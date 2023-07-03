@@ -154,9 +154,30 @@
     <ClInclude Include="Device.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="EngineInfo.h" />
+    <ClInclude Include="EngineMath.h" />
+    <ClInclude Include="EngineSetting.h" />
     <ClInclude Include="Flag.h" />
+    <ClInclude Include="fmod.h" />
+    <ClInclude Include="fmod.hpp" />
+    <ClInclude Include="fmod_codec.h" />
+    <ClInclude Include="fmod_common.h" />
+    <ClInclude Include="fmod_dsp.h" />
+    <ClInclude Include="fmod_dsp_effects.h" />
+    <ClInclude Include="fmod_errors.h" />
+    <ClInclude Include="fmod_output.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="Matrix.h" />
+    <ClInclude Include="PathManager.h" />
     <ClInclude Include="Ref.h" />
+    <ClInclude Include="Resource\Animation\AnimationManager.h" />
+    <ClInclude Include="Resource\Font\FontManager.h" />
+    <ClInclude Include="Resource\Material\MaterialManager.h" />
+    <ClInclude Include="Resource\Mesh\MeshManager.h" />
+    <ClInclude Include="Resource\ResourceManager.h" />
+    <ClInclude Include="Resource\Shader\ShaderManager.h" />
+    <ClInclude Include="Resource\Sound\SoundManager.h" />
+    <ClInclude Include="Resource\Texture\DirectXTex.h" />
+    <ClInclude Include="Resource\Texture\TextureManager.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Vector3.h" />
@@ -165,12 +186,29 @@
   <ItemGroup>
     <ClCompile Include="Device.cpp" />
     <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="EngineSetting.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="Matrix.cpp" />
+    <ClCompile Include="PathManager.cpp" />
     <ClCompile Include="Ref.cpp" />
+    <ClCompile Include="Resource\Animation\AnimationManager.cpp" />
+    <ClCompile Include="Resource\Font\FontManager.cpp" />
+    <ClCompile Include="Resource\Material\MaterialManager.cpp" />
+    <ClCompile Include="Resource\Mesh\MeshManager.cpp" />
+    <ClCompile Include="Resource\ResourceManager.cpp" />
+    <ClCompile Include="Resource\Shader\ShaderManager.cpp" />
+    <ClCompile Include="Resource\Sound\SoundManager.cpp" />
+    <ClCompile Include="Resource\Texture\TextureManager.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="Vector3.cpp" />
     <ClCompile Include="Vector4.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="fmod.cs" />
+    <None Include="fmod_dsp.cs" />
+    <None Include="fmod_errors.cs" />
+    <None Include="Resource\Texture\DirectXTex.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

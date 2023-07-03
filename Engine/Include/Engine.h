@@ -1,6 +1,7 @@
 #pragma once
 
 #include "EngineInfo.h"
+#include "EngineSetting.h"
 
 class CEngine
 {
@@ -13,6 +14,7 @@ private:
 	class CTimer* m_Timer;
 	static bool m_EditorMode;
 	static std::function<bool(HWND, UINT, WPARAM, LPARAM)> m_WndProcFunc;
+	CEngineSetting* m_Setting;
 
 public:
 	float GetFPS() const;

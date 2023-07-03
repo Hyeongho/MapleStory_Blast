@@ -32,6 +32,7 @@
 #include "Vector3.h"
 #include "Vector4.h"
 #include "Matrix.h"
+#include "Resource/Texture/DirectXTex.h"
 #include "fmod.hpp"
 
 #pragma comment(lib, "../Bin/fmod64_vc.lib")

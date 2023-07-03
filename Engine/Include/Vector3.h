@@ -91,8 +91,6 @@ struct Vector3
 	Vector3 TransformNormal(const Matrix& m)	const;
 	Vector3 TransformCoord(const Matrix& m)	const;
 
-
-
 	DirectX::XMVECTOR Convert()	const;
 	void Convert(const DirectX::XMVECTOR& v);
 
