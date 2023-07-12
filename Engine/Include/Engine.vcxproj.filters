@@ -88,6 +88,51 @@
     <Filter Include="02. Resource\06. Sound\01. FMOD">
       <UniqueIdentifier>{771ff2d0-c137-4cbf-8302-72429974c063}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02. Resource\02. Shader\01. HLSL">
+      <UniqueIdentifier>{c0c48140-7b8f-4516-a033-8f1d74aaddba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Resource\02. Shader\02. ShaderClass">
+      <UniqueIdentifier>{cbcd71f7-24a3-4e53-8760-b664d17df40f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Resource\02. Shader\03. ConstantBudder">
+      <UniqueIdentifier>{ee10dae3-e3b2-4515-9ed8-5ecc612ebf86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Resource\02. Shader\04. StructureBuffer">
+      <UniqueIdentifier>{acdd2be7-6492-444b-beaf-d05e60861375}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\01. SceneInfo">
+      <UniqueIdentifier>{8312273f-dc41-4752-91d0-06be7ec632a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\02. Resource">
+      <UniqueIdentifier>{fd80a59c-f6cc-4e55-91d6-e7692fea3831}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\03. Camera">
+      <UniqueIdentifier>{62e75889-5a67-40de-abcd-3235e017b9b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\04. Collision">
+      <UniqueIdentifier>{8289799a-1f16-4ea4-b4e4-6d757a71feb0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene\05. Viewport">
+      <UniqueIdentifier>{723dfd80-f4db-4b35-982a-dd6e75b39f13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Component\01. SceneComponent">
+      <UniqueIdentifier>{b860b5b4-e9fa-41b9-a932-5dcd641fbe31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Component\01. SceneComponent\01. Primitive">
+      <UniqueIdentifier>{9398530a-5aa2-4d2b-90fe-d4f841649b61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Component\01. SceneComponent\02. Camera">
+      <UniqueIdentifier>{a46470ba-3946-47f9-933d-39d657cff3a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Component\01. SceneComponent\03. Arm">
+      <UniqueIdentifier>{ee3ae3a4-4eca-4984-9500-6b9e619174aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Component\01. SceneComponent\04. Collider">
+      <UniqueIdentifier>{f53401ad-1109-4a18-a163-b0c47b8cbbd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Component\02. ObjectComponent">
+      <UniqueIdentifier>{88c5739b-3e7e-46ea-b84c-7a3fef63e016}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EngineInfo.h">
@@ -183,6 +228,36 @@
     <ClInclude Include="Resource\Texture\DirectXTex.h">
       <Filter>02. Resource\03. Texture</Filter>
     </ClInclude>
+    <ClInclude Include="Resource\Mesh\SpriteMesh.h">
+      <Filter>02. Resource\01. Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource\Mesh\Mesh.h">
+      <Filter>02. Resource\01. Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource\Material\Material.h">
+      <Filter>02. Resource\04. Material</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\SceneManager.h">
+      <Filter>03. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Scene.h">
+      <Filter>03. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\SceneInfo.h">
+      <Filter>03. Scene\01. SceneInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Component.h">
+      <Filter>05. Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\SceneComponent.h">
+      <Filter>05. Component\01. SceneComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Transform.h">
+      <Filter>05. Component\01. SceneComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject\GameObject.h">
+      <Filter>04. GameObject</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine.cpp">
@@ -242,6 +317,36 @@
     <ClCompile Include="Resource\Font\FontManager.cpp">
       <Filter>02. Resource\07. Font</Filter>
     </ClCompile>
+    <ClCompile Include="Resource\Mesh\SpriteMesh.cpp">
+      <Filter>02. Resource\01. Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource\Mesh\Mesh.cpp">
+      <Filter>02. Resource\01. Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource\Material\Material.cpp">
+      <Filter>02. Resource\04. Material</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\SceneManager.cpp">
+      <Filter>03. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Scene.cpp">
+      <Filter>03. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\SceneInfo.cpp">
+      <Filter>03. Scene\01. SceneInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Component.cpp">
+      <Filter>05. Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\SceneComponent.cpp">
+      <Filter>05. Component\01. SceneComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Transform.cpp">
+      <Filter>05. Component\01. SceneComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject\GameObject.cpp">
+      <Filter>04. GameObject</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="fmod.cs">
@@ -256,5 +361,37 @@
     <None Include="Resource\Texture\DirectXTex.inl">
       <Filter>02. Resource\03. Texture</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="..\Bin\Shader\Collider.fx">
+      <Filter>02. Resource\02. Shader\01. HLSL</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Bin\Shader\Debug.fx">
+      <Filter>02. Resource\02. Shader\01. HLSL</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Bin\Shader\Light.fx">
+      <Filter>02. Resource\02. Shader\01. HLSL</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Bin\Shader\Mesh.fx">
+      <Filter>02. Resource\02. Shader\01. HLSL</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Bin\Shader\ParticleRender.fx">
+      <Filter>02. Resource\02. Shader\01. HLSL</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Bin\Shader\ParticleUpdate.fx">
+      <Filter>02. Resource\02. Shader\01. HLSL</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Bin\Shader\Share.fx">
+      <Filter>02. Resource\02. Shader\01. HLSL</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Bin\Shader\Sprite.fx">
+      <Filter>02. Resource\02. Shader\01. HLSL</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Bin\Shader\TileMap.fx">
+      <Filter>02. Resource\02. Shader\01. HLSL</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Bin\Shader\UI.fx">
+      <Filter>02. Resource\02. Shader\01. HLSL</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>
