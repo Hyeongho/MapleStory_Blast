@@ -11,3 +11,36 @@ CRef::CRef(const CRef& ref) : m_RefCount(0), m_Name(ref.m_Name), m_TypeName(ref.
 CRef::~CRef()
 {
 }
+
+void CRef::Save(FILE* File)
+{
+	int	Length = (int)m_Name.length();
+
+	fwrite(&Length, sizeof(int), 1, File);
+	fwrite(m_Name.c_str(), sizeof(char), Length, File);
+
+	Length = (int)m_TypeName.length();
+
+	fwrite(&Length, sizeof(int), 1, File);
+	fwrite(m_TypeName.c_str(), sizeof(char), Length, File);
+
+	fwrite(&m_TypeID, sizeof(size_t), 1, File);
+}
+
+void CRef::Load(FILE* File)
+{
+	int	Length = 0;
+	char Text[256] = {};
+
+	fread(&Length, sizeof(int), 1, File);
+	fread(Text, sizeof(char), Length, File);
+	m_Name = Text;
+
+	memset(Text, 0, 256);
+
+	fread(&Length, sizeof(int), 1, File);
+	fread(Text, sizeof(char), Length, File);
+	m_TypeName = Text;
+
+	fread(&m_TypeID, sizeof(size_t), 1, File);
+}

@@ -15,6 +15,6 @@ private:
 	~CScene();
 
 private:
-	static std::unord
+	static std::unordered_map<std::string, CSceneInfo*>	m_mapSceneInfoCDO;
 };
 

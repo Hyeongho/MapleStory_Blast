@@ -69,7 +69,8 @@ enum class EImageType : unsigned char
 {
 	Atlas,
 	Frame,
-	Array
+	Array,
+	RenderTarget
 };
 
 enum class ESamplerType : unsigned char

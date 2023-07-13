@@ -77,5 +77,9 @@ public:
 
 		m_TypeID = typeid(T).hash_code();
 	}
+
+public:
+	virtual void Save(FILE* File);
+	virtual void Load(FILE* File);
 };
 

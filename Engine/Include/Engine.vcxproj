@@ -152,6 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Component\Component.h" />
+    <ClInclude Include="Component\ObjectComponent.h" />
     <ClInclude Include="Component\SceneComponent.h" />
     <ClInclude Include="Component\Transform.h" />
     <ClInclude Include="Device.h" />
@@ -181,9 +182,31 @@
     <ClInclude Include="Resource\Mesh\MeshManager.h" />
     <ClInclude Include="Resource\Mesh\SpriteMesh.h" />
     <ClInclude Include="Resource\ResourceManager.h" />
+    <ClInclude Include="Resource\Shader\AnimationConstantBuffer.h" />
+    <ClInclude Include="Resource\Shader\ColliderConstantBuffer.h" />
+    <ClInclude Include="Resource\Shader\ColliderImageShader.h" />
+    <ClInclude Include="Resource\Shader\ColliderShader.h" />
+    <ClInclude Include="Resource\Shader\ComputeShader.h" />
+    <ClInclude Include="Resource\Shader\ConstantBuffer.h" />
+    <ClInclude Include="Resource\Shader\ConstantBufferData.h" />
+    <ClInclude Include="Resource\Shader\GraphicShader.h" />
+    <ClInclude Include="Resource\Shader\MaterialConstantBuffer.h" />
+    <ClInclude Include="Resource\Shader\Shader.h" />
     <ClInclude Include="Resource\Shader\ShaderManager.h" />
+    <ClInclude Include="Resource\Shader\SpriteColorShader.h" />
+    <ClInclude Include="Resource\Shader\SpriteShader.h" />
+    <ClInclude Include="Resource\Shader\StructuredBuffer.h" />
+    <ClInclude Include="Resource\Shader\TileMapBackShader.h" />
+    <ClInclude Include="Resource\Shader\TileMapConstantBuffer.h" />
+    <ClInclude Include="Resource\Shader\TileMapShader.h" />
+    <ClInclude Include="Resource\Shader\TransformConstantBuffer.h" />
+    <ClInclude Include="Resource\Shader\UIConstantBuffer.h" />
+    <ClInclude Include="Resource\Shader\UIProgressBarConstantBuffer.h" />
+    <ClInclude Include="Resource\Shader\UIProgressBarShader.h" />
+    <ClInclude Include="Resource\Shader\UIShader.h" />
     <ClInclude Include="Resource\Sound\SoundManager.h" />
     <ClInclude Include="Resource\Texture\DirectXTex.h" />
+    <ClInclude Include="Resource\Texture\Texture.h" />
     <ClInclude Include="Resource\Texture\TextureManager.h" />
     <ClInclude Include="Scene\Scene.h" />
     <ClInclude Include="Scene\SceneInfo.h" />
@@ -195,6 +218,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Component\Component.cpp" />
+    <ClCompile Include="Component\ObjectComponent.cpp" />
     <ClCompile Include="Component\SceneComponent.cpp" />
     <ClCompile Include="Component\Transform.cpp" />
     <ClCompile Include="Device.cpp" />
@@ -213,8 +237,30 @@
     <ClCompile Include="Resource\Mesh\MeshManager.cpp" />
     <ClCompile Include="Resource\Mesh\SpriteMesh.cpp" />
     <ClCompile Include="Resource\ResourceManager.cpp" />
+    <ClCompile Include="Resource\Shader\AnimationConstantBuffer.cpp" />
+    <ClCompile Include="Resource\Shader\ColliderConstantBuffer.cpp" />
+    <ClCompile Include="Resource\Shader\ColliderImageShader.cpp" />
+    <ClCompile Include="Resource\Shader\ColliderShader.cpp" />
+    <ClCompile Include="Resource\Shader\ComputeShader.cpp" />
+    <ClCompile Include="Resource\Shader\ConstantBuffer.cpp" />
+    <ClCompile Include="Resource\Shader\ConstantBufferData.cpp" />
+    <ClCompile Include="Resource\Shader\GraphicShader.cpp" />
+    <ClCompile Include="Resource\Shader\MaterialConstantBuffer.cpp" />
+    <ClCompile Include="Resource\Shader\Shader.cpp" />
     <ClCompile Include="Resource\Shader\ShaderManager.cpp" />
+    <ClCompile Include="Resource\Shader\SpriteColorShader.cpp" />
+    <ClCompile Include="Resource\Shader\SpriteShader.cpp" />
+    <ClCompile Include="Resource\Shader\StructuredBuffer.cpp" />
+    <ClCompile Include="Resource\Shader\TileMapBackShader.cpp" />
+    <ClCompile Include="Resource\Shader\TileMapConstantBuffer.cpp" />
+    <ClCompile Include="Resource\Shader\TileMapShader.cpp" />
+    <ClCompile Include="Resource\Shader\TransformConstantBuffer.cpp" />
+    <ClCompile Include="Resource\Shader\UIConstantBuffer.cpp" />
+    <ClCompile Include="Resource\Shader\UIProgressBarConstantBuffer.cpp" />
+    <ClCompile Include="Resource\Shader\UIProgressBarShader.cpp" />
+    <ClCompile Include="Resource\Shader\UIShader.cpp" />
     <ClCompile Include="Resource\Sound\SoundManager.cpp" />
+    <ClCompile Include="Resource\Texture\Texture.cpp" />
     <ClCompile Include="Resource\Texture\TextureManager.cpp" />
     <ClCompile Include="Scene\Scene.cpp" />
     <ClCompile Include="Scene\SceneInfo.cpp" />
