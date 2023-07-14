@@ -102,6 +102,13 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>call $(SolutionDir)Copy.bat</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -119,6 +126,13 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>call $(SolutionDir)Copy.bat</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -132,6 +146,13 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>call $(SolutionDir)Copy.bat</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -149,6 +170,13 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>call $(SolutionDir)Copy.bat</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Component\Component.h" />
@@ -175,6 +203,9 @@
     <ClInclude Include="PathManager.h" />
     <ClInclude Include="Ref.h" />
     <ClInclude Include="Resource\Animation\AnimationManager.h" />
+    <ClInclude Include="Resource\Animation\AnimationSequence.h" />
+    <ClInclude Include="Resource\Font\Font.h" />
+    <ClInclude Include="Resource\Font\FontCollection.h" />
     <ClInclude Include="Resource\Font\FontManager.h" />
     <ClInclude Include="Resource\Material\Material.h" />
     <ClInclude Include="Resource\Material\MaterialManager.h" />
@@ -204,13 +235,17 @@
     <ClInclude Include="Resource\Shader\UIProgressBarConstantBuffer.h" />
     <ClInclude Include="Resource\Shader\UIProgressBarShader.h" />
     <ClInclude Include="Resource\Shader\UIShader.h" />
+    <ClInclude Include="Resource\Sound\Sound.h" />
     <ClInclude Include="Resource\Sound\SoundManager.h" />
     <ClInclude Include="Resource\Texture\DirectXTex.h" />
     <ClInclude Include="Resource\Texture\Texture.h" />
     <ClInclude Include="Resource\Texture\TextureManager.h" />
+    <ClInclude Include="Scene\CameraManager.h" />
     <ClInclude Include="Scene\Scene.h" />
+    <ClInclude Include="Scene\SceneCollision.h" />
     <ClInclude Include="Scene\SceneInfo.h" />
     <ClInclude Include="Scene\SceneManager.h" />
+    <ClInclude Include="Scene\SceneResource.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Vector3.h" />
@@ -230,6 +265,9 @@
     <ClCompile Include="PathManager.cpp" />
     <ClCompile Include="Ref.cpp" />
     <ClCompile Include="Resource\Animation\AnimationManager.cpp" />
+    <ClCompile Include="Resource\Animation\AnimationSequence.cpp" />
+    <ClCompile Include="Resource\Font\Font.cpp" />
+    <ClCompile Include="Resource\Font\FontCollection.cpp" />
     <ClCompile Include="Resource\Font\FontManager.cpp" />
     <ClCompile Include="Resource\Material\Material.cpp" />
     <ClCompile Include="Resource\Material\MaterialManager.cpp" />
@@ -259,12 +297,16 @@
     <ClCompile Include="Resource\Shader\UIProgressBarConstantBuffer.cpp" />
     <ClCompile Include="Resource\Shader\UIProgressBarShader.cpp" />
     <ClCompile Include="Resource\Shader\UIShader.cpp" />
+    <ClCompile Include="Resource\Sound\Sound.cpp" />
     <ClCompile Include="Resource\Sound\SoundManager.cpp" />
     <ClCompile Include="Resource\Texture\Texture.cpp" />
     <ClCompile Include="Resource\Texture\TextureManager.cpp" />
+    <ClCompile Include="Scene\CameraManager.cpp" />
     <ClCompile Include="Scene\Scene.cpp" />
+    <ClCompile Include="Scene\SceneCollision.cpp" />
     <ClCompile Include="Scene\SceneInfo.cpp" />
     <ClCompile Include="Scene\SceneManager.cpp" />
+    <ClCompile Include="Scene\SceneResource.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="Vector3.cpp" />
@@ -277,16 +319,82 @@
     <None Include="Resource\Texture\DirectXTex.inl" />
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="..\Bin\Shader\Collider.fx" />
-    <FxCompile Include="..\Bin\Shader\Debug.fx" />
-    <FxCompile Include="..\Bin\Shader\Light.fx" />
-    <FxCompile Include="..\Bin\Shader\Mesh.fx" />
-    <FxCompile Include="..\Bin\Shader\ParticleRender.fx" />
-    <FxCompile Include="..\Bin\Shader\ParticleUpdate.fx" />
-    <FxCompile Include="..\Bin\Shader\Share.fx" />
-    <FxCompile Include="..\Bin\Shader\Sprite.fx" />
-    <FxCompile Include="..\Bin\Shader\TileMap.fx" />
-    <FxCompile Include="..\Bin\Shader\UI.fx" />
+    <FxCompile Include="..\Bin\Shader\Collider.fx">
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ColliderVS</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Effect</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ColliderVS</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Effect</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ColliderVS</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Effect</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ColliderVS</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Effect</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="..\Bin\Shader\Mesh.fx">
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MeshVS</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Effect</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MeshVS</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Effect</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MeshVS</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Effect</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MeshVS</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Effect</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="..\Bin\Shader\Share.fx">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </FxCompile>
+    <FxCompile Include="..\Bin\Shader\Sprite.fx">
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">SpriteColorVS</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Effect</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">SpriteColorVS</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Effect</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">SpriteColorVS</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Effect</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">SpriteColorVS</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Effect</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="..\Bin\Shader\TileMap.fx">
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">TileMapVS</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Effect</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">TileMapVS</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Effect</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">TileMapVS</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Effect</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">TileMapVS</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Effect</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="..\Bin\Shader\UI.fx">
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UIVS</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Effect</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UIVS</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Effect</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UIVS</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Effect</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UIVS</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Effect</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
+    </FxCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

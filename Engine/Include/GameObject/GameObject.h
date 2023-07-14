@@ -98,9 +98,9 @@ public:
 
 	void GetAllComponentHierarchyName(std::vector<HierarchyName>& vecName);
 
-	std::shared_ptr<CSceneComponent> GetRootComponent() const
+	CSceneComponent* GetRootComponent() const
 	{
-		return m_RootComponent;
+		return m_RootComponent.get();
 	}
 
 	const std::list<CSceneComponent*>& GetSceneComponents() const

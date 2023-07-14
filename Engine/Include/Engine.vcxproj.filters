@@ -357,6 +357,27 @@
     <ClInclude Include="Resource\Shader\StructuredBuffer.h">
       <Filter>02. Resource\02. Shader\04. StructureBuffer</Filter>
     </ClInclude>
+    <ClInclude Include="Resource\Animation\AnimationSequence.h">
+      <Filter>02. Resource\05. Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource\Sound\Sound.h">
+      <Filter>02. Resource\06. Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource\Font\Font.h">
+      <Filter>02. Resource\07. Font</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource\Font\FontCollection.h">
+      <Filter>02. Resource\07. Font</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\SceneResource.h">
+      <Filter>03. Scene\02. Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\CameraManager.h">
+      <Filter>03. Scene\03. Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\SceneCollision.h">
+      <Filter>03. Scene\04. Collision</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine.cpp">
@@ -515,6 +536,27 @@
     <ClCompile Include="Resource\Shader\StructuredBuffer.cpp">
       <Filter>02. Resource\02. Shader\04. StructureBuffer</Filter>
     </ClCompile>
+    <ClCompile Include="Resource\Animation\AnimationSequence.cpp">
+      <Filter>02. Resource\05. Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource\Sound\Sound.cpp">
+      <Filter>02. Resource\06. Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource\Font\Font.cpp">
+      <Filter>02. Resource\07. Font</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource\Font\FontCollection.cpp">
+      <Filter>02. Resource\07. Font</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\SceneResource.cpp">
+      <Filter>03. Scene\02. Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\CameraManager.cpp">
+      <Filter>03. Scene\03. Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\SceneCollision.cpp">
+      <Filter>03. Scene\04. Collision</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="fmod.cs">
@@ -534,19 +576,7 @@
     <FxCompile Include="..\Bin\Shader\Collider.fx">
       <Filter>02. Resource\02. Shader\01. HLSL</Filter>
     </FxCompile>
-    <FxCompile Include="..\Bin\Shader\Debug.fx">
-      <Filter>02. Resource\02. Shader\01. HLSL</Filter>
-    </FxCompile>
-    <FxCompile Include="..\Bin\Shader\Light.fx">
-      <Filter>02. Resource\02. Shader\01. HLSL</Filter>
-    </FxCompile>
     <FxCompile Include="..\Bin\Shader\Mesh.fx">
-      <Filter>02. Resource\02. Shader\01. HLSL</Filter>
-    </FxCompile>
-    <FxCompile Include="..\Bin\Shader\ParticleRender.fx">
-      <Filter>02. Resource\02. Shader\01. HLSL</Filter>
-    </FxCompile>
-    <FxCompile Include="..\Bin\Shader\ParticleUpdate.fx">
       <Filter>02. Resource\02. Shader\01. HLSL</Filter>
     </FxCompile>
     <FxCompile Include="..\Bin\Shader\Share.fx">
