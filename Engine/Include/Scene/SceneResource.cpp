@@ -75,7 +75,7 @@ bool CSceneResource::CreateMesh(MeshType Type, const std::string& Name, void* Vt
 	return true;
 }
 
-CMesh* CSceneResource::FindMesh(const std::string& Name)
+std::shared_ptr<CMesh> CSceneResource::FindMesh(const std::string& Name)
 {
 	auto iter = m_mapMesh.find(Name);
 
@@ -90,10 +90,10 @@ CMesh* CSceneResource::FindMesh(const std::string& Name)
 
 		m_mapMesh.insert(std::make_pair(Name, std::make_shared<CMesh>(Mesh)));
 
-		return Mesh;
+		return std::make_shared<CMesh>(Mesh);
 	}
 
-	return iter->second.get();
+	return iter->second;
 }
 
 CShader* CSceneResource::FindShader(const std::string& Name)
@@ -185,46 +185,46 @@ bool CSceneResource::LoadTextureFullPath(const std::string& Name, const std::vec
 	return true;
 }
 
-CTexture* CSceneResource::FindTexture(const std::string& Name)
+std::shared_ptr<CTexture> CSceneResource::FindTexture(const std::string& Name)
 {
 	auto iter = m_mapTexture.find(Name);
 
 	if (iter == m_mapTexture.end())
 	{
-		CTexture* Texture = CResourceManager::GetInst()->FindTexture(Name);
+		std::shared_ptr<CTexture> Texture = CResourceManager::GetInst()->FindTexture(Name);
 
 		if (!Texture)
 		{
 			return nullptr;
 		}
 
-		m_mapTexture.insert(std::make_pair(Name, std::make_shared<CTexture>(Texture)));
+		m_mapTexture.insert(std::make_pair(Name, Texture));
 
 		return Texture;
 	}
 
-	return iter->second.get();
+	return iter->second;
 }
 
-CMaterial* CSceneResource::FindMaterial(const std::string& Name)
+std::shared_ptr<CMaterial> CSceneResource::FindMaterial(const std::string& Name)
 {
 	auto iter = m_mapMaterial.find(Name);
 
 	if (iter == m_mapMaterial.end())
 	{
-		CMaterial* Material = CResourceManager::GetInst()->FindMaterial(Name);
+		std::shared_ptr<CMaterial> Material = CResourceManager::GetInst()->FindMaterial(Name);
 
 		if (!Material)
 		{
 			return nullptr;
 		}
 
-		m_mapMaterial.insert(std::make_pair(Name, std::make_shared<CMaterial>(Material)));
+		m_mapMaterial.insert(std::make_pair(Name, Material));
 
 		return Material;
 	}
 
-	return iter->second.get();
+	return iter->second;
 }
 
 bool CSceneResource::CreateAnimationSequence2D(const std::string& Name, const std::string& TextureName, const TCHAR* FileName, const std::string& PathName)

@@ -50,132 +50,126 @@ bool CTextureManager::Init()
 
 bool CTextureManager::LoadTexture(const std::string& Name, const TCHAR* FileName, const std::string& PathName)
 {
-	CTexture* Texture = FindTexture(Name);
+	std::shared_ptr<CTexture> Texture = FindTexture(Name);
 
 	if (Texture)
 	{
 		return true;
 	}
 
-	Texture = new CTexture;
+	Texture = std::make_shared<CTexture>();
 
 	if (!Texture->LoadTexture(Name, FileName, PathName))
 	{
-		SAFE_DELETE(Texture);
 		return false;
 	}
 
-	m_mapTexture.insert(std::make_pair(Name, std::make_shared<CTexture>(Texture)));
+	m_mapTexture.insert(std::make_pair(Name,Texture));
 
 	return true;
 }
 
 bool CTextureManager::LoadTextureFullPath(const std::string& Name, const TCHAR* FullPath)
 {
-	CTexture* Texture = FindTexture(Name);
+	std::shared_ptr<CTexture> Texture = FindTexture(Name);
 
 	if (Texture)
 	{
 		return true;
 	}
 
-	Texture = new CTexture;
+	Texture = std::make_shared<CTexture>();
 
 	if (!Texture->LoadTextureFullPath(Name, FullPath))
 	{
-		SAFE_DELETE(Texture);
 		return false;
 	}
 
-	m_mapTexture.insert(std::make_pair(Name, std::make_shared<CTexture>(Texture)));
+	m_mapTexture.insert(std::make_pair(Name, Texture));
 
 	return true;
 }
 
 bool CTextureManager::LoadTexture(const std::string& Name, const std::vector<const TCHAR*>& vecFileName, const std::string& PathName)
 {
-	CTexture* Texture = FindTexture(Name);
+	std::shared_ptr<CTexture> Texture = FindTexture(Name);
 
 	if (Texture)
 	{
 		return true;
 	}
 
-	Texture = new CTexture;
+	Texture = std::make_shared<CTexture>();
 
 	if (!Texture->LoadTexture(Name, vecFileName, PathName))
 	{
-		SAFE_DELETE(Texture);
 		return false;
 	}
 
-	m_mapTexture.insert(std::make_pair(Name, std::make_shared<CTexture>(Texture)));
+	m_mapTexture.insert(std::make_pair(Name, Texture));
 
 	return true;
 }
 
 bool CTextureManager::LoadTextureFullPath(const std::string& Name, const std::vector<const TCHAR*>& vecFullPath)
 {
-	CTexture* Texture = FindTexture(Name);
+	std::shared_ptr<CTexture> Texture = FindTexture(Name);
 
 	if (Texture)
 	{
 		return true;
 	}
 
-	Texture = new CTexture;
+	Texture = std::make_shared<CTexture>();
 
 	if (!Texture->LoadTextureFullPath(Name, vecFullPath))
 	{
-		SAFE_DELETE(Texture);
 		return false;
 	}
 
-	m_mapTexture.insert(std::make_pair(Name, std::make_shared<CTexture>(Texture)));
+	m_mapTexture.insert(std::make_pair(Name, Texture));
 
 	return true;
 }
 
 bool CTextureManager::LoadTextureArray(const std::string& Name, const std::vector<const TCHAR*>& vecFileName, const std::string& PathName)
 {
-	CTexture* Texture = FindTexture(Name);
+	std::shared_ptr<CTexture> Texture = FindTexture(Name);
 
 	if (Texture)
 	{
 		return true;
 	}
 
-	Texture = new CTexture;
+	Texture = std::make_shared<CTexture>();
 
 	if (!Texture->LoadTextureArray(Name, vecFileName, PathName))
 	{
-		SAFE_DELETE(Texture);
 		return false;
 	}
 
-	m_mapTexture.insert(std::make_pair(Name, std::make_shared<CTexture>(Texture)));
+	m_mapTexture.insert(std::make_pair(Name, Texture));
 
 	return true;
 }
 
 bool CTextureManager::LoadTextureArrayFullPath(const std::string& Name, const std::vector<const TCHAR*>& vecFullPath)
 {
-	CTexture* Texture = FindTexture(Name);
+	std::shared_ptr<CTexture> Texture = FindTexture(Name);
 
 	if (Texture)
 	{
 		return true;
 	}
 
-	Texture = new CTexture;
+	Texture = std::make_shared<CTexture>();
 
 	if (!Texture->LoadTextureArrayFullPath(Name, vecFullPath))
 	{
-		SAFE_DELETE(Texture);
 		return false;
 	}
 
-	m_mapTexture.insert(std::make_pair(Name, std::make_shared<CTexture>(Texture)));
+	m_mapTexture.insert(std::make_pair(Name, Texture));
 
 	return true;
 }
@@ -218,7 +212,7 @@ void CTextureManager::Render()
 	}
 }
 
-CTexture* CTextureManager::FindTexture(const std::string& Name)
+std::shared_ptr<CTexture> CTextureManager::FindTexture(const std::string& Name)
 {
 	auto iter = m_mapTexture.find(Name);
 
@@ -227,7 +221,7 @@ CTexture* CTextureManager::FindTexture(const std::string& Name)
 		return nullptr;
 	}
 
-	return iter->second.get();
+	return iter->second;
 }
 
 void CTextureManager::ReleaseTexture(const std::string& Name)

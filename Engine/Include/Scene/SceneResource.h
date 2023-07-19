@@ -39,7 +39,7 @@ public:
 public:	// ===================== Mesh =========================
 	bool CreateMesh(MeshType Type, const std::string& Name, void* VtxData, int Size, int Count, D3D11_USAGE VtxUsage, D3D11_PRIMITIVE_TOPOLOGY Primitive, void* IdxData = nullptr, int IdxSize = 0, int IdxCount = 0, D3D11_USAGE IdxUsage = D3D11_USAGE_DEFAULT, DXGI_FORMAT Fmt = DXGI_FORMAT_UNKNOWN);
 
-	class CMesh* FindMesh(const std::string& Name);
+	class std::shared_ptr<CMesh> FindMesh(const std::string& Name);
 
 public:	// ===================== Shader =========================
 	class CShader* FindShader(const std::string& Name);
@@ -55,10 +55,10 @@ public:	// ===================== Texture =========================
 	bool CreateTarget(const std::string& Name, unsigned int Width, unsigned int Height, DXGI_FORMAT PixelFormat, DXGI_FORMAT DepthFormat = DXGI_FORMAT_UNKNOWN);
 	void RenderTexture();
 
-	class CTexture* FindTexture(const std::string& Name);
+	std::shared_ptr<class CTexture> FindTexture(const std::string& Name);
 
 public:	// ===================== Material =========================
-	CMaterial* FindMaterial(const std::string& Name);
+	std::shared_ptr<class CMaterial> FindMaterial(const std::string& Name);
 
 	template <typename T>
 	bool CreateMaterial(const std::string& Name)

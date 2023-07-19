@@ -103,13 +103,12 @@ bool CResourceManager::LoadMeshMultibyte(CScene* Scene, MeshType Type,
 	return m_MeshManager->LoadMeshMultibyte(Scene, Type, Name, FileName, PathName);
 }
 
-bool CResourceManager::LoadMeshMultibyteFullPath(CScene* Scene,
-	MeshType Type, const std::string& Name, const char* FullPath)
+bool CResourceManager::LoadMeshMultibyteFullPath(CScene* Scene, MeshType Type, const std::string& Name, const char* FullPath)
 {
 	return m_MeshManager->LoadMeshMultibyteFullPath(Scene, Type, Name, FullPath);
 }
 
-CMesh* CResourceManager::FindMesh(const std::string& Name)
+std::shared_ptr<CMesh> CResourceManager::FindMesh(const std::string& Name)
 {
 	return m_MeshManager->FindMesh(Name);
 }
@@ -190,7 +189,7 @@ void CResourceManager::RenderTexture()
 	m_TextureManager->Render();
 }
 
-CTexture* CResourceManager::FindTexture(const std::string& Name)
+std::shared_ptr<CTexture> CResourceManager::FindTexture(const std::string& Name)
 {
 	return m_TextureManager->FindTexture(Name);
 }
@@ -200,7 +199,7 @@ void CResourceManager::ReleaseTexture(const std::string& Name)
 	m_TextureManager->ReleaseTexture(Name);
 }
 
-CMaterial* CResourceManager::FindMaterial(const std::string& Name)
+std::shared_ptr<CMaterial> CResourceManager::FindMaterial(const std::string& Name)
 {
 	return m_MaterialManager->FindMaterial(Name);
 }
@@ -284,7 +283,7 @@ bool CResourceManager::LoadSequence2D(const std::string& Name, const char* FileN
 	return m_AnimationManager->LoadSequence2D(Name, FileName, PathName);
 }
 
-CAnimationSequence2D* CResourceManager::FindAnimationSequence2D(const std::string& Name)
+CAnimationSequence* CResourceManager::FindAnimationSequence2D(const std::string& Name)
 {
 	return m_AnimationManager->FindAnimationSequence2D(Name);
 }
@@ -294,7 +293,7 @@ void CResourceManager::ReleaseAnimationSequence2D(const std::string& Name)
 	m_AnimationManager->ReleaseAnimationSequence2D(Name);
 }
 
-CAnimation2DConstantBuffer* CResourceManager::GetAnim2DConstantBuffer() const
+CAnimationConstantBuffer* CResourceManager::GetAnim2DConstantBuffer() const
 {
 	return m_AnimationManager->GetAnim2DConstantBuffer();
 }

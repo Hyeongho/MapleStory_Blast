@@ -299,6 +299,39 @@ void CMaterial::AddTextureFullPath(int Register, int ShaderBufferType, const std
 	m_vecTextureInfo.push_back(Info);
 }
 
+void CMaterial::AddTextureArray(int Register, int ShaderBufferType, const std::string& Name, const std::vector<const TCHAR*>& vecFileName, const std::string& PathName)
+{
+	MaterialTextureInfo* Info = new MaterialTextureInfo;
+
+	Info->Register = Register;
+	Info->ShaderBufferType = ShaderBufferType;
+	Info->Name = Name;
+
+	if (m_Scene)
+	{
+		if (!m_Scene->GetResource()->LoadTextureArray(Name, vecFileName, PathName))
+		{
+			return;
+		}
+
+		Info->Texture = m_Scene->GetResource()->FindTexture(Name);
+	}
+
+	else
+	{
+		if (!CResourceManager::GetInst()->LoadTextureArray(Name, vecFileName, PathName))
+			return;
+
+		Info->Texture = CResourceManager::GetInst()->FindTexture(Name);
+	}
+
+	m_vecTextureInfo.push_back(Info);
+}
+
+void CMaterial::AddTextureArrayFullPath(int Register, int ShaderBufferType, const std::string& Name, const std::vector<const TCHAR*>& vecFullPath)
+{
+}
+
 void CMaterial::SetTexture(int Index, int Register, int ShaderBufferType, const std::string& Name, CTexture* Texture)
 {
 	if (Index < 0 || Index >= (int)m_vecTextureInfo.size())
@@ -450,6 +483,14 @@ void CMaterial::SetTextureFullPath(int Index, int Register, int ShaderBufferType
 	}
 }
 
+void CMaterial::SetTextureArray(int Index, int Register, int ShaderBufferType, const std::string& Name, const std::vector<const TCHAR*>& vecFileName, const std::string& PathName)
+{
+}
+
+void CMaterial::SetTextureArrayFullPath(int Index, int Register, int ShaderBufferType, const std::string& Name, const std::vector<const TCHAR*>& vecFullPath)
+{
+}
+
 void CMaterial::SetTextureSamplerType(int Index, ESamplerType Type)
 {
 	if (Index < 0 || Index >= (int)m_vecTextureInfo.size())
@@ -550,9 +591,10 @@ void CMaterial::ResetMaterial()
 	}
 }
 
-CMaterial* CMaterial::Clone() const
+std::shared_ptr<CMaterial> CMaterial::Clone() const
 {
-	return new CMaterial(*this);
+	//return new CMaterial(*this);
+	return std::make_shared<CMaterial>(*this);
 }
 
 void CMaterial::Save(FILE* File)

@@ -163,6 +163,9 @@
     <Filter Include="02. Resource\02. Shader\03. ConstantBudder\06. TileMap">
       <UniqueIdentifier>{2a53a1b8-7ae1-4e0e-a66a-c67f0f8fd83a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="06. Render\01. RenderState">
+      <UniqueIdentifier>{be89bd1b-a706-47e2-b72c-c7b29a2b81cd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EngineInfo.h">
@@ -378,6 +381,51 @@
     <ClInclude Include="Scene\SceneCollision.h">
       <Filter>03. Scene\04. Collision</Filter>
     </ClInclude>
+    <ClInclude Include="Scene\SceneViewport.h">
+      <Filter>03. Scene\05. Viewport</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\PrimitiveComponent.h">
+      <Filter>05. Component\01. SceneComponent\01. Primitive</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\SpriteComponent.h">
+      <Filter>05. Component\01. SceneComponent\01. Primitive</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation\AnimationData.h">
+      <Filter>08. Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation\Animation.h">
+      <Filter>08. Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\BlendState.h">
+      <Filter>06. Render\01. RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\DepthStencilState.h">
+      <Filter>06. Render\01. RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\RenderState.h">
+      <Filter>06. Render\01. RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\RenderStateManager.h">
+      <Filter>06. Render\01. RenderState</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\RenderManager.h">
+      <Filter>06. Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\TileMapComponent.h">
+      <Filter>05. Component\01. SceneComponent\01. Primitive</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Tile.h">
+      <Filter>05. Component\01. SceneComponent\01. Primitive</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource\Texture\RenderTarget.h">
+      <Filter>02. Resource\03. Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\CameraComponent.h">
+      <Filter>05. Component\01. SceneComponent\02. Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\TargetArm.h">
+      <Filter>05. Component\01. SceneComponent\03. Arm</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine.cpp">
@@ -556,6 +604,51 @@
     </ClCompile>
     <ClCompile Include="Scene\SceneCollision.cpp">
       <Filter>03. Scene\04. Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\SceneViewport.cpp">
+      <Filter>03. Scene\05. Viewport</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\PrimitiveComponent.cpp">
+      <Filter>05. Component\01. SceneComponent\01. Primitive</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\SpriteComponent.cpp">
+      <Filter>05. Component\01. SceneComponent\01. Primitive</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation\AnimationData.cpp">
+      <Filter>08. Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation\Animation.cpp">
+      <Filter>08. Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\RenderStateManager.cpp">
+      <Filter>06. Render\01. RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\RenderState.cpp">
+      <Filter>06. Render\01. RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\DepthStencilState.cpp">
+      <Filter>06. Render\01. RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\BlendState.cpp">
+      <Filter>06. Render\01. RenderState</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\RenderManager.cpp">
+      <Filter>06. Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\TileMapComponent.cpp">
+      <Filter>05. Component\01. SceneComponent\01. Primitive</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Tile.cpp">
+      <Filter>05. Component\01. SceneComponent\01. Primitive</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource\Texture\RenderTarget.cpp">
+      <Filter>02. Resource\03. Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\CameraComponent.cpp">
+      <Filter>05. Component\01. SceneComponent\02. Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\TargetArm.cpp">
+      <Filter>05. Component\01. SceneComponent\03. Arm</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

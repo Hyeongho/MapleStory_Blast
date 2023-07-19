@@ -27,7 +27,7 @@ public:
 	bool CreateTarget(const std::string& Name, unsigned int Width, unsigned int Height, DXGI_FORMAT PixelFormat, DXGI_FORMAT DepthFormat = DXGI_FORMAT_UNKNOWN);
 	void Render();
 
-	class CTexture* FindTexture(const std::string& Name);
+	std::shared_ptr<class CTexture> FindTexture(const std::string& Name);
 	void ReleaseTexture(const std::string& Name);
 
 private:

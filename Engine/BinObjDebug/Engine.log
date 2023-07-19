@@ -1,114 +1,112 @@
 ﻿FXC : warning X4717: Effects deprecated for D3DCompiler_47
   
-  compilation object save succeeded; see D:\C++_Client\MapleStory_Blast\Engine\Bin\Collider.cso
+  compilation object save succeeded; see E:\C++_Client\MapleStory_Blast\Engine\Bin\Collider.cso
 FXC : warning X4717: Effects deprecated for D3DCompiler_47
   
-  compilation object save succeeded; see D:\C++_Client\MapleStory_Blast\Engine\Bin\Mesh.cso
+  compilation object save succeeded; see E:\C++_Client\MapleStory_Blast\Engine\Bin\Mesh.cso
 FXC : warning X4717: Effects deprecated for D3DCompiler_47
   
-  compilation object save succeeded; see D:\C++_Client\MapleStory_Blast\Engine\Bin\Sprite.cso
+  compilation object save succeeded; see E:\C++_Client\MapleStory_Blast\Engine\Bin\Sprite.cso
 FXC : warning X4717: Effects deprecated for D3DCompiler_47
   
-  compilation object save succeeded; see D:\C++_Client\MapleStory_Blast\Engine\Bin\TileMap.cso
+  compilation object save succeeded; see E:\C++_Client\MapleStory_Blast\Engine\Bin\TileMap.cso
 FXC : warning X4717: Effects deprecated for D3DCompiler_47
   
-  compilation object save succeeded; see D:\C++_Client\MapleStory_Blast\Engine\Bin\UI.cso
+  compilation object save succeeded; see E:\C++_Client\MapleStory_Blast\Engine\Bin\UI.cso
   Component.cpp
   ObjectComponent.cpp
   SceneComponent.cpp
-D:\C++_Client\MapleStory_Blast\Engine\Include\GameObject\GameObject.h(130,35): error C2760: 구문 오류: '상수'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
-D:\C++_Client\MapleStory_Blast\Engine\Include\GameObject\GameObject.h(114,5): message : 이 진단은 컴파일러 생성 함수 'T *CGameObject::FindComponentFromType(void) const'에서 수행되었습니다.
-D:\C++_Client\MapleStory_Blast\Engine\Include\Component\SceneComponent.cpp(106,61): error C2440: '초기화 중': 'std::shared_ptr<CSceneComponent>'에서 'CSceneComponent *'(으)로 변환할 수 없습니다.
-D:\C++_Client\MapleStory_Blast\Engine\Include\Component\SceneComponent.cpp(106,34): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\GameObject\GameObject.h(130,35): error C2760: 구문 오류: '상수'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\GameObject\GameObject.h(114,5): message : 이 진단은 컴파일러 생성 함수 'T *CGameObject::FindComponentFromType(void) const'에서 수행되었습니다.
   Transform.cpp
-D:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(4,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'SceneResource.h': No such file or directory
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
   Device.cpp
   Engine.cpp
   EngineSetting.cpp
   GameObject.cpp
-D:\C++_Client\MapleStory_Blast\Engine\Include\GameObject\GameObject.h(130,35): error C2760: 구문 오류: '상수'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
-D:\C++_Client\MapleStory_Blast\Engine\Include\GameObject\GameObject.h(114,5): message : 이 진단은 컴파일러 생성 함수 'T *CGameObject::FindComponentFromType(void) const'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\GameObject\GameObject.h(130,35): error C2760: 구문 오류: '상수'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\GameObject\GameObject.h(114,5): message : 이 진단은 컴파일러 생성 함수 'T *CGameObject::FindComponentFromType(void) const'에서 수행되었습니다.
   Input.cpp
   Matrix.cpp
   PathManager.cpp
   Ref.cpp
   AnimationManager.cpp
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xmemory(298,1): error C2248: 'CAnimationSequence::~CAnimationSequence': private 멤버('CAnimationSequence' 클래스에서 선언)에 액세스할 수 없습니다.
-D:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Animation\AnimationSequence.h(70): message : 컴파일러에서 여기에 'CAnimationSequence::~CAnimationSequence'을(를) 생성했습니다.
-D:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Animation\AnimationSequence.h(5): message : 'CAnimationSequence' 선언을 참조하십시오.
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\memory(2032): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Destroy_in_place<_Ty>(_Ty &) noexcept'에 대한 참조를 확인하세요.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\xmemory(298,1): error C2248: 'CAnimationSequence::~CAnimationSequence': private 멤버('CAnimationSequence' 클래스에서 선언)에 액세스할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Animation\AnimationSequence.h(70): message : 컴파일러에서 여기에 'CAnimationSequence::~CAnimationSequence'을(를) 생성했습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Animation\AnimationSequence.h(5): message : 'CAnimationSequence' 선언을 참조하십시오.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(2032): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Destroy_in_place<_Ty>(_Ty &) noexcept'에 대한 참조를 확인하세요.
           with
           [
               _Ty=CAnimationSequence
           ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\memory(2031): message : 클래스 템플릿 멤버 함수 'void std::_Ref_count_obj2<_Ty>::_Destroy(void) noexcept'을(를) 컴파일하는 중입니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(2031): message : 클래스 템플릿 멤버 함수 'void std::_Ref_count_obj2<_Ty>::_Destroy(void) noexcept'을(를) 컴파일하는 중입니다.
           with
           [
               _Ty=CAnimationSequence
           ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\memory(2725): message : 컴파일되는 클래스 템플릿 인스턴스화 'std::_Ref_count_obj2<_Ty>'에 대한 참조를 확인하세요.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(2725): message : 컴파일되는 클래스 템플릿 인스턴스화 'std::_Ref_count_obj2<_Ty>'에 대한 참조를 확인하세요.
           with
           [
               _Ty=CAnimationSequence
           ]
-D:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Animation\AnimationManager.cpp(42): message : 컴파일되는 함수 템플릿 인스턴스화 'std::shared_ptr<CAnimationSequence> std::make_shared<CAnimationSequence,CAnimationSequence*&>(CAnimationSequence *&)'에 대한 참조를 확인하세요.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Animation\AnimationManager.cpp(42): message : 컴파일되는 함수 템플릿 인스턴스화 'std::shared_ptr<CAnimationSequence> std::make_shared<CAnimationSequence,CAnimationSequence*&>(CAnimationSequence *&)'에 대한 참조를 확인하세요.
   AnimationSequence.cpp
-D:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(4,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'SceneResource.h': No such file or directory
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
   Font.cpp
   FontCollection.cpp
   FontManager.cpp
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xmemory(298,1): error C2248: 'CFont::~CFont': private 멤버('CFont' 클래스에서 선언)에 액세스할 수 없습니다.
-D:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Font\Font.h(21): message : 컴파일러에서 여기에 'CFont::~CFont'을(를) 생성했습니다.
-D:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Font\Font.h(5): message : 'CFont' 선언을 참조하십시오.
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\memory(2032): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Destroy_in_place<_Ty>(_Ty &) noexcept'에 대한 참조를 확인하세요.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\xmemory(298,1): error C2248: 'CFont::~CFont': private 멤버('CFont' 클래스에서 선언)에 액세스할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Font\Font.h(21): message : 컴파일러에서 여기에 'CFont::~CFont'을(를) 생성했습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Font\Font.h(5): message : 'CFont' 선언을 참조하십시오.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(2032): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Destroy_in_place<_Ty>(_Ty &) noexcept'에 대한 참조를 확인하세요.
           with
           [
               _Ty=CFont
           ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\memory(2031): message : 클래스 템플릿 멤버 함수 'void std::_Ref_count_obj2<_Ty>::_Destroy(void) noexcept'을(를) 컴파일하는 중입니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(2031): message : 클래스 템플릿 멤버 함수 'void std::_Ref_count_obj2<_Ty>::_Destroy(void) noexcept'을(를) 컴파일하는 중입니다.
           with
           [
               _Ty=CFont
           ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\memory(2725): message : 컴파일되는 클래스 템플릿 인스턴스화 'std::_Ref_count_obj2<_Ty>'에 대한 참조를 확인하세요.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(2725): message : 컴파일되는 클래스 템플릿 인스턴스화 'std::_Ref_count_obj2<_Ty>'에 대한 참조를 확인하세요.
           with
           [
               _Ty=CFont
           ]
-D:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Font\FontManager.cpp(76): message : 컴파일되는 함수 템플릿 인스턴스화 'std::shared_ptr<CFont> std::make_shared<CFont,CFont*&>(CFont *&)'에 대한 참조를 확인하세요.
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xmemory(298,1): error C2248: 'CFontCollection::~CFontCollection': private 멤버('CFontCollection' 클래스에서 선언)에 액세스할 수 없습니다.
-D:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Font\FontCollection.h(23): message : 컴파일러에서 여기에 'CFontCollection::~CFontCollection'을(를) 생성했습니다.
-D:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Font\FontCollection.h(5): message : 'CFontCollection' 선언을 참조하십시오.
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\memory(2032): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Destroy_in_place<_Ty>(_Ty &) noexcept'에 대한 참조를 확인하세요.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Font\FontManager.cpp(76): message : 컴파일되는 함수 템플릿 인스턴스화 'std::shared_ptr<CFont> std::make_shared<CFont,CFont*&>(CFont *&)'에 대한 참조를 확인하세요.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\xmemory(298,1): error C2248: 'CFontCollection::~CFontCollection': private 멤버('CFontCollection' 클래스에서 선언)에 액세스할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Font\FontCollection.h(23): message : 컴파일러에서 여기에 'CFontCollection::~CFontCollection'을(를) 생성했습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Font\FontCollection.h(5): message : 'CFontCollection' 선언을 참조하십시오.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(2032): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Destroy_in_place<_Ty>(_Ty &) noexcept'에 대한 참조를 확인하세요.
           with
           [
               _Ty=CFontCollection
           ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\memory(2031): message : 클래스 템플릿 멤버 함수 'void std::_Ref_count_obj2<_Ty>::_Destroy(void) noexcept'을(를) 컴파일하는 중입니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(2031): message : 클래스 템플릿 멤버 함수 'void std::_Ref_count_obj2<_Ty>::_Destroy(void) noexcept'을(를) 컴파일하는 중입니다.
           with
           [
               _Ty=CFontCollection
           ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\memory(2725): message : 컴파일되는 클래스 템플릿 인스턴스화 'std::_Ref_count_obj2<_Ty>'에 대한 참조를 확인하세요.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(2725): message : 컴파일되는 클래스 템플릿 인스턴스화 'std::_Ref_count_obj2<_Ty>'에 대한 참조를 확인하세요.
           with
           [
               _Ty=CFontCollection
           ]
-D:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Font\FontManager.cpp(54): message : 컴파일되는 함수 템플릿 인스턴스화 'std::shared_ptr<CFontCollection> std::make_shared<CFontCollection,CFontCollection*&>(CFontCollection *&)'에 대한 참조를 확인하세요.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Font\FontManager.cpp(54): message : 컴파일되는 함수 템플릿 인스턴스화 'std::shared_ptr<CFontCollection> std::make_shared<CFontCollection,CFontCollection*&>(CFontCollection *&)'에 대한 참조를 확인하세요.
   Material.cpp
-D:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
   MaterialManager.cpp
-D:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
   Mesh.cpp
-D:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
   코드를 생성하고 있습니다...
   컴파일하고 있습니다...
   MeshManager.cpp
-D:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
   SpriteMesh.cpp
-D:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
   ResourceManager.cpp
-D:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
   AnimationConstantBuffer.cpp
   ColliderConstantBuffer.cpp
   ColliderImageShader.cpp
@@ -116,30 +114,30 @@ D:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10)
   ComputeShader.cpp
   ConstantBuffer.cpp
   ConstantBufferData.cpp
-D:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
   GraphicShader.cpp
   MaterialConstantBuffer.cpp
   Shader.cpp
   ShaderManager.cpp
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xmemory(298,1): error C2248: 'CConstantBuffer::~CConstantBuffer': private 멤버('CConstantBuffer' 클래스에서 선언)에 액세스할 수 없습니다.
-D:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ConstantBuffer.h(21): message : 컴파일러에서 여기에 'CConstantBuffer::~CConstantBuffer'을(를) 생성했습니다.
-D:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ConstantBuffer.h(3): message : 'CConstantBuffer' 선언을 참조하십시오.
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\memory(2032): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Destroy_in_place<_Ty>(_Ty &) noexcept'에 대한 참조를 확인하세요.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\xmemory(298,1): error C2248: 'CConstantBuffer::~CConstantBuffer': private 멤버('CConstantBuffer' 클래스에서 선언)에 액세스할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ConstantBuffer.h(21): message : 컴파일러에서 여기에 'CConstantBuffer::~CConstantBuffer'을(를) 생성했습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ConstantBuffer.h(3): message : 'CConstantBuffer' 선언을 참조하십시오.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(2032): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Destroy_in_place<_Ty>(_Ty &) noexcept'에 대한 참조를 확인하세요.
           with
           [
               _Ty=CConstantBuffer
           ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\memory(2031): message : 클래스 템플릿 멤버 함수 'void std::_Ref_count_obj2<_Ty>::_Destroy(void) noexcept'을(를) 컴파일하는 중입니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(2031): message : 클래스 템플릿 멤버 함수 'void std::_Ref_count_obj2<_Ty>::_Destroy(void) noexcept'을(를) 컴파일하는 중입니다.
           with
           [
               _Ty=CConstantBuffer
           ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\memory(2725): message : 컴파일되는 클래스 템플릿 인스턴스화 'std::_Ref_count_obj2<_Ty>'에 대한 참조를 확인하세요.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(2725): message : 컴파일되는 클래스 템플릿 인스턴스화 'std::_Ref_count_obj2<_Ty>'에 대한 참조를 확인하세요.
           with
           [
               _Ty=CConstantBuffer
           ]
-D:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ShaderManager.cpp(107): message : 컴파일되는 함수 템플릿 인스턴스화 'std::shared_ptr<CConstantBuffer> std::make_shared<CConstantBuffer,CConstantBuffer*&>(CConstantBuffer *&)'에 대한 참조를 확인하세요.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ShaderManager.cpp(107): message : 컴파일되는 함수 템플릿 인스턴스화 'std::shared_ptr<CConstantBuffer> std::make_shared<CConstantBuffer,CConstantBuffer*&>(CConstantBuffer *&)'에 대한 참조를 확인하세요.
   SpriteColorShader.cpp
   SpriteShader.cpp
   StructuredBuffer.cpp
@@ -155,34 +153,43 @@ D:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ShaderManager.cpp(
   UIShader.cpp
   Sound.cpp
   SoundManager.cpp
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xmemory(298,1): error C2248: 'CSound::~CSound': private 멤버('CSound' 클래스에서 선언)에 액세스할 수 없습니다.
-D:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Sound\Sound.h(59): message : 컴파일러에서 여기에 'CSound::~CSound'을(를) 생성했습니다.
-D:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Sound\Sound.h(5): message : 'CSound' 선언을 참조하십시오.
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\memory(2032): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Destroy_in_place<_Ty>(_Ty &) noexcept'에 대한 참조를 확인하세요.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\xmemory(298,1): error C2248: 'CSound::~CSound': private 멤버('CSound' 클래스에서 선언)에 액세스할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Sound\Sound.h(59): message : 컴파일러에서 여기에 'CSound::~CSound'을(를) 생성했습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Sound\Sound.h(5): message : 'CSound' 선언을 참조하십시오.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(2032): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Destroy_in_place<_Ty>(_Ty &) noexcept'에 대한 참조를 확인하세요.
           with
           [
               _Ty=CSound
           ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\memory(2031): message : 클래스 템플릿 멤버 함수 'void std::_Ref_count_obj2<_Ty>::_Destroy(void) noexcept'을(를) 컴파일하는 중입니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(2031): message : 클래스 템플릿 멤버 함수 'void std::_Ref_count_obj2<_Ty>::_Destroy(void) noexcept'을(를) 컴파일하는 중입니다.
           with
           [
               _Ty=CSound
           ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\memory(2725): message : 컴파일되는 클래스 템플릿 인스턴스화 'std::_Ref_count_obj2<_Ty>'에 대한 참조를 확인하세요.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(2725): message : 컴파일되는 클래스 템플릿 인스턴스화 'std::_Ref_count_obj2<_Ty>'에 대한 참조를 확인하세요.
           with
           [
               _Ty=CSound
           ]
-D:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Sound\SoundManager.cpp(116): message : 컴파일되는 함수 템플릿 인스턴스화 'std::shared_ptr<CSound> std::make_shared<CSound,CSound*&>(CSound *&)'에 대한 참조를 확인하세요.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Sound\SoundManager.cpp(116): message : 컴파일되는 함수 템플릿 인스턴스화 'std::shared_ptr<CSound> std::make_shared<CSound,CSound*&>(CSound *&)'에 대한 참조를 확인하세요.
   Texture.cpp
   TextureManager.cpp
-D:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Texture\TextureManager.cpp(4,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'RenderTarget.h': No such file or directory
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Texture\TextureManager.cpp(4,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'RenderTarget.h': No such file or directory
+  CameraManager.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\CameraManager.cpp(2,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../Component/CameraComponent.h': No such file or directory
   Scene.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
+  SceneCollision.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneCollision.cpp(2,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'CollisionSection2D.h': No such file or directory
   SceneInfo.cpp
-D:\C++_Client\MapleStory_Blast\Engine\Include\GameObject\GameObject.h(130,35): error C2760: 구문 오류: '상수'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
-D:\C++_Client\MapleStory_Blast\Engine\Include\GameObject\GameObject.h(114,5): message : 이 진단은 컴파일러 생성 함수 'T *CGameObject::FindComponentFromType(void) const'에서 수행되었습니다.
-D:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(4,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'SceneResource.h': No such file or directory
+E:\C++_Client\MapleStory_Blast\Engine\Include\GameObject\GameObject.h(130,35): error C2760: 구문 오류: '상수'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\GameObject\GameObject.h(114,5): message : 이 진단은 컴파일러 생성 함수 'T *CGameObject::FindComponentFromType(void) const'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
   SceneManager.cpp
+  SceneResource.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
+  SceneViewport.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneViewport.h(4,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../UI/UIWindow.h': No such file or directory
   Timer.cpp
   Vector2.cpp
   Vector3.cpp

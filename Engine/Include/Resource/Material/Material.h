@@ -72,6 +72,8 @@ public:
     void AddTextureFullPath(int Register, int ShaderBufferType, const std::string& Name, const TCHAR* FullPath);
     void AddTexture(int Register, int ShaderBufferType, const std::string& Name, const std::vector<const TCHAR*>& vecFileName, const std::string& PathName = TEXTURE_PATH);
     void AddTextureFullPath(int Register, int ShaderBufferType, const std::string& Name, const std::vector<const TCHAR*>& vecFullPath);
+    void AddTextureArray(int Register, int ShaderBufferType, const std::string& Name, const std::vector<const TCHAR*>& vecFileName, const std::string& PathName = TEXTURE_PATH);
+    void AddTextureArrayFullPath(int Register, int ShaderBufferType, const std::string& Name, const std::vector<const TCHAR*>& vecFullPath);
 
     // === 추가되어 있는 Texture 변경 ===
     void SetTexture(int Index, int Register, int ShaderBufferType, const std::string& Name, class CTexture* Texture);
@@ -79,6 +81,8 @@ public:
     void SetTextureFullPath(int Index, int Register, int ShaderBufferType, const std::string& Name, const TCHAR* FullPath);
     void SetTexture(int Index, int Register, int ShaderBufferType, const std::string& Name, const std::vector<const TCHAR*>& vecFileName, const std::string& PathName = TEXTURE_PATH);
     void SetTextureFullPath(int Index, int Register, int ShaderBufferType, const std::string& Name, const std::vector<const TCHAR*>& vecFullPath);
+    void SetTextureArray(int Index, int Register, int ShaderBufferType, const std::string& Name, const std::vector<const TCHAR*>& vecFileName, const std::string& PathName = TEXTURE_PATH);
+    void SetTextureArrayFullPath(int Index, int Register, int ShaderBufferType, const std::string& Name, const std::vector<const TCHAR*>& vecFullPath);
 
     void SetTextureSamplerType(int Index, ESamplerType Type);
 
@@ -86,7 +90,7 @@ public:
 
     void SetImageType(int TexIndex, EImageType ImageType);
 
-    class CTexture* GetTexture(int Index = 0)   const;
+    class CTexture* GetTexture(int Index = 0) const;
 
 public:
     void SetRenderState(const std::string& Name);
@@ -95,7 +99,7 @@ public:
     void SetShader(const std::string& Name);
     void SetMaterial();
     void ResetMaterial();
-    CMaterial* Clone()  const;
+    std::shared_ptr<CMaterial> Clone() const;
     virtual void Save(FILE* File);
     virtual void Load(FILE* File);
 };

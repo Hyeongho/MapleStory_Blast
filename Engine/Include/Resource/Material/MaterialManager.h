@@ -16,7 +16,7 @@ private:
 
 public:
 	bool Init();
-	CMaterial* FindMaterial(const std::string& Name);
+	std::shared_ptr<CMaterial> FindMaterial(const std::string& Name);
 	void ReleaseMaterial(const std::string& Name);
 
 public:

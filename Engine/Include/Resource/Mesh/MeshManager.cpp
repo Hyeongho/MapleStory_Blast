@@ -24,7 +24,7 @@ bool CMeshManager::Init()
 
 	CreateMesh(nullptr, MeshType::Sprite, "CenterColorRect", CenterColorMesh, sizeof(VertexColor), 4, D3D11_USAGE_IMMUTABLE, D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST, RectIndex, 4, 6, D3D11_USAGE_IMMUTABLE, DXGI_FORMAT_R32_UINT);
 
-	CMesh* Mesh = FindMesh("CenterColorRect");
+	std::shared_ptr<CMesh> Mesh = FindMesh("CenterColorRect");
 
 	Mesh->SetMaterial(0, 0, "DefaultColor");
 
@@ -139,7 +139,7 @@ bool CMeshManager::CreateMesh(CScene* Scene, MeshType Type, const std::string& N
 	return true;
 }
 
-CMesh* CMeshManager::FindMesh(const std::string& Name)
+std::shared_ptr<CMesh> CMeshManager::FindMesh(const std::string& Name)
 {
 	auto iter = m_mapMesh.find(Name);
 
@@ -148,7 +148,7 @@ CMesh* CMeshManager::FindMesh(const std::string& Name)
 		return nullptr;
 	}
 
-	return iter->second.get();
+	return iter->second;
 }
 
 void CMeshManager::ReleaseMesh(const std::string& Name)

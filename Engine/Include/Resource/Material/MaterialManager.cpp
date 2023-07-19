@@ -23,7 +23,7 @@ bool CMaterialManager::Init()
 	return true;
 }
 
-CMaterial* CMaterialManager::FindMaterial(const std::string& Name)
+std::shared_ptr<CMaterial> CMaterialManager::FindMaterial(const std::string& Name)
 {
 	auto iter = m_mapMaterial.find(Name);
 
@@ -32,7 +32,7 @@ CMaterial* CMaterialManager::FindMaterial(const std::string& Name)
 		return nullptr;
 	}
 
-	return iter->second.get();
+	return iter->second;
 }
 
 void CMaterialManager::ReleaseMaterial(const std::string& Name)
