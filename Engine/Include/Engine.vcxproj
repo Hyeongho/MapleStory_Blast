@@ -181,7 +181,14 @@
   <ItemGroup>
     <ClInclude Include="Animation\Animation.h" />
     <ClInclude Include="Animation\AnimationData.h" />
+    <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="Component\CameraComponent.h" />
+    <ClInclude Include="Component\Collider.h" />
+    <ClInclude Include="Component\Collider2D.h" />
+    <ClInclude Include="Component\ColliderBox2D.h" />
+    <ClInclude Include="Component\ColliderOBB2D.h" />
+    <ClInclude Include="Component\ColliderPixel.h" />
+    <ClInclude Include="Component\ColliderSphere2D.h" />
     <ClInclude Include="Component\Component.h" />
     <ClInclude Include="Component\ObjectComponent.h" />
     <ClInclude Include="Component\PrimitiveComponent.h" />
@@ -255,6 +262,7 @@
     <ClInclude Include="Resource\Texture\Texture.h" />
     <ClInclude Include="Resource\Texture\TextureManager.h" />
     <ClInclude Include="Scene\CameraManager.h" />
+    <ClInclude Include="Scene\CollisionSection.h" />
     <ClInclude Include="Scene\Scene.h" />
     <ClInclude Include="Scene\SceneCollision.h" />
     <ClInclude Include="Scene\SceneInfo.h" />
@@ -269,7 +277,14 @@
   <ItemGroup>
     <ClCompile Include="Animation\Animation.cpp" />
     <ClCompile Include="Animation\AnimationData.cpp" />
+    <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="Component\CameraComponent.cpp" />
+    <ClCompile Include="Component\Collider.cpp" />
+    <ClCompile Include="Component\Collider2D.cpp" />
+    <ClCompile Include="Component\ColliderBox2D.cpp" />
+    <ClCompile Include="Component\ColliderOBB2D.cpp" />
+    <ClCompile Include="Component\ColliderPixel.cpp" />
+    <ClCompile Include="Component\ColliderSphere2D.cpp" />
     <ClCompile Include="Component\Component.cpp" />
     <ClCompile Include="Component\ObjectComponent.cpp" />
     <ClCompile Include="Component\PrimitiveComponent.cpp" />
@@ -331,6 +346,7 @@
     <ClCompile Include="Resource\Texture\Texture.cpp" />
     <ClCompile Include="Resource\Texture\TextureManager.cpp" />
     <ClCompile Include="Scene\CameraManager.cpp" />
+    <ClCompile Include="Scene\CollisionSection.cpp" />
     <ClCompile Include="Scene\Scene.cpp" />
     <ClCompile Include="Scene\SceneCollision.cpp" />
     <ClCompile Include="Scene\SceneInfo.cpp" />
