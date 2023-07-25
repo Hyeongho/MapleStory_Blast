@@ -42,7 +42,7 @@ public:
 	unsigned int CreateFontColorKey(float r, float g, float b, float a);
 	unsigned int CreateFontColorKey(const Vector4& Color);
 
-	CFont* FindFont(const std::string& Name);
+	std::shared_ptr<CFont> FindFont(const std::string& Name);
 	CFontCollection* FindFontCollection(const std::string& Name);
 	void ReleaseFont(const std::string& Name);
 	void ReleaseFontCollection(const std::string& Name);

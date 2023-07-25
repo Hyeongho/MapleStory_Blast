@@ -1,35 +1,198 @@
-﻿FXC : warning X4717: Effects deprecated for D3DCompiler_47
-  
-  compilation object save succeeded; see E:\C++_Client\MapleStory_Blast\Engine\Bin\Collider.cso
-FXC : warning X4717: Effects deprecated for D3DCompiler_47
-  
-  compilation object save succeeded; see E:\C++_Client\MapleStory_Blast\Engine\Bin\Mesh.cso
-FXC : warning X4717: Effects deprecated for D3DCompiler_47
-  
-  compilation object save succeeded; see E:\C++_Client\MapleStory_Blast\Engine\Bin\Sprite.cso
-FXC : warning X4717: Effects deprecated for D3DCompiler_47
-  
-  compilation object save succeeded; see E:\C++_Client\MapleStory_Blast\Engine\Bin\TileMap.cso
-FXC : warning X4717: Effects deprecated for D3DCompiler_47
-  
-  compilation object save succeeded; see E:\C++_Client\MapleStory_Blast\Engine\Bin\UI.cso
+﻿  Animation.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Animation\AnimationData.h(80,35): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 '형식 지정자'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Animation\AnimationData.h(78,7): message : 이 진단은 컴파일러 생성 함수 'void CAnimationData::AddNotify(const std::string &,int,T *,void (__cdecl T::* )(void))'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Animation\AnimationData.h(93,35): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 '형식 지정자'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Animation\AnimationData.h(91,7): message : 이 진단은 컴파일러 생성 함수 'void CAnimationData::AddNotify(const std::string &,float,T *,void (__cdecl T::* )(void))'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(134,31): error C2039: 'Get': 'std::shared_ptr<CUIWidget>'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(42): message : 'std::shared_ptr<CUIWidget>' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(126,5): message : 이 진단은 컴파일러 생성 함수 'T *CUIWindow::FindWidget(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneViewport.h(19,2): error C7568: 가정한 함수 템플릿 'CSharedPtr' 뒤에 인수 목록이 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(173,42): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(160,5): message : 이 진단은 컴파일러 생성 함수 'T *CScene::CreateObject(const std::string &)'에서 수행되었습니다.
+  AnimationData.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Animation\AnimationData.h(80,35): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 '형식 지정자'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Animation\AnimationData.h(78,7): message : 이 진단은 컴파일러 생성 함수 'void CAnimationData::AddNotify(const std::string &,int,T *,void (__cdecl T::* )(void))'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Animation\AnimationData.h(93,35): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 '형식 지정자'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Animation\AnimationData.h(91,7): message : 이 진단은 컴파일러 생성 함수 'void CAnimationData::AddNotify(const std::string &,float,T *,void (__cdecl T::* )(void))'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(134,31): error C2039: 'Get': 'std::shared_ptr<CUIWidget>'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(42): message : 'std::shared_ptr<CUIWidget>' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(126,5): message : 이 진단은 컴파일러 생성 함수 'T *CUIWindow::FindWidget(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneViewport.h(19,2): error C7568: 가정한 함수 템플릿 'CSharedPtr' 뒤에 인수 목록이 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(173,42): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(160,5): message : 이 진단은 컴파일러 생성 함수 'T *CScene::CreateObject(const std::string &)'에서 수행되었습니다.
+  CollisionManager.cpp
+  Collider.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(134,31): error C2039: 'Get': 'std::shared_ptr<CUIWidget>'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(42): message : 'std::shared_ptr<CUIWidget>' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(126,5): message : 이 진단은 컴파일러 생성 함수 'T *CUIWindow::FindWidget(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneViewport.h(19,2): error C7568: 가정한 함수 템플릿 'CSharedPtr' 뒤에 인수 목록이 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(173,42): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(160,5): message : 이 진단은 컴파일러 생성 함수 'T *CScene::CreateObject(const std::string &)'에서 수행되었습니다.
+  Collider2D.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(134,31): error C2039: 'Get': 'std::shared_ptr<CUIWidget>'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(42): message : 'std::shared_ptr<CUIWidget>' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(126,5): message : 이 진단은 컴파일러 생성 함수 'T *CUIWindow::FindWidget(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneViewport.h(19,2): error C7568: 가정한 함수 템플릿 'CSharedPtr' 뒤에 인수 목록이 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(173,42): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(160,5): message : 이 진단은 컴파일러 생성 함수 'T *CScene::CreateObject(const std::string &)'에서 수행되었습니다.
+  ColliderBox2D.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(134,31): error C2039: 'Get': 'std::shared_ptr<CUIWidget>'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(42): message : 'std::shared_ptr<CUIWidget>' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(126,5): message : 이 진단은 컴파일러 생성 함수 'T *CUIWindow::FindWidget(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneViewport.h(19,2): error C7568: 가정한 함수 템플릿 'CSharedPtr' 뒤에 인수 목록이 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(173,42): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(160,5): message : 이 진단은 컴파일러 생성 함수 'T *CScene::CreateObject(const std::string &)'에서 수행되었습니다.
+  ColliderOBB2D.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(134,31): error C2039: 'Get': 'std::shared_ptr<CUIWidget>'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(42): message : 'std::shared_ptr<CUIWidget>' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(126,5): message : 이 진단은 컴파일러 생성 함수 'T *CUIWindow::FindWidget(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneViewport.h(19,2): error C7568: 가정한 함수 템플릿 'CSharedPtr' 뒤에 인수 목록이 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(173,42): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(160,5): message : 이 진단은 컴파일러 생성 함수 'T *CScene::CreateObject(const std::string &)'에서 수행되었습니다.
+  ColliderPixel.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(134,31): error C2039: 'Get': 'std::shared_ptr<CUIWidget>'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(42): message : 'std::shared_ptr<CUIWidget>' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(126,5): message : 이 진단은 컴파일러 생성 함수 'T *CUIWindow::FindWidget(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneViewport.h(19,2): error C7568: 가정한 함수 템플릿 'CSharedPtr' 뒤에 인수 목록이 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(173,42): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(160,5): message : 이 진단은 컴파일러 생성 함수 'T *CScene::CreateObject(const std::string &)'에서 수행되었습니다.
+  ColliderSphere2D.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(134,31): error C2039: 'Get': 'std::shared_ptr<CUIWidget>'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(42): message : 'std::shared_ptr<CUIWidget>' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(126,5): message : 이 진단은 컴파일러 생성 함수 'T *CUIWindow::FindWidget(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneViewport.h(19,2): error C7568: 가정한 함수 템플릿 'CSharedPtr' 뒤에 인수 목록이 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(173,42): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(160,5): message : 이 진단은 컴파일러 생성 함수 'T *CScene::CreateObject(const std::string &)'에서 수행되었습니다.
   Component.cpp
-  ObjectComponent.cpp
+  PrimitiveComponent.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(134,31): error C2039: 'Get': 'std::shared_ptr<CUIWidget>'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(42): message : 'std::shared_ptr<CUIWidget>' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(126,5): message : 이 진단은 컴파일러 생성 함수 'T *CUIWindow::FindWidget(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneViewport.h(19,2): error C7568: 가정한 함수 템플릿 'CSharedPtr' 뒤에 인수 목록이 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(173,42): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(160,5): message : 이 진단은 컴파일러 생성 함수 'T *CScene::CreateObject(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Component\PrimitiveComponent.cpp(22,60): error C2440: '초기화 중': 'std::shared_ptr<CMaterial>'에서 'CMaterial *'(으)로 변환할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Component\PrimitiveComponent.cpp(22,23): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Component\PrimitiveComponent.cpp(55,47): error C2440: '초기화 중': 'std::shared_ptr<CMaterial>'에서 'CMaterial *'(으)로 변환할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Component\PrimitiveComponent.cpp(55,23): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Component\PrimitiveComponent.cpp(78,47): error C2440: '초기화 중': 'std::shared_ptr<CMaterial>'에서 'CMaterial *'(으)로 변환할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Component\PrimitiveComponent.cpp(78,23): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Component\PrimitiveComponent.cpp(103,56): error C2440: '=': 'std::shared_ptr<CMaterial>'에서 'CMaterial *'(으)로 변환할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Component\PrimitiveComponent.cpp(103,50): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Component\PrimitiveComponent.cpp(108,61): error C2440: '=': 'std::shared_ptr<CMaterial>'에서 'CMaterial *'(으)로 변환할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Component\PrimitiveComponent.cpp(108,55): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Component\PrimitiveComponent.cpp(133,56): error C2440: '=': 'std::shared_ptr<CMaterial>'에서 'CMaterial *'(으)로 변환할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Component\PrimitiveComponent.cpp(133,50): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Component\PrimitiveComponent.cpp(138,61): error C2440: '=': 'std::shared_ptr<CMaterial>'에서 'CMaterial *'(으)로 변환할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Component\PrimitiveComponent.cpp(138,55): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Component\PrimitiveComponent.cpp(242,47): error C2440: '초기화 중': 'std::shared_ptr<CMaterial>'에서 'CMaterial *'(으)로 변환할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Component\PrimitiveComponent.cpp(242,23): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Component\PrimitiveComponent.cpp(244,31): error C2440: '=': 'std::shared_ptr<CMaterial>'에서 'CMaterial *'(으)로 변환할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Component\PrimitiveComponent.cpp(244,29): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
   SceneComponent.cpp
 E:\C++_Client\MapleStory_Blast\Engine\Include\GameObject\GameObject.h(130,35): error C2760: 구문 오류: '상수'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
 E:\C++_Client\MapleStory_Blast\Engine\Include\GameObject\GameObject.h(114,5): message : 이 진단은 컴파일러 생성 함수 'T *CGameObject::FindComponentFromType(void) const'에서 수행되었습니다.
+  SpriteComponent.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Animation\AnimationData.h(80,35): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 '형식 지정자'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Animation\AnimationData.h(78,7): message : 이 진단은 컴파일러 생성 함수 'void CAnimationData::AddNotify(const std::string &,int,T *,void (__cdecl T::* )(void))'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Animation\AnimationData.h(93,35): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 '형식 지정자'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Animation\AnimationData.h(91,7): message : 이 진단은 컴파일러 생성 함수 'void CAnimationData::AddNotify(const std::string &,float,T *,void (__cdecl T::* )(void))'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+  TargetArm.cpp
+  TileMapComponent.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(134,31): error C2039: 'Get': 'std::shared_ptr<CUIWidget>'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(42): message : 'std::shared_ptr<CUIWidget>' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(126,5): message : 이 진단은 컴파일러 생성 함수 'T *CUIWindow::FindWidget(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneViewport.h(19,2): error C7568: 가정한 함수 템플릿 'CSharedPtr' 뒤에 인수 목록이 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(173,42): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(160,5): message : 이 진단은 컴파일러 생성 함수 'T *CScene::CreateObject(const std::string &)'에서 수행되었습니다.
   Transform.cpp
-E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(134,31): error C2039: 'Get': 'std::shared_ptr<CUIWidget>'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(42): message : 'std::shared_ptr<CUIWidget>' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(126,5): message : 이 진단은 컴파일러 생성 함수 'T *CUIWindow::FindWidget(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneViewport.h(19,2): error C7568: 가정한 함수 템플릿 'CSharedPtr' 뒤에 인수 목록이 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(173,42): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(160,5): message : 이 진단은 컴파일러 생성 함수 'T *CScene::CreateObject(const std::string &)'에서 수행되었습니다.
   Device.cpp
-  Engine.cpp
-  EngineSetting.cpp
+  EditorButton.cpp
+  EditorImage.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+  EditorInput.cpp
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
   GameObject.cpp
 E:\C++_Client\MapleStory_Blast\Engine\Include\GameObject\GameObject.h(130,35): error C2760: 구문 오류: '상수'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
 E:\C++_Client\MapleStory_Blast\Engine\Include\GameObject\GameObject.h(114,5): message : 이 진단은 컴파일러 생성 함수 'T *CGameObject::FindComponentFromType(void) const'에서 수행되었습니다.
-  Input.cpp
-  Matrix.cpp
-  PathManager.cpp
-  Ref.cpp
+  imgui.cpp
+  imgui_impl_dx11.cpp
+  imgui_impl_win32.cpp
+  RenderManager.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\xmemory(1893,9): error C2259: 'CRenderState': 추상 클래스를 인스턴스화할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Render\RenderState.h(3): message : 'CRenderState' 선언을 참조하십시오.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\xmemory(1893,9): message : 다음 멤버가 원인입니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\xmemory(1893,9): message : 'void CRenderState::SetState(void)': abstract입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Render\RenderState.h(24): message : 'CRenderState::SetState' 선언을 참조하십시오.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\xmemory(1893,9): message : 'void CRenderState::ResetState(void)': abstract입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Render\RenderState.h(25): message : 'CRenderState::ResetState' 선언을 참조하십시오.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(2027): message : 컴파일되는 클래스 템플릿 인스턴스화 'std::_Wrap<_Ty>'에 대한 참조를 확인하세요.
+          with
+          [
+              _Ty=CRenderState
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(2725): message : 컴파일되는 클래스 템플릿 인스턴스화 'std::_Ref_count_obj2<_Ty>'에 대한 참조를 확인하세요.
+          with
+          [
+              _Ty=CRenderState
+          ]
+E:\C++_Client\MapleStory_Blast\Engine\Include\Render\RenderManager.cpp(62): message : 컴파일되는 함수 템플릿 인스턴스화 'std::shared_ptr<CRenderState> std::make_shared<CRenderState,T*>(T *&&)'에 대한 참조를 확인하세요.
+          with
+          [
+              T=CRenderState
+          ]
+  RenderState.cpp
+  RenderStateManager.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Render\RenderStateManager.cpp(26,73): error C2440: '초기화 중': 'T *'에서 'std::shared_ptr<CBlendState>'(으)로 변환할 수 없습니다.
+          with
+          [
+              T=CBlendState
+          ]
+E:\C++_Client\MapleStory_Blast\Engine\Include\Render\RenderStateManager.cpp(26,73): message : 소스 형식을 가져올 수 있는 생성자가 없거나 생성자 오버로드 확인이 모호합니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Render\RenderStateManager.cpp(45,73): error C2440: '초기화 중': 'T *'에서 'std::shared_ptr<CBlendState>'(으)로 변환할 수 없습니다.
+          with
+          [
+              T=CBlendState
+          ]
+E:\C++_Client\MapleStory_Blast\Engine\Include\Render\RenderStateManager.cpp(45,73): message : 소스 형식을 가져올 수 있는 생성자가 없거나 생성자 오버로드 확인이 모호합니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Render\RenderStateManager.cpp(83,87): error C2440: '초기화 중': 'T *'에서 'std::shared_ptr<CDepthStencilState>'(으)로 변환할 수 없습니다.
+          with
+          [
+              T=CDepthStencilState
+          ]
+E:\C++_Client\MapleStory_Blast\Engine\Include\Render\RenderStateManager.cpp(83,87): message : 소스 형식을 가져올 수 있는 생성자가 없거나 생성자 오버로드 확인이 모호합니다.
   AnimationManager.cpp
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\xmemory(298,1): error C2248: 'CAnimationSequence::~CAnimationSequence': private 멤버('CAnimationSequence' 클래스에서 선언)에 액세스할 수 없습니다.
 E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Animation\AnimationSequence.h(70): message : 컴파일러에서 여기에 'CAnimationSequence::~CAnimationSequence'을(를) 생성했습니다.
@@ -51,107 +214,139 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.3013
           ]
 E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Animation\AnimationManager.cpp(42): message : 컴파일되는 함수 템플릿 인스턴스화 'std::shared_ptr<CAnimationSequence> std::make_shared<CAnimationSequence,CAnimationSequence*&>(CAnimationSequence *&)'에 대한 참조를 확인하세요.
   AnimationSequence.cpp
-E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(134,31): error C2039: 'Get': 'std::shared_ptr<CUIWidget>'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(42): message : 'std::shared_ptr<CUIWidget>' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(126,5): message : 이 진단은 컴파일러 생성 함수 'T *CUIWindow::FindWidget(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneViewport.h(19,2): error C7568: 가정한 함수 템플릿 'CSharedPtr' 뒤에 인수 목록이 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(173,42): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(160,5): message : 이 진단은 컴파일러 생성 함수 'T *CScene::CreateObject(const std::string &)'에서 수행되었습니다.
   Font.cpp
-  FontCollection.cpp
   FontManager.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\xmemory(298,1): error C2248: 'CFont::~CFont': private 멤버('CFont' 클래스에서 선언)에 액세스할 수 없습니다.
-E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Font\Font.h(21): message : 컴파일러에서 여기에 'CFont::~CFont'을(를) 생성했습니다.
-E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Font\Font.h(5): message : 'CFont' 선언을 참조하십시오.
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(2032): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Destroy_in_place<_Ty>(_Ty &) noexcept'에 대한 참조를 확인하세요.
-          with
-          [
-              _Ty=CFont
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(2031): message : 클래스 템플릿 멤버 함수 'void std::_Ref_count_obj2<_Ty>::_Destroy(void) noexcept'을(를) 컴파일하는 중입니다.
-          with
-          [
-              _Ty=CFont
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(2725): message : 컴파일되는 클래스 템플릿 인스턴스화 'std::_Ref_count_obj2<_Ty>'에 대한 참조를 확인하세요.
-          with
-          [
-              _Ty=CFont
-          ]
-E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Font\FontManager.cpp(76): message : 컴파일되는 함수 템플릿 인스턴스화 'std::shared_ptr<CFont> std::make_shared<CFont,CFont*&>(CFont *&)'에 대한 참조를 확인하세요.
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\xmemory(298,1): error C2248: 'CFontCollection::~CFontCollection': private 멤버('CFontCollection' 클래스에서 선언)에 액세스할 수 없습니다.
-E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Font\FontCollection.h(23): message : 컴파일러에서 여기에 'CFontCollection::~CFontCollection'을(를) 생성했습니다.
-E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Font\FontCollection.h(5): message : 'CFontCollection' 선언을 참조하십시오.
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(2032): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Destroy_in_place<_Ty>(_Ty &) noexcept'에 대한 참조를 확인하세요.
-          with
-          [
-              _Ty=CFontCollection
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(2031): message : 클래스 템플릿 멤버 함수 'void std::_Ref_count_obj2<_Ty>::_Destroy(void) noexcept'을(를) 컴파일하는 중입니다.
-          with
-          [
-              _Ty=CFontCollection
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(2725): message : 컴파일되는 클래스 템플릿 인스턴스화 'std::_Ref_count_obj2<_Ty>'에 대한 참조를 확인하세요.
-          with
-          [
-              _Ty=CFontCollection
-          ]
-E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Font\FontManager.cpp(54): message : 컴파일되는 함수 템플릿 인스턴스화 'std::shared_ptr<CFontCollection> std::make_shared<CFontCollection,CFontCollection*&>(CFontCollection *&)'에 대한 참조를 확인하세요.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Font\FontManager.cpp(61,33): error C2440: '초기화 중': 'std::shared_ptr<CFont>'에서 'CFont *'(으)로 변환할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Font\FontManager.cpp(61,17): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
   Material.cpp
-E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(134,31): error C2039: 'Get': 'std::shared_ptr<CUIWidget>'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(42): message : 'std::shared_ptr<CUIWidget>' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(126,5): message : 이 진단은 컴파일러 생성 함수 'T *CUIWindow::FindWidget(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneViewport.h(19,2): error C7568: 가정한 함수 템플릿 'CSharedPtr' 뒤에 인수 목록이 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(173,42): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(160,5): message : 이 진단은 컴파일러 생성 함수 'T *CScene::CreateObject(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.cpp(513,39): error C2039: 'SetImageType': 'CTexture'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Texture\Texture.h(32): message : 'CTexture' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.cpp(523,1): error C2440: 'return': 'std::shared_ptr<CTexture>'에서 'CTexture *'(으)로 변환할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.cpp(523,32): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.cpp(535,58): error C2679: 이항 '=': 오른쪽 피연산자로 'CRenderState *' 형식을 사용하는 연산자가 없거나 허용되는 변환이 없습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1628,17): message : 'std::shared_ptr<CRenderState> &std::shared_ptr<CRenderState>::operator =(std::shared_ptr<CRenderState> &&) noexcept'일 수 있습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1617,17): message : 또는       'std::shared_ptr<CRenderState> &std::shared_ptr<CRenderState>::operator =(const std::shared_ptr<CRenderState> &) noexcept'
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.cpp(535,58): message : 인수 목록 '(std::shared_ptr<CRenderState>, CRenderState *)'을(를) 일치시키는 동안
   MaterialManager.cpp
-E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
   Mesh.cpp
-E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
-  코드를 생성하고 있습니다...
-  컴파일하고 있습니다...
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(134,31): error C2039: 'Get': 'std::shared_ptr<CUIWidget>'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(42): message : 'std::shared_ptr<CUIWidget>' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(126,5): message : 이 진단은 컴파일러 생성 함수 'T *CUIWindow::FindWidget(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneViewport.h(19,2): error C7568: 가정한 함수 템플릿 'CSharedPtr' 뒤에 인수 목록이 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(173,42): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(160,5): message : 이 진단은 컴파일러 생성 함수 'T *CScene::CreateObject(const std::string &)'에서 수행되었습니다.
   MeshManager.cpp
-E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
-  SpriteMesh.cpp
-E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
-  ResourceManager.cpp
-E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
-  AnimationConstantBuffer.cpp
-  ColliderConstantBuffer.cpp
-  ColliderImageShader.cpp
-  ColliderShader.cpp
-  ComputeShader.cpp
-  ConstantBuffer.cpp
-  ConstantBufferData.cpp
-E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
-  GraphicShader.cpp
-  MaterialConstantBuffer.cpp
-  Shader.cpp
-  ShaderManager.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\xmemory(298,1): error C2248: 'CConstantBuffer::~CConstantBuffer': private 멤버('CConstantBuffer' 클래스에서 선언)에 액세스할 수 없습니다.
-E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ConstantBuffer.h(21): message : 컴파일러에서 여기에 'CConstantBuffer::~CConstantBuffer'을(를) 생성했습니다.
-E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ConstantBuffer.h(3): message : 'CConstantBuffer' 선언을 참조하십시오.
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(2032): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Destroy_in_place<_Ty>(_Ty &) noexcept'에 대한 참조를 확인하세요.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\xmemory(1893,9): error C2259: 'CMesh': 추상 클래스를 인스턴스화할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Mesh\Mesh.h(34): message : 'CMesh' 선언을 참조하십시오.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\xmemory(1893,9): message : 다음 멤버가 원인입니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\xmemory(1893,9): message : 'CMesh::~CMesh(void)': abstract입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Mesh\Mesh.h(41): message : 'CMesh::~CMesh' 선언을 참조하십시오.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(2027): message : 컴파일되는 클래스 템플릿 인스턴스화 'std::_Wrap<_Ty>'에 대한 참조를 확인하세요.
           with
           [
-              _Ty=CConstantBuffer
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(2031): message : 클래스 템플릿 멤버 함수 'void std::_Ref_count_obj2<_Ty>::_Destroy(void) noexcept'을(를) 컴파일하는 중입니다.
-          with
-          [
-              _Ty=CConstantBuffer
+              _Ty=CMesh
           ]
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(2725): message : 컴파일되는 클래스 템플릿 인스턴스화 'std::_Ref_count_obj2<_Ty>'에 대한 참조를 확인하세요.
           with
           [
-              _Ty=CConstantBuffer
+              _Ty=CMesh
           ]
-E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ShaderManager.cpp(107): message : 컴파일되는 함수 템플릿 인스턴스화 'std::shared_ptr<CConstantBuffer> std::make_shared<CConstantBuffer,CConstantBuffer*&>(CConstantBuffer *&)'에 대한 참조를 확인하세요.
-  SpriteColorShader.cpp
-  SpriteShader.cpp
-  StructuredBuffer.cpp
-  TileMapBackShader.cpp
-  TileMapConstantBuffer.cpp
-  TileMapShader.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Mesh\MeshManager.cpp(137): message : 컴파일되는 함수 템플릿 인스턴스화 'std::shared_ptr<CMesh> std::make_shared<CMesh,CMesh*&>(CMesh *&)'에 대한 참조를 확인하세요.
+  SpriteMesh.cpp
+  ResourceManager.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIProgressBar.h(25,5): error C7568: 가정한 함수 템플릿 'CSharedPtr' 뒤에 인수 목록이 없습니다.
+  AnimationConstantBuffer.cpp
+  ConstantBufferData.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ConstantBufferData.cpp(19,66): error C2679: 이항 '=': 오른쪽 피연산자로 'CConstantBuffer *' 형식을 사용하는 연산자가 없거나 허용되는 변환이 없습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1628,17): message : 'std::shared_ptr<CConstantBuffer> &std::shared_ptr<CConstantBuffer>::operator =(std::shared_ptr<CConstantBuffer> &&) noexcept'일 수 있습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1617,17): message : 또는       'std::shared_ptr<CConstantBuffer> &std::shared_ptr<CConstantBuffer>::operator =(const std::shared_ptr<CConstantBuffer> &) noexcept'
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ConstantBufferData.cpp(19,66): message : 인수 목록 '(std::shared_ptr<CConstantBuffer>, CConstantBuffer *)'을(를) 일치시키는 동안
+  GraphicShader.cpp
   코드를 생성하고 있습니다...
   컴파일하고 있습니다...
+  ShaderManager.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ShaderManager.h(37,1): error C2440: '형식 캐스트': 'std::shared_ptr<CShader>'에서 'T *'(으)로 변환할 수 없습니다.
+          with
+          [
+              T=CSpriteColorShader
+          ]
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ShaderManager.h(37,15): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ShaderManager.cpp(25): message : 컴파일되는 함수 템플릿 인스턴스화 'bool CShaderManager::CreateShader<CSpriteColorShader>(const std::string &,bool)'에 대한 참조를 확인하세요.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ShaderManager.h(37,1): error C2440: '형식 캐스트': 'std::shared_ptr<CShader>'에서 'T *'(으)로 변환할 수 없습니다.
+          with
+          [
+              T=CSpriteShader
+          ]
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ShaderManager.h(37,15): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ShaderManager.cpp(28): message : 컴파일되는 함수 템플릿 인스턴스화 'bool CShaderManager::CreateShader<CSpriteShader>(const std::string &,bool)'에 대한 참조를 확인하세요.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ShaderManager.h(37,1): error C2440: '형식 캐스트': 'std::shared_ptr<CShader>'에서 'T *'(으)로 변환할 수 없습니다.
+          with
+          [
+              T=CColliderShader
+          ]
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ShaderManager.h(37,15): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ShaderManager.cpp(31): message : 컴파일되는 함수 템플릿 인스턴스화 'bool CShaderManager::CreateShader<CColliderShader>(const std::string &,bool)'에 대한 참조를 확인하세요.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ShaderManager.h(37,1): error C2440: '형식 캐스트': 'std::shared_ptr<CShader>'에서 'T *'(으)로 변환할 수 없습니다.
+          with
+          [
+              T=CColliderImageShader
+          ]
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ShaderManager.h(37,15): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ShaderManager.cpp(34): message : 컴파일되는 함수 템플릿 인스턴스화 'bool CShaderManager::CreateShader<CColliderImageShader>(const std::string &,bool)'에 대한 참조를 확인하세요.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ShaderManager.h(37,1): error C2440: '형식 캐스트': 'std::shared_ptr<CShader>'에서 'T *'(으)로 변환할 수 없습니다.
+          with
+          [
+              T=CUIShader
+          ]
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ShaderManager.h(37,15): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ShaderManager.cpp(37): message : 컴파일되는 함수 템플릿 인스턴스화 'bool CShaderManager::CreateShader<CUIShader>(const std::string &,bool)'에 대한 참조를 확인하세요.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ShaderManager.h(37,1): error C2440: '형식 캐스트': 'std::shared_ptr<CShader>'에서 'T *'(으)로 변환할 수 없습니다.
+          with
+          [
+              T=CUIProgressBarShader
+          ]
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ShaderManager.h(37,15): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ShaderManager.cpp(40): message : 컴파일되는 함수 템플릿 인스턴스화 'bool CShaderManager::CreateShader<CUIProgressBarShader>(const std::string &,bool)'에 대한 참조를 확인하세요.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ShaderManager.h(37,1): error C2440: '형식 캐스트': 'std::shared_ptr<CShader>'에서 'T *'(으)로 변환할 수 없습니다.
+          with
+          [
+              T=CTileMapShader
+          ]
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ShaderManager.h(37,15): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ShaderManager.cpp(43): message : 컴파일되는 함수 템플릿 인스턴스화 'bool CShaderManager::CreateShader<CTileMapShader>(const std::string &,bool)'에 대한 참조를 확인하세요.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ShaderManager.h(37,1): error C2440: '형식 캐스트': 'std::shared_ptr<CShader>'에서 'T *'(으)로 변환할 수 없습니다.
+          with
+          [
+              T=CTileMapBackShader
+          ]
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ShaderManager.h(37,15): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Shader\ShaderManager.cpp(46): message : 컴파일되는 함수 템플릿 인스턴스화 'bool CShaderManager::CreateShader<CTileMapBackShader>(const std::string &,bool)'에 대한 참조를 확인하세요.
+  SpriteColorShader.cpp
   TransformConstantBuffer.cpp
-  UIConstantBuffer.cpp
-  UIProgressBarConstantBuffer.cpp
-  UIProgressBarShader.cpp
-  UIShader.cpp
-  Sound.cpp
   SoundManager.cpp
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\xmemory(298,1): error C2248: 'CSound::~CSound': private 멤버('CSound' 클래스에서 선언)에 액세스할 수 없습니다.
 E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Sound\Sound.h(59): message : 컴파일러에서 여기에 'CSound::~CSound'을(를) 생성했습니다.
@@ -172,26 +367,295 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.3013
               _Ty=CSound
           ]
 E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Sound\SoundManager.cpp(116): message : 컴파일되는 함수 템플릿 인스턴스화 'std::shared_ptr<CSound> std::make_shared<CSound,CSound*&>(CSound *&)'에 대한 참조를 확인하세요.
+  RenderTarget.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Texture\RenderTarget.cpp(27,40): error C2039: 'GetSampleCount': 'CDevice'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Device.h(5): message : 'CDevice' 선언을 참조하십시오.
   Texture.cpp
   TextureManager.cpp
-E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Texture\TextureManager.cpp(4,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'RenderTarget.h': No such file or directory
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Texture\TextureManager.cpp(179,60): error C2440: '형식 캐스트': 'std::shared_ptr<CTexture>'에서 'CRenderTarget *'(으)로 변환할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Texture\TextureManager.cpp(179,27): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Texture\TextureManager.cpp(194,51): error C2664: 'std::_Insert_return_type<std::_List_iterator<std::_List_val<std::_List_simple_types<_Ty>>>,std::_Node_handle<std::_List_node<std::pair<const std::string,std::shared_ptr<CTexture>>,std::_Default_allocator_traits<_Alloc>::void_pointer>,_Alloc,std::_Node_handle_map_base,_Kty,std::shared_ptr<CTexture>>> std::_Hash<std::_Umap_traits<_Kty,std::shared_ptr<CTexture>,std::_Uhash_compare<_Kty,_Hasher,_Keyeq>,_Alloc,false>>::insert(std::_Node_handle<std::_List_node<std::pair<const std::string,std::shared_ptr<CTexture>>,std::_Default_allocator_traits<_Alloc>::void_pointer>,_Alloc,std::_Node_handle_map_base,_Kty,std::shared_ptr<CTexture>> &&)': 인수 1을(를) 'std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char>>,CRenderTarget *>'에서 'std::_Node_handle<std::_List_node<std::pair<const std::string,std::shared_ptr<CTexture>>,std::_Default_allocator_traits<_Alloc>::void_pointer>,_Alloc,std::_Node_handle_map_base,_Kty,_Ty> &&'(으)로 변환할 수 없습니다.
+          with
+          [
+              _Ty=std::pair<const std::string,std::shared_ptr<CTexture>>,
+              _Alloc=std::allocator<std::pair<const std::string,std::shared_ptr<CTexture>>>,
+              _Kty=std::string,
+              _Hasher=std::hash<std::string>,
+              _Keyeq=std::equal_to<std::string>
+          ]
+          and
+          [
+              _Alloc=std::allocator<std::pair<const std::string,std::shared_ptr<CTexture>>>,
+              _Kty=std::string,
+              _Ty=std::shared_ptr<CTexture>
+          ]
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Texture\TextureManager.cpp(194,51): message : 원인: 'std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char>>,CRenderTarget *>'에서 'std::_Node_handle<std::_List_node<std::pair<const std::string,std::shared_ptr<CTexture>>,std::_Default_allocator_traits<_Alloc>::void_pointer>,_Alloc,std::_Node_handle_map_base,_Kty,_Ty>'(으)로 변환할 수 없습니다.
+          with
+          [
+              _Alloc=std::allocator<std::pair<const std::string,std::shared_ptr<CTexture>>>,
+              _Kty=std::string,
+              _Ty=std::shared_ptr<CTexture>
+          ]
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Texture\TextureManager.cpp(194,36): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\xhash(1454,88): message : 'std::_Hash<std::_Umap_traits<_Kty,_Ty,std::_Uhash_compare<_Kty,_Hasher,_Keyeq>,_Alloc,false>>::insert' 선언을 참조하십시오.
+          with
+          [
+              _Kty=std::string,
+              _Ty=std::shared_ptr<CTexture>,
+              _Hasher=std::hash<std::string>,
+              _Keyeq=std::equal_to<std::string>,
+              _Alloc=std::allocator<std::pair<const std::string,std::shared_ptr<CTexture>>>
+          ]
   CameraManager.cpp
-E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\CameraManager.cpp(2,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../Component/CameraComponent.h': No such file or directory
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\CameraManager.cpp(14,26): error C2679: 이항 '=': 오른쪽 피연산자로 'CCameraComponent *' 형식을 사용하는 연산자가 없거나 허용되는 변환이 없습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1628,17): message : 'std::shared_ptr<CCameraComponent> &std::shared_ptr<CCameraComponent>::operator =(std::shared_ptr<CCameraComponent> &&) noexcept'일 수 있습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1617,17): message : 또는       'std::shared_ptr<CCameraComponent> &std::shared_ptr<CCameraComponent>::operator =(const std::shared_ptr<CCameraComponent> &) noexcept'
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\CameraManager.cpp(14,26): message : 인수 목록 '(std::shared_ptr<CCameraComponent>, CCameraComponent *)'을(를) 일치시키는 동안
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\CameraManager.cpp(19,21): error C2679: 이항 '=': 오른쪽 피연산자로 'CCameraComponent *' 형식을 사용하는 연산자가 없거나 허용되는 변환이 없습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1628,17): message : 'std::shared_ptr<CCameraComponent> &std::shared_ptr<CCameraComponent>::operator =(std::shared_ptr<CCameraComponent> &&) noexcept'일 수 있습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1617,17): message : 또는       'std::shared_ptr<CCameraComponent> &std::shared_ptr<CCameraComponent>::operator =(const std::shared_ptr<CCameraComponent> &) noexcept'
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\CameraManager.cpp(19,21): message : 인수 목록 '(std::shared_ptr<CCameraComponent>, CCameraComponent *)'을(를) 일치시키는 동안
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\CameraManager.cpp(28,40): error C2679: 이항 '=': 오른쪽 피연산자로 'CCameraComponent *' 형식을 사용하는 연산자가 없거나 허용되는 변환이 없습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1628,17): message : 'std::shared_ptr<CCameraComponent> &std::shared_ptr<CCameraComponent>::operator =(std::shared_ptr<CCameraComponent> &&) noexcept'일 수 있습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1617,17): message : 또는       'std::shared_ptr<CCameraComponent> &std::shared_ptr<CCameraComponent>::operator =(const std::shared_ptr<CCameraComponent> &) noexcept'
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\CameraManager.cpp(28,40): message : 인수 목록 '(std::shared_ptr<CCameraComponent>, CCameraComponent *)'을(를) 일치시키는 동안
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\CameraManager.cpp(34,35): error C2679: 이항 '=': 오른쪽 피연산자로 'CCameraComponent *' 형식을 사용하는 연산자가 없거나 허용되는 변환이 없습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1628,17): message : 'std::shared_ptr<CCameraComponent> &std::shared_ptr<CCameraComponent>::operator =(std::shared_ptr<CCameraComponent> &&) noexcept'일 수 있습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1617,17): message : 또는       'std::shared_ptr<CCameraComponent> &std::shared_ptr<CCameraComponent>::operator =(const std::shared_ptr<CCameraComponent> &) noexcept'
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\CameraManager.cpp(34,35): message : 인수 목록 '(std::shared_ptr<CCameraComponent>, CCameraComponent *)'을(를) 일치시키는 동안
+  CollisionSection.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\CollisionSection.cpp(16,10): error C2027: 정의되지 않은 형식 'CCollider2D'을(를) 사용했습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\CollisionSection.h(19): message : 'CCollider2D' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\CollisionSection.cpp(34,33): error C2440: '초기화 중': 'CCollider2D *'에서 'CCollider *'(으)로 변환할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\CollisionSection.cpp(34,18): message : 가리킨 형식이 관련이 없습니다. 변환하려면 reinterpret_cast, C 스타일 캐스트 또는 함수 스타일 캐스트가 필요합니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\CollisionSection.cpp(41,36): error C2440: '초기화 중': 'CCollider2D *'에서 'CCollider *'(으)로 변환할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\CollisionSection.cpp(41,20): message : 가리킨 형식이 관련이 없습니다. 변환하려면 reinterpret_cast, C 스타일 캐스트 또는 함수 스타일 캐스트가 필요합니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\CollisionSection.cpp(113,6): error C2027: 정의되지 않은 형식 'CCollider2D'을(를) 사용했습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\CollisionSection.h(19): message : 'CCollider2D' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\CollisionSection.cpp(113,16): error C2039: 'CollisionMouse': 'std::shared_ptr<CCollider2D>'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\CollisionSection.h(19): message : 'std::shared_ptr<CCollider2D>' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\CollisionSection.cpp(115,1): error C2440: 'return': 'std::shared_ptr<CCollider2D>'에서 'CCollider *'(으)로 변환할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\CollisionSection.cpp(115,11): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\CollisionSection.cpp(124,12): error C2027: 정의되지 않은 형식 'CCollider2D'을(를) 사용했습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\CollisionSection.h(19): message : 'CCollider2D' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\CollisionSection.cpp(124,31): error C2027: 정의되지 않은 형식 'CCollider2D'을(를) 사용했습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\CollisionSection.h(19): message : 'CCollider2D' 선언을 참조하십시오.
   Scene.cpp
-E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(134,31): error C2039: 'Get': 'std::shared_ptr<CUIWidget>'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(42): message : 'std::shared_ptr<CUIWidget>' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(126,5): message : 이 진단은 컴파일러 생성 함수 'T *CUIWindow::FindWidget(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneViewport.h(19,2): error C7568: 가정한 함수 템플릿 'CSharedPtr' 뒤에 인수 목록이 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(173,42): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(160,5): message : 이 진단은 컴파일러 생성 함수 'T *CScene::CreateObject(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\GameObject\GameObject.h(130,35): error C2760: 구문 오류: '상수'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\GameObject\GameObject.h(114,5): message : 이 진단은 컴파일러 생성 함수 'T *CGameObject::FindComponentFromType(void) const'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Animation\AnimationData.h(80,35): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 '형식 지정자'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Animation\AnimationData.h(78,7): message : 이 진단은 컴파일러 생성 함수 'void CAnimationData::AddNotify(const std::string &,int,T *,void (__cdecl T::* )(void))'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Animation\AnimationData.h(93,35): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 '형식 지정자'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Animation\AnimationData.h(91,7): message : 이 진단은 컴파일러 생성 함수 'void CAnimationData::AddNotify(const std::string &,float,T *,void (__cdecl T::* )(void))'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.cpp(119,15): error C2061: 구문 오류: 식별자 'CNavigationAgent'
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.cpp(131,2): error C2653: 'CAnimation2D': 클래스 또는 네임스페이스 이름이 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.cpp(131,16): error C3861: 'AddAnimationCDO': 식별자를 찾을 수 없습니다.
   SceneCollision.cpp
 E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneCollision.cpp(2,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'CollisionSection2D.h': No such file or directory
   SceneInfo.cpp
 E:\C++_Client\MapleStory_Blast\Engine\Include\GameObject\GameObject.h(130,35): error C2760: 구문 오류: '상수'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
 E:\C++_Client\MapleStory_Blast\Engine\Include\GameObject\GameObject.h(114,5): message : 이 진단은 컴파일러 생성 함수 'T *CGameObject::FindComponentFromType(void) const'에서 수행되었습니다.
-E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(134,31): error C2039: 'Get': 'std::shared_ptr<CUIWidget>'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(42): message : 'std::shared_ptr<CUIWidget>' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(126,5): message : 이 진단은 컴파일러 생성 함수 'T *CUIWindow::FindWidget(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneViewport.h(19,2): error C7568: 가정한 함수 템플릿 'CSharedPtr' 뒤에 인수 목록이 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(173,42): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(160,5): message : 이 진단은 컴파일러 생성 함수 'T *CScene::CreateObject(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneInfo.cpp(33,59): error C2679: 이항 '=': 오른쪽 피연산자로 'CGameObject *' 형식을 사용하는 연산자가 없거나 허용되는 변환이 없습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1628,17): message : 'std::shared_ptr<CGameObject> &std::shared_ptr<CGameObject>::operator =(std::shared_ptr<CGameObject> &&) noexcept'일 수 있습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1617,17): message : 또는       'std::shared_ptr<CGameObject> &std::shared_ptr<CGameObject>::operator =(const std::shared_ptr<CGameObject> &) noexcept'
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneInfo.cpp(33,59): message : 인수 목록 '(std::shared_ptr<CGameObject>, CGameObject *)'을(를) 일치시키는 동안
   SceneManager.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(134,31): error C2039: 'Get': 'std::shared_ptr<CUIWidget>'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(42): message : 'std::shared_ptr<CUIWidget>' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(126,5): message : 이 진단은 컴파일러 생성 함수 'T *CUIWindow::FindWidget(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneViewport.h(19,2): error C7568: 가정한 함수 템플릿 'CSharedPtr' 뒤에 인수 목록이 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(173,42): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(160,5): message : 이 진단은 컴파일러 생성 함수 'T *CScene::CreateObject(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\GameObject\GameObject.h(130,35): error C2760: 구문 오류: '상수'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\GameObject\GameObject.h(114,5): message : 이 진단은 컴파일러 생성 함수 'T *CGameObject::FindComponentFromType(void) const'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneManager.cpp(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../Animation/Animation2D.h': No such file or directory
   SceneResource.cpp
-E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\Material.h(5,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../../Render/RenderState.h': No such file or directory
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
   SceneViewport.cpp
-E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneViewport.h(4,10): fatal error C1083: 포함 파일을 열 수 없습니다. '../UI/UIWindow.h': No such file or directory
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(134,31): error C2039: 'Get': 'std::shared_ptr<CUIWidget>'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(42): message : 'std::shared_ptr<CUIWidget>' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(126,5): message : 이 진단은 컴파일러 생성 함수 'T *CUIWindow::FindWidget(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneViewport.h(19,2): error C7568: 가정한 함수 템플릿 'CSharedPtr' 뒤에 인수 목록이 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\GameObject\GameObject.h(130,35): error C2760: 구문 오류: '상수'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\GameObject\GameObject.h(114,5): message : 이 진단은 컴파일러 생성 함수 'T *CGameObject::FindComponentFromType(void) const'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(173,42): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(160,5): message : 이 진단은 컴파일러 생성 함수 'T *CScene::CreateObject(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneViewport.cpp(159,31): error C2664: 'void std::vector<std::shared_ptr<CUIWindow>,std::allocator<std::shared_ptr<CUIWindow>>>::push_back(const _Ty &)': 인수 1을(를) 'CUIWindow *'에서 'const _Ty &'(으)로 변환할 수 없습니다.
+          with
+          [
+              _Ty=std::shared_ptr<CUIWindow>
+          ]
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneViewport.cpp(159,31): message : 원인: 'CUIWindow *'에서 'const _Ty'(으)로 변환할 수 없습니다.
+          with
+          [
+              _Ty=std::shared_ptr<CUIWindow>
+          ]
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneViewport.cpp(159,31): message : 소스 형식을 가져올 수 있는 생성자가 없거나 생성자 오버로드 확인이 모호합니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\vector(742,33): message : 'std::vector<std::shared_ptr<CUIWindow>,std::allocator<std::shared_ptr<CUIWindow>>>::push_back' 선언을 참조하십시오.
   Timer.cpp
-  Vector2.cpp
-  Vector3.cpp
+  UIButton.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(134,31): error C2039: 'Get': 'std::shared_ptr<CUIWidget>'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(42): message : 'std::shared_ptr<CUIWidget>' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(126,5): message : 이 진단은 컴파일러 생성 함수 'T *CUIWindow::FindWidget(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneViewport.h(19,2): error C7568: 가정한 함수 템플릿 'CSharedPtr' 뒤에 인수 목록이 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(173,42): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(160,5): message : 이 진단은 컴파일러 생성 함수 'T *CScene::CreateObject(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIButton.cpp(42,48): error C2679: 이항 '=': 오른쪽 피연산자로 'CTexture *' 형식을 사용하는 연산자가 없거나 허용되는 변환이 없습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1628,17): message : 'std::shared_ptr<CTexture> &std::shared_ptr<CTexture>::operator =(std::shared_ptr<CTexture> &&) noexcept'일 수 있습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1617,17): message : 또는       'std::shared_ptr<CTexture> &std::shared_ptr<CTexture>::operator =(const std::shared_ptr<CTexture> &) noexcept'
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIButton.cpp(42,48): message : 인수 목록 '(std::shared_ptr<CTexture>, CTexture *)'을(를) 일치시키는 동안
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIButton.cpp(165,32): error C2679: 이항 '=': 오른쪽 피연산자로 'CSound *' 형식을 사용하는 연산자가 없거나 허용되는 변환이 없습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1628,17): message : 'std::shared_ptr<CSound> &std::shared_ptr<CSound>::operator =(std::shared_ptr<CSound> &&) noexcept'일 수 있습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1617,17): message : 또는       'std::shared_ptr<CSound> &std::shared_ptr<CSound>::operator =(const std::shared_ptr<CSound> &) noexcept'
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIButton.cpp(165,32): message : 인수 목록 '(std::shared_ptr<CSound>, CSound *)'을(를) 일치시키는 동안
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIButton.cpp(171,70): error C2679: 이항 '=': 오른쪽 피연산자로 'CSound *' 형식을 사용하는 연산자가 없거나 허용되는 변환이 없습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1628,17): message : 'std::shared_ptr<CSound> &std::shared_ptr<CSound>::operator =(std::shared_ptr<CSound> &&) noexcept'일 수 있습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1617,17): message : 또는       'std::shared_ptr<CSound> &std::shared_ptr<CSound>::operator =(const std::shared_ptr<CSound> &) noexcept'
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIButton.cpp(171,70): message : 인수 목록 '(std::shared_ptr<CSound>, CSound *)'을(를) 일치시키는 동안
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIButton.cpp(174,75): error C2679: 이항 '=': 오른쪽 피연산자로 'CSound *' 형식을 사용하는 연산자가 없거나 허용되는 변환이 없습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1628,17): message : 'std::shared_ptr<CSound> &std::shared_ptr<CSound>::operator =(std::shared_ptr<CSound> &&) noexcept'일 수 있습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1617,17): message : 또는       'std::shared_ptr<CSound> &std::shared_ptr<CSound>::operator =(const std::shared_ptr<CSound> &) noexcept'
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIButton.cpp(174,75): message : 인수 목록 '(std::shared_ptr<CSound>, CSound *)'을(를) 일치시키는 동안
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIButton.cpp(185,70): error C2679: 이항 '=': 오른쪽 피연산자로 'CSound *' 형식을 사용하는 연산자가 없거나 허용되는 변환이 없습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1628,17): message : 'std::shared_ptr<CSound> &std::shared_ptr<CSound>::operator =(std::shared_ptr<CSound> &&) noexcept'일 수 있습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1617,17): message : 또는       'std::shared_ptr<CSound> &std::shared_ptr<CSound>::operator =(const std::shared_ptr<CSound> &) noexcept'
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIButton.cpp(185,70): message : 인수 목록 '(std::shared_ptr<CSound>, CSound *)'을(를) 일치시키는 동안
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIButton.cpp(193,75): error C2679: 이항 '=': 오른쪽 피연산자로 'CSound *' 형식을 사용하는 연산자가 없거나 허용되는 변환이 없습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1628,17): message : 'std::shared_ptr<CSound> &std::shared_ptr<CSound>::operator =(std::shared_ptr<CSound> &&) noexcept'일 수 있습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1617,17): message : 또는       'std::shared_ptr<CSound> &std::shared_ptr<CSound>::operator =(const std::shared_ptr<CSound> &) noexcept'
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIButton.cpp(193,75): message : 인수 목록 '(std::shared_ptr<CSound>, CSound *)'을(를) 일치시키는 동안
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIButton.cpp(605,74): error C2679: 이항 '=': 오른쪽 피연산자로 'CSound *' 형식을 사용하는 연산자가 없거나 허용되는 변환이 없습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1628,17): message : 'std::shared_ptr<CSound> &std::shared_ptr<CSound>::operator =(std::shared_ptr<CSound> &&) noexcept'일 수 있습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1617,17): message : 또는       'std::shared_ptr<CSound> &std::shared_ptr<CSound>::operator =(const std::shared_ptr<CSound> &) noexcept'
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIButton.cpp(605,74): message : 인수 목록 '(std::shared_ptr<CSound>, CSound *)'을(를) 일치시키는 동안
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIButton.cpp(611,79): error C2679: 이항 '=': 오른쪽 피연산자로 'CSound *' 형식을 사용하는 연산자가 없거나 허용되는 변환이 없습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1628,17): message : 'std::shared_ptr<CSound> &std::shared_ptr<CSound>::operator =(std::shared_ptr<CSound> &&) noexcept'일 수 있습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1617,17): message : 또는       'std::shared_ptr<CSound> &std::shared_ptr<CSound>::operator =(const std::shared_ptr<CSound> &) noexcept'
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIButton.cpp(611,79): message : 인수 목록 '(std::shared_ptr<CSound>, CSound *)'을(를) 일치시키는 동안
+  UIImage.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(134,31): error C2039: 'Get': 'std::shared_ptr<CUIWidget>'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(42): message : 'std::shared_ptr<CUIWidget>' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(126,5): message : 이 진단은 컴파일러 생성 함수 'T *CUIWindow::FindWidget(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneViewport.h(19,2): error C7568: 가정한 함수 템플릿 'CSharedPtr' 뒤에 인수 목록이 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(173,42): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(160,5): message : 이 진단은 컴파일러 생성 함수 'T *CScene::CreateObject(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIImage.cpp(24,36): error C2679: 이항 '=': 오른쪽 피연산자로 'CTexture *' 형식을 사용하는 연산자가 없거나 허용되는 변환이 없습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1628,17): message : 'std::shared_ptr<CTexture> &std::shared_ptr<CTexture>::operator =(std::shared_ptr<CTexture> &&) noexcept'일 수 있습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1617,17): message : 또는       'std::shared_ptr<CTexture> &std::shared_ptr<CTexture>::operator =(const std::shared_ptr<CTexture> &) noexcept'
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIImage.cpp(24,36): message : 인수 목록 '(std::shared_ptr<CTexture>, CTexture *)'을(를) 일치시키는 동안
+  UINumber.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(134,31): error C2039: 'Get': 'std::shared_ptr<CUIWidget>'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(42): message : 'std::shared_ptr<CUIWidget>' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(126,5): message : 이 진단은 컴파일러 생성 함수 'T *CUIWindow::FindWidget(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneViewport.h(19,2): error C7568: 가정한 함수 템플릿 'CSharedPtr' 뒤에 인수 목록이 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(173,42): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(160,5): message : 이 진단은 컴파일러 생성 함수 'T *CScene::CreateObject(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UINumber.cpp(25,36): error C2679: 이항 '=': 오른쪽 피연산자로 'CTexture *' 형식을 사용하는 연산자가 없거나 허용되는 변환이 없습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1628,17): message : 'std::shared_ptr<CTexture> &std::shared_ptr<CTexture>::operator =(std::shared_ptr<CTexture> &&) noexcept'일 수 있습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1617,17): message : 또는       'std::shared_ptr<CTexture> &std::shared_ptr<CTexture>::operator =(const std::shared_ptr<CTexture> &) noexcept'
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UINumber.cpp(25,36): message : 인수 목록 '(std::shared_ptr<CTexture>, CTexture *)'을(를) 일치시키는 동안
+  UIProgressBar.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIProgressBar.h(25,5): error C7568: 가정한 함수 템플릿 'CSharedPtr' 뒤에 인수 목록이 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(134,31): error C2039: 'Get': 'std::shared_ptr<CUIWidget>'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(42): message : 'std::shared_ptr<CUIWidget>' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(126,5): message : 이 진단은 컴파일러 생성 함수 'T *CUIWindow::FindWidget(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneViewport.h(19,2): error C7568: 가정한 함수 템플릿 'CSharedPtr' 뒤에 인수 목록이 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(173,42): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(160,5): message : 이 진단은 컴파일러 생성 함수 'T *CScene::CreateObject(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIProgressBar.cpp(39,47): error C2679: 이항 '=': 오른쪽 피연산자로 'CTexture *' 형식을 사용하는 연산자가 없거나 허용되는 변환이 없습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1628,17): message : 'std::shared_ptr<CTexture> &std::shared_ptr<CTexture>::operator =(std::shared_ptr<CTexture> &&) noexcept'일 수 있습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1617,17): message : 또는       'std::shared_ptr<CTexture> &std::shared_ptr<CTexture>::operator =(const std::shared_ptr<CTexture> &) noexcept'
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIProgressBar.cpp(39,47): message : 인수 목록 '(std::shared_ptr<CTexture>, CTexture *)'을(를) 일치시키는 동안
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  UIText.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(134,31): error C2039: 'Get': 'std::shared_ptr<CUIWidget>'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(42): message : 'std::shared_ptr<CUIWidget>' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(126,5): message : 이 진단은 컴파일러 생성 함수 'T *CUIWindow::FindWidget(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneViewport.h(19,2): error C7568: 가정한 함수 템플릿 'CSharedPtr' 뒤에 인수 목록이 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(173,42): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(160,5): message : 이 진단은 컴파일러 생성 함수 'T *CScene::CreateObject(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIText.cpp(60,56): error C2679: 이항 '=': 오른쪽 피연산자로 'CFont *' 형식을 사용하는 연산자가 없거나 허용되는 변환이 없습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1628,17): message : 'std::shared_ptr<CFont> &std::shared_ptr<CFont>::operator =(std::shared_ptr<CFont> &&) noexcept'일 수 있습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\memory(1617,17): message : 또는       'std::shared_ptr<CFont> &std::shared_ptr<CFont>::operator =(const std::shared_ptr<CFont> &) noexcept'
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIText.cpp(60,56): message : 인수 목록 '(std::shared_ptr<CFont>, CFont *)'을(를) 일치시키는 동안
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIText.cpp(291,42): error C2039: 'Get2DTarget': 'CDevice'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Device.h(5): message : 'CDevice' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIText.cpp(426,42): error C2039: 'Get2DTarget': 'CDevice'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Device.h(5): message : 'CDevice' 선언을 참조하십시오.
+  UIWidget.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(37,64): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Resource\Material\MaterialManager.h(24,5): message : 이 진단은 컴파일러 생성 함수 'T *CMaterialManager::CreateMaterial(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(134,31): error C2039: 'Get': 'std::shared_ptr<CUIWidget>'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(42): message : 'std::shared_ptr<CUIWidget>' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(126,5): message : 이 진단은 컴파일러 생성 함수 'T *CUIWindow::FindWidget(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\SceneViewport.h(19,2): error C7568: 가정한 함수 템플릿 'CSharedPtr' 뒤에 인수 목록이 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(173,42): error C2760: 구문 오류: '식별자'을(는) 예기치 않은 토큰입니다. 필요한 토큰은 ')'입니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\Scene\Scene.h(160,5): message : 이 진단은 컴파일러 생성 함수 'T *CScene::CreateObject(const std::string &)'에서 수행되었습니다.
+  UIWindow.cpp
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(134,31): error C2039: 'Get': 'std::shared_ptr<CUIWidget>'의 멤버가 아닙니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(42): message : 'std::shared_ptr<CUIWidget>' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.h(126,5): message : 이 진단은 컴파일러 생성 함수 'T *CUIWindow::FindWidget(const std::string &)'에서 수행되었습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.cpp(27,31): error C2664: 'void std::vector<std::shared_ptr<CUIWidget>,std::allocator<std::shared_ptr<CUIWidget>>>::push_back(const _Ty &)': 인수 1을(를) 'CUIWidget *'에서 'const _Ty &'(으)로 변환할 수 없습니다.
+          with
+          [
+              _Ty=std::shared_ptr<CUIWidget>
+          ]
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.cpp(27,31): message : 원인: 'CUIWidget *'에서 'const _Ty'(으)로 변환할 수 없습니다.
+          with
+          [
+              _Ty=std::shared_ptr<CUIWidget>
+          ]
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.cpp(27,31): message : 소스 형식을 가져올 수 있는 생성자가 없거나 생성자 오버로드 확인이 모호합니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\vector(742,33): message : 'std::vector<std::shared_ptr<CUIWidget>,std::allocator<std::shared_ptr<CUIWidget>>>::push_back' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.cpp(187,32): error C2664: 'void std::vector<std::shared_ptr<CUIWidget>,std::allocator<std::shared_ptr<CUIWidget>>>::push_back(const _Ty &)': 인수 1을(를) 'CUIWidget *'에서 'const _Ty &'(으)로 변환할 수 없습니다.
+          with
+          [
+              _Ty=std::shared_ptr<CUIWidget>
+          ]
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.cpp(187,32): message : 원인: 'CUIWidget *'에서 'const _Ty'(으)로 변환할 수 없습니다.
+          with
+          [
+              _Ty=std::shared_ptr<CUIWidget>
+          ]
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.cpp(187,32): message : 소스 형식을 가져올 수 있는 생성자가 없거나 생성자 오버로드 확인이 모호합니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133\include\vector(742,33): message : 'std::vector<std::shared_ptr<CUIWidget>,std::allocator<std::shared_ptr<CUIWidget>>>::push_back' 선언을 참조하십시오.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.cpp(254,1): error C2440: 'return': 'std::shared_ptr<CUIWidget>'에서 'CUIWidget *'(으)로 변환할 수 없습니다.
+E:\C++_Client\MapleStory_Blast\Engine\Include\UI\UIWindow.cpp(254,11): message : 이 변환을 수행할 수 있는 사용 가능한 사용자 정의 변환 연산자가 없거나 연산자를 호출할 수 없습니다.
   Vector4.cpp
   코드를 생성하고 있습니다...

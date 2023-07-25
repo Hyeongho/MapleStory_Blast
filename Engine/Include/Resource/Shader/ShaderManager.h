@@ -24,7 +24,7 @@ public:
 
 public:
 	bool Init();
-	class CShader* FindShader(const std::string& Name);
+	std::shared_ptr<class CShader> FindShader(const std::string& Name);
 	void ReleaseShader(const std::string& Name);
 
 	bool CreateConstantBuffer(const std::string& Name, int Size, int Register, int ShaderBufferType = (int)EShaderBufferType::All);

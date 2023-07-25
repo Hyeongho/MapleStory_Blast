@@ -237,7 +237,7 @@ unsigned int CFontManager::CreateFontColorKey(const Vector4& Color)
     return Key;
 }
 
-CFont* CFontManager::FindFont(const std::string& Name)
+std::shared_ptr<CFont> CFontManager::FindFont(const std::string& Name)
 {
     auto iter = m_mapFont.find(Name);
 
@@ -246,7 +246,7 @@ CFont* CFontManager::FindFont(const std::string& Name)
         return nullptr;
     }
 
-    return iter->second.get();
+    return iter->second;
 }
 
 CFontCollection* CFontManager::FindFontCollection(const std::string& Name)

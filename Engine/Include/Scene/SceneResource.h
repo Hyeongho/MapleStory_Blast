@@ -42,7 +42,7 @@ public:	// ===================== Mesh =========================
 	class std::shared_ptr<CMesh> FindMesh(const std::string& Name);
 
 public:	// ===================== Shader =========================
-	class CShader* FindShader(const std::string& Name);
+	std::shared_ptr<class CShader> FindShader(const std::string& Name);
 
 public:	// ===================== Texture =========================
 	bool LoadTexture(const std::string& Name, const TCHAR* FileName, const std::string& PathName = TEXTURE_PATH);
@@ -134,7 +134,7 @@ public:	// ============================ Font ================================
 	unsigned int CreateFontColorKey(float r, float g, float b, float a);
 	unsigned int CreateFontColorKey(const Vector4& Color);
 
-	CFont* FindFont(const std::string& Name);
+	std::shared_ptr<CFont> FindFont(const std::string& Name);
 	CFontCollection* FindFontCollection(const std::string& Name);
 };
 

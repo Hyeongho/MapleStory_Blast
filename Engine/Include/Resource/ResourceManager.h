@@ -36,7 +36,7 @@ public:	// ===================== Shader =========================
 	}
 
 	class CColliderConstantBuffer* GetColliderCBuffer()	const;
-	class CShader* FindShader(const std::string& Name);
+	std::shared_ptr<class CShader> FindShader(const std::string& Name);
 	void ReleaseShader(const std::string& Name);
 
 	bool CreateConstantBuffer(const std::string& Name, int Size, int Register, int ShaderBufferType = (int)EShaderBufferType::All);
@@ -120,7 +120,7 @@ public:	// ============================ Font ================================
 	unsigned int CreateFontColorKey(float r, float g, float b, float a);
 	unsigned int CreateFontColorKey(const Vector4& Color);
 
-	CFont* FindFont(const std::string& Name);
+	std::shared_ptr<CFont> FindFont(const std::string& Name);
 	CFontCollection* FindFontCollection(const std::string& Name);
 	void ReleaseFont(const std::string& Name);
 	void ReleaseFontCollection(const std::string& Name);

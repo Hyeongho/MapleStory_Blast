@@ -36,7 +36,7 @@ bool CResourceManager::Init()
 
 	CUIWidget::m_CBuffer->Init();
 
-	CUIWidget::m_AnimCBuffer = new CAnimation2DConstantBuffer;
+	CUIWidget::m_AnimCBuffer = new CAnimationConstantBuffer;
 
 	CUIWidget::m_AnimCBuffer->Init();
 
@@ -76,36 +76,9 @@ void CResourceManager::Update()
 	m_SoundManager->Update();
 }
 
-bool CResourceManager::CreateMesh(CScene* Scene, MeshType Type,
-	const std::string& Name, void* VtxData, int Size,
-	int Count, D3D11_USAGE VtxUsage,
-	D3D11_PRIMITIVE_TOPOLOGY Primitive, void* IdxData, int IdxSize,
-	int IdxCount, D3D11_USAGE IdxUsage, DXGI_FORMAT Fmt)
+bool CResourceManager::CreateMesh(CScene* Scene, MeshType Type, const std::string& Name, void* VtxData, int Size, int Count, D3D11_USAGE VtxUsage, D3D11_PRIMITIVE_TOPOLOGY Primitive, void* IdxData, int IdxSize, int IdxCount, D3D11_USAGE IdxUsage, DXGI_FORMAT Fmt)
 {
-	return m_MeshManager->CreateMesh(Scene, Type, Name, VtxData, Size,
-		Count, VtxUsage, Primitive, IdxData, IdxSize, IdxCount, IdxUsage,
-		Fmt);
-}
-
-bool CResourceManager::LoadMesh(CScene* Scene, MeshType Type, const std::string& Name, const TCHAR* FileName, const std::string& PathName)
-{
-	return m_MeshManager->LoadMesh(Scene, Type, Name, FileName, PathName);
-}
-
-bool CResourceManager::LoadMeshFullPath(CScene* Scene, MeshType Type, const std::string& Name, const TCHAR* FullPath)
-{
-	return m_MeshManager->LoadMeshFullPath(Scene, Type, Name, FullPath);
-}
-
-bool CResourceManager::LoadMeshMultibyte(CScene* Scene, MeshType Type,
-	const std::string& Name, const char* FileName, const std::string& PathName)
-{
-	return m_MeshManager->LoadMeshMultibyte(Scene, Type, Name, FileName, PathName);
-}
-
-bool CResourceManager::LoadMeshMultibyteFullPath(CScene* Scene, MeshType Type, const std::string& Name, const char* FullPath)
-{
-	return m_MeshManager->LoadMeshMultibyteFullPath(Scene, Type, Name, FullPath);
+	return m_MeshManager->CreateMesh(Scene, Type, Name, VtxData, Size, Count, VtxUsage, Primitive, IdxData, IdxSize, IdxCount, IdxUsage, Fmt);
 }
 
 std::shared_ptr<CMesh> CResourceManager::FindMesh(const std::string& Name)
@@ -123,7 +96,7 @@ CColliderConstantBuffer* CResourceManager::GetColliderCBuffer() const
 	return m_ShaderManager->GetColliderCBuffer();
 }
 
-CShader* CResourceManager::FindShader(const std::string& Name)
+std::shared_ptr<class CShader> CResourceManager::FindShader(const std::string& Name)
 {
 	return m_ShaderManager->FindShader(Name);
 }
@@ -431,7 +404,7 @@ unsigned int CResourceManager::CreateFontColorKey(const Vector4& Color)
 	return m_FontManager->CreateFontColorKey(Color);
 }
 
-CFont* CResourceManager::FindFont(const std::string& Name)
+std::shared_ptr<CFont> CResourceManager::FindFont(const std::string& Name)
 {
 	return m_FontManager->FindFont(Name);
 }

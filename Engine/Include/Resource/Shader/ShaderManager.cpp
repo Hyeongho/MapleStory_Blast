@@ -60,7 +60,7 @@ bool CShaderManager::Init()
 	return true;
 }
 
-CShader* CShaderManager::FindShader(const std::string& Name)
+std::shared_ptr<class CShader> CShaderManager::FindShader(const std::string& Name)
 {
 	auto iter = m_mapShader.find(Name);
 
@@ -69,7 +69,7 @@ CShader* CShaderManager::FindShader(const std::string& Name)
 		return nullptr;
 	}
 
-	return iter->second.get();
+	return iter->second;
 }
 
 void CShaderManager::ReleaseShader(const std::string& Name)

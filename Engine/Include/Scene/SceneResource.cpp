@@ -81,40 +81,40 @@ std::shared_ptr<CMesh> CSceneResource::FindMesh(const std::string& Name)
 
 	if (iter == m_mapMesh.end())
 	{
-		CMesh* Mesh = CResourceManager::GetInst()->FindMesh(Name);
+		std::shared_ptr<CMesh> Mesh = CResourceManager::GetInst()->FindMesh(Name);
 
 		if (!Mesh)
 		{
 			return nullptr;
 		}
 
-		m_mapMesh.insert(std::make_pair(Name, std::make_shared<CMesh>(Mesh)));
+		m_mapMesh.insert(std::make_pair(Name,Mesh));
 
-		return std::make_shared<CMesh>(Mesh);
+		return Mesh;
 	}
 
 	return iter->second;
 }
 
-CShader* CSceneResource::FindShader(const std::string& Name)
+std::shared_ptr<CShader> CSceneResource::FindShader(const std::string& Name)
 {
 	auto iter = m_mapShader.find(Name);
 
 	if (iter == m_mapShader.end())
 	{
-		CShader* Shader = CResourceManager::GetInst()->FindShader(Name);
+		std::shared_ptr<CShader> Shader = CResourceManager::GetInst()->FindShader(Name);
 
 		if (!Shader)
 		{
 			return nullptr;
 		}
 
-		m_mapShader.insert(std::make_pair(Name, std::make_shared<CShader>(Shader)));
+		m_mapShader.insert(std::make_pair(Name, Shader));
 
 		return Shader;
 	}
 
-	return iter->second.get();
+	return iter->second;
 }
 
 bool CSceneResource::LoadTexture(const std::string& Name, const TCHAR* FileName, const std::string& PathName)
@@ -183,6 +183,25 @@ bool CSceneResource::LoadTextureFullPath(const std::string& Name, const std::vec
 	m_mapTexture.insert(std::make_pair(Name, std::make_shared<CTexture>(CResourceManager::GetInst()->FindTexture(Name))));
 
 	return true;
+}
+
+bool CSceneResource::LoadTextureArray(const std::string& Name, const std::vector<const TCHAR*>& vecFileName, const std::string& PathName)
+{
+	return false;
+}
+
+bool CSceneResource::LoadTextureArrayFullPath(const std::string& Name, const std::vector<const TCHAR*>& vecFullPath)
+{
+	return false;
+}
+
+bool CSceneResource::CreateTarget(const std::string& Name, unsigned int Width, unsigned int Height, DXGI_FORMAT PixelFormat, DXGI_FORMAT DepthFormat)
+{
+	return false;
+}
+
+void CSceneResource::RenderTexture()
+{
 }
 
 std::shared_ptr<CTexture> CSceneResource::FindTexture(const std::string& Name)
@@ -371,4 +390,139 @@ CAnimationSequence* CSceneResource::FindAnimationSequence2D(const std::string& N
 	}
 
 	return iter->second.get();
+}
+
+bool CSceneResource::CreateSoundChannel(const std::string& Name)
+{
+	return false;
+}
+
+bool CSceneResource::LoadSound(const std::string& GroupName, const std::string& Name, bool Loop, const char* FileName, const std::string& PathName)
+{
+	return false;
+}
+
+bool CSceneResource::SetVolume(int Volume)
+{
+	return false;
+}
+
+bool CSceneResource::SetVolume(const std::string& GroupName, int Volume)
+{
+	return false;
+}
+
+bool CSceneResource::SoundPlay(const std::string& Name)
+{
+	return false;
+}
+
+bool CSceneResource::SoundStop(const std::string& Name)
+{
+	return false;
+}
+
+bool CSceneResource::SoundPause(const std::string& Name)
+{
+	return false;
+}
+
+bool CSceneResource::SoundResume(const std::string& Name)
+{
+	return false;
+}
+
+FMOD::ChannelGroup* CSceneResource::FindChannelGroup(const std::string& Name)
+{
+	return nullptr;
+}
+
+CSound* CSceneResource::FindSound(const std::string& Name)
+{
+	return nullptr;
+}
+
+bool CSceneResource::CreateFontCollection(const std::string& Name, const TCHAR* FileName, const std::string& PathName)
+{
+	return false;
+}
+
+bool CSceneResource::LoadFont(const std::string& Name, const TCHAR* FontName, int Weight, float FontSize, const TCHAR* LocalName, int Stretch)
+{
+	return false;
+}
+
+const TCHAR* CSceneResource::GetFontFaceName(const std::string& CollectionName)
+{
+	return nullptr;
+}
+
+const char* CSceneResource::GetFontFaceNameMultibyte(const std::string& CollectionName)
+{
+	return nullptr;
+}
+
+bool CSceneResource::CreateFontColor(unsigned char r, unsigned char g, unsigned char b, unsigned char a)
+{
+	return false;
+}
+
+bool CSceneResource::CreateFontColor(float r, float g, float b, float a)
+{
+	return false;
+}
+
+bool CSceneResource::CreateFontColor(const Vector4& Color)
+{
+	return false;
+}
+
+bool CSceneResource::CreateFontColor(unsigned int Color)
+{
+	return false;
+}
+
+ID2D1SolidColorBrush* CSceneResource::FindFontColor(unsigned char r, unsigned char g, unsigned char b, unsigned char a)
+{
+	return nullptr;
+}
+
+ID2D1SolidColorBrush* CSceneResource::FindFontColor(float r, float g, float b, float a)
+{
+	return nullptr;
+}
+
+ID2D1SolidColorBrush* CSceneResource::FindFontColor(const Vector4& Color)
+{
+	return nullptr;
+}
+
+ID2D1SolidColorBrush* CSceneResource::FindFontColor(unsigned int Color)
+{
+	return nullptr;
+}
+
+unsigned int CSceneResource::CreateFontColorKey(unsigned char r, unsigned char g, unsigned char b, unsigned char a)
+{
+	return 0;
+}
+
+unsigned int CSceneResource::CreateFontColorKey(float r, float g, float b, float a)
+{
+	return 0;
+}
+
+unsigned int CSceneResource::CreateFontColorKey(const Vector4& Color)
+{
+	return 0;
+}
+
+std::shared_ptr<CFont> CSceneResource::FindFont(const std::string& Name)
+{
+	return std::shared_ptr<CFont>();
+}
+
+CFontCollection* CSceneResource::FindFontCollection(const std::string& Name)
+{
+	return nullptr;
 }

@@ -15,5 +15,3 @@ E:\C++_Client\MapleStory_Blast\Client\Include\ClientManager.cpp(33,5): error C26
 E:\C++_Client\MapleStory_Blast\Client\Include\ClientManager.cpp(33,13): error C3861: 'GetInst': 식별자를 찾을 수 없습니다.
 E:\C++_Client\MapleStory_Blast\Client\Include\ClientManager.cpp(37,5): error C2653: 'CSceneManager': 클래스 또는 네임스페이스 이름이 아닙니다.
 E:\C++_Client\MapleStory_Blast\Client\Include\ClientManager.cpp(37,20): error C3861: 'GetInst': 식별자를 찾을 수 없습니다.
-  main.cpp
-  코드를 생성하고 있습니다...

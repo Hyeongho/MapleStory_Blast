@@ -166,6 +166,21 @@
     <Filter Include="01. Manager\07. Collision">
       <UniqueIdentifier>{319c6b66-8cb6-49c1-9240-0c4445cabfea}</UniqueIdentifier>
     </Filter>
+    <Filter Include="07. Editor\01. IMGUI">
+      <UniqueIdentifier>{7b931f6c-476d-49ba-8ff9-364f2542830c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="07. Editor\02. Window">
+      <UniqueIdentifier>{b1013a8d-0be0-4c0d-9ef7-8a3857c021ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="07. Editor\03. Widget">
+      <UniqueIdentifier>{54741c2e-7581-4516-8b95-a3ffacaa4ef2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="09. UI\01. Window">
+      <UniqueIdentifier>{72a77d07-22fc-4bb0-8366-92962c103bb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="09. UI\02. Widget">
+      <UniqueIdentifier>{a0e7d5fc-38ee-4a5a-b859-3d8324ca5466}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EngineInfo.h">
@@ -450,6 +465,99 @@
     <ClInclude Include="Component\ColliderOBB2D.h">
       <Filter>05. Component\01. SceneComponent\04. Collider</Filter>
     </ClInclude>
+    <ClInclude Include="imconfig.h">
+      <Filter>07. Editor\01. IMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui.h">
+      <Filter>07. Editor\01. IMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui_impl_dx11.h">
+      <Filter>07. Editor\01. IMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui_impl_win32.h">
+      <Filter>07. Editor\01. IMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui_internal.h">
+      <Filter>07. Editor\01. IMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="imstb_rectpack.h">
+      <Filter>07. Editor\01. IMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="imstb_textedit.h">
+      <Filter>07. Editor\01. IMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="imstb_truetype.h">
+      <Filter>07. Editor\01. IMGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Editor\EditorGUIManager.h">
+      <Filter>07. Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="Editor\EditorInfo.h">
+      <Filter>07. Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="Editor\EditorListBox.h">
+      <Filter>07. Editor\03. Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="Editor\EditorSameLine.h">
+      <Filter>07. Editor\03. Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="Editor\EditorText.h">
+      <Filter>07. Editor\03. Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="Editor\EditorTree.h">
+      <Filter>07. Editor\03. Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="Editor\EditorTreeItem.h">
+      <Filter>07. Editor\03. Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="Editor\EditorWidget.h">
+      <Filter>07. Editor\03. Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="Editor\EditorButton.h">
+      <Filter>07. Editor\03. Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="Editor\EditorCheckBox.h">
+      <Filter>07. Editor\03. Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="Editor\EditorComboBox.h">
+      <Filter>07. Editor\03. Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="Editor\EditorGroup.h">
+      <Filter>07. Editor\03. Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="Editor\EditorImage.h">
+      <Filter>07. Editor\03. Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="Editor\EditorInput.h">
+      <Filter>07. Editor\03. Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="Editor\EditorLabel.h">
+      <Filter>07. Editor\03. Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="Editor\EditorWindow.h">
+      <Filter>07. Editor\02. Window</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\UIWindow.h">
+      <Filter>09. UI\01. Window</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\UIButton.h">
+      <Filter>09. UI\02. Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\UIImage.h">
+      <Filter>09. UI\02. Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\UINumber.h">
+      <Filter>09. UI\02. Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\UIProgressBar.h">
+      <Filter>09. UI\02. Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\UIText.h">
+      <Filter>09. UI\02. Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\UIWidget.h">
+      <Filter>09. UI\02. Widget</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine.cpp">
@@ -697,6 +805,87 @@
     </ClCompile>
     <ClCompile Include="Component\ColliderOBB2D.cpp">
       <Filter>05. Component\01. SceneComponent\04. Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui.cpp">
+      <Filter>07. Editor\01. IMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_demo.cpp">
+      <Filter>07. Editor\01. IMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_draw.cpp">
+      <Filter>07. Editor\01. IMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_impl_dx11.cpp">
+      <Filter>07. Editor\01. IMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_impl_win32.cpp">
+      <Filter>07. Editor\01. IMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_tables.cpp">
+      <Filter>07. Editor\01. IMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_widgets.cpp">
+      <Filter>07. Editor\01. IMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Editor\EditorGUIManager.cpp">
+      <Filter>07. Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="Editor\EditorListBox.cpp">
+      <Filter>07. Editor\03. Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="Editor\EditorSameLine.cpp">
+      <Filter>07. Editor\03. Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="Editor\EditorText.cpp">
+      <Filter>07. Editor\03. Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="Editor\EditorWidget.cpp">
+      <Filter>07. Editor\03. Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="Editor\EditorButton.cpp">
+      <Filter>07. Editor\03. Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="Editor\EditorCheckBox.cpp">
+      <Filter>07. Editor\03. Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="Editor\EditorComboBox.cpp">
+      <Filter>07. Editor\03. Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="Editor\EditorGroup.cpp">
+      <Filter>07. Editor\03. Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="Editor\EditorImage.cpp">
+      <Filter>07. Editor\03. Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="Editor\EditorInput.cpp">
+      <Filter>07. Editor\03. Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="Editor\EditorLabel.cpp">
+      <Filter>07. Editor\03. Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="Editor\EditorWindow.cpp">
+      <Filter>07. Editor\02. Window</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\UIWindow.cpp">
+      <Filter>09. UI\01. Window</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\UIButton.cpp">
+      <Filter>09. UI\02. Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\UIImage.cpp">
+      <Filter>09. UI\02. Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\UINumber.cpp">
+      <Filter>09. UI\02. Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\UIProgressBar.cpp">
+      <Filter>09. UI\02. Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\UIText.cpp">
+      <Filter>09. UI\02. Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\UIWidget.cpp">
+      <Filter>09. UI\02. Widget</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
