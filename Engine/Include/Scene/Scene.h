@@ -170,7 +170,7 @@ public:
 			return nullptr;
 		}
 
-		m_ObjList.push_back(std::make_shared<T>Obj);
+		m_ObjList.push_back(std::make_shared<T>(Obj));
 
 		if (m_Start)
 		{

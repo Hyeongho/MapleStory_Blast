@@ -286,9 +286,11 @@ void CUIText::Start()
 bool CUIText::Init()
 {
     if (!CUIWidget::Init())
+    {
         return false;
+    }
 
-    m_RenderTarget = CDevice::GetInst()->Get2DTarget();
+    m_RenderTarget = CDevice::GetInst()->GetTarget();
 
     SetFont("Default");
 
@@ -423,7 +425,7 @@ void CUIText::Load(FILE* File)
     SetColor(m_Color);
     SetShadowColor(m_ShadowColor);
 
-    m_RenderTarget = CDevice::GetInst()->Get2DTarget();
+    m_RenderTarget = CDevice::GetInst()->GetTarget();
 
     CreateLayout();
 }

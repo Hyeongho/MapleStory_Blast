@@ -88,9 +88,7 @@ public:
 
     void SetTextureFrameIndex(int TexIndex, int FrameIndex);
 
-    void SetImageType(int TexIndex, EImageType ImageType);
-
-    class CTexture* GetTexture(int Index = 0) const;
+    std::shared_ptr<class CTexture> GetTexture(int Index = 0) const;
 
 public:
     void SetRenderState(const std::string& Name);

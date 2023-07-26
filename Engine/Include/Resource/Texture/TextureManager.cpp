@@ -176,22 +176,21 @@ bool CTextureManager::LoadTextureArrayFullPath(const std::string& Name, const st
 
 bool CTextureManager::CreateTarget(const std::string& Name, unsigned int Width, unsigned int Height, DXGI_FORMAT PixelFormat, DXGI_FORMAT DepthFormat)
 {
-	CRenderTarget* Texture = (CRenderTarget*)FindTexture(Name);
+	CTexture* Texture = FindTexture(Name).get();
 
 	if (Texture)
 	{
 		return true;
 	}
 
-	Texture = new CRenderTarget;
+	std::shared_ptr<CRenderTarget> RenderTarget = std::make_shared<CRenderTarget>();
 
-	if (!Texture->CreateTarget(Name, Width, Height, PixelFormat, DepthFormat))
+	if (!RenderTarget->CreateTarget(Name, Width, Height, PixelFormat, DepthFormat))
 	{
-		SAFE_DELETE(Texture);
 		return false;
 	}
 
-	m_mapTexture.insert(std::make_pair(Name, Texture));
+	m_mapTexture.insert(std::make_pair(Name, RenderTarget));
 
 	return true;
 }

@@ -16,7 +16,7 @@ protected:
 protected:
 	class CScene* m_Owner;
 	std::vector<std::shared_ptr<CUIWindow>>	m_vecWindow;
-	CSharedPtr<class CUIWidget>	m_CollisionWidget;
+	std::shared_ptr<class CUIWidget> m_CollisionWidget;
 
 public:
 	void LoadComplete();

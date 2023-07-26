@@ -24,7 +24,7 @@ CUIWindow::CUIWindow(const CUIWindow& Window) : CRef(Window)
 
 		Widget->m_Owner = this;
 
-		m_vecWidget.push_back(Widget);
+		m_vecWidget.push_back(std::make_shared<CUIWidget>(Widget));
 	}
 }
 
@@ -34,7 +34,7 @@ CUIWindow::~CUIWindow()
 
 void CUIWindow::Start()
 {
-	size_t	Size = m_vecWidget.size();
+	size_t Size = m_vecWidget.size();
 
 	for (size_t i = 0; i < Size; i++)
 	{
@@ -184,7 +184,7 @@ void CUIWindow::Load(FILE* File)
 			Widget->Init();
 			Widget->Load(File);
 
-			m_vecWidget.push_back(Widget);
+			m_vecWidget.push_back(std::make_shared<CUIWidget>(Widget));
 		}
 
 		else
@@ -251,7 +251,7 @@ CUIWidget* CUIWindow::CollisionMouse(const Vector2& MousePos)
 		if ((*iter)->CollisionMouse(MousePos))
 		{
 			(*iter)->m_MouseHovered = true;
-			return *iter;
+			return (*iter).get();
 		}
 
 		else

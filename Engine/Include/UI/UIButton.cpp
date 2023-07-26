@@ -39,7 +39,7 @@ CUIButton::~CUIButton()
 
 void CUIButton::SetTexture(EButtonState State, CTexture* Texture)
 {
-    m_TextureInfo[(int)State].Texture = Texture;
+    m_TextureInfo[(int)State].Texture = std::make_shared<CTexture>(Texture);
 }
 
 bool CUIButton::SetTexture(EButtonState State, const std::string& Name, const TCHAR* FileName, const std::string& PathName)
@@ -162,25 +162,30 @@ void CUIButton::SetPlayScale(EButtonState State, float PlayScale)
 
 void CUIButton::SetSound(EButtonEventState State, CSound* Sound)
 {
-    m_Sound[(int)State] = Sound;
+    m_Sound[(int)State] = std::make_shared<CSound>(Sound);
 }
 
 void CUIButton::SetSound(EButtonEventState State, const std::string& Name)
 {
     if (m_Scene)
+    {
         m_Sound[(int)State] = m_Scene->GetResource()->FindSound(Name);
+    }
 
     else
+    {
         m_Sound[(int)State] = CResourceManager::GetInst()->FindSound(Name);
+    }
 }
 
-bool CUIButton::SetSound(EButtonEventState State, const std::string& GroupName, const std::string& Name,
-    bool Loop, const char* FileName, const std::string& PathName)
+bool CUIButton::SetSound(EButtonEventState State, const std::string& GroupName, const std::string& Name, bool Loop, const char* FileName, const std::string& PathName)
 {
     if (m_Scene)
     {
         if (!m_Scene->GetResource()->LoadSound(GroupName, Name, Loop, FileName, PathName))
+        {
             return false;
+        }
 
         m_Sound[(int)State] = m_Scene->GetResource()->FindSound(Name);
     }
@@ -188,7 +193,9 @@ bool CUIButton::SetSound(EButtonEventState State, const std::string& GroupName, 
     else
     {
         if (!CResourceManager::GetInst()->LoadSound(GroupName, Name, Loop, FileName, PathName))
+        {
             return false;
+        }
 
         m_Sound[(int)State] = CResourceManager::GetInst()->FindSound(Name);
     }
@@ -204,7 +211,9 @@ void CUIButton::Start()
 bool CUIButton::Init()
 {
     if (!CUIWidget::Init())
+    {
         return false;
+    }
 
     return true;
 }
@@ -218,19 +227,27 @@ void CUIButton::Update(float DeltaTime)
         // 마우스가 버튼 위에 올라왔는지 체크한다.
         Vector2 MousePos = CInput::GetInst()->GetMousePos();
 
-        bool    MouseHovered = true;
+        bool MouseHovered = true;
 
         if (m_RenderPos.x > MousePos.x)
+        {
             MouseHovered = false;
+        }
 
         else if (m_RenderPos.y > MousePos.y)
+        {
             MouseHovered = false;
+        }
 
         else if (m_RenderPos.x + m_Size.x < MousePos.x)
+        {
             MouseHovered = false;
+        }
 
         else if (m_RenderPos.y + m_Size.y < MousePos.y)
+        {
             MouseHovered = false;
+        }
 
         if (MouseHovered)
         {
@@ -245,14 +262,17 @@ void CUIButton::Update(float DeltaTime)
                 m_State = EButtonState::Click;
             }
 
-            else if (m_State == EButtonState::Click &&
-                CInput::GetInst()->GetMouseLUp())
+            else if (m_State == EButtonState::Click && CInput::GetInst()->GetMouseLUp())
             {
                 if (m_Sound[(int)EButtonEventState::Click])
+                {
                     m_Sound[(int)EButtonEventState::Click]->Play();
+                }
 
                 if (m_ClickCallback[(int)EButtonEventState::Click])
+                {
                     m_ClickCallback[(int)EButtonEventState::Click]();
+                }
 
                 if (m_State != EButtonState::Hovered)
                 {
@@ -264,18 +284,24 @@ void CUIButton::Update(float DeltaTime)
             }
 
             else if (m_State == EButtonState::Click && CInput::GetInst()->GetMouseLPush())
+            {
                 m_State = EButtonState::Click;
+            }
 
             else
             {
                 if (m_MouseHovered != MouseHovered)
                 {
                     if (m_Sound[(int)EButtonEventState::Hovered])
+                    {
                         m_Sound[(int)EButtonEventState::Hovered]->Play();
+                    }
                 }
 
                 if (m_ClickCallback[(int)EButtonEventState::Hovered])
+                {
                     m_ClickCallback[(int)EButtonEventState::Hovered]();
+                }
 
                 if (m_State != EButtonState::Hovered)
                 {
@@ -311,10 +337,12 @@ void CUIButton::Update(float DeltaTime)
         {
             m_TextureInfo[(int)m_State].Time -= m_TextureInfo[(int)m_State].FrameTime;
 
-            ++m_TextureInfo[(int)m_State].Frame;
+            m_TextureInfo[(int)m_State].Frame++;
 
             if (m_TextureInfo[(int)m_State].Frame == m_TextureInfo[(int)m_State].vecFrameData.size())
+            {
                 m_TextureInfo[(int)m_State].Frame = 0;
+            }
         }
     }
 
@@ -340,16 +368,16 @@ void CUIButton::Render()
             int TextureFrame = 0;
 
             if (m_TextureInfo[(int)m_State].Texture->GetImageType() == EImageType::Frame)
+            {
                 TextureFrame = m_TextureInfo[(int)m_State].Frame;
+            }
 
             m_TextureInfo[(int)m_State].Texture->SetShader(0, (int)EShaderBufferType::Pixel, TextureFrame);
 
             m_AnimCBuffer->SetAnim2DEnable(true);
             m_AnimCBuffer->SetFrame(m_TextureInfo[(int)m_State].Frame);
-            m_AnimCBuffer->SetImageFrame(m_TextureInfo[(int)m_State].vecFrameData[m_TextureInfo[(int)m_State].Frame].Start,
-                m_TextureInfo[(int)m_State].vecFrameData[m_TextureInfo[(int)m_State].Frame].End);
-            m_AnimCBuffer->SetImageSize((float)m_TextureInfo[(int)m_State].Texture->GetWidth(),
-                (float)m_TextureInfo[(int)m_State].Texture->GetHeight());
+            m_AnimCBuffer->SetImageFrame(m_TextureInfo[(int)m_State].vecFrameData[m_TextureInfo[(int)m_State].Frame].Start, m_TextureInfo[(int)m_State].vecFrameData[m_TextureInfo[(int)m_State].Frame].End);
+            m_AnimCBuffer->SetImageSize((float)m_TextureInfo[(int)m_State].Texture->GetWidth(), (float)m_TextureInfo[(int)m_State].Texture->GetHeight());
             m_AnimCBuffer->SetImageType((EAnimation2DType)m_TextureInfo[(int)m_State].Texture->GetImageType());
         }
 
@@ -374,7 +402,7 @@ void CUIButton::Save(FILE* File)
 {
     CUIWidget::Save(File);
 
-    for (int i = 0; i < (int)EButtonState::Max; ++i)
+    for (int i = 0; i < (int)EButtonState::Max; i++)
     {
         fwrite(&m_TextureInfo[i].Tint, sizeof(Vector4), 1, File);
 
@@ -386,9 +414,11 @@ void CUIButton::Save(FILE* File)
         fwrite(&FrameCount, sizeof(int), 1, File);
 
         if (FrameCount > 0)
+        {
             fwrite(&m_TextureInfo[i].vecFrameData[0], sizeof(Animation2DFrameData), FrameCount, File);
+        }
 
-        bool    TextureEnable = m_TextureInfo[i].Texture ? true : false;
+        bool TextureEnable = m_TextureInfo[i].Texture ? true : false;
 
         fwrite(&TextureEnable, sizeof(bool), 1, File);
 
@@ -404,9 +434,9 @@ void CUIButton::Save(FILE* File)
         }
     }
 
-    for (int i = 0; i < (int)EButtonState::Max; ++i)
+    for (int i = 0; i < (int)EButtonState::Max; i++)
     {
-        bool    SoundEnable = m_Sound[i] ? true : false;
+        bool SoundEnable = m_Sound[i] ? true : false;
 
         fwrite(&SoundEnable, sizeof(bool), 1, File);
 
@@ -427,7 +457,7 @@ void CUIButton::Load(FILE* File)
 {
     CUIWidget::Load(File);
 
-    for (int i = 0; i < (int)EButtonState::Max; ++i)
+    for (int i = 0; i < (int)EButtonState::Max; i++)
     {
         fread(&m_TextureInfo[i].Tint, sizeof(Vector4), 1, File);
 
@@ -450,14 +480,14 @@ void CUIButton::Load(FILE* File)
 
         if (TextureEnable)
         {
-            char    TexName[256] = {};
+            char TexName[256] = {};
 
             int Length = 0;
 
             fread(&Length, sizeof(int), 1, File);
             fread(TexName, 1, Length, File);
 
-            EImageType  ImageType;
+            EImageType ImageType;
 
             fread(&ImageType, sizeof(EImageType), 1, File);
 
@@ -467,8 +497,8 @@ void CUIButton::Load(FILE* File)
 
             if (TextureSRVCount == 1)
             {
-                TCHAR	FileName[MAX_PATH] = {};
-                char	PathName[MAX_PATH] = {};
+                TCHAR FileName[MAX_PATH] = {};
+                char PathName[MAX_PATH] = {};
 
                 fread(FileName, sizeof(TCHAR), MAX_PATH, File);
                 fread(PathName, sizeof(char), MAX_PATH, File);
@@ -492,13 +522,13 @@ void CUIButton::Load(FILE* File)
             {
                 if (ImageType == EImageType::Frame)
                 {
-                    std::vector<const TCHAR*>	vecFileName;
+                    std::vector<const TCHAR*> vecFileName;
                     std::string	ResultPathName;
 
-                    for (int i = 0; i < TextureSRVCount; ++i)
+                    for (int i = 0; i < TextureSRVCount; i++)
                     {
                         TCHAR* FileName = new TCHAR[MAX_PATH];
-                        char	PathName[MAX_PATH] = {};
+                        char PathName[MAX_PATH] = {};
 
                         fread(FileName, sizeof(TCHAR), MAX_PATH, File);
                         fread(PathName, sizeof(char), MAX_PATH, File);
@@ -522,7 +552,7 @@ void CUIButton::Load(FILE* File)
                         m_TextureInfo[i].Texture = CResourceManager::GetInst()->FindTexture(TexName);
                     }
 
-                    for (int i = 0; i < TextureSRVCount; ++i)
+                    for (int i = 0; i < TextureSRVCount; i++)
                     {
                         SAFE_DELETE_ARRAY(vecFileName[i]);
                     }
@@ -530,10 +560,10 @@ void CUIButton::Load(FILE* File)
 
                 else
                 {
-                    std::vector<const TCHAR*>	vecFileName;
+                    std::vector<const TCHAR*> vecFileName;
                     std::string	ResultPathName;
 
-                    for (int i = 0; i < TextureSRVCount; ++i)
+                    for (int i = 0; i < TextureSRVCount; i++)
                     {
                         TCHAR* FileName = new TCHAR[MAX_PATH];
                         char	PathName[MAX_PATH] = {};
@@ -560,7 +590,7 @@ void CUIButton::Load(FILE* File)
                         m_TextureInfo[i].Texture = CResourceManager::GetInst()->FindTexture(TexName);
                     }
 
-                    for (int i = 0; i < TextureSRVCount; ++i)
+                    for (int i = 0; i < TextureSRVCount; i++)
                     {
                         SAFE_DELETE_ARRAY(vecFileName[i]);
                     }
@@ -569,32 +599,32 @@ void CUIButton::Load(FILE* File)
         }
     }
 
-    for (int i = 0; i < (int)EButtonState::Max; ++i)
+    for (int i = 0; i < (int)EButtonState::Max; i++)
     {
-        bool    SoundEnable = false;
+        bool SoundEnable = false;
 
         fread(&SoundEnable, sizeof(bool), 1, File);
 
         if (SoundEnable)
         {
-            char    SoundName[256] = {};
+            char SoundName[256] = {};
 
             int Length = 0;
 
             fread(&Length, sizeof(int), 1, File);
             fread(SoundName, 1, Length, File);
 
-            bool    Loop = false;
+            bool Loop = false;
             fread(&Loop, sizeof(bool), 1, File);
 
             Length = 0;
-            char    GroupName[256] = {};
+            char GroupName[256] = {};
 
             fread(&Length, sizeof(int), 1, File);
             fread(GroupName, 1, Length, File);
 
-            char    FileName[MAX_PATH] = {};
-            char    PathName[MAX_PATH] = {};
+            char FileName[MAX_PATH] = {};
+            char PathName[MAX_PATH] = {};
             fread(FileName, sizeof(char), MAX_PATH, File);
             fread(PathName, sizeof(char), MAX_PATH, File);
 

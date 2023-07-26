@@ -43,7 +43,7 @@ public:
     bool SetTextureFullPath(const std::string& Name, const std::vector<const TCHAR*>& vecFullPath);
     void SetTextureFrameIndex(int Index);
 
-    class CTexture* GetTexture(int Index = 0) const;
+    std::shared_ptr<class CTexture> GetTexture(int Index = 0) const;
 
     void ClearAnimation();
 

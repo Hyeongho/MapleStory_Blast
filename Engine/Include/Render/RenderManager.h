@@ -54,7 +54,7 @@ public:
 	template <typename T>
 	T* FindRenderState(const std::string& Name)
 	{
-		return m_RenderStateManager->FindRenderState<T>(Name);
+		return m_RenderStateManager->FindRenderState<T>(Name).get();
 	}
 
 private:

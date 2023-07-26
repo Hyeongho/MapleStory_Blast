@@ -40,7 +40,7 @@ public:
 
 public:
 	template <typename T>
-	T* FindRenderState(const std::string& Name)
+	std::shared_ptr<T> FindRenderState(const std::string& Name)
 	{
 		auto iter = m_mapState.find(Name);
 
@@ -49,7 +49,8 @@ public:
 			return nullptr;
 		}
 
-		return (T*)iter->second.get();
+		//return (T*)iter->second;
+		return iter->second;
 	}
 };
 

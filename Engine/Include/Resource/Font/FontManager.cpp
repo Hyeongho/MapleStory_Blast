@@ -58,22 +58,21 @@ bool CFontManager::CreateFontCollection(const std::string& Name, const TCHAR* Fi
 
 bool CFontManager::LoadFont(const std::string& Name, const TCHAR* FontName, int Weight, float FontSize, const TCHAR* LocalName, int Stretch)
 {
-    CFont* Font = FindFont(Name);
+    std::shared_ptr<CFont> Font = FindFont(Name);
 
     if (Font)
     {
         return true;
     }
 
-    Font = new CFont;
+    Font = std::make_shared<CFont>();
 
     if (!Font->LoadFont(m_WriteFactory, Name, FontName, Weight, FontSize, LocalName, Stretch))
     {
-        SAFE_DELETE(Font);
         return false;
     }
 
-    m_mapFont.insert(std::make_pair(Name, std::make_shared<CFont>(Font)));
+    m_mapFont.insert(std::make_pair(Name, Font));
 
     return true;
 }

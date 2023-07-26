@@ -21,7 +21,7 @@ CUIImage::~CUIImage()
 
 void CUIImage::SetTexture(CTexture* Texture)
 {
-    m_TextureInfo.Texture = Texture;
+    m_TextureInfo.Texture = std::make_shared<CTexture>(Texture);
 }
 
 bool CUIImage::SetTexture(const std::string& Name, const TCHAR* FileName, const std::string& PathName)

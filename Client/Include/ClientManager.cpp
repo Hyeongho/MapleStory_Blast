@@ -15,8 +15,7 @@ CClientManager::~CClientManager()
 
 bool CClientManager::Init(HINSTANCE hInst)
 {
-    if (!CEngine::GetInst()->Init(hInst, TEXT("Client2D"), TEXT("Client2D"), IDI_ICON1,
-        IDI_ICON1, 1280, 720, 1280, 720, true))
+    if (!CEngine::GetInst()->Init(hInst, TEXT("Client2D"), TEXT("Client2D"), IDI_ICON1, IDI_ICON1, 1280, 720, 1280, 720, true))
     {
         return false;
     }
@@ -34,7 +33,7 @@ bool CClientManager::Init(HINSTANCE hInst)
 
     // SceneInfo »ý¼º
     //CSceneManager::GetInst()->CreateSceneInfo<CMainSceneInfo>();
-    CSceneManager::GetInst()->GetScene()->Load("Start.scn", SCENE_PATH);
+    //CSceneManager::GetInst()->GetScene()->Load("Start.scn", SCENE_PATH);
 
     return true;
 }

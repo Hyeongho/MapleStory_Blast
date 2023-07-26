@@ -109,7 +109,7 @@ bool CShaderManager::CreateConstantBuffer(const std::string& Name, int Size, int
 	return true;
 }
 
-CConstantBuffer* CShaderManager::FindConstantBuffer(const std::string& Name)
+std::shared_ptr<CConstantBuffer> CShaderManager::FindConstantBuffer(const std::string& Name)
 {
 	auto iter = m_mapCBuffer.find(Name);
 
@@ -118,5 +118,5 @@ CConstantBuffer* CShaderManager::FindConstantBuffer(const std::string& Name)
 		return nullptr;
 	}
 
-	return iter->second.get();
+	return iter->second;
 }

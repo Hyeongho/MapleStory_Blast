@@ -4,7 +4,7 @@
 
 struct Section
 {
-	std::vector<class CCollisionSection2D*> vecSection;
+	std::vector<class CCollisionSection*> vecSection;
 	int CountX;
 	int CountY;
 	int Count;

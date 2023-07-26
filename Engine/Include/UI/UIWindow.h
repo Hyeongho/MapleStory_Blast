@@ -131,7 +131,7 @@ public:
 		{
 			if (m_vecWidget[i]->GetName() == Name)
 			{
-				return (T*)m_vecWidget[i].Get();
+				return (T*)m_vecWidget[i].get();
 			}
 		}
 

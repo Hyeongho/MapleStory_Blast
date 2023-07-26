@@ -1,9 +1,7 @@
 #include "SceneCollision.h"
-#include "CollisionSection2D.h"
-#include "CollisionSection3D.h"
+#include "CollisionSection.h"
 #include "../Device.h"
 #include "../Component/Collider2D.h"
-#include "../Component/Collider3D.h"
 #include "../PathManager.h"
 #include "../Input.h"
 #include "Scene.h"
@@ -192,7 +190,7 @@ void CSceneCollision::Save(FILE* File)
 	Vector2	WorldSize;
 	*/
 	/*
-	Section2D	m_Section2D;
+	Section2D	m_Section;
 	Section3D	m_Section3D;
 	*/
 }
@@ -229,18 +227,18 @@ void CSceneCollision::CollisionMouse(float DeltaTime)
 
 		int	IndexX = 0, IndexY = 0;
 
-		IndexX = (int)(MouseIndex.x / m_Section2D.SectionSize.x);
-		IndexY = (int)(MouseIndex.y / m_Section2D.SectionSize.y);
+		IndexX = (int)(MouseIndex.x / m_Section.SectionSize.x);
+		IndexY = (int)(MouseIndex.y / m_Section.SectionSize.y);
 
 		IndexX = IndexX < 0 ? -1 : IndexX;
 		IndexY = IndexY < 0 ? -1 : IndexY;
 
-		IndexX = IndexX >= m_Section2D.CountX ? -1 : IndexX;
-		IndexY = IndexY >= m_Section2D.CountY ? -1 : IndexY;
+		IndexX = IndexX >= m_Section.CountX ? -1 : IndexX;
+		IndexY = IndexY >= m_Section.CountY ? -1 : IndexY;
 
 		if (IndexX != -1 && IndexY != -1)
 		{
-			CCollider* ColliderMouse = m_Section2D.vecSection[IndexY * m_Section2D.CountX + IndexX]->CollisionMouse(MouseWorldPos, DeltaTime);
+			CCollider* ColliderMouse = m_Section.vecSection[IndexY * m_Section.CountX + IndexX]->CollisionMouse(MouseWorldPos, DeltaTime);
 
 			if (ColliderMouse)
 			{
@@ -284,30 +282,30 @@ void CSceneCollision::CheckSection(CCollider* Collider)
 
 	if (Collider->GetColliderType() == ECollider_Type::Collider2D)
 	{
-		Min -= Vector3(m_Section2D.WorldStart.x, m_Section2D.WorldStart.y, 0.f);
-		Max -= Vector3(m_Section2D.WorldStart.x, m_Section2D.WorldStart.y, 0.f);
+		Min -= Vector3(m_Section.WorldStart.x, m_Section.WorldStart.y, 0.f);
+		Max -= Vector3(m_Section.WorldStart.x, m_Section.WorldStart.y, 0.f);
 
 		int	IndexMinX, IndexMinY, IndexMaxX, IndexMaxY;
 
-		IndexMinX = (int)(Min.x / m_Section2D.SectionSize.x);
-		IndexMinY = (int)(Min.y / m_Section2D.SectionSize.y);
+		IndexMinX = (int)(Min.x / m_Section.SectionSize.x);
+		IndexMinY = (int)(Min.y / m_Section.SectionSize.y);
 
-		IndexMaxX = (int)(Max.x / m_Section2D.SectionSize.x);
-		IndexMaxY = (int)(Max.y / m_Section2D.SectionSize.y);
+		IndexMaxX = (int)(Max.x / m_Section.SectionSize.x);
+		IndexMaxY = (int)(Max.y / m_Section.SectionSize.y);
 
 		IndexMinX = IndexMinX < 0 ? 0 : IndexMinX;
 		IndexMinY = IndexMinY < 0 ? 0 : IndexMinY;
 
-		IndexMaxX = IndexMaxX >= m_Section2D.CountX ? m_Section2D.CountX - 1 : IndexMaxX;
-		IndexMaxY = IndexMaxY >= m_Section2D.CountY ? m_Section2D.CountY - 1 : IndexMaxY;
+		IndexMaxX = IndexMaxX >= m_Section.CountX ? m_Section.CountX - 1 : IndexMaxX;
+		IndexMaxY = IndexMaxY >= m_Section.CountY ? m_Section.CountY - 1 : IndexMaxY;
 
 		for (int i = IndexMinY; i <= IndexMaxY; ++i)
 		{
 			for (int j = IndexMinX; j <= IndexMaxX; ++j)
 			{
-				int	Index = i * m_Section2D.CountX + j;
+				int	Index = i * m_Section.CountX + j;
 
-				m_Section2D.vecSection[Index]->AddCollider((CCollider*)Collider);
+				m_Section.vecSection[Index]->AddCollider((CCollider*)Collider);
 			}
 		}
 	}

@@ -95,7 +95,7 @@ void CSpriteComponent::SetTextureFrameIndex(int Index)
 	m_vecMaterial[0]->SetTextureFrameIndex(0, Index);
 }
 
-CTexture* CSpriteComponent::GetTexture(int Index) const
+std::shared_ptr<CTexture> CSpriteComponent::GetTexture(int Index) const
 {
 	if (m_vecMaterial.empty())
 	{

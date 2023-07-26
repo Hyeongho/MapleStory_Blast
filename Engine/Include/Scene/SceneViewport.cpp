@@ -156,7 +156,7 @@ void CSceneViewport::Load(FILE* File)
 
 		Window->Load(File);
 
-		m_vecWindow.push_back(Window);
+		m_vecWindow.push_back(std::make_shared<CUIWindow>(Window));
 	}
 }
 
@@ -189,14 +189,14 @@ bool CSceneViewport::CollisionMouse()
 
 		CUIWidget* Widget = (*iter).get()->CollisionMouse(MousePos);
 
-		if (m_CollisionWidget && m_CollisionWidget != Widget)
+		if (m_CollisionWidget && m_CollisionWidget.get() != Widget)
 		{
 			m_CollisionWidget->m_MouseHovered = false;
 		}
 
 		if (Widget)
 		{
-			m_CollisionWidget = Widget;
+			m_CollisionWidget = std::make_shared<CUIWidget>(Widget);
 		}
 
 		if (Widget)

@@ -394,135 +394,225 @@ CAnimationSequence* CSceneResource::FindAnimationSequence2D(const std::string& N
 
 bool CSceneResource::CreateSoundChannel(const std::string& Name)
 {
-	return false;
+	return CResourceManager::GetInst()->CreateSoundChannel(Name);
 }
 
 bool CSceneResource::LoadSound(const std::string& GroupName, const std::string& Name, bool Loop, const char* FileName, const std::string& PathName)
 {
-	return false;
+	if (FindSound(Name))
+	{
+		return false;
+	}
+
+	if (!CResourceManager::GetInst()->LoadSound(GroupName, Name, Loop, FileName, PathName))
+	{
+		return false;
+	}
+
+	std::shared_ptr<CSound> Sound = CResourceManager::GetInst()->FindSound(Name);
+
+	m_mapSound.insert(std::make_pair(Name, Sound));
+
+	return true;
 }
 
 bool CSceneResource::SetVolume(int Volume)
 {
-	return false;
+	return CResourceManager::GetInst()->SetVolume(Volume);
 }
 
 bool CSceneResource::SetVolume(const std::string& GroupName, int Volume)
 {
-	return false;
+	return CResourceManager::GetInst()->SetVolume(GroupName, Volume);
 }
 
 bool CSceneResource::SoundPlay(const std::string& Name)
 {
-	return false;
+	return CResourceManager::GetInst()->SoundPlay(Name);
 }
 
 bool CSceneResource::SoundStop(const std::string& Name)
 {
-	return false;
+	return CResourceManager::GetInst()->SoundStop(Name);
 }
 
 bool CSceneResource::SoundPause(const std::string& Name)
 {
-	return false;
+	return CResourceManager::GetInst()->SoundPause(Name);
 }
 
 bool CSceneResource::SoundResume(const std::string& Name)
 {
-	return false;
+	return CResourceManager::GetInst()->SoundResume(Name);
 }
 
 FMOD::ChannelGroup* CSceneResource::FindChannelGroup(const std::string& Name)
 {
-	return nullptr;
+	return CResourceManager::GetInst()->FindChannelGroup(Name);
 }
 
-CSound* CSceneResource::FindSound(const std::string& Name)
+std::shared_ptr<CSound> CSceneResource::FindSound(const std::string& Name)
 {
-	return nullptr;
+	auto iter = m_mapSound.find(Name);
+
+	if (iter == m_mapSound.end())
+	{
+		std::shared_ptr<CSound> Sound = CResourceManager::GetInst()->FindSound(Name);
+
+		if (!Sound)
+		{
+			return nullptr;
+		}
+
+		m_mapSound.insert(std::make_pair(Name, Sound));
+
+		return Sound;
+	}
+
+	return iter->second;
 }
 
 bool CSceneResource::CreateFontCollection(const std::string& Name, const TCHAR* FileName, const std::string& PathName)
 {
-	return false;
+	if (FindFontCollection(Name))
+	{
+		return false;
+	}
+
+	if (!CResourceManager::GetInst()->CreateFontCollection(Name, FileName, PathName))
+	{
+		return false;
+	}
+
+	CFontCollection* Font = CResourceManager::GetInst()->FindFontCollection(Name);
+
+	m_mapFontCollection.insert(std::make_pair(Name, std::make_shared<CFontCollection>(Font)));
+
+	return true;
 }
 
 bool CSceneResource::LoadFont(const std::string& Name, const TCHAR* FontName, int Weight, float FontSize, const TCHAR* LocalName, int Stretch)
 {
-	return false;
+	if (FindFont(Name))
+	{
+		return false;
+	}
+
+	if (!CResourceManager::GetInst()->LoadFont(Name, FontName, Weight, FontSize, LocalName, Stretch))
+	{
+		return false;
+	}
+
+	std::shared_ptr<CFont> Font = CResourceManager::GetInst()->FindFont(Name);
+
+	m_mapFont.insert(std::make_pair(Name, Font));
+
+	return true;
 }
 
 const TCHAR* CSceneResource::GetFontFaceName(const std::string& CollectionName)
 {
-	return nullptr;
+	return CResourceManager::GetInst()->GetFontFaceName(CollectionName);
 }
 
 const char* CSceneResource::GetFontFaceNameMultibyte(const std::string& CollectionName)
 {
-	return nullptr;
+	return CResourceManager::GetInst()->GetFontFaceNameMultibyte(CollectionName);
 }
 
 bool CSceneResource::CreateFontColor(unsigned char r, unsigned char g, unsigned char b, unsigned char a)
 {
-	return false;
+	return CResourceManager::GetInst()->CreateFontColor(r, g, b, a);
 }
 
 bool CSceneResource::CreateFontColor(float r, float g, float b, float a)
 {
-	return false;
+	return CResourceManager::GetInst()->CreateFontColor(r, g, b, a);
 }
 
 bool CSceneResource::CreateFontColor(const Vector4& Color)
 {
-	return false;
+	return CResourceManager::GetInst()->CreateFontColor(Color);
 }
 
 bool CSceneResource::CreateFontColor(unsigned int Color)
 {
-	return false;
+	return CResourceManager::GetInst()->CreateFontColor(Color);
 }
 
 ID2D1SolidColorBrush* CSceneResource::FindFontColor(unsigned char r, unsigned char g, unsigned char b, unsigned char a)
 {
-	return nullptr;
+	return CResourceManager::GetInst()->FindFontColor(r, g, b, a);
 }
 
 ID2D1SolidColorBrush* CSceneResource::FindFontColor(float r, float g, float b, float a)
 {
-	return nullptr;
+	return CResourceManager::GetInst()->FindFontColor(r, g, b, a);
 }
 
 ID2D1SolidColorBrush* CSceneResource::FindFontColor(const Vector4& Color)
 {
-	return nullptr;
+	return CResourceManager::GetInst()->FindFontColor(Color);
 }
 
 ID2D1SolidColorBrush* CSceneResource::FindFontColor(unsigned int Color)
 {
-	return nullptr;
+	return CResourceManager::GetInst()->FindFontColor(Color);
 }
 
 unsigned int CSceneResource::CreateFontColorKey(unsigned char r, unsigned char g, unsigned char b, unsigned char a)
 {
-	return 0;
+	return CResourceManager::GetInst()->CreateFontColorKey(r, g, b, a);
 }
 
 unsigned int CSceneResource::CreateFontColorKey(float r, float g, float b, float a)
 {
-	return 0;
+	return CResourceManager::GetInst()->CreateFontColorKey(r, g, b, a);
 }
 
 unsigned int CSceneResource::CreateFontColorKey(const Vector4& Color)
 {
-	return 0;
+	return CResourceManager::GetInst()->CreateFontColorKey(Color);
 }
 
 std::shared_ptr<CFont> CSceneResource::FindFont(const std::string& Name)
 {
-	return std::shared_ptr<CFont>();
+	auto iter = m_mapFont.find(Name);
+
+	if (iter == m_mapFont.end())
+	{
+		std::shared_ptr<CFont> Font = CResourceManager::GetInst()->FindFont(Name);
+
+		if (!Font)
+		{
+			return nullptr;
+		}
+
+		m_mapFont.insert(std::make_pair(Name, Font));
+
+		return Font;
+	}
+
+	return iter->second;
 }
 
 CFontCollection* CSceneResource::FindFontCollection(const std::string& Name)
 {
-	return nullptr;
+	auto iter = m_mapFontCollection.find(Name);
+
+	if (iter == m_mapFontCollection.end())
+	{
+		CFontCollection* Font = CResourceManager::GetInst()->FindFontCollection(Name);
+
+		if (!Font)
+		{
+			return nullptr;
+		}
+
+		m_mapFontCollection.insert(std::make_pair(Name, std::make_shared<CFontCollection>(Font)));
+
+		return Font;
+	}
+
+	return iter->second.get();
 }

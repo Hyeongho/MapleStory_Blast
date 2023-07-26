@@ -106,13 +106,12 @@ void CResourceManager::ReleaseShader(const std::string& Name)
 	m_ShaderManager->ReleaseShader(Name);
 }
 
-bool CResourceManager::CreateConstantBuffer(const std::string& Name, int Size,
-	int Register, int ShaderBufferType)
+bool CResourceManager::CreateConstantBuffer(const std::string& Name, int Size, int Register, int ShaderBufferType)
 {
 	return m_ShaderManager->CreateConstantBuffer(Name, Size, Register, ShaderBufferType);
 }
 
-CConstantBuffer* CResourceManager::FindConstantBuffer(const std::string& Name)
+std::shared_ptr<CConstantBuffer> CResourceManager::FindConstantBuffer(const std::string& Name)
 {
 	return m_ShaderManager->FindConstantBuffer(Name);
 }
@@ -127,14 +126,12 @@ bool CResourceManager::LoadTextureFullPath(const std::string& Name, const TCHAR*
 	return m_TextureManager->LoadTextureFullPath(Name, FullPath);
 }
 
-bool CResourceManager::LoadTexture(const std::string& Name,
-	const std::vector<const TCHAR*>& vecFileName, const std::string& PathName)
+bool CResourceManager::LoadTexture(const std::string& Name, const std::vector<const TCHAR*>& vecFileName, const std::string& PathName)
 {
 	return m_TextureManager->LoadTexture(Name, vecFileName, PathName);
 }
 
-bool CResourceManager::LoadTextureFullPath(const std::string& Name,
-	const std::vector<const TCHAR*>& vecFullPath)
+bool CResourceManager::LoadTextureFullPath(const std::string& Name, const std::vector<const TCHAR*>& vecFullPath)
 {
 	return m_TextureManager->LoadTextureFullPath(Name, vecFullPath);
 }
@@ -316,7 +313,7 @@ FMOD::ChannelGroup* CResourceManager::FindChannelGroup(const std::string& Name)
 	return m_SoundManager->FindChannelGroup(Name);
 }
 
-CSound* CResourceManager::FindSound(const std::string& Name)
+std::shared_ptr<CSound> CResourceManager::FindSound(const std::string& Name)
 {
 	return m_SoundManager->FindSound(Name);
 }
@@ -326,8 +323,7 @@ void CResourceManager::ReleaseSound(const std::string& Name)
 	m_SoundManager->ReleaseSound(Name);
 }
 
-bool CResourceManager::CreateFontCollection(const std::string& Name,
-	const TCHAR* FileName, const std::string& PathName)
+bool CResourceManager::CreateFontCollection(const std::string& Name, const TCHAR* FileName, const std::string& PathName)
 {
 	return m_FontManager->CreateFontCollection(Name, FileName, PathName);
 }
@@ -335,8 +331,7 @@ bool CResourceManager::CreateFontCollection(const std::string& Name,
 bool CResourceManager::LoadFont(const std::string& Name, const TCHAR* FontName,
 	int Weight, float FontSize, const TCHAR* LocalName, int Stretch)
 {
-	return m_FontManager->LoadFont(Name, FontName, Weight,
-		FontSize, LocalName, Stretch);
+	return m_FontManager->LoadFont(Name, FontName, Weight, FontSize, LocalName, Stretch);
 }
 
 const TCHAR* CResourceManager::GetFontFaceName(const std::string& CollectionName)

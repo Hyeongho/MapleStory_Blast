@@ -2,7 +2,7 @@
 #include "SceneInfo.h"
 #include "../GameObject/GameObject.h"
 #include "../Component/SceneComponent.h"
-#include "../Animation/Animation2D.h"
+#include "../Animation/Animation.h"
 #include "../UI/UIWindow.h"
 #include "../UI/UIWidget.h"
 
@@ -49,8 +49,8 @@ CSceneManager::~CSceneManager()
 	}
 
 	{
-		auto iter = CAnimation2D::m_mapAnimationCDO.begin();
-		auto iterEnd = CAnimation2D::m_mapAnimationCDO.end();
+		auto iter = CAnimation::m_mapAnimationCDO.begin();
+		auto iterEnd = CAnimation::m_mapAnimationCDO.end();
 
 		for (; iter != iterEnd; ++iter)
 		{

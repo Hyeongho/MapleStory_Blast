@@ -22,7 +22,7 @@ CUINumber::~CUINumber()
 
 void CUINumber::SetTexture(CTexture* Texture)
 {
-    m_TextureInfo.Texture = Texture;
+    m_TextureInfo.Texture = std::make_shared<CTexture>(Texture);
 }
 
 bool CUINumber::SetTexture(const std::string& Name, const TCHAR* FileName, const std::string& PathName)
@@ -30,7 +30,9 @@ bool CUINumber::SetTexture(const std::string& Name, const TCHAR* FileName, const
     if (m_Scene)
     {
         if (!m_Scene->GetResource()->LoadTexture(Name, FileName, PathName))
+        {
             return false;
+        }
 
         m_TextureInfo.Texture = m_Scene->GetResource()->FindTexture(Name);
     }
@@ -38,7 +40,9 @@ bool CUINumber::SetTexture(const std::string& Name, const TCHAR* FileName, const
     else
     {
         if (!CResourceManager::GetInst()->LoadTexture(Name, FileName, PathName))
+        {
             return false;
+        }
 
         m_TextureInfo.Texture = CResourceManager::GetInst()->FindTexture(Name);
     }
@@ -51,7 +55,9 @@ bool CUINumber::SetTextureFullPath(const std::string& Name, const TCHAR* FullPat
     if (m_Scene)
     {
         if (!m_Scene->GetResource()->LoadTextureFullPath(Name, FullPath))
+        {
             return false;
+        }
 
         m_TextureInfo.Texture = m_Scene->GetResource()->FindTexture(Name);
     }
@@ -59,7 +65,9 @@ bool CUINumber::SetTextureFullPath(const std::string& Name, const TCHAR* FullPat
     else
     {
         if (!CResourceManager::GetInst()->LoadTextureFullPath(Name, FullPath))
+        {
             return false;
+        }
 
         m_TextureInfo.Texture = CResourceManager::GetInst()->FindTexture(Name);
     }
@@ -67,13 +75,14 @@ bool CUINumber::SetTextureFullPath(const std::string& Name, const TCHAR* FullPat
     return true;
 }
 
-bool CUINumber::SetTexture(const std::string& Name, const std::vector<const TCHAR*>& vecFileName,
-    const std::string& PathName)
+bool CUINumber::SetTexture(const std::string& Name, const std::vector<const TCHAR*>& vecFileName, const std::string& PathName)
 {
     if (m_Scene)
     {
         if (!m_Scene->GetResource()->LoadTexture(Name, vecFileName, PathName))
+        {
             return false;
+        }
 
         m_TextureInfo.Texture = m_Scene->GetResource()->FindTexture(Name);
     }
@@ -81,7 +90,9 @@ bool CUINumber::SetTexture(const std::string& Name, const std::vector<const TCHA
     else
     {
         if (!CResourceManager::GetInst()->LoadTexture(Name, vecFileName, PathName))
+        {
             return false;
+        }
 
         m_TextureInfo.Texture = CResourceManager::GetInst()->FindTexture(Name);
     }
@@ -94,7 +105,9 @@ bool CUINumber::SetTextureFullPath(const std::string& Name, const std::vector<co
     if (m_Scene)
     {
         if (!m_Scene->GetResource()->LoadTextureFullPath(Name, vecFullPath))
+        {
             return false;
+        }
 
         m_TextureInfo.Texture = m_Scene->GetResource()->FindTexture(Name);
     }
@@ -102,7 +115,9 @@ bool CUINumber::SetTextureFullPath(const std::string& Name, const std::vector<co
     else
     {
         if (!CResourceManager::GetInst()->LoadTextureFullPath(Name, vecFullPath))
+        {
             return false;
+        }
 
         m_TextureInfo.Texture = CResourceManager::GetInst()->FindTexture(Name);
     }
@@ -122,7 +137,7 @@ void CUINumber::SetImageTint(unsigned char r, unsigned char g, unsigned char b, 
 
 void CUINumber::AddFrameData(const Vector2& Start, const Vector2& End)
 {
-    Animation2DFrameData    Frame;
+    Animation2DFrameData Frame;
     Frame.Start = Start;
     Frame.End = End;
 
@@ -151,7 +166,9 @@ void CUINumber::Start()
 bool CUINumber::Init()
 {
     if (!CUIWidget::Init())
+    {
         return false;
+    }
 
     return true;
 }
@@ -195,11 +212,11 @@ void CUINumber::PostUpdate(float DeltaTime)
 
 void CUINumber::Render()
 {
-    size_t  Size = m_vecNumber.size();
+    size_t Size = m_vecNumber.size();
 
-    float   Space = 0.f;
+    float Space = 0.f;
 
-    for (size_t i = 0; i < Size; ++i)
+    for (size_t i = 0; i < Size; i++)
     {
         // 상수버퍼를 채워준다.
         bool TextureEnable = m_TextureInfo.Texture ? true : false;
@@ -213,16 +230,16 @@ void CUINumber::Render()
                 int TextureFrame = 0;
 
                 if (m_TextureInfo.Texture->GetImageType() == EImageType::Frame)
+                {
                     TextureFrame = (int)m_vecNumber[i];
+                }
 
                 m_TextureInfo.Texture->SetShader(0, (int)EShaderBufferType::Pixel, TextureFrame);
 
                 m_AnimCBuffer->SetAnim2DEnable(true);
                 m_AnimCBuffer->SetFrame(m_vecNumber[i]);
-                m_AnimCBuffer->SetImageFrame(m_TextureInfo.vecFrameData[m_vecNumber[i]].Start,
-                    m_TextureInfo.vecFrameData[m_vecNumber[i]].End);
-                m_AnimCBuffer->SetImageSize((float)m_TextureInfo.Texture->GetWidth(),
-                    (float)m_TextureInfo.Texture->GetHeight());
+                m_AnimCBuffer->SetImageFrame(m_TextureInfo.vecFrameData[m_vecNumber[i]].Start, m_TextureInfo.vecFrameData[m_vecNumber[i]].End);
+                m_AnimCBuffer->SetImageSize((float)m_TextureInfo.Texture->GetWidth(), (float)m_TextureInfo.Texture->GetHeight());
                 m_AnimCBuffer->SetImageType((EAnimation2DType)m_TextureInfo.Texture->GetImageType());
             }
 
@@ -262,12 +279,16 @@ void CUINumber::Save(FILE* File)
     fwrite(&FrameCount, sizeof(int), 1, File);
 
     if (FrameCount > 0)
+    {
         fwrite(&m_TextureInfo.vecFrameData[0], sizeof(Animation2DFrameData), FrameCount, File);
+    }
 
-    bool    TexEnable = false;
+    bool TexEnable = false;
 
     if (m_TextureInfo.Texture)
+    {
         TexEnable = true;
+    }
 
     fwrite(&TexEnable, sizeof(bool), 1, File);
 
@@ -301,22 +322,24 @@ void CUINumber::Load(FILE* File)
     m_TextureInfo.vecFrameData.resize((size_t)FrameCount);
 
     if (FrameCount > 0)
+    {
         fread(&m_TextureInfo.vecFrameData[0], sizeof(Animation2DFrameData), FrameCount, File);
+    }
 
-    bool    TexEnable = false;
+    bool TexEnable = false;
 
     fread(&TexEnable, sizeof(bool), 1, File);
 
     if (TexEnable)
     {
-        char    TexName[256] = {};
+        char TexName[256] = {};
 
         int Length = 0;
 
         fread(&Length, sizeof(int), 1, File);
         fread(TexName, 1, Length, File);
 
-        EImageType  ImageType;
+        EImageType ImageType;
 
         fread(&ImageType, sizeof(EImageType), 1, File);
 
@@ -326,8 +349,8 @@ void CUINumber::Load(FILE* File)
 
         if (TextureSRVCount == 1)
         {
-            TCHAR	FileName[MAX_PATH] = {};
-            char	PathName[MAX_PATH] = {};
+            TCHAR FileName[MAX_PATH] = {};
+            char PathName[MAX_PATH] = {};
 
             fread(FileName, sizeof(TCHAR), MAX_PATH, File);
             fread(PathName, sizeof(char), MAX_PATH, File);
@@ -351,13 +374,13 @@ void CUINumber::Load(FILE* File)
         {
             if (ImageType == EImageType::Frame)
             {
-                std::vector<const TCHAR*>	vecFileName;
+                std::vector<const TCHAR*> vecFileName;
                 std::string	ResultPathName;
 
-                for (int i = 0; i < TextureSRVCount; ++i)
+                for (int i = 0; i < TextureSRVCount; i++)
                 {
                     TCHAR* FileName = new TCHAR[MAX_PATH];
-                    char	PathName[MAX_PATH] = {};
+                    char PathName[MAX_PATH] = {};
 
                     fread(FileName, sizeof(TCHAR), MAX_PATH, File);
                     fread(PathName, sizeof(char), MAX_PATH, File);
@@ -381,7 +404,7 @@ void CUINumber::Load(FILE* File)
                     m_TextureInfo.Texture = CResourceManager::GetInst()->FindTexture(TexName);
                 }
 
-                for (int i = 0; i < TextureSRVCount; ++i)
+                for (int i = 0; i < TextureSRVCount; i++)
                 {
                     SAFE_DELETE_ARRAY(vecFileName[i]);
                 }
@@ -389,13 +412,13 @@ void CUINumber::Load(FILE* File)
 
             else
             {
-                std::vector<const TCHAR*>	vecFileName;
+                std::vector<const TCHAR*> vecFileName;
                 std::string	ResultPathName;
 
-                for (int i = 0; i < TextureSRVCount; ++i)
+                for (int i = 0; i < TextureSRVCount; i++)
                 {
                     TCHAR* FileName = new TCHAR[MAX_PATH];
-                    char	PathName[MAX_PATH] = {};
+                    char PathName[MAX_PATH] = {};
 
                     fread(FileName, sizeof(TCHAR), MAX_PATH, File);
                     fread(PathName, sizeof(char), MAX_PATH, File);
@@ -419,7 +442,7 @@ void CUINumber::Load(FILE* File)
                     m_TextureInfo.Texture = CResourceManager::GetInst()->FindTexture(TexName);
                 }
 
-                for (int i = 0; i < TextureSRVCount; ++i)
+                for (int i = 0; i < TextureSRVCount; i++)
                 {
                     SAFE_DELETE_ARRAY(vecFileName[i]);
                 }

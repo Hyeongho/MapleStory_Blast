@@ -87,7 +87,7 @@ bool CSoundManager::CreateSoundChannel(const std::string& Name)
 
 bool CSoundManager::LoadSound(const std::string& GroupName, const std::string& Name, bool Loop, const char* FileName, const std::string& PathName)
 {
-	CSound* Sound = FindSound(Name);
+	std::shared_ptr<CSound> Sound = FindSound(Name);
 
 	if (Sound)
 	{
@@ -101,19 +101,18 @@ bool CSoundManager::LoadSound(const std::string& GroupName, const std::string& N
 		return false;
 	}
 
-	Sound = new CSound;
+	Sound = std::make_shared<CSound>();
 
 	Sound->SetName(Name);
 
 	if (!Sound->LoadSound(m_System, Group, Loop, FileName, PathName))
 	{
-		SAFE_DELETE(Sound);
 		return false;
 	}
 
 	Sound->SetGroupName(GroupName);
 
-	m_mapSound.insert(std::make_pair(Name, std::make_shared<CSound>(Sound)));
+	m_mapSound.insert(std::make_pair(Name, Sound));
 
 	return true;
 }
@@ -141,7 +140,7 @@ bool CSoundManager::SetVolume(const std::string& GroupName, int Volume)
 
 bool CSoundManager::SoundPlay(const std::string& Name)
 {
-	CSound* Sound = FindSound(Name);
+	CSound* Sound = FindSound(Name).get();
 
 	if (!Sound)
 	{
@@ -155,7 +154,7 @@ bool CSoundManager::SoundPlay(const std::string& Name)
 
 bool CSoundManager::SoundStop(const std::string& Name)
 {
-	CSound* Sound = FindSound(Name);
+	CSound* Sound = FindSound(Name).get();
 
 	if (!Sound)
 	{
@@ -169,7 +168,7 @@ bool CSoundManager::SoundStop(const std::string& Name)
 
 bool CSoundManager::SoundPause(const std::string& Name)
 {
-	CSound* Sound = FindSound(Name);
+	CSound* Sound = FindSound(Name).get();
 
 	if (!Sound)
 	{
@@ -183,7 +182,7 @@ bool CSoundManager::SoundPause(const std::string& Name)
 
 bool CSoundManager::SoundResume(const std::string& Name)
 {
-	CSound* Sound = FindSound(Name);
+	CSound* Sound = FindSound(Name).get();
 
 	if (!Sound)
 	{
@@ -207,7 +206,7 @@ FMOD::ChannelGroup* CSoundManager::FindChannelGroup(const std::string& Name)
 	return iter->second;
 }
 
-CSound* CSoundManager::FindSound(const std::string& Name)
+std::shared_ptr<CSound> CSoundManager::FindSound(const std::string& Name)
 {
 	auto iter = m_mapSound.find(Name);
 
@@ -216,7 +215,7 @@ CSound* CSoundManager::FindSound(const std::string& Name)
 		return nullptr;
 	}
 
-	return iter->second.get();
+	return iter->second;
 }
 
 void CSoundManager::ReleaseSound(const std::string& Name)
@@ -229,5 +228,7 @@ void CSoundManager::ReleaseSound(const std::string& Name)
 	}
 
 	if (iter->second->GetRefCount() == 1)
+	{
 		m_mapSound.erase(iter);
+	}
 }

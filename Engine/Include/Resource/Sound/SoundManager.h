@@ -29,7 +29,7 @@ public:
 	bool SoundResume(const std::string& Name);
 
 	FMOD::ChannelGroup* FindChannelGroup(const std::string& Name);
-	class CSound* FindSound(const std::string& Name);
+	std::shared_ptr<class CSound> FindSound(const std::string& Name);
 	void ReleaseSound(const std::string& Name);
 };
 

@@ -40,7 +40,7 @@ public:	// ===================== Shader =========================
 	void ReleaseShader(const std::string& Name);
 
 	bool CreateConstantBuffer(const std::string& Name, int Size, int Register, int ShaderBufferType = (int)EShaderBufferType::All);
-	class CConstantBuffer* FindConstantBuffer(const std::string& Name);
+	std::shared_ptr<class CConstantBuffer> FindConstantBuffer(const std::string& Name);
 
 public:	// ===================== Texture =========================
 	bool LoadTexture(const std::string& Name, const TCHAR* FileName, const std::string& PathName = TEXTURE_PATH);
@@ -96,7 +96,7 @@ public:	// ============================ Sound ================================
 	bool SoundResume(const std::string& Name);
 
 	FMOD::ChannelGroup* FindChannelGroup(const std::string& Name);
-	class CSound* FindSound(const std::string& Name);
+	std::shared_ptr<class CSound> FindSound(const std::string& Name);
 	void ReleaseSound(const std::string& Name);
 
 public:	// ============================ Font ================================

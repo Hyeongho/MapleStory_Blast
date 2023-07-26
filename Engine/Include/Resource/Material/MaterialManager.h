@@ -23,7 +23,7 @@ public:
 	template <typename T>
 	T* CreateMaterial(const std::string& Name)
 	{
-		T* Material = (T*)FindMaterial(Name);
+		T* Material = (T*)FindMaterial(Name).get();
 
 		if (Material)
 		{
@@ -34,7 +34,7 @@ public:
 
 		Material->SetName(Name);
 
-		m_mapMaterial.insert(std::make_pair(Name, std::make_shared<T>Material));
+		m_mapMaterial.insert(std::make_pair(Name, std::make_shared<T>(Material)));
 
 		return Material;
 	}

@@ -116,19 +116,12 @@ void CScene::CreateCDO()
 
 	CComponent::AddComponentCDO("TileMapComponent", ComCDO);
 
-	ComCDO = new CNavigationAgent;
-
-	ComCDO->Init();
-
-	CComponent::AddComponentCDO("NavigationAgent", ComCDO);
-
-
 	// ==================== Animation ====================
 	CAnimation* AnimCDO = new CAnimation;
 
 	AnimCDO->Init();
 
-	CAnimation2D::AddAnimationCDO("Animation2D", AnimCDO);
+	CAnimation::AddAnimationCDO("Animation", AnimCDO);
 
 
 	// ==================== UI ====================

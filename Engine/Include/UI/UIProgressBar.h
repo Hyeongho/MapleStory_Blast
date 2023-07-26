@@ -17,12 +17,12 @@ protected:
 
 protected:
     static CUIProgressBarConstantBuffer* m_ProgressBarCBuffer;
-    UIWidgetImageInfo   m_TextureInfo[(int)EProgressBarTextureType::Max];
-    EProgressBarDir     m_BarDir;
-    float               m_Min;
-    float               m_Max;
-    float               m_Value;
-    CSharedPtr<class CShader>   m_BarShader;
+    UIWidgetImageInfo m_TextureInfo[(int)EProgressBarTextureType::Max];
+    EProgressBarDir m_BarDir;
+    float m_Min;
+    float m_Max;
+    float m_Value;
+    std::shared_ptr<class CShader> m_BarShader;
 
 public:
     float GetValue()    const
@@ -32,11 +32,9 @@ public:
 
 public:
     void SetTexture(EProgressBarTextureType Type, CTexture* Texture);
-    bool SetTexture(EProgressBarTextureType Type, const std::string& Name, const TCHAR* FileName,
-        const std::string& PathName = TEXTURE_PATH);
+    bool SetTexture(EProgressBarTextureType Type, const std::string& Name, const TCHAR* FileName, const std::string& PathName = TEXTURE_PATH);
     bool SetTextureFullPath(EProgressBarTextureType Type, const std::string& Name, const TCHAR* FullPath);
-    bool SetTexture(EProgressBarTextureType Type, const std::string& Name, const std::vector<const TCHAR*>& vecFileName,
-        const std::string& PathName = TEXTURE_PATH);
+    bool SetTexture(EProgressBarTextureType Type, const std::string& Name, const std::vector<const TCHAR*>& vecFileName, const std::string& PathName = TEXTURE_PATH);
     bool SetTextureFullPath(EProgressBarTextureType Type, const std::string& Name, const std::vector<const TCHAR*>& vecFullPath);
     void SetImageTint(EProgressBarTextureType Type, const Vector4& Tint);
     void SetImageTint(EProgressBarTextureType Type, unsigned char r, unsigned char g, unsigned char b, unsigned char a);

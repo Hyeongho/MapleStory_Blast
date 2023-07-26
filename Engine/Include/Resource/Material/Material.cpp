@@ -508,12 +508,7 @@ void CMaterial::SetTextureFrameIndex(int TexIndex, int FrameIndex)
 	m_vecTextureInfo[TexIndex]->Index = FrameIndex;
 }
 
-void CMaterial::SetImageType(int TexIndex, EImageType ImageType)
-{
-	m_vecTextureInfo[TexIndex]->Texture->SetImageType(ImageType);
-}
-
-CTexture* CMaterial::GetTexture(int Index) const
+std::shared_ptr<CTexture> CMaterial::GetTexture(int Index) const
 {
 	if ((int)m_vecTextureInfo.size() <= Index)
 	{
@@ -532,7 +527,7 @@ void CMaterial::SetRenderState(const std::string& Name)
 		return;
 	}
 
-	m_RenderState[(int)RenderState->GetType()] = RenderState;
+	m_RenderState[(int)RenderState->GetType()] = std::make_shared<CRenderState>(RenderState);
 }
 
 void CMaterial::SetShader(const std::string& Name)

@@ -28,13 +28,13 @@ public:
 	void ReleaseShader(const std::string& Name);
 
 	bool CreateConstantBuffer(const std::string& Name, int Size, int Register, int ShaderBufferType = (int)EShaderBufferType::All);
-	class CConstantBuffer* FindConstantBuffer(const std::string& Name);
+	std::shared_ptr<class CConstantBuffer> FindConstantBuffer(const std::string& Name);
 
 public:
 	template <typename T>
 	bool CreateShader(const std::string& Name, bool GlobalShader = false)
 	{
-		T* Shader = (T*)FindShader(Name);
+		T* Shader = (T*)FindShader(Name).get();
 
 		if (Shader)
 		{

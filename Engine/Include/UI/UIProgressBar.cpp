@@ -7,11 +7,7 @@
 
 CUIProgressBarConstantBuffer* CUIProgressBar::m_ProgressBarCBuffer = nullptr;
 
-CUIProgressBar::CUIProgressBar()    :
-    m_Min(0.f),
-    m_Max(1.f),
-    m_Value(0.5f),
-    m_BarDir(EProgressBarDir::RightToLeft)
+CUIProgressBar::CUIProgressBar() : m_Min(0.f), m_Max(1.f), m_Value(0.5f), m_BarDir(EProgressBarDir::RightToLeft)
 {
     m_WidgetTypeName = "UIProgressBar";
 }
@@ -19,7 +15,7 @@ CUIProgressBar::CUIProgressBar()    :
 CUIProgressBar::CUIProgressBar(const CUIProgressBar& ProgressBar) :
     CUIWidget(ProgressBar)
 {
-    for (int i = 0; i < (int)EProgressBarTextureType::Max; ++i)
+    for (int i = 0; i < (int)EProgressBarTextureType::Max; i++)
     {
         m_TextureInfo[i] = ProgressBar.m_TextureInfo[i];
     }
@@ -36,7 +32,7 @@ CUIProgressBar::~CUIProgressBar()
 
 void CUIProgressBar::SetTexture(EProgressBarTextureType Type, CTexture* Texture)
 {
-    m_TextureInfo[(int)Type].Texture = Texture;
+    m_TextureInfo[(int)Type].Texture = std::make_shared<CTexture>(Texture);
 }
 
 bool CUIProgressBar::SetTexture(EProgressBarTextureType Type, const std::string& Name, const TCHAR* FileName, const std::string& PathName)
@@ -44,7 +40,9 @@ bool CUIProgressBar::SetTexture(EProgressBarTextureType Type, const std::string&
     if (m_Scene)
     {
         if (!m_Scene->GetResource()->LoadTexture(Name, FileName, PathName))
+        {
             return false;
+        }
 
         m_TextureInfo[(int)Type].Texture = m_Scene->GetResource()->FindTexture(Name);
     }
@@ -52,7 +50,9 @@ bool CUIProgressBar::SetTexture(EProgressBarTextureType Type, const std::string&
     else
     {
         if (!CResourceManager::GetInst()->LoadTexture(Name, FileName, PathName))
+        {
             return false;
+        }
 
         m_TextureInfo[(int)Type].Texture = CResourceManager::GetInst()->FindTexture(Name);
     }
@@ -65,7 +65,9 @@ bool CUIProgressBar::SetTextureFullPath(EProgressBarTextureType Type, const std:
     if (m_Scene)
     {
         if (!m_Scene->GetResource()->LoadTextureFullPath(Name, FullPath))
+        {
             return false;
+        }
 
         m_TextureInfo[(int)Type].Texture = m_Scene->GetResource()->FindTexture(Name);
     }
@@ -73,7 +75,9 @@ bool CUIProgressBar::SetTextureFullPath(EProgressBarTextureType Type, const std:
     else
     {
         if (!CResourceManager::GetInst()->LoadTextureFullPath(Name, FullPath))
+        {
             return false;
+        }
 
         m_TextureInfo[(int)Type].Texture = CResourceManager::GetInst()->FindTexture(Name);
     }
@@ -81,13 +85,14 @@ bool CUIProgressBar::SetTextureFullPath(EProgressBarTextureType Type, const std:
     return true;
 }
 
-bool CUIProgressBar::SetTexture(EProgressBarTextureType Type, const std::string& Name, const std::vector<const TCHAR*>& vecFileName,
-    const std::string& PathName)
+bool CUIProgressBar::SetTexture(EProgressBarTextureType Type, const std::string& Name, const std::vector<const TCHAR*>& vecFileName, const std::string& PathName)
 {
     if (m_Scene)
     {
         if (!m_Scene->GetResource()->LoadTexture(Name, vecFileName, PathName))
+        {
             return false;
+        }
 
         m_TextureInfo[(int)Type].Texture = m_Scene->GetResource()->FindTexture(Name);
     }
@@ -95,7 +100,9 @@ bool CUIProgressBar::SetTexture(EProgressBarTextureType Type, const std::string&
     else
     {
         if (!CResourceManager::GetInst()->LoadTexture(Name, vecFileName, PathName))
+        {
             return false;
+        }
 
         m_TextureInfo[(int)Type].Texture = CResourceManager::GetInst()->FindTexture(Name);
     }
@@ -108,7 +115,9 @@ bool CUIProgressBar::SetTextureFullPath(EProgressBarTextureType Type, const std:
     if (m_Scene)
     {
         if (!m_Scene->GetResource()->LoadTextureFullPath(Name, vecFullPath))
+        {
             return false;
+        }
 
         m_TextureInfo[(int)Type].Texture = m_Scene->GetResource()->FindTexture(Name);
     }
@@ -116,7 +125,9 @@ bool CUIProgressBar::SetTextureFullPath(EProgressBarTextureType Type, const std:
     else
     {
         if (!CResourceManager::GetInst()->LoadTextureFullPath(Name, vecFullPath))
+        {
             return false;
+        }
 
         m_TextureInfo[(int)Type].Texture = CResourceManager::GetInst()->FindTexture(Name);
     }
@@ -136,7 +147,7 @@ void CUIProgressBar::SetImageTint(EProgressBarTextureType Type, unsigned char r,
 
 void CUIProgressBar::AddFrameData(EProgressBarTextureType Type, const Vector2& Start, const Vector2& End)
 {
-    Animation2DFrameData    Frame;
+    Animation2DFrameData Frame;
     Frame.Start = Start;
     Frame.End = End;
 
@@ -172,10 +183,14 @@ void CUIProgressBar::SetValue(float Value)
     m_Value = Value;
 
     if (m_Value < m_Min)
+    {
         m_Value = m_Min;
+    }
 
     else if (m_Value > m_Max)
+    {
         m_Value = m_Max;
+    }
 }
 
 void CUIProgressBar::AddValue(float Value)
@@ -183,10 +198,14 @@ void CUIProgressBar::AddValue(float Value)
     m_Value += Value;
 
     if (m_Value < m_Min)
+    {
         m_Value = m_Min;
+    }
 
     else if (m_Value > m_Max)
+    {
         m_Value = m_Max;
+    }
 }
 
 void CUIProgressBar::Start()
@@ -207,7 +226,9 @@ void CUIProgressBar::Start()
 bool CUIProgressBar::Init()
 {
     if (!CUIWidget::Init())
+    {
         return false;
+    }
 
     return true;
 }
@@ -216,7 +237,7 @@ void CUIProgressBar::Update(float DeltaTime)
 {
     CUIWidget::Update(DeltaTime);
 
-    for (int i = 0; i < (int)EProgressBarTextureType::Max; ++i)
+    for (int i = 0; i < (int)EProgressBarTextureType::Max; i++)
     {
         if (!m_TextureInfo[i].vecFrameData.empty())
         {
@@ -226,10 +247,12 @@ void CUIProgressBar::Update(float DeltaTime)
             {
                 m_TextureInfo[i].Time -= m_TextureInfo[i].FrameTime;
 
-                ++m_TextureInfo[i].Frame;
+                m_TextureInfo[i].Frame++;
 
                 if (m_TextureInfo[i].Frame == m_TextureInfo[i].vecFrameData.size())
+                {
                     m_TextureInfo[i].Frame = 0;
+                }
             }
         }
     }
@@ -256,16 +279,16 @@ void CUIProgressBar::Render()
             int TextureFrame = 0;
 
             if (m_TextureInfo[(int)EProgressBarTextureType::Back].Texture->GetImageType() == EImageType::Frame)
+            {
                 TextureFrame = m_TextureInfo[(int)EProgressBarTextureType::Back].Frame;
+            }
 
             m_TextureInfo[(int)EProgressBarTextureType::Back].Texture->SetShader(0, (int)EShaderBufferType::Pixel, TextureFrame);
 
             m_AnimCBuffer->SetAnim2DEnable(true);
             m_AnimCBuffer->SetFrame(m_TextureInfo[(int)EProgressBarTextureType::Back].Frame);
-            m_AnimCBuffer->SetImageFrame(m_TextureInfo[(int)EProgressBarTextureType::Back].vecFrameData[m_TextureInfo[(int)EProgressBarTextureType::Back].Frame].Start,
-                m_TextureInfo[(int)EProgressBarTextureType::Back].vecFrameData[m_TextureInfo[(int)EProgressBarTextureType::Back].Frame].End);
-            m_AnimCBuffer->SetImageSize((float)m_TextureInfo[(int)EProgressBarTextureType::Back].Texture->GetWidth(),
-                (float)m_TextureInfo[(int)EProgressBarTextureType::Back].Texture->GetHeight());
+            m_AnimCBuffer->SetImageFrame(m_TextureInfo[(int)EProgressBarTextureType::Back].vecFrameData[m_TextureInfo[(int)EProgressBarTextureType::Back].Frame].Start, m_TextureInfo[(int)EProgressBarTextureType::Back].vecFrameData[m_TextureInfo[(int)EProgressBarTextureType::Back].Frame].End);
+            m_AnimCBuffer->SetImageSize((float)m_TextureInfo[(int)EProgressBarTextureType::Back].Texture->GetWidth(), (float)m_TextureInfo[(int)EProgressBarTextureType::Back].Texture->GetHeight());
             m_AnimCBuffer->SetImageType((EAnimation2DType)m_TextureInfo[(int)EProgressBarTextureType::Back].Texture->GetImageType());
         }
 
@@ -291,16 +314,16 @@ void CUIProgressBar::Render()
             int TextureFrame = 0;
 
             if (m_TextureInfo[(int)EProgressBarTextureType::Bar].Texture->GetImageType() == EImageType::Frame)
+            {
                 TextureFrame = m_TextureInfo[(int)EProgressBarTextureType::Bar].Frame;
+            }
 
             m_TextureInfo[(int)EProgressBarTextureType::Bar].Texture->SetShader(0, (int)EShaderBufferType::Pixel, TextureFrame);
 
             m_AnimCBuffer->SetAnim2DEnable(true);
             m_AnimCBuffer->SetFrame(m_TextureInfo[(int)EProgressBarTextureType::Bar].Frame);
-            m_AnimCBuffer->SetImageFrame(m_TextureInfo[(int)EProgressBarTextureType::Bar].vecFrameData[m_TextureInfo[(int)EProgressBarTextureType::Bar].Frame].Start,
-                m_TextureInfo[(int)EProgressBarTextureType::Bar].vecFrameData[m_TextureInfo[(int)EProgressBarTextureType::Bar].Frame].End);
-            m_AnimCBuffer->SetImageSize((float)m_TextureInfo[(int)EProgressBarTextureType::Bar].Texture->GetWidth(),
-                (float)m_TextureInfo[(int)EProgressBarTextureType::Bar].Texture->GetHeight());
+            m_AnimCBuffer->SetImageFrame(m_TextureInfo[(int)EProgressBarTextureType::Bar].vecFrameData[m_TextureInfo[(int)EProgressBarTextureType::Bar].Frame].Start, m_TextureInfo[(int)EProgressBarTextureType::Bar].vecFrameData[m_TextureInfo[(int)EProgressBarTextureType::Bar].Frame].End);
+            m_AnimCBuffer->SetImageSize((float)m_TextureInfo[(int)EProgressBarTextureType::Bar].Texture->GetWidth(), (float)m_TextureInfo[(int)EProgressBarTextureType::Bar].Texture->GetHeight());
             m_AnimCBuffer->SetImageType((EAnimation2DType)m_TextureInfo[(int)EProgressBarTextureType::Bar].Texture->GetImageType());
         }
 
@@ -338,7 +361,7 @@ void CUIProgressBar::Save(FILE* File)
 {
     CUIWidget::Save(File);
 
-    for (int i = 0; i < (int)EProgressBarTextureType::Max; ++i)
+    for (int i = 0; i < (int)EProgressBarTextureType::Max; i++)
     {
         fwrite(&m_TextureInfo[i].Tint, sizeof(Vector4), 1, File);
                               
@@ -350,12 +373,16 @@ void CUIProgressBar::Save(FILE* File)
         fwrite(&FrameCount, sizeof(int), 1, File);
 
         if (FrameCount > 0)
+        {
             fwrite(&m_TextureInfo[i].vecFrameData[0], sizeof(Animation2DFrameData), FrameCount, File);
+        }
 
-        bool    TexEnable = false;
+        bool TexEnable = false;
 
         if (m_TextureInfo[i].Texture)
+        {
             TexEnable = true;
+        }
 
         fwrite(&TexEnable, sizeof(bool), 1, File);
 
@@ -382,7 +409,7 @@ void CUIProgressBar::Load(FILE* File)
 {
     CUIWidget::Load(File);
 
-    for (int i = 0; i < (int)EProgressBarTextureType::Max; ++i)
+    for (int i = 0; i < (int)EProgressBarTextureType::Max; i++)
     {
         fread(&m_TextureInfo[i].Tint, sizeof(Vector4), 1, File);
 
@@ -396,22 +423,24 @@ void CUIProgressBar::Load(FILE* File)
         m_TextureInfo[i].vecFrameData.resize((size_t)FrameCount);
 
         if (FrameCount > 0)
+        {
             fread(&m_TextureInfo[i].vecFrameData[0], sizeof(Animation2DFrameData), FrameCount, File);
+        }
 
-        bool    TexEnable = false;
+        bool TexEnable = false;
 
         fread(&TexEnable, sizeof(bool), 1, File);
 
         if (TexEnable)
         {
-            char    TexName[256] = {};
+            char TexName[256] = {};
 
             int Length = 0;
 
             fread(&Length, sizeof(int), 1, File);
             fread(TexName, 1, Length, File);
 
-            EImageType  ImageType;
+            EImageType ImageType;
 
             fread(&ImageType, sizeof(EImageType), 1, File);
 
@@ -421,8 +450,8 @@ void CUIProgressBar::Load(FILE* File)
 
             if (TextureSRVCount == 1)
             {
-                TCHAR	FileName[MAX_PATH] = {};
-                char	PathName[MAX_PATH] = {};
+                TCHAR FileName[MAX_PATH] = {};
+                char PathName[MAX_PATH] = {};
 
                 fread(FileName, sizeof(TCHAR), MAX_PATH, File);
                 fread(PathName, sizeof(char), MAX_PATH, File);
@@ -446,13 +475,13 @@ void CUIProgressBar::Load(FILE* File)
             {
                 if (ImageType == EImageType::Frame)
                 {
-                    std::vector<const TCHAR*>	vecFileName;
+                    std::vector<const TCHAR*> vecFileName;
                     std::string	ResultPathName;
 
-                    for (int i = 0; i < TextureSRVCount; ++i)
+                    for (int i = 0; i < TextureSRVCount; i++)
                     {
                         TCHAR* FileName = new TCHAR[MAX_PATH];
-                        char	PathName[MAX_PATH] = {};
+                        char PathName[MAX_PATH] = {};
 
                         fread(FileName, sizeof(TCHAR), MAX_PATH, File);
                         fread(PathName, sizeof(char), MAX_PATH, File);
@@ -476,7 +505,7 @@ void CUIProgressBar::Load(FILE* File)
                         m_TextureInfo[i].Texture = CResourceManager::GetInst()->FindTexture(TexName);
                     }
 
-                    for (int i = 0; i < TextureSRVCount; ++i)
+                    for (int i = 0; i < TextureSRVCount; i++)
                     {
                         SAFE_DELETE_ARRAY(vecFileName[i]);
                     }
@@ -484,13 +513,13 @@ void CUIProgressBar::Load(FILE* File)
 
                 else
                 {
-                    std::vector<const TCHAR*>	vecFileName;
+                    std::vector<const TCHAR*> vecFileName;
                     std::string	ResultPathName;
 
-                    for (int i = 0; i < TextureSRVCount; ++i)
+                    for (int i = 0; i < TextureSRVCount; i++)
                     {
                         TCHAR* FileName = new TCHAR[MAX_PATH];
-                        char	PathName[MAX_PATH] = {};
+                        char PathName[MAX_PATH] = {};
 
                         fread(FileName, sizeof(TCHAR), MAX_PATH, File);
                         fread(PathName, sizeof(char), MAX_PATH, File);
@@ -514,7 +543,7 @@ void CUIProgressBar::Load(FILE* File)
                         m_TextureInfo[i].Texture = CResourceManager::GetInst()->FindTexture(TexName);
                     }
 
-                    for (int i = 0; i < TextureSRVCount; ++i)
+                    for (int i = 0; i < TextureSRVCount; i++)
                     {
                         SAFE_DELETE_ARRAY(vecFileName[i]);
                     }

@@ -58,7 +58,7 @@ void CRenderStateManager::AddBlendInfo(const std::string& Name, bool BlendEnable
 
 bool CRenderStateManager::CreateBlendState(const std::string& Name, bool AlphaToCoverageEnable, bool IndependentBlendEnable)
 {
-	CBlendState* State = FindRenderState<CBlendState>(Name);
+	std::shared_ptr<CBlendState> State = FindRenderState<CBlendState>(Name);
 
 	if (!State)
 	{
@@ -67,7 +67,6 @@ bool CRenderStateManager::CreateBlendState(const std::string& Name, bool AlphaTo
 
 	if (!State->CreateState(AlphaToCoverageEnable, IndependentBlendEnable))
 	{
-		SAFE_DELETE(State);
 		return false;
 	}
 
@@ -91,9 +90,7 @@ bool CRenderStateManager::CreateDepthStencil(const std::string& Name,
 
 	State->SetName(Name);
 
-	if (!State->CreateDepthStencil(DepthEnable, DepthWriteMask, DepthFunc,
-		StencilEnable, StencilReadMask, StencilWriteMask, FrontFace,
-		BackFace))
+	if (!State->CreateDepthStencil(DepthEnable, DepthWriteMask, DepthFunc, StencilEnable, StencilReadMask, StencilWriteMask, FrontFace, BackFace))
 	{
 		return false;
 	}

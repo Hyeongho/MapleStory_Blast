@@ -19,7 +19,7 @@ CPrimitiveComponent::CPrimitiveComponent(const CPrimitiveComponent& component) :
 
 	for (size_t i = 0; i < Size; i++)
 	{
-		CMaterial* Material = component.m_vecMaterial[i]->Clone();
+		CMaterial* Material = component.m_vecMaterial[i]->Clone().get();
 
 		m_vecMaterial.push_back(std::make_shared<CMaterial>(Material));
 	}
@@ -52,7 +52,7 @@ bool CPrimitiveComponent::SetMesh(const std::string& Name)
 
 	for (int i = 0; i < SlotCount; i++)
 	{
-		CMaterial* Material = m_Mesh->GetMaterial(i);
+		CMaterial* Material = m_Mesh->GetMaterial(i).get();
 
 		m_vecMaterial.push_back(std::make_shared<CMaterial>(Material->Clone()));
 	}
@@ -75,7 +75,7 @@ bool CPrimitiveComponent::SetMesh(CMesh* Mesh)
 
 	for (int i = 0; i < SlotCount; i++)
 	{
-		CMaterial* Material = m_Mesh->GetMaterial(i);
+		CMaterial* Material = m_Mesh->GetMaterial(i).get();
 
 		m_vecMaterial.push_back(std::make_shared<CMaterial>(Material->Clone()));
 	}
@@ -100,12 +100,12 @@ void CPrimitiveComponent::SetMaterial(int Slot, const std::string& Name)
 
 	if (m_Scene)
 	{
-		Material = m_Scene->GetResource()->FindMaterial(Name);
+		Material = m_Scene->GetResource()->FindMaterial(Name).get();
 	}
 
 	else
 	{
-		Material = CResourceManager::GetInst()->FindMaterial(Name);
+		Material = CResourceManager::GetInst()->FindMaterial(Name).get();
 	}
 
 	m_vecMaterial[Slot] = std::make_shared<CMaterial>(Material->Clone());
@@ -126,7 +126,7 @@ void CPrimitiveComponent::SetMaterial(int Slot, CMaterial* Material)
 
 void CPrimitiveComponent::AddMaterial(const std::string& Name)
 {
-	CMaterial* Material = nullptr;
+	std::shared_ptr<CMaterial> Material = nullptr;
 
 	if (m_Scene)
 	{
@@ -239,7 +239,7 @@ void CPrimitiveComponent::Load(FILE* File)
 
 	for (int i = 0; i < MaterialCount; i++)
 	{
-		CMaterial* Material = m_Mesh->GetMaterial(i);
+		std::shared_ptr<CMaterial> Material = m_Mesh->GetMaterial(i);
 
 		Material = Material->Clone();
 
@@ -247,6 +247,6 @@ void CPrimitiveComponent::Load(FILE* File)
 
 		Material->Load(File);
 
-		m_vecMaterial.push_back(std::make_shared<CMaterial>(Material));
+		m_vecMaterial.push_back(Material);
 	}
 }
