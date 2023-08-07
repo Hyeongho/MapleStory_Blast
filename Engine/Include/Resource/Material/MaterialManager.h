@@ -12,18 +12,18 @@ private:
 	~CMaterialManager();
 
 private:
-	std::unordered_map<std::string, std::shared_ptr<CMaterial>> m_mapMaterial;
+	std::unordered_map<std::string, CSharedPtr<CMaterial>> m_mapMaterial;
 
 public:
 	bool Init();
-	std::shared_ptr<CMaterial> FindMaterial(const std::string& Name);
+	CSharedPtr<CMaterial> FindMaterial(const std::string& Name);
 	void ReleaseMaterial(const std::string& Name);
 
 public:
 	template <typename T>
 	T* CreateMaterial(const std::string& Name)
 	{
-		T* Material = (T*)FindMaterial(Name).get();
+		T* Material = (T*)FindMaterial(Name);
 
 		if (Material)
 		{
@@ -34,7 +34,7 @@ public:
 
 		Material->SetName(Name);
 
-		m_mapMaterial.insert(std::make_pair(Name, std::make_shared<T>(Material)));
+		m_mapMaterial.insert(std::make_pair(Name, Material));
 
 		return Material;
 	}

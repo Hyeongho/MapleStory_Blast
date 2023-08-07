@@ -40,7 +40,7 @@ CSceneCollision::~CSceneCollision()
 
 void CSceneCollision::AddCollider(CCollider* Collider)
 {
-	m_ColliderList.push_back(std::make_shared<CCollider>(Collider));
+	m_ColliderList.push_back(Collider);
 }
 
 bool CSceneCollision::CollisionWidget()
@@ -72,7 +72,7 @@ void CSceneCollision::Update(float DeltaTime)
 
 	for (; iter != iterEnd;)
 	{
-		if (!(*iter).get()->GetActive())
+		if (!(*iter)->GetActive())
 		{
 			iter = m_ColliderList.erase(iter);
 			iterEnd = m_ColliderList.end();
@@ -85,12 +85,12 @@ void CSceneCollision::Update(float DeltaTime)
 			// 보내야 한다.
 			(*iter)->SendPrevCollisionEnd();
 
-			++iter;
+			iter++;
 			continue;
 		}
 
-		CheckSection(*iter);
-		++iter;
+		CheckSection((*iter));
+		iter++;
 	}
 
 	// 현재 충돌영역이 겹치는지 판단한다. 이전프레임에 충돌되고 있던 물체와 충돌영역이 겹치는게 없다면
@@ -155,7 +155,7 @@ void CSceneCollision::CreateSection2D(int CountX, int CountY, const Vector2& Wor
 	{
 		for (int j = 0; j < CountX; ++j)
 		{
-			CCollisionSection2D* Section = new CCollisionSection2D;
+			CCollisionSection* Section = new CCollisionSection;
 
 			Section->m_Min = WorldStart + SectionSize * Vector2((float)j, (float)i);
 			Section->m_Max = Section->m_Min + SectionSize;
@@ -305,7 +305,7 @@ void CSceneCollision::CheckSection(CCollider* Collider)
 			{
 				int	Index = i * m_Section.CountX + j;
 
-				m_Section.vecSection[Index]->AddCollider((CCollider*)Collider);
+				m_Section.vecSection[Index]->AddCollider((CCollider2D*)Collider);
 			}
 		}
 	}

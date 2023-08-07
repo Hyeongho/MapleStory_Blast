@@ -1,8 +1,7 @@
 #include "AnimationManager.h"
 #include "../Shader/AnimationConstantBuffer.h"
 
-CAnimationManager::CAnimationManager() :
-	m_Anim2DBuffer(nullptr)
+CAnimationManager::CAnimationManager() : m_Anim2DBuffer(nullptr)
 {
 }
 
@@ -39,7 +38,7 @@ bool CAnimationManager::CreateAnimationSequence2D(const std::string& Name, const
 		return false;
 	}
 
-	m_mapSequence2D.insert(std::make_pair(Name, std::make_shared<CAnimationSequence>(Sequence)));
+	m_mapSequence2D.insert(std::make_pair(Name, Sequence));
 
 	return true;
 }
@@ -63,7 +62,7 @@ bool CAnimationManager::CreateAnimationSequence2D(const std::string& Name, CText
 		return false;
 	}
 
-	m_mapSequence2D.insert(std::make_pair(Name, std::make_shared<CAnimationSequence>(Sequence)));
+	m_mapSequence2D.insert(std::make_pair(Name, Sequence));
 
 	return true;
 }
@@ -87,7 +86,7 @@ bool CAnimationManager::CreateAnimationSequence2DFullPath( const std::string& Na
 		return false;
 	}
 
-	m_mapSequence2D.insert(std::make_pair(Name, std::make_shared<CAnimationSequence>(Sequence)));
+	m_mapSequence2D.insert(std::make_pair(Name, Sequence));
 
 	return true;
 }
@@ -111,7 +110,7 @@ bool CAnimationManager::CreateAnimationSequence2D(const std::string& Name, const
 		return false;
 	}
 
-	m_mapSequence2D.insert(std::make_pair(Name, std::make_shared<CAnimationSequence>(Sequence)));
+	m_mapSequence2D.insert(std::make_pair(Name, Sequence));
 
 	return true;
 }
@@ -135,7 +134,7 @@ bool CAnimationManager::CreateAnimationSequence2DFullPath(const std::string& Nam
 		return false;
 	}
 
-	m_mapSequence2D.insert(std::make_pair(Name, std::make_shared<CAnimationSequence>(Sequence)));
+	m_mapSequence2D.insert(std::make_pair(Name, Sequence));
 
 	return true;
 }
@@ -256,7 +255,7 @@ bool CAnimationManager::LoadSequence2D(const std::string& Name, const char* File
 
 	if (!Find)
 	{
-		m_mapSequence2D.insert(std::make_pair(Name, std::make_shared<CAnimationSequence>(Sequence)));
+		m_mapSequence2D.insert(std::make_pair(Name, Sequence));
 	}
 
 	return true;
@@ -271,7 +270,7 @@ CAnimationSequence* CAnimationManager::FindAnimationSequence2D(const std::string
 		return nullptr;
 	}
 
-	return iter->second.get();
+	return iter->second;
 }
 
 void CAnimationManager::ReleaseAnimationSequence2D(const std::string& Name)

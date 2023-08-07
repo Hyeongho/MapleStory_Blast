@@ -32,7 +32,7 @@ CUIProgressBar::~CUIProgressBar()
 
 void CUIProgressBar::SetTexture(EProgressBarTextureType Type, CTexture* Texture)
 {
-    m_TextureInfo[(int)Type].Texture = std::make_shared<CTexture>(Texture);
+    m_TextureInfo[(int)Type].Texture = Texture;
 }
 
 bool CUIProgressBar::SetTexture(EProgressBarTextureType Type, const std::string& Name, const TCHAR* FileName, const std::string& PathName)

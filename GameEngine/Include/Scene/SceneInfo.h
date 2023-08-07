@@ -14,7 +14,7 @@ protected:
 
 protected:
 	class CScene* m_Owner;
-	std::shared_ptr<class CGameObject> m_PlayerObject;
+	CSharedPtr<class CGameObject> m_PlayerObject;
 	std::string m_ClassTypeName;
 	std::string m_PlayerObjectName;
 

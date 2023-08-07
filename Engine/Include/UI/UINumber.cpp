@@ -22,7 +22,7 @@ CUINumber::~CUINumber()
 
 void CUINumber::SetTexture(CTexture* Texture)
 {
-    m_TextureInfo.Texture = std::make_shared<CTexture>(Texture);
+    m_TextureInfo.Texture = Texture;
 }
 
 bool CUINumber::SetTexture(const std::string& Name, const TCHAR* FileName, const std::string& PathName)

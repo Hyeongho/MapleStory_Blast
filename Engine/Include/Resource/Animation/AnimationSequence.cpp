@@ -22,7 +22,7 @@ CAnimationSequence::~CAnimationSequence()
 
 bool CAnimationSequence::Init(CTexture* Texture)
 {
-	m_Texture = std::make_shared<CTexture>(Texture);
+	m_Texture = Texture;
 
 	if (m_Texture)
 	{

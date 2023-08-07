@@ -11,9 +11,9 @@ private:
 	~CTextureManager();
 
 private:
-	std::unordered_map<std::string, std::shared_ptr<class CTexture>> m_mapTexture;
+	std::unordered_map<std::string, CSharedPtr<class CTexture>> m_mapTexture;
 	std::unordered_map<std::string, ID3D11SamplerState*> m_mapSampler;
-	std::shared_ptr<class CShader> m_DebugShader;
+	CSharedPtr<class CShader> m_DebugShader;
 
 public:
 	bool Init();

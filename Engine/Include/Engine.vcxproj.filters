@@ -181,6 +181,9 @@
     <Filter Include="09. UI\02. Widget">
       <UniqueIdentifier>{a0e7d5fc-38ee-4a5a-b859-3d8324ca5466}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Manager\09. SharedPtr">
+      <UniqueIdentifier>{9a523158-1a38-45d8-8d72-3e4858bce9e9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EngineInfo.h">
@@ -557,6 +560,9 @@
     </ClInclude>
     <ClInclude Include="UI\UIWidget.h">
       <Filter>09. UI\02. Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="SharedPtr.h">
+      <Filter>01. Manager\09. SharedPtr</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

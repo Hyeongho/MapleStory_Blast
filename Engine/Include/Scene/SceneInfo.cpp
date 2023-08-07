@@ -18,7 +18,7 @@ CSceneInfo::~CSceneInfo()
 
 void CSceneInfo::SetPlayerObject(CGameObject* Player)
 {
-	m_PlayerObject = std::make_shared<CGameObject>(Player);
+	m_PlayerObject = Player;
 
 	if (Player)
 	{

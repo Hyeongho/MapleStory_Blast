@@ -11,7 +11,7 @@ private:
 	~CMeshManager();
 
 private:
-	std::unordered_map<std::string, std::shared_ptr<class CMesh>> m_mapMesh;
+	std::unordered_map<std::string, CSharedPtr<class CMesh>> m_mapMesh;
 
 public:
 	bool Init();

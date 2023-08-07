@@ -169,7 +169,7 @@ void CMaterial::AddTexture(int Register, int ShaderBufferType, const std::string
 	Info->Register = Register;
 	Info->ShaderBufferType = ShaderBufferType;
 	Info->Name = Name;
-	Info->Texture = std::make_shared<CTexture>(Texture);
+	Info->Texture = Texture;
 
 	m_vecTextureInfo.push_back(Info);
 }
@@ -189,7 +189,7 @@ void CMaterial::AddTexture(int Register, int ShaderBufferType, const std::string
 			return;
 		}
 
-		Info->Texture = std::make_shared<CTexture>(m_Scene->GetResource()->FindTexture(Name));
+		Info->Texture = m_Scene->GetResource()->FindTexture(Name);
 	}
 
 	else
@@ -199,14 +199,13 @@ void CMaterial::AddTexture(int Register, int ShaderBufferType, const std::string
 			return;
 		}
 
-		Info->Texture = std::make_shared<CTexture>(CResourceManager::GetInst()->FindTexture(Name));
+		Info->Texture = CResourceManager::GetInst()->FindTexture(Name);
 	}
 
 	m_vecTextureInfo.push_back(Info);
 }
 
-void CMaterial::AddTextureFullPath(int Register, int ShaderBufferType,
-	const std::string& Name, const TCHAR* FullPath)
+void CMaterial::AddTextureFullPath(int Register, int ShaderBufferType, const std::string& Name, const TCHAR* FullPath)
 {
 	MaterialTextureInfo* Info = new MaterialTextureInfo;
 
@@ -221,7 +220,7 @@ void CMaterial::AddTextureFullPath(int Register, int ShaderBufferType,
 			return;
 		}
 
-		Info->Texture = std::make_shared<CTexture>(m_Scene->GetResource()->FindTexture(Name));
+		Info->Texture = m_Scene->GetResource()->FindTexture(Name);
 	}
 
 	else
@@ -344,7 +343,7 @@ void CMaterial::SetTexture(int Index, int Register, int ShaderBufferType, const 
 	Info->Register = Register;
 	Info->ShaderBufferType = ShaderBufferType;
 	Info->Name = Name;
-	Info->Texture = std::make_shared<CTexture>(Texture);
+	Info->Texture = Texture;
 }
 
 void CMaterial::SetTexture(int Index, int Register, int ShaderBufferType, const std::string& Name, const TCHAR* FileName, const std::string& PathName)
@@ -508,7 +507,7 @@ void CMaterial::SetTextureFrameIndex(int TexIndex, int FrameIndex)
 	m_vecTextureInfo[TexIndex]->Index = FrameIndex;
 }
 
-std::shared_ptr<CTexture> CMaterial::GetTexture(int Index) const
+CTexture* CMaterial::GetTexture(int Index) const
 {
 	if ((int)m_vecTextureInfo.size() <= Index)
 	{
@@ -527,7 +526,7 @@ void CMaterial::SetRenderState(const std::string& Name)
 		return;
 	}
 
-	m_RenderState[(int)RenderState->GetType()] = std::make_shared<CRenderState>(RenderState);
+	m_RenderState[(int)RenderState->GetType()] = RenderState;
 }
 
 void CMaterial::SetShader(const std::string& Name)
@@ -586,10 +585,9 @@ void CMaterial::ResetMaterial()
 	}
 }
 
-std::shared_ptr<CMaterial> CMaterial::Clone() const
+CMaterial* CMaterial::Clone() const
 {
-	//return new CMaterial(*this);
-	return std::make_shared<CMaterial>(*this);
+	return new CMaterial(*this);
 }
 
 void CMaterial::Save(FILE* File)

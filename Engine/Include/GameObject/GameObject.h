@@ -59,9 +59,9 @@ public:
 	virtual void Destroy();
 
 protected:
-	std::shared_ptr<CSceneComponent> m_RootComponent;
+	CSharedPtr<CSceneComponent> m_RootComponent;
 	std::list<CSceneComponent*> m_SceneComponentList;
-	std::vector<std::shared_ptr<CObjectComponent>> m_vecObjectComponent;
+	std::vector<CSharedPtr<CObjectComponent>> m_vecObjectComponent;
 	float m_LifeTime;
 	bool m_Start;
 
@@ -71,7 +71,7 @@ public:
 		m_LifeTime = LifeTime;
 	}
 
-	void SetRootComponent(std::shared_ptr<CSceneComponent> Component)
+	void SetRootComponent(CSharedPtr<CSceneComponent> Component)
 	{
 		m_RootComponent = Component;
 	}
@@ -100,7 +100,7 @@ public:
 
 	CSceneComponent* GetRootComponent() const
 	{
-		return m_RootComponent.get();
+		return m_RootComponent;
 	}
 
 	const std::list<CSceneComponent*>& GetSceneComponents() const
@@ -131,7 +131,7 @@ public:
 		{
 			if ((*iter1)->CheckTypeID<T>())
 			{
-				return (T*)(*iter1).get();
+				return (T*)(*iter1);
 			}
 		}
 
@@ -182,10 +182,12 @@ public:
 
 		Component->SetSerialNumber(m_ComponentSerialNumber);
 
-		++m_ComponentSerialNumber;
+		m_ComponentSerialNumber++;
 
 		if (m_Start)
+		{
 			Component->Start();
+		}
 
 		return Component;
 	}

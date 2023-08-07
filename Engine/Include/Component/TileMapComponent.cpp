@@ -29,7 +29,7 @@ CTileMapComponent::CTileMapComponent(const CTileMapComponent& component) : CPrim
 
 	if (component.m_TileMaterial)
 	{
-		m_TileMaterial = std::make_shared<CMaterial>(component.m_TileMaterial->Clone());
+		m_TileMaterial = component.m_TileMaterial->Clone();
 	}
 
 	if (component.m_TileMapCBuffer)
@@ -110,12 +110,15 @@ void CTileMapComponent::SetTileMaterial(const std::string& Name)
 		m_TileMaterial = CResourceManager::GetInst()->FindMaterial(Name);
 	}
 
-	m_TileMapCBuffer->SetImageSize(Vector2((float)m_TileMaterial->GetTexture(0)->GetWidth(), (float)m_TileMaterial->GetTexture(0)->GetHeight()));
+	if (!m_TileMaterial->EmptyTexture())
+	{
+		m_TileMapCBuffer->SetImageSize(Vector2((float)m_TileMaterial->GetTexture(0)->GetWidth(), (float)m_TileMaterial->GetTexture(0)->GetHeight()));
+	}
 }
 
 void CTileMapComponent::SetTileMaterial(CMaterial* Material)
 {
-	m_TileMaterial = std::make_shared<CMaterial>(Material);
+	m_TileMaterial = Material;
 }
 
 void CTileMapComponent::SetTileTexture(CTexture* Texture)
@@ -145,7 +148,7 @@ void CTileMapComponent::SetTileTextureArrayFullPath( const std::string& Name, co
 
 void CTileMapComponent::SetTileBackTexture(CTexture* Texture)
 {
-	m_TileBackTexture = std::make_shared<CTexture>(Texture);
+	m_TileBackTexture = Texture;
 
 	if (m_TileBackTexture)
 	{
@@ -172,7 +175,7 @@ void CTileMapComponent::SetTileBackTexture(const std::string& Name, const TCHAR*
 			return;
 		}
 
-		Texture = m_Scene->GetResource()->FindTexture(Name).get();
+		Texture = m_Scene->GetResource()->FindTexture(Name);
 	}
 
 	else
@@ -182,10 +185,10 @@ void CTileMapComponent::SetTileBackTexture(const std::string& Name, const TCHAR*
 			return;
 		}
 
-		Texture = CResourceManager::GetInst()->FindTexture(Name).get();
+		Texture = CResourceManager::GetInst()->FindTexture(Name);
 	}
 
-	m_TileBackTexture = std::make_shared<CTexture>(Texture);
+	m_TileBackTexture = Texture;
 
 	if (m_TileBackTexture)
 	{
@@ -204,7 +207,7 @@ void CTileMapComponent::SetTileBackTextureFullPath(const std::string& Name, cons
 			return;
 		}
 
-		Texture = m_Scene->GetResource()->FindTexture(Name).get();
+		Texture = m_Scene->GetResource()->FindTexture(Name);
 	}
 
 	else
@@ -214,10 +217,10 @@ void CTileMapComponent::SetTileBackTextureFullPath(const std::string& Name, cons
 			return;
 		}
 
-		Texture = CResourceManager::GetInst()->FindTexture(Name).get();
+		Texture = CResourceManager::GetInst()->FindTexture(Name);
 	}
 
-	m_TileBackTexture = std::make_shared<CTexture>(Texture);;
+	m_TileBackTexture = Texture;
 
 	if (m_TileBackTexture)
 	{
@@ -236,7 +239,7 @@ void CTileMapComponent::SetTileBackTextureArray(const std::string& Name, const s
 			return;
 		}
 
-		Texture = m_Scene->GetResource()->FindTexture(Name).get();
+		Texture = m_Scene->GetResource()->FindTexture(Name);
 	}
 
 	else
@@ -246,10 +249,10 @@ void CTileMapComponent::SetTileBackTextureArray(const std::string& Name, const s
 			return;
 		}
 
-		Texture = CResourceManager::GetInst()->FindTexture(Name).get();
+		Texture = CResourceManager::GetInst()->FindTexture(Name);
 	}
 
-	m_TileBackTexture = std::make_shared<CTexture>(Texture);;
+	m_TileBackTexture = Texture;
 
 	if (m_TileBackTexture)
 	{
@@ -268,7 +271,7 @@ void CTileMapComponent::SetTileBackTextureArrayFullPath(const std::string& Name,
 			return;
 		}
 
-		Texture = m_Scene->GetResource()->FindTexture(Name).get();
+		Texture = m_Scene->GetResource()->FindTexture(Name);
 	}
 
 	else
@@ -278,10 +281,10 @@ void CTileMapComponent::SetTileBackTextureArrayFullPath(const std::string& Name,
 			return;
 		}
 
-		Texture = CResourceManager::GetInst()->FindTexture(Name).get();
+		Texture = CResourceManager::GetInst()->FindTexture(Name);
 	}
 
-	m_TileBackTexture = std::make_shared<CTexture>(Texture);;
+	m_TileBackTexture = Texture;
 
 	if (m_TileBackTexture)
 	{
@@ -1233,7 +1236,7 @@ void CTileMapComponent::Load(FILE* File)
 
 	if (TileMaterial)
 	{
-		std::shared_ptr<CMaterial> Material = m_Mesh->GetMaterial(0);
+		CSharedPtr<CMaterial> Material = m_Mesh->GetMaterial(0);
 
 		m_TileMaterial = Material->Clone();
 

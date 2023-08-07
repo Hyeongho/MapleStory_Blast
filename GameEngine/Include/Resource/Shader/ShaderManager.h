@@ -11,9 +11,9 @@ private:
 	~CShaderManager();
 
 private:
-	std::unordered_map<std::string, std::shared_ptr<class CShader>>	m_mapShader;
-	std::unordered_map<std::string, std::shared_ptr<class CShader>>	m_mapGlobalShader;
-	std::unordered_map<std::string, std::shared_ptr<class CConstantBuffer>>	m_mapCBuffer;
+	std::unordered_map<std::string, CSharedPtr<class CShader>> m_mapShader;
+	std::unordered_map<std::string, CSharedPtr<class CShader>> m_mapGlobalShader;
+	std::unordered_map<std::string, CSharedPtr<class CConstantBuffer>> m_mapCBuffer;
 	class CColliderConstantBuffer* m_ColliderCBuffer;
 
 public:
@@ -51,11 +51,11 @@ public:
 			return false;
 		}
 
-		m_mapShader.insert(std::make_pair(Name, std::make_shared<T>(Shader)));
+		m_mapShader.insert(std::make_pair(Name, Shader));
 
 		if (GlobalShader)
 		{
-			m_mapGlobalShader.insert(std::make_pair(Name, std::make_shared<T>(Shader)));
+			m_mapGlobalShader.insert(std::make_pair(Name, Shader));
 		}
 
 		return true;

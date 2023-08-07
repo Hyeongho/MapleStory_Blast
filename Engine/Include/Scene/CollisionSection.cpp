@@ -1,5 +1,6 @@
 #include "CollisionSection.h"
 #include "../Component/Collider.h"
+#include "../Component/Collider2D.h"
 
 CCollisionSection::CCollisionSection()
 {
@@ -11,7 +12,7 @@ CCollisionSection::~CCollisionSection()
 
 void CCollisionSection::AddCollider(CCollider2D* Collider)
 {
-	m_ColliderList.push_back(std::make_shared<CCollider2D>(Collider));
+	m_ColliderList.push_back(Collider);
 
 	Collider->AddSectionIndex(m_Index);
 }
@@ -31,14 +32,14 @@ void CCollisionSection::Collision(float DeltaTime)
 
 	for (; iter != iterEnd; iter++)
 	{
-		CCollider* Src = (*iter).get();
+		CCollider* Src = *iter;
 
 		auto iter1 = iter;
 		iter1++;
 
 		for (; iter1 != iter1End; iter1++)
 		{
-			CCollider* Dest = (*iter1).get();
+			CCollider* Dest = *iter1;
 
 			int	OverlapSection = Src->CheckOverlapSection(Dest);
 

@@ -39,7 +39,7 @@ CUIButton::~CUIButton()
 
 void CUIButton::SetTexture(EButtonState State, CTexture* Texture)
 {
-    m_TextureInfo[(int)State].Texture = std::make_shared<CTexture>(Texture);
+    m_TextureInfo[(int)State].Texture = Texture;
 }
 
 bool CUIButton::SetTexture(EButtonState State, const std::string& Name, const TCHAR* FileName, const std::string& PathName)
@@ -47,7 +47,9 @@ bool CUIButton::SetTexture(EButtonState State, const std::string& Name, const TC
     if (m_Scene)
     {
         if (!m_Scene->GetResource()->LoadTexture(Name, FileName, PathName))
+        {
             return false;
+        }
 
         m_TextureInfo[(int)State].Texture = m_Scene->GetResource()->FindTexture(Name);
     }
@@ -55,7 +57,9 @@ bool CUIButton::SetTexture(EButtonState State, const std::string& Name, const TC
     else
     {
         if (!CResourceManager::GetInst()->LoadTexture(Name, FileName, PathName))
+        {
             return false;
+        }
 
         m_TextureInfo[(int)State].Texture = CResourceManager::GetInst()->FindTexture(Name);
     }
@@ -162,7 +166,7 @@ void CUIButton::SetPlayScale(EButtonState State, float PlayScale)
 
 void CUIButton::SetSound(EButtonEventState State, CSound* Sound)
 {
-    m_Sound[(int)State] = std::make_shared<CSound>(Sound);
+    m_Sound[(int)State] = Sound;
 }
 
 void CUIButton::SetSound(EButtonEventState State, const std::string& Name)

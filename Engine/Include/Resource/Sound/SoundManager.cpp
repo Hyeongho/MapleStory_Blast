@@ -87,7 +87,7 @@ bool CSoundManager::CreateSoundChannel(const std::string& Name)
 
 bool CSoundManager::LoadSound(const std::string& GroupName, const std::string& Name, bool Loop, const char* FileName, const std::string& PathName)
 {
-	std::shared_ptr<CSound> Sound = FindSound(Name);
+	CSound* Sound = FindSound(Name);
 
 	if (Sound)
 	{
@@ -101,12 +101,13 @@ bool CSoundManager::LoadSound(const std::string& GroupName, const std::string& N
 		return false;
 	}
 
-	Sound = std::make_shared<CSound>();
+	Sound = new CSound;
 
 	Sound->SetName(Name);
 
 	if (!Sound->LoadSound(m_System, Group, Loop, FileName, PathName))
 	{
+		SAFE_DELETE(Sound);
 		return false;
 	}
 
@@ -140,7 +141,7 @@ bool CSoundManager::SetVolume(const std::string& GroupName, int Volume)
 
 bool CSoundManager::SoundPlay(const std::string& Name)
 {
-	CSound* Sound = FindSound(Name).get();
+	CSound* Sound = FindSound(Name);
 
 	if (!Sound)
 	{
@@ -154,7 +155,7 @@ bool CSoundManager::SoundPlay(const std::string& Name)
 
 bool CSoundManager::SoundStop(const std::string& Name)
 {
-	CSound* Sound = FindSound(Name).get();
+	CSound* Sound = FindSound(Name);
 
 	if (!Sound)
 	{
@@ -168,7 +169,7 @@ bool CSoundManager::SoundStop(const std::string& Name)
 
 bool CSoundManager::SoundPause(const std::string& Name)
 {
-	CSound* Sound = FindSound(Name).get();
+	CSound* Sound = FindSound(Name);
 
 	if (!Sound)
 	{
@@ -182,7 +183,7 @@ bool CSoundManager::SoundPause(const std::string& Name)
 
 bool CSoundManager::SoundResume(const std::string& Name)
 {
-	CSound* Sound = FindSound(Name).get();
+	CSound* Sound = FindSound(Name);
 
 	if (!Sound)
 	{
@@ -206,7 +207,7 @@ FMOD::ChannelGroup* CSoundManager::FindChannelGroup(const std::string& Name)
 	return iter->second;
 }
 
-std::shared_ptr<CSound> CSoundManager::FindSound(const std::string& Name)
+CSound* CSoundManager::FindSound(const std::string& Name)
 {
 	auto iter = m_mapSound.find(Name);
 

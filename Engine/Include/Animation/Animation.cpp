@@ -169,6 +169,7 @@ bool CAnimation::AddAnimation(const std::string& Name, const std::string& Sequen
 	}
 
 	CAnimationSequence* Sequence = nullptr;
+	//CSharedPtr<CAnimationSequence> Sequence = std::make_shared<CAnimationSequence>(new CAnimationSequence());
 
 	if (m_Owner->GetScene())
 	{
@@ -182,7 +183,7 @@ bool CAnimation::AddAnimation(const std::string& Name, const std::string& Sequen
 
 	Anim = new CAnimationData;
 
-	Anim->m_Sequence = std::make_shared<CAnimationSequence>(Sequence);
+	Anim->m_Sequence = Sequence;
 	Anim->m_SequenceName = SequenceName;
 	Anim->m_Name = Name;
 	Anim->m_PlayTime = PlayTime;
@@ -218,7 +219,7 @@ bool CAnimation::AddAnimation(const std::string& Name, CAnimationSequence* Seque
 
 	Anim = new CAnimationData;
 
-	Anim->m_Sequence = std::make_shared<CAnimationSequence>(Sequence);
+	Anim->m_Sequence = Sequence;
 	Anim->m_SequenceName = Sequence->GetName();
 	Anim->m_Name = Name;
 	Anim->m_PlayTime = PlayTime;

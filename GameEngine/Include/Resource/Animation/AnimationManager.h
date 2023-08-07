@@ -11,7 +11,7 @@ private:
 	~CAnimationManager();
 
 private:
-	std::unordered_map<std::string, std::shared_ptr<CAnimationSequence>> m_mapSequence2D;
+	std::unordered_map<std::string, CSharedPtr<CAnimationSequence>> m_mapSequence2D;
 	class CAnimationConstantBuffer* m_Anim2DBuffer;
 
 public:

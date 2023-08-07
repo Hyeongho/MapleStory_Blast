@@ -11,9 +11,9 @@ private:
 	~CShaderManager();
 
 private:
-	std::unordered_map<std::string, std::shared_ptr<class CShader>>	m_mapShader;
-	std::unordered_map<std::string, std::shared_ptr<class CShader>>	m_mapGlobalShader;
-	std::unordered_map<std::string, std::shared_ptr<class CConstantBuffer>>	m_mapCBuffer;
+	std::unordered_map<std::string, CSharedPtr<class CShader>> m_mapShader;
+	std::unordered_map<std::string, CSharedPtr<class CShader>> m_mapGlobalShader;
+	std::unordered_map<std::string, CSharedPtr<class CConstantBuffer>> m_mapCBuffer;
 	class CColliderConstantBuffer* m_ColliderCBuffer;
 
 public:
@@ -24,17 +24,17 @@ public:
 
 public:
 	bool Init();
-	std::shared_ptr<class CShader> FindShader(const std::string& Name);
+	class CShader* FindShader(const std::string& Name);
 	void ReleaseShader(const std::string& Name);
 
 	bool CreateConstantBuffer(const std::string& Name, int Size, int Register, int ShaderBufferType = (int)EShaderBufferType::All);
-	std::shared_ptr<class CConstantBuffer> FindConstantBuffer(const std::string& Name);
+	class CConstantBuffer* FindConstantBuffer(const std::string& Name);
 
 public:
 	template <typename T>
 	bool CreateShader(const std::string& Name, bool GlobalShader = false)
 	{
-		T* Shader = (T*)FindShader(Name).get();
+		T* Shader = (T*)FindShader(Name);
 
 		if (Shader)
 		{
@@ -51,11 +51,11 @@ public:
 			return false;
 		}
 
-		m_mapShader.insert(std::make_pair(Name, std::make_shared<T>(Shader)));
+		m_mapShader.insert(std::make_pair(Name, Shader));
 
 		if (GlobalShader)
 		{
-			m_mapGlobalShader.insert(std::make_pair(Name, std::make_shared<T>(Shader)));
+			m_mapGlobalShader.insert(std::make_pair(Name, Shader));
 		}
 
 		return true;

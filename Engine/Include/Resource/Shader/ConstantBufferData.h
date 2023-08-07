@@ -11,7 +11,7 @@ public:
 	virtual ~CConstantBufferData();
 
 protected:
-	std::shared_ptr<class CConstantBuffer> m_Buffer;
+	CSharedPtr<class CConstantBuffer> m_Buffer;
 
 protected:
 	void SetConstantBuffer(const std::string& Name);

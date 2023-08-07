@@ -60,7 +60,7 @@ bool CShaderManager::Init()
 	return true;
 }
 
-std::shared_ptr<class CShader> CShaderManager::FindShader(const std::string& Name)
+CShader* CShaderManager::FindShader(const std::string& Name)
 {
 	auto iter = m_mapShader.find(Name);
 
@@ -104,12 +104,12 @@ bool CShaderManager::CreateConstantBuffer(const std::string& Name, int Size, int
 		return false;
 	}
 
-	m_mapCBuffer.insert(std::make_pair(Name, std::make_shared<CConstantBuffer>(Buffer)));
+	m_mapCBuffer.insert(std::make_pair(Name, Buffer));
 
 	return true;
 }
 
-std::shared_ptr<CConstantBuffer> CShaderManager::FindConstantBuffer(const std::string& Name)
+CConstantBuffer* CShaderManager::FindConstantBuffer(const std::string& Name)
 {
 	auto iter = m_mapCBuffer.find(Name);
 

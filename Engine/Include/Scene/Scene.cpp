@@ -498,7 +498,7 @@ void CScene::Load(const char* FullPath)
 
 		CurPos = NextPos;
 
-		m_ObjList.push_back(std::make_shared<CGameObject>(NewObj));
+		m_ObjList.push_back(NewObj);
 	}
 
 	m_SceneInfo->LoadComplete();
@@ -551,7 +551,7 @@ void CScene::GetAllGameObjectHierarchyName(std::vector<HierarchyObjectName>& vec
 
 		Names.Name = (*iter)->GetName();
 		Names.ClassName = (*iter)->GetObjectTypeName();
-		Names.Obj = (*iter).get();
+		Names.Obj = (*iter);
 		//Names.Parent = Parent;
 
 		/*if (Parent)
@@ -573,7 +573,7 @@ CGameObject* CScene::FindObject(const std::string& Name)
 	{
 		if ((*iter)->GetName() == Name)
 		{
-			return (*iter).get();
+			return (*iter);
 		}
 	}
 

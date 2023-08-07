@@ -24,7 +24,7 @@ CUIWindow::CUIWindow(const CUIWindow& Window) : CRef(Window)
 
 		Widget->m_Owner = this;
 
-		m_vecWidget.push_back(std::make_shared<CUIWidget>(Widget));
+		m_vecWidget.push_back(Widget);
 	}
 }
 
@@ -184,7 +184,7 @@ void CUIWindow::Load(FILE* File)
 			Widget->Init();
 			Widget->Load(File);
 
-			m_vecWidget.push_back(std::make_shared<CUIWidget>(Widget));
+			m_vecWidget.push_back(Widget);
 		}
 
 		else
@@ -251,7 +251,7 @@ CUIWidget* CUIWindow::CollisionMouse(const Vector2& MousePos)
 		if ((*iter)->CollisionMouse(MousePos))
 		{
 			(*iter)->m_MouseHovered = true;
-			return (*iter).get();
+			return (*iter);
 		}
 
 		else
@@ -263,12 +263,12 @@ CUIWidget* CUIWindow::CollisionMouse(const Vector2& MousePos)
 	return nullptr;
 }
 
-bool CUIWindow::SortWidget(std::shared_ptr<CUIWidget> Src, std::shared_ptr<CUIWidget> Dest)
+bool CUIWindow::SortWidget(CSharedPtr<CUIWidget> Src, CSharedPtr<CUIWidget> Dest)
 {
 	return Src->GetZOrder() > Dest->GetZOrder();
 }
 
-bool CUIWindow::SortWidgetInv(std::shared_ptr<CUIWidget> Src, std::shared_ptr<CUIWidget> Dest)
+bool CUIWindow::SortWidgetInv(CSharedPtr<CUIWidget> Src, CSharedPtr<CUIWidget> Dest)
 {
 	return Src->GetZOrder() < Dest->GetZOrder();
 }

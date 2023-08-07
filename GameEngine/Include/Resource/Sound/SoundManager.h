@@ -11,7 +11,7 @@ private:
 	~CSoundManager();
 
 private:
-	std::unordered_map<std::string, std::shared_ptr<class CSound>> m_mapSound;
+	std::unordered_map<std::string, CSharedPtr<class CSound>> m_mapSound;
 	FMOD::System* m_System;
 	FMOD::ChannelGroup* m_MasterGroup;
 	std::unordered_map<std::string, FMOD::ChannelGroup*> m_mapChannelGroup;

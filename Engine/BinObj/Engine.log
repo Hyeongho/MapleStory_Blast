@@ -1,0 +1,154 @@
+﻿FXC : warning X4717: Effects deprecated for D3DCompiler_47
+  
+  compilation object save succeeded; see E:\C++_Client\MapleStory_Blast\Engine\Bin\Collider.cso
+FXC : warning X4717: Effects deprecated for D3DCompiler_47
+  
+  compilation object save succeeded; see E:\C++_Client\MapleStory_Blast\Engine\Bin\Mesh.cso
+FXC : warning X4717: Effects deprecated for D3DCompiler_47
+  
+  compilation object save succeeded; see E:\C++_Client\MapleStory_Blast\Engine\Bin\Sprite.cso
+FXC : warning X4717: Effects deprecated for D3DCompiler_47
+  
+  compilation object save succeeded; see E:\C++_Client\MapleStory_Blast\Engine\Bin\TileMap.cso
+FXC : warning X4717: Effects deprecated for D3DCompiler_47
+  
+  compilation object save succeeded; see E:\C++_Client\MapleStory_Blast\Engine\Bin\UI.cso
+  Animation.cpp
+  AnimationData.cpp
+  CollisionManager.cpp
+  CameraComponent.cpp
+  Collider.cpp
+  Collider2D.cpp
+  ColliderBox2D.cpp
+  ColliderOBB2D.cpp
+  ColliderPixel.cpp
+  ColliderSphere2D.cpp
+  Component.cpp
+  ObjectComponent.cpp
+  PrimitiveComponent.cpp
+  SceneComponent.cpp
+  SpriteComponent.cpp
+  TargetArm.cpp
+  Tile.cpp
+  TileMapComponent.cpp
+  Transform.cpp
+  Device.cpp
+  컴파일하고 있습니다...
+  EditorButton.cpp
+  EditorCheckBox.cpp
+  EditorComboBox.cpp
+  EditorGroup.cpp
+  EditorGUIManager.cpp
+  EditorImage.cpp
+  EditorInput.cpp
+  EditorLabel.cpp
+  EditorListBox.cpp
+  EditorSameLine.cpp
+  EditorText.cpp
+  EditorWidget.cpp
+  EditorWindow.cpp
+  Engine.cpp
+  EngineSetting.cpp
+  GameObject.cpp
+  imgui.cpp
+  imgui_demo.cpp
+  imgui_draw.cpp
+  imgui_impl_dx11.cpp
+  컴파일하고 있습니다...
+  imgui_impl_win32.cpp
+  imgui_tables.cpp
+  imgui_widgets.cpp
+  Input.cpp
+  Matrix.cpp
+  PathManager.cpp
+  Ref.cpp
+  BlendState.cpp
+  DepthStencilState.cpp
+  RenderManager.cpp
+  RenderState.cpp
+  RenderStateManager.cpp
+  AnimationManager.cpp
+  AnimationSequence.cpp
+  Font.cpp
+  FontCollection.cpp
+  FontManager.cpp
+  Material.cpp
+  MaterialManager.cpp
+  Mesh.cpp
+  컴파일하고 있습니다...
+  MeshManager.cpp
+  SpriteMesh.cpp
+  ResourceManager.cpp
+  AnimationConstantBuffer.cpp
+  ColliderConstantBuffer.cpp
+  ColliderImageShader.cpp
+  ColliderShader.cpp
+  ComputeShader.cpp
+  ConstantBuffer.cpp
+  ConstantBufferData.cpp
+  GraphicShader.cpp
+  MaterialConstantBuffer.cpp
+  Shader.cpp
+  ShaderManager.cpp
+  SpriteColorShader.cpp
+  SpriteShader.cpp
+  StructuredBuffer.cpp
+  TileMapBackShader.cpp
+  TileMapConstantBuffer.cpp
+  TileMapShader.cpp
+  컴파일하고 있습니다...
+  TransformConstantBuffer.cpp
+  UIConstantBuffer.cpp
+  UIProgressBarConstantBuffer.cpp
+  UIProgressBarShader.cpp
+  UIShader.cpp
+  Sound.cpp
+  SoundManager.cpp
+  RenderTarget.cpp
+  Texture.cpp
+  TextureManager.cpp
+  CameraManager.cpp
+  CollisionSection.cpp
+  Scene.cpp
+  SceneCollision.cpp
+  SceneInfo.cpp
+  SceneManager.cpp
+  SceneResource.cpp
+  SceneViewport.cpp
+  Timer.cpp
+  UIButton.cpp
+  컴파일하고 있습니다...
+  UIImage.cpp
+  UINumber.cpp
+  UIProgressBar.cpp
+  UIText.cpp
+  UIWidget.cpp
+  UIWindow.cpp
+  Vector2.cpp
+  Vector3.cpp
+  Vector4.cpp
+  Engine.vcxproj -> E:\C++_Client\MapleStory_Blast\Engine\Bin\Engine.lib
+  0개 파일이 복사되었습니다.
+  파일을 찾을 수 없습니다-*.inl
+  0개 파일이 복사되었습니다.
+  0개 파일이 복사되었습니다.
+  .\Engine\Bin\Collider.cso
+  .\Engine\Bin\Engine.lib
+  .\Engine\Bin\Mesh.cso
+  .\Engine\Bin\Sprite.cso
+  .\Engine\Bin\TileMap.cso
+  .\Engine\Bin\UI.cso
+  6개 파일이 복사되었습니다.
+  .\Engine\Bin\Collider.cso
+  .\Engine\Bin\Engine.lib
+  .\Engine\Bin\Mesh.cso
+  .\Engine\Bin\Sprite.cso
+  .\Engine\Bin\TileMap.cso
+  .\Engine\Bin\UI.cso
+  6개 파일이 복사되었습니다.
+  .\Engine\Bin\Collider.cso
+  .\Engine\Bin\Engine.lib
+  디스크 공간이 부족합니다.
+  1개 파일이 복사되었습니다.
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(155,5): error MSB3073: "call E:\C++_Client\MapleStory_Blast\Copy.bat
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(155,5): error MSB3073: :VCEnd" 명령이 종료되었습니다(코드: 4).

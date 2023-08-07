@@ -12,6 +12,24 @@ CRef::~CRef()
 {
 }
 
+void CRef::AddRef()
+{
+	m_RefCount++;
+}
+
+int CRef::Release()
+{
+	m_RefCount--;
+
+	if (m_RefCount <= 0)
+	{
+		delete this;
+		return 0;
+	}
+
+	return m_RefCount;
+}
+
 void CRef::Save(FILE* File)
 {
 	int	Length = (int)m_Name.length();

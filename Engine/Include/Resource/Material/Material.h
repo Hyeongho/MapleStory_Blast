@@ -8,7 +8,7 @@ struct MaterialTextureInfo
 {
     std::string Name;
     ESamplerType SamplerType;
-    std::shared_ptr<CTexture> Texture;
+    CSharedPtr<CTexture> Texture;
     int Register;
     int ShaderBufferType;
     int Index;
@@ -40,15 +40,21 @@ public:
     }
 
 protected:
-    std::shared_ptr<class CShader> m_Shader;
+    CSharedPtr<class CShader> m_Shader;
     std::vector<MaterialTextureInfo*> m_vecTextureInfo;
     Vector4 m_BaseColor;
     Vector4 m_AmbientColor;
     Vector4 m_SpecularColor;
-    Vector4 m_EmissiveColor;    // 자체적으로 빛을 발산하는 물체일 경우
-    float m_Opacity;          // 불투명도.
+    Vector4 m_EmissiveColor;
+    float m_Opacity;
     class CMaterialConstantBuffer* m_CBuffer;
-    std::shared_ptr<CRenderState> m_RenderState[3];
+    CSharedPtr<CRenderState> m_RenderState[3];
+
+public:
+    bool EmptyTexture() const
+    {
+        return m_vecTextureInfo.empty();
+    }
 
 public:
     void SetBaseColor(const Vector4& Color);
@@ -88,7 +94,7 @@ public:
 
     void SetTextureFrameIndex(int TexIndex, int FrameIndex);
 
-    std::shared_ptr<class CTexture> GetTexture(int Index = 0) const;
+    CTexture* GetTexture(int Index = 0) const;
 
 public:
     void SetRenderState(const std::string& Name);
@@ -97,7 +103,7 @@ public:
     void SetShader(const std::string& Name);
     void SetMaterial();
     void ResetMaterial();
-    std::shared_ptr<CMaterial> Clone() const;
+    CMaterial* Clone() const;
     virtual void Save(FILE* File);
     virtual void Load(FILE* File);
 };

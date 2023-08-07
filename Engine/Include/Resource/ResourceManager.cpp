@@ -81,9 +81,9 @@ bool CResourceManager::CreateMesh(CScene* Scene, MeshType Type, const std::strin
 	return m_MeshManager->CreateMesh(Scene, Type, Name, VtxData, Size, Count, VtxUsage, Primitive, IdxData, IdxSize, IdxCount, IdxUsage, Fmt);
 }
 
-std::shared_ptr<CMesh> CResourceManager::FindMesh(const std::string& Name)
+CMesh* CResourceManager::FindMesh(const std::string& Name)
 {
-	return m_MeshManager->FindMesh(Name);
+	return m_MeshManager->FindMesh(Name); 
 }
 
 void CResourceManager::ReleaseMesh(const std::string& Name)
@@ -96,7 +96,7 @@ CColliderConstantBuffer* CResourceManager::GetColliderCBuffer() const
 	return m_ShaderManager->GetColliderCBuffer();
 }
 
-std::shared_ptr<class CShader> CResourceManager::FindShader(const std::string& Name)
+CShader* CResourceManager::FindShader(const std::string& Name)
 {
 	return m_ShaderManager->FindShader(Name);
 }
@@ -111,7 +111,7 @@ bool CResourceManager::CreateConstantBuffer(const std::string& Name, int Size, i
 	return m_ShaderManager->CreateConstantBuffer(Name, Size, Register, ShaderBufferType);
 }
 
-std::shared_ptr<CConstantBuffer> CResourceManager::FindConstantBuffer(const std::string& Name)
+CConstantBuffer* CResourceManager::FindConstantBuffer(const std::string& Name)
 {
 	return m_ShaderManager->FindConstantBuffer(Name);
 }
@@ -159,7 +159,7 @@ void CResourceManager::RenderTexture()
 	m_TextureManager->Render();
 }
 
-std::shared_ptr<CTexture> CResourceManager::FindTexture(const std::string& Name)
+CTexture* CResourceManager::FindTexture(const std::string& Name)
 {
 	return m_TextureManager->FindTexture(Name);
 }
@@ -169,7 +169,7 @@ void CResourceManager::ReleaseTexture(const std::string& Name)
 	m_TextureManager->ReleaseTexture(Name);
 }
 
-std::shared_ptr<CMaterial> CResourceManager::FindMaterial(const std::string& Name)
+CMaterial* CResourceManager::FindMaterial(const std::string& Name)
 {
 	return m_MaterialManager->FindMaterial(Name);
 }
@@ -189,28 +189,19 @@ bool CResourceManager::CreateAnimationSequence2D(const std::string& Name, CTextu
 	return m_AnimationManager->CreateAnimationSequence2D(Name, Texture);
 }
 
-bool CResourceManager::CreateAnimationSequence2DFullPath(
-	const std::string& Name, const std::string& TextureName,
-	const TCHAR* FullPath)
+bool CResourceManager::CreateAnimationSequence2DFullPath(const std::string& Name, const std::string& TextureName, const TCHAR* FullPath)
 {
 	return m_AnimationManager->CreateAnimationSequence2DFullPath(Name, TextureName, FullPath);
 }
 
-bool CResourceManager::CreateAnimationSequence2D(const std::string& Name,
-	const std::string& TextureName,
-	const std::vector<const TCHAR*>& vecFileName,
-	const std::string& PathName)
+bool CResourceManager::CreateAnimationSequence2D(const std::string& Name, const std::string& TextureName, const std::vector<const TCHAR*>& vecFileName, const std::string& PathName)
 {
-	return m_AnimationManager->CreateAnimationSequence2D(Name, TextureName,
-		vecFileName, PathName);
+	return m_AnimationManager->CreateAnimationSequence2D(Name, TextureName, vecFileName, PathName);
 }
 
-bool CResourceManager::CreateAnimationSequence2DFullPath(
-	const std::string& Name, const std::string& TextureName,
-	const std::vector<const TCHAR*>& vecFullPath)
+bool CResourceManager::CreateAnimationSequence2DFullPath(const std::string& Name, const std::string& TextureName, const std::vector<const TCHAR*>& vecFullPath)
 {
-	return m_AnimationManager->CreateAnimationSequence2DFullPath(Name, TextureName,
-		vecFullPath);
+	return m_AnimationManager->CreateAnimationSequence2DFullPath(Name, TextureName, vecFullPath);
 }
 
 bool CResourceManager::AddAnimationSequence2DFrame(const std::string& Name, const Vector2& Start, const Vector2& End)
@@ -313,7 +304,7 @@ FMOD::ChannelGroup* CResourceManager::FindChannelGroup(const std::string& Name)
 	return m_SoundManager->FindChannelGroup(Name);
 }
 
-std::shared_ptr<CSound> CResourceManager::FindSound(const std::string& Name)
+CSound* CResourceManager::FindSound(const std::string& Name)
 {
 	return m_SoundManager->FindSound(Name);
 }
@@ -399,7 +390,7 @@ unsigned int CResourceManager::CreateFontColorKey(const Vector4& Color)
 	return m_FontManager->CreateFontColorKey(Color);
 }
 
-std::shared_ptr<CFont> CResourceManager::FindFont(const std::string& Name)
+CSharedPtr<CFont> CResourceManager::FindFont(const std::string& Name)
 {
 	return m_FontManager->FindFont(Name);
 }

@@ -19,9 +19,9 @@ CPrimitiveComponent::CPrimitiveComponent(const CPrimitiveComponent& component) :
 
 	for (size_t i = 0; i < Size; i++)
 	{
-		CMaterial* Material = component.m_vecMaterial[i]->Clone().get();
+		CMaterial* Material = component.m_vecMaterial[i]->Clone();
 
-		m_vecMaterial.push_back(std::make_shared<CMaterial>(Material));
+		m_vecMaterial.push_back(Material);
 	}
 }
 
@@ -38,7 +38,7 @@ bool CPrimitiveComponent::SetMesh(const std::string& Name)
 
 	else
 	{
-		m_Mesh = std::make_shared<CMesh>(CResourceManager::GetInst()->FindMesh(Name));
+		m_Mesh = CResourceManager::GetInst()->FindMesh(Name);
 	}
 
 	if (m_Mesh)
@@ -52,9 +52,9 @@ bool CPrimitiveComponent::SetMesh(const std::string& Name)
 
 	for (int i = 0; i < SlotCount; i++)
 	{
-		CMaterial* Material = m_Mesh->GetMaterial(i).get();
+		CMaterial* Material = m_Mesh->GetMaterial(i);
 
-		m_vecMaterial.push_back(std::make_shared<CMaterial>(Material->Clone()));
+		m_vecMaterial.push_back(Material->Clone());
 	}
 
 	return true;
@@ -62,7 +62,7 @@ bool CPrimitiveComponent::SetMesh(const std::string& Name)
 
 bool CPrimitiveComponent::SetMesh(CMesh* Mesh)
 {
-	m_Mesh = std::make_shared<CMesh>(Mesh);
+	m_Mesh = Mesh;
 
 	if (!m_Mesh)
 	{
@@ -75,9 +75,9 @@ bool CPrimitiveComponent::SetMesh(CMesh* Mesh)
 
 	for (int i = 0; i < SlotCount; i++)
 	{
-		CMaterial* Material = m_Mesh->GetMaterial(i).get();
+		CMaterial* Material = m_Mesh->GetMaterial(i);
 
-		m_vecMaterial.push_back(std::make_shared<CMaterial>(Material->Clone()));
+		m_vecMaterial.push_back(Material->Clone());
 	}
 
 	return true;
@@ -100,33 +100,33 @@ void CPrimitiveComponent::SetMaterial(int Slot, const std::string& Name)
 
 	if (m_Scene)
 	{
-		Material = m_Scene->GetResource()->FindMaterial(Name).get();
+		Material = m_Scene->GetResource()->FindMaterial(Name);
 	}
 
 	else
 	{
-		Material = CResourceManager::GetInst()->FindMaterial(Name).get();
+		Material = CResourceManager::GetInst()->FindMaterial(Name);
 	}
 
-	m_vecMaterial[Slot] = std::make_shared<CMaterial>(Material->Clone());
+	m_vecMaterial[Slot] = Material->Clone();
 }
 
 void CPrimitiveComponent::SetMaterial(int Slot, CMaterial* Material)
 {
 	if (Material)
 	{
-		m_vecMaterial[Slot] = std::make_shared<CMaterial>(Material->Clone());
+		m_vecMaterial[Slot] = Material->Clone();
 	}
 
 	else
 	{
-		m_vecMaterial[Slot] = std::make_shared<CMaterial>(Material);
+		m_vecMaterial[Slot] = Material;
 	}
 }
 
 void CPrimitiveComponent::AddMaterial(const std::string& Name)
 {
-	std::shared_ptr<CMaterial> Material = nullptr;
+	CSharedPtr<CMaterial> Material = nullptr;
 
 	if (m_Scene)
 	{
@@ -138,12 +138,12 @@ void CPrimitiveComponent::AddMaterial(const std::string& Name)
 		Material = CResourceManager::GetInst()->FindMaterial(Name);
 	}
 
-	m_vecMaterial.push_back(std::make_shared<CMaterial>(Material->Clone()));
+	m_vecMaterial.push_back(Material->Clone());
 }
 
 void CPrimitiveComponent::AddMaterial(CMaterial* Material)
 {
-	m_vecMaterial.push_back(std::make_shared<CMaterial>(Material->Clone()));
+	m_vecMaterial.push_back(Material->Clone());
 }
 
 void CPrimitiveComponent::ClearMaterial()
@@ -239,7 +239,7 @@ void CPrimitiveComponent::Load(FILE* File)
 
 	for (int i = 0; i < MaterialCount; i++)
 	{
-		std::shared_ptr<CMaterial> Material = m_Mesh->GetMaterial(i);
+		CSharedPtr<CMaterial> Material = m_Mesh->GetMaterial(i);
 
 		Material = Material->Clone();
 

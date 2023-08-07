@@ -52,7 +52,6 @@ public:
     void Pause();
     void Resume();
 
-
 public:
     void Save(FILE* File);
     void Load(FILE* File);

@@ -16,6 +16,24 @@
     <Filter Include="01. ClientManager">
       <UniqueIdentifier>{e144a8e7-0963-41f5-94b9-f3b61f142db7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="02. Scene">
+      <UniqueIdentifier>{8d1d9443-212a-4b21-b45a-1b20f602fbde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. GameObject">
+      <UniqueIdentifier>{5660ddec-3a4e-43cd-a346-34fc507cfbdf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04. UI">
+      <UniqueIdentifier>{7c86117f-9056-4c2e-b0a6-2e018204b211}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Setting">
+      <UniqueIdentifier>{4c907434-3923-473f-8f18-648e3f2bebed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Scene\01. LoadingScene">
+      <UniqueIdentifier>{142840ae-c3c0-4b25-a739-043438d433c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Scene\02. SceneInfo">
+      <UniqueIdentifier>{df5f0409-01ef-4e09-83e6-da0c421b4cb8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -23,6 +41,9 @@
     </ClCompile>
     <ClCompile Include="ClientManager.cpp">
       <Filter>01. ClientManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\TitleScene.cpp">
+      <Filter>02. Scene\02. SceneInfo</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -32,5 +53,21 @@
     <ClInclude Include="ClientManager.h">
       <Filter>01. ClientManager</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\TitleScene.h">
+      <Filter>02. Scene\02. SceneInfo</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Client.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon1.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
 </Project>

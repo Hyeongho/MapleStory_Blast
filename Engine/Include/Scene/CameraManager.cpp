@@ -11,12 +11,12 @@ CCameraManager::~CCameraManager()
 
 void CCameraManager::SetCurrentCamera(CCameraComponent* Camera)
 {
-	m_CurrentCamera = std::make_shared<CCameraComponent>(Camera);
+	m_CurrentCamera = Camera;
 }
 
 void CCameraManager::SetUICamera(CCameraComponent* Camera)
 {
-	m_UICamera = std::make_shared<CCameraComponent>(Camera);
+	m_UICamera = Camera;
 }
 
 void CCameraManager::Start()
@@ -25,13 +25,13 @@ void CCameraManager::Start()
 
 bool CCameraManager::Init()
 {
-	m_CurrentCamera = std::make_shared<CCameraComponent>();
+	m_CurrentCamera = new CCameraComponent;
 
 	m_CurrentCamera->Init();
 
 	m_CurrentCamera->SetCameraType(ECameraType::Camera2D);
 
-	m_UICamera = std::make_shared<CCameraComponent>();
+	m_UICamera = new CCameraComponent;
 
 	m_UICamera->Init();
 

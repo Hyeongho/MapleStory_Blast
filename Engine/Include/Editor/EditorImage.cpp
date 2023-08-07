@@ -56,7 +56,7 @@ void CEditorImage::SetTextureFullPath(const std::string& Name, const TCHAR* Full
 
 void CEditorImage::SetTexture(CTexture* Texture)
 {
-	m_Texture = std::make_shared<CTexture>(Texture);
+	m_Texture = Texture;
 
 	if (!m_Texture)
 	{

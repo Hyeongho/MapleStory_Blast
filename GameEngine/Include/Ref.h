@@ -18,6 +18,10 @@ protected:
 	bool m_Active;
 
 public:
+	void AddRef();
+	int Release();
+
+public:
 	int GetRefCount() const
 	{
 		return m_RefCount;

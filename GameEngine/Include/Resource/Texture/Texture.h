@@ -57,11 +57,21 @@ public:
 
 	unsigned int GetWidth(int Index = 0) const
 	{
+		if (!m_vecTextureInfo[Index])
+		{
+			return 0;
+		}
+
 		return m_vecTextureInfo[Index]->Width;
 	}
 
 	unsigned int GetHeight(int Index = 0) const
 	{
+		if (!m_vecTextureInfo[Index])
+		{
+			return 0;
+		}
+
 		return m_vecTextureInfo[Index]->Height;
 	}
 

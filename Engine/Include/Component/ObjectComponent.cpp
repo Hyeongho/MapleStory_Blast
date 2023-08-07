@@ -9,8 +9,7 @@ CObjectComponent::CObjectComponent()
 	m_ComponentTypeName = "ObjectComponent";
 }
 
-CObjectComponent::CObjectComponent(const CObjectComponent& Obj) :
-	CComponent(Obj)
+CObjectComponent::CObjectComponent(const CObjectComponent& Obj) : CComponent(Obj)
 {
 }
 

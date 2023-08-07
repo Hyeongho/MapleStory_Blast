@@ -42,7 +42,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -74,6 +74,7 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>../Bin/</OutDir>
     <IntDir>../BinObjDebug/</IntDir>
+    <TargetName>$(ProjectName)_Debug</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -84,6 +85,7 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>../Bin/</OutDir>
     <IntDir>../BinObjDebug/</IntDir>
+    <TargetName>$(ProjectName)_Debug</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -293,6 +295,7 @@
     <ClInclude Include="Scene\SceneManager.h" />
     <ClInclude Include="Scene\SceneResource.h" />
     <ClInclude Include="Scene\SceneViewport.h" />
+    <ClInclude Include="SharedPtr.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="UI\UIButton.h" />
     <ClInclude Include="UI\UIImage.h" />

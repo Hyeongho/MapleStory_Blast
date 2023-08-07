@@ -2,7 +2,7 @@
 
 DEFINITION_SINGLE(CDevice)
 
-CDevice::CDevice() : m_Device(nullptr), m_Context(nullptr), m_SwapChain(nullptr), m_TargetView(nullptr), m_DepthView(nullptr), m_RS{}, m_hWnd(0), m_Target(nullptr), m_TargetWorld(nullptr), m_Factory(nullptr)
+CDevice::CDevice() : m_Device(nullptr), m_Context(nullptr), m_SwapChain(nullptr), m_TargetView(nullptr), m_DepthView(nullptr), m_RS{}, m_hWnd(0), m_Target(nullptr), m_TargetWorld(nullptr), m_Factory(nullptr), m_SampleCount(1)
 {
 }
 
@@ -60,14 +60,14 @@ bool CDevice::Init(HWND hWnd, unsigned int DeviceWidth, unsigned int DeviceHeigh
 		return false;
 	}
 
-	int SampleCount = 4;
+	m_SampleCount = 4;
 
 	UINT Check = 0;
 	m_Device->CheckMultisampleQualityLevels(DXGI_FORMAT_R8G8B8A8_UNORM, 4, &Check);
 
 	if (Check < 1)
 	{
-		SampleCount = 1;
+		m_SampleCount = 1;
 	}
 
 	DXGI_SWAP_CHAIN_DESC SwapDesc = {};
@@ -91,7 +91,7 @@ bool CDevice::Init(HWND hWnd, unsigned int DeviceWidth, unsigned int DeviceHeigh
 	SwapDesc.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
 	SwapDesc.OutputWindow = hWnd;
 	SwapDesc.SampleDesc.Quality = 0;
-	SwapDesc.SampleDesc.Count = SampleCount;
+	SwapDesc.SampleDesc.Count = m_SampleCount;
 	SwapDesc.Windowed = WindowMode;
 	SwapDesc.SwapEffect = DXGI_SWAP_EFFECT_DISCARD;
 
@@ -141,7 +141,7 @@ bool CDevice::Init(HWND hWnd, unsigned int DeviceWidth, unsigned int DeviceHeigh
 	DepthDesc.Format = DXGI_FORMAT_D24_UNORM_S8_UINT;
 	DepthDesc.BindFlags = D3D11_BIND_DEPTH_STENCIL;
 	DepthDesc.Usage = D3D11_USAGE_DEFAULT;
-	DepthDesc.SampleDesc.Count = SampleCount;
+	DepthDesc.SampleDesc.Count = m_SampleCount;
 	DepthDesc.SampleDesc.Quality = 0;
 	DepthDesc.MipLevels = 1;
 

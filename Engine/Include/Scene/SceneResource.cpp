@@ -70,18 +70,18 @@ bool CSceneResource::CreateMesh(MeshType Type, const std::string& Name, void* Vt
 		return false;
 	}
 
-	m_mapMesh.insert(std::make_pair(Name, std::make_shared<CMesh>(CResourceManager::GetInst()->FindMesh(Name))));
+	m_mapMesh.insert(std::make_pair(Name, CResourceManager::GetInst()->FindMesh(Name)));
 
 	return true;
 }
 
-std::shared_ptr<CMesh> CSceneResource::FindMesh(const std::string& Name)
+CMesh* CSceneResource::FindMesh(const std::string& Name)
 {
 	auto iter = m_mapMesh.find(Name);
 
 	if (iter == m_mapMesh.end())
 	{
-		std::shared_ptr<CMesh> Mesh = CResourceManager::GetInst()->FindMesh(Name);
+		CMesh* Mesh = CResourceManager::GetInst()->FindMesh(Name);
 
 		if (!Mesh)
 		{
@@ -96,13 +96,13 @@ std::shared_ptr<CMesh> CSceneResource::FindMesh(const std::string& Name)
 	return iter->second;
 }
 
-std::shared_ptr<CShader> CSceneResource::FindShader(const std::string& Name)
+CShader* CSceneResource::FindShader(const std::string& Name)
 {
 	auto iter = m_mapShader.find(Name);
 
 	if (iter == m_mapShader.end())
 	{
-		std::shared_ptr<CShader> Shader = CResourceManager::GetInst()->FindShader(Name);
+		CShader* Shader = CResourceManager::GetInst()->FindShader(Name);
 
 		if (!Shader)
 		{
@@ -129,7 +129,7 @@ bool CSceneResource::LoadTexture(const std::string& Name, const TCHAR* FileName,
 		return false;
 	}
 
-	m_mapTexture.insert(std::make_pair(Name, std::make_shared<CTexture>(CResourceManager::GetInst()->FindTexture(Name))));
+	m_mapTexture.insert(std::make_pair(Name, CResourceManager::GetInst()->FindTexture(Name)));
 
 	return true;
 }
@@ -146,7 +146,7 @@ bool CSceneResource::LoadTextureFullPath(const std::string& Name, const TCHAR* F
 		return false;
 	}
 
-	m_mapTexture.insert(std::make_pair(Name, std::make_shared<CTexture>(CResourceManager::GetInst()->FindTexture(Name))));
+	m_mapTexture.insert(std::make_pair(Name, CResourceManager::GetInst()->FindTexture(Name)));
 
 	return true;
 }
@@ -163,7 +163,7 @@ bool CSceneResource::LoadTexture(const std::string& Name, const std::vector<cons
 		return false;
 	}
 
-	m_mapTexture.insert(std::make_pair(Name, std::make_shared<CTexture>(CResourceManager::GetInst()->FindTexture(Name))));
+	m_mapTexture.insert(std::make_pair(Name, CResourceManager::GetInst()->FindTexture(Name)));
 
 	return true;
 }
@@ -180,7 +180,7 @@ bool CSceneResource::LoadTextureFullPath(const std::string& Name, const std::vec
 		return false;
 	}
 
-	m_mapTexture.insert(std::make_pair(Name, std::make_shared<CTexture>(CResourceManager::GetInst()->FindTexture(Name))));
+	m_mapTexture.insert(std::make_pair(Name, CResourceManager::GetInst()->FindTexture(Name)));
 
 	return true;
 }
@@ -204,13 +204,13 @@ void CSceneResource::RenderTexture()
 {
 }
 
-std::shared_ptr<CTexture> CSceneResource::FindTexture(const std::string& Name)
+CTexture* CSceneResource::FindTexture(const std::string& Name)
 {
 	auto iter = m_mapTexture.find(Name);
 
 	if (iter == m_mapTexture.end())
 	{
-		std::shared_ptr<CTexture> Texture = CResourceManager::GetInst()->FindTexture(Name);
+		CTexture* Texture = CResourceManager::GetInst()->FindTexture(Name);
 
 		if (!Texture)
 		{
@@ -225,13 +225,13 @@ std::shared_ptr<CTexture> CSceneResource::FindTexture(const std::string& Name)
 	return iter->second;
 }
 
-std::shared_ptr<CMaterial> CSceneResource::FindMaterial(const std::string& Name)
+CMaterial* CSceneResource::FindMaterial(const std::string& Name)
 {
 	auto iter = m_mapMaterial.find(Name);
 
 	if (iter == m_mapMaterial.end())
 	{
-		std::shared_ptr<CMaterial> Material = CResourceManager::GetInst()->FindMaterial(Name);
+		CMaterial* Material = CResourceManager::GetInst()->FindMaterial(Name);
 
 		if (!Material)
 		{
@@ -258,7 +258,7 @@ bool CSceneResource::CreateAnimationSequence2D(const std::string& Name, const st
 		return false;
 	}
 
-	m_mapAnimationSequence2D.insert(std::make_pair(Name, std::make_shared<CAnimationSequence>(CResourceManager::GetInst()->FindAnimationSequence2D(Name))));
+	m_mapAnimationSequence2D.insert(std::make_pair(Name, CResourceManager::GetInst()->FindAnimationSequence2D(Name)));
 
 	return true;
 }
@@ -275,7 +275,7 @@ bool CSceneResource::CreateAnimationSequence2D(const std::string& Name, CTexture
 		return false;
 	}
 
-	m_mapAnimationSequence2D.insert(std::make_pair(Name, std::make_shared<CAnimationSequence>(CResourceManager::GetInst()->FindAnimationSequence2D(Name))));
+	m_mapAnimationSequence2D.insert(std::make_pair(Name, CResourceManager::GetInst()->FindAnimationSequence2D(Name)));
 
 	return true;
 }
@@ -292,7 +292,7 @@ bool CSceneResource::CreateAnimationSequence2DFullPath(const std::string& Name, 
 		return false;
 	}
 
-	m_mapAnimationSequence2D.insert(std::make_pair(Name, std::make_shared<CAnimationSequence>(CResourceManager::GetInst()->FindAnimationSequence2D(Name))));
+	m_mapAnimationSequence2D.insert(std::make_pair(Name, CResourceManager::GetInst()->FindAnimationSequence2D(Name)));
 
 	return true;
 }
@@ -309,7 +309,7 @@ bool CSceneResource::CreateAnimationSequence2D(const std::string& Name, const st
 		return false;
 	}
 
-	m_mapAnimationSequence2D.insert(std::make_pair(Name, std::make_shared<CAnimationSequence>(CResourceManager::GetInst()->FindAnimationSequence2D(Name))));
+	m_mapAnimationSequence2D.insert(std::make_pair(Name, CResourceManager::GetInst()->FindAnimationSequence2D(Name)));
 
 	return true;
 }
@@ -326,7 +326,7 @@ bool CSceneResource::CreateAnimationSequence2DFullPath(const std::string& Name, 
 		return false;
 	}
 
-	m_mapAnimationSequence2D.insert(std::make_pair(Name, std::make_shared<CAnimationSequence>(CResourceManager::GetInst()->FindAnimationSequence2D(Name))));
+	m_mapAnimationSequence2D.insert(std::make_pair(Name, CResourceManager::GetInst()->FindAnimationSequence2D(Name)));
 
 	return true;
 }
@@ -384,12 +384,12 @@ CAnimationSequence* CSceneResource::FindAnimationSequence2D(const std::string& N
 			return nullptr;
 		}
 
-		m_mapAnimationSequence2D.insert(std::make_pair(Name, std::make_shared<CAnimationSequence>(Sequence)));
+		m_mapAnimationSequence2D.insert(std::make_pair(Name, Sequence));
 
 		return Sequence;
 	}
 
-	return iter->second.get();
+	return iter->second;
 }
 
 bool CSceneResource::CreateSoundChannel(const std::string& Name)
@@ -409,7 +409,7 @@ bool CSceneResource::LoadSound(const std::string& GroupName, const std::string& 
 		return false;
 	}
 
-	std::shared_ptr<CSound> Sound = CResourceManager::GetInst()->FindSound(Name);
+	CSharedPtr<CSound> Sound = CResourceManager::GetInst()->FindSound(Name);
 
 	m_mapSound.insert(std::make_pair(Name, Sound));
 
@@ -451,13 +451,13 @@ FMOD::ChannelGroup* CSceneResource::FindChannelGroup(const std::string& Name)
 	return CResourceManager::GetInst()->FindChannelGroup(Name);
 }
 
-std::shared_ptr<CSound> CSceneResource::FindSound(const std::string& Name)
+CSound* CSceneResource::FindSound(const std::string& Name)
 {
 	auto iter = m_mapSound.find(Name);
 
 	if (iter == m_mapSound.end())
 	{
-		std::shared_ptr<CSound> Sound = CResourceManager::GetInst()->FindSound(Name);
+		CSound* Sound = CResourceManager::GetInst()->FindSound(Name);
 
 		if (!Sound)
 		{
@@ -486,7 +486,7 @@ bool CSceneResource::CreateFontCollection(const std::string& Name, const TCHAR* 
 
 	CFontCollection* Font = CResourceManager::GetInst()->FindFontCollection(Name);
 
-	m_mapFontCollection.insert(std::make_pair(Name, std::make_shared<CFontCollection>(Font)));
+	m_mapFontCollection.insert(std::make_pair(Name, Font));
 
 	return true;
 }
@@ -503,7 +503,7 @@ bool CSceneResource::LoadFont(const std::string& Name, const TCHAR* FontName, in
 		return false;
 	}
 
-	std::shared_ptr<CFont> Font = CResourceManager::GetInst()->FindFont(Name);
+	CSharedPtr<CFont> Font = CResourceManager::GetInst()->FindFont(Name);
 
 	m_mapFont.insert(std::make_pair(Name, Font));
 
@@ -575,13 +575,13 @@ unsigned int CSceneResource::CreateFontColorKey(const Vector4& Color)
 	return CResourceManager::GetInst()->CreateFontColorKey(Color);
 }
 
-std::shared_ptr<CFont> CSceneResource::FindFont(const std::string& Name)
+CFont* CSceneResource::FindFont(const std::string& Name)
 {
 	auto iter = m_mapFont.find(Name);
 
 	if (iter == m_mapFont.end())
 	{
-		std::shared_ptr<CFont> Font = CResourceManager::GetInst()->FindFont(Name);
+		CFont* Font = CResourceManager::GetInst()->FindFont(Name);
 
 		if (!Font)
 		{
@@ -609,10 +609,10 @@ CFontCollection* CSceneResource::FindFontCollection(const std::string& Name)
 			return nullptr;
 		}
 
-		m_mapFontCollection.insert(std::make_pair(Name, std::make_shared<CFontCollection>(Font)));
+		m_mapFontCollection.insert(std::make_pair(Name, Font));
 
 		return Font;
 	}
 
-	return iter->second.get();
+	return iter->second;
 }

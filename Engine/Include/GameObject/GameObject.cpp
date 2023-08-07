@@ -18,7 +18,7 @@ CGameObject::CGameObject(const CGameObject& Obj) : CRef(Obj)
 
 	if (Obj.m_RootComponent)
 	{
-		m_RootComponent = std::make_shared<CSceneComponent>(Obj.m_RootComponent->Clone());
+		m_RootComponent = Obj.m_RootComponent->Clone();
 
 		m_RootComponent->SetOwner(this);
 
@@ -33,7 +33,7 @@ CGameObject::CGameObject(const CGameObject& Obj) : CRef(Obj)
 
 		for (; iter != iterEnd; iter++)
 		{
-			std::shared_ptr<CObjectComponent> Component = std::make_shared<CObjectComponent>((*iter)->Clone());
+			CSharedPtr<CObjectComponent> Component = (*iter)->Clone();
 
 			Component->SetOwner(this);
 
@@ -99,7 +99,7 @@ void CGameObject::GetAllComponentHierarchyName(std::vector<HierarchyName>& vecNa
 
 		Names.Name = m_RootComponent->GetName();
 		Names.ClassName = m_RootComponent->GetComponentTypeName();
-		Names.Component = m_RootComponent.get();
+		Names.Component = m_RootComponent;
 		Names.Parent = nullptr;
 
 		vecName.push_back(Names);
@@ -128,7 +128,7 @@ CComponent* CGameObject::FindComponent(const std::string& Name)
 	{
 		if ((*iter1)->GetName() == Name)
 		{
-			return (*iter1).get();
+			return (*iter1);
 		}
 	}
 
@@ -255,7 +255,7 @@ void CGameObject::Load(FILE* File)
 		{
 			CComponent* CDO = CComponent::FindCDO(TypeName);
 
-			m_RootComponent = std::make_shared<CSceneComponent>(CDO->Clone());
+			m_RootComponent = (CSceneComponent*)CDO->Clone();
 
 			m_RootComponent->SetOwner(this);
 			m_RootComponent->SetScene(m_Scene);
@@ -299,13 +299,13 @@ void CGameObject::Load(FILE* File)
 					break;
 				}
 
-				std::shared_ptr<CComponent> Component = std::make_shared<CComponent>(CDO->Clone());
+				CComponent* Component = CDO->Clone();
 
 				Component->SetOwner(this);
 				Component->SetScene(m_Scene);
 				Component->Load(File);
 
-				m_vecObjectComponent.push_back(std::dynamic_pointer_cast<CObjectComponent>(Component));
+				m_vecObjectComponent.push_back((CObjectComponent*)Component);
 			}
 
 			else

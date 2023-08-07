@@ -32,6 +32,7 @@
 #include "Vector3.h"
 #include "Vector4.h"
 #include "Matrix.h"
+#include "SharedPtr.h"
 #include "Resource/Texture/DirectXTex.h"
 #include "fmod.hpp"
 
@@ -284,8 +285,7 @@ struct PixelInfo
 	char PathName[MAX_PATH];
 	int RefCount;
 
-	PixelInfo() : FileName{}, PathName{}, RefCount(0), Pixel(nullptr), Box2D{}, Width(0), Height(0),
-		PixelColorCollisionType(EPixelCollision_Type::Alpha_Confirm), PixelAlphaCollisionType(EPixelCollision_Type::None), TypeColor{}
+	PixelInfo() : FileName{}, PathName{}, RefCount(0), Pixel(nullptr), Box2D{}, Width(0), Height(0), PixelColorCollisionType(EPixelCollision_Type::Alpha_Confirm), PixelAlphaCollisionType(EPixelCollision_Type::None), TypeColor{}
 	{
 	}
 };

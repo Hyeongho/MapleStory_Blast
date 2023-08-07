@@ -50,38 +50,40 @@ bool CTextureManager::Init()
 
 bool CTextureManager::LoadTexture(const std::string& Name, const TCHAR* FileName, const std::string& PathName)
 {
-	std::shared_ptr<CTexture> Texture = FindTexture(Name);
+	CTexture* Texture = FindTexture(Name);
 
 	if (Texture)
 	{
 		return true;
 	}
 
-	Texture = std::make_shared<CTexture>();
+	Texture = new CTexture;
 
 	if (!Texture->LoadTexture(Name, FileName, PathName))
 	{
+		SAFE_DELETE(Texture);
 		return false;
 	}
 
-	m_mapTexture.insert(std::make_pair(Name,Texture));
+	m_mapTexture.insert(std::make_pair(Name, Texture));
 
 	return true;
 }
 
 bool CTextureManager::LoadTextureFullPath(const std::string& Name, const TCHAR* FullPath)
 {
-	std::shared_ptr<CTexture> Texture = FindTexture(Name);
+	CTexture* Texture = FindTexture(Name);
 
 	if (Texture)
 	{
 		return true;
 	}
 
-	Texture = std::make_shared<CTexture>();
+	Texture = new CTexture;
 
 	if (!Texture->LoadTextureFullPath(Name, FullPath))
 	{
+		SAFE_DELETE(Texture);
 		return false;
 	}
 
@@ -92,17 +94,18 @@ bool CTextureManager::LoadTextureFullPath(const std::string& Name, const TCHAR* 
 
 bool CTextureManager::LoadTexture(const std::string& Name, const std::vector<const TCHAR*>& vecFileName, const std::string& PathName)
 {
-	std::shared_ptr<CTexture> Texture = FindTexture(Name);
+	CTexture* Texture = FindTexture(Name);
 
 	if (Texture)
 	{
 		return true;
 	}
 
-	Texture = std::make_shared<CTexture>();
+	Texture = new CTexture;
 
 	if (!Texture->LoadTexture(Name, vecFileName, PathName))
 	{
+		SAFE_DELETE(Texture);
 		return false;
 	}
 
@@ -113,17 +116,18 @@ bool CTextureManager::LoadTexture(const std::string& Name, const std::vector<con
 
 bool CTextureManager::LoadTextureFullPath(const std::string& Name, const std::vector<const TCHAR*>& vecFullPath)
 {
-	std::shared_ptr<CTexture> Texture = FindTexture(Name);
+	CTexture* Texture = FindTexture(Name);
 
 	if (Texture)
 	{
 		return true;
 	}
 
-	Texture = std::make_shared<CTexture>();
+	Texture = new CTexture;
 
 	if (!Texture->LoadTextureFullPath(Name, vecFullPath))
 	{
+		SAFE_DELETE(Texture);
 		return false;
 	}
 
@@ -134,17 +138,18 @@ bool CTextureManager::LoadTextureFullPath(const std::string& Name, const std::ve
 
 bool CTextureManager::LoadTextureArray(const std::string& Name, const std::vector<const TCHAR*>& vecFileName, const std::string& PathName)
 {
-	std::shared_ptr<CTexture> Texture = FindTexture(Name);
+	CTexture* Texture = FindTexture(Name);
 
 	if (Texture)
 	{
 		return true;
 	}
 
-	Texture = std::make_shared<CTexture>();
+	Texture = new CTexture;
 
 	if (!Texture->LoadTextureArray(Name, vecFileName, PathName))
 	{
+		SAFE_DELETE(Texture);
 		return false;
 	}
 
@@ -155,17 +160,18 @@ bool CTextureManager::LoadTextureArray(const std::string& Name, const std::vecto
 
 bool CTextureManager::LoadTextureArrayFullPath(const std::string& Name, const std::vector<const TCHAR*>& vecFullPath)
 {
-	std::shared_ptr<CTexture> Texture = FindTexture(Name);
+	CTexture* Texture = FindTexture(Name);
 
 	if (Texture)
 	{
 		return true;
 	}
 
-	Texture = std::make_shared<CTexture>();
+	Texture = new CTexture;
 
 	if (!Texture->LoadTextureArrayFullPath(Name, vecFullPath))
 	{
+		SAFE_DELETE(Texture);
 		return false;
 	}
 
@@ -176,21 +182,22 @@ bool CTextureManager::LoadTextureArrayFullPath(const std::string& Name, const st
 
 bool CTextureManager::CreateTarget(const std::string& Name, unsigned int Width, unsigned int Height, DXGI_FORMAT PixelFormat, DXGI_FORMAT DepthFormat)
 {
-	CTexture* Texture = FindTexture(Name).get();
+	CRenderTarget* Texture = (CRenderTarget*)FindTexture(Name);
 
 	if (Texture)
 	{
 		return true;
 	}
 
-	std::shared_ptr<CRenderTarget> RenderTarget = std::make_shared<CRenderTarget>();
+	Texture = new CRenderTarget;
 
-	if (!RenderTarget->CreateTarget(Name, Width, Height, PixelFormat, DepthFormat))
+	if (!Texture->CreateTarget(Name, Width, Height, PixelFormat, DepthFormat))
 	{
+		SAFE_DELETE(Texture);
 		return false;
 	}
 
-	m_mapTexture.insert(std::make_pair(Name, RenderTarget));
+	m_mapTexture.insert(std::make_pair(Name, Texture));
 
 	return true;
 }
@@ -211,7 +218,7 @@ void CTextureManager::Render()
 	}
 }
 
-std::shared_ptr<CTexture> CTextureManager::FindTexture(const std::string& Name)
+CTexture* CTextureManager::FindTexture(const std::string& Name)
 {
 	auto iter = m_mapTexture.find(Name);
 
@@ -229,7 +236,7 @@ void CTextureManager::ReleaseTexture(const std::string& Name)
 
 	if (iter != m_mapTexture.end())
 	{
-		if (iter->second.use_count() == 1)
+		if (iter->second->GetRefCount() == 1)
 		{
 			m_mapTexture.erase(iter);
 		}

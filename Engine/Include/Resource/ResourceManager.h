@@ -25,7 +25,7 @@ public:
 public:	// ===================== Mesh =========================
 	bool CreateMesh(class CScene* Scene, MeshType Type, const std::string& Name, void* VtxData, int Size, int Count, D3D11_USAGE VtxUsage, D3D11_PRIMITIVE_TOPOLOGY Primitive, void* IdxData = nullptr, int IdxSize = 0, int IdxCount = 0, D3D11_USAGE IdxUsage = D3D11_USAGE_DEFAULT, DXGI_FORMAT Fmt = DXGI_FORMAT_UNKNOWN);
 
-	std::shared_ptr<class CMesh> FindMesh(const std::string& Name);
+	class CMesh* FindMesh(const std::string& Name);
 	void ReleaseMesh(const std::string& Name);
 
 public:	// ===================== Shader =========================
@@ -36,11 +36,11 @@ public:	// ===================== Shader =========================
 	}
 
 	class CColliderConstantBuffer* GetColliderCBuffer()	const;
-	std::shared_ptr<class CShader> FindShader(const std::string& Name);
+	class CShader* FindShader(const std::string& Name);
 	void ReleaseShader(const std::string& Name);
 
 	bool CreateConstantBuffer(const std::string& Name, int Size, int Register, int ShaderBufferType = (int)EShaderBufferType::All);
-	std::shared_ptr<class CConstantBuffer> FindConstantBuffer(const std::string& Name);
+	class CConstantBuffer* FindConstantBuffer(const std::string& Name);
 
 public:	// ===================== Texture =========================
 	bool LoadTexture(const std::string& Name, const TCHAR* FileName, const std::string& PathName = TEXTURE_PATH);
@@ -53,11 +53,11 @@ public:	// ===================== Texture =========================
 	bool CreateTarget(const std::string& Name, unsigned int Width, unsigned int Height, DXGI_FORMAT PixelFormat, DXGI_FORMAT DepthFormat = DXGI_FORMAT_UNKNOWN);
 	void RenderTexture();
 
-	std::shared_ptr<class CTexture> FindTexture(const std::string& Name);
+	class CTexture* FindTexture(const std::string& Name);
 	void ReleaseTexture(const std::string& Name);
 
 public:	// ===================== Material =========================
-	std::shared_ptr<class CMaterial> FindMaterial(const std::string& Name);
+	class CMaterial* FindMaterial(const std::string& Name);
 	void ReleaseMaterial(const std::string& Name);
 
 	template <typename T>
@@ -96,7 +96,7 @@ public:	// ============================ Sound ================================
 	bool SoundResume(const std::string& Name);
 
 	FMOD::ChannelGroup* FindChannelGroup(const std::string& Name);
-	std::shared_ptr<class CSound> FindSound(const std::string& Name);
+	class CSound* FindSound(const std::string& Name);
 	void ReleaseSound(const std::string& Name);
 
 public:	// ============================ Font ================================
@@ -120,7 +120,7 @@ public:	// ============================ Font ================================
 	unsigned int CreateFontColorKey(float r, float g, float b, float a);
 	unsigned int CreateFontColorKey(const Vector4& Color);
 
-	std::shared_ptr<CFont> FindFont(const std::string& Name);
+	CSharedPtr<CFont> FindFont(const std::string& Name);
 	CFontCollection* FindFontCollection(const std::string& Name);
 	void ReleaseFont(const std::string& Name);
 	void ReleaseFontCollection(const std::string& Name);

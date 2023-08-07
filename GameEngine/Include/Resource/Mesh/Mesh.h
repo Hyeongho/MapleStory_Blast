@@ -7,7 +7,7 @@ struct MeshSubset
 {
 	IndexBuffer IB;
 	struct MeshSlot* Slot;
-	std::shared_ptr<CMaterial> Material;
+	CSharedPtr<CMaterial> Material;
 };
 
 struct MeshContainer
@@ -23,7 +23,7 @@ struct MeshSlot
 {
 	VertexBuffer* VB;
 	IndexBuffer* IB;
-	std::shared_ptr<class CMaterial> Material;
+	CSharedPtr<class CMaterial> Material;
 	D3D11_PRIMITIVE_TOPOLOGY Primitive;
 
 	MeshSlot() : VB(nullptr), IB(nullptr)
@@ -83,9 +83,9 @@ public:
 		return (int)m_vecMeshSlot.size();
 	}
 
-	CMaterial* GetMaterial(int Slot) const
+	CSharedPtr<CMaterial> GetMaterial(int Slot) const
 	{
-		return m_vecMeshSlot[Slot]->Material.get();
+		return m_vecMeshSlot[Slot]->Material;
 	}
 
 public:
@@ -96,7 +96,8 @@ public:
 	virtual bool CreateMesh(void* VtxData, int Size, int Count, D3D11_USAGE VtxUsage, D3D11_PRIMITIVE_TOPOLOGY Primitive, void* IdxData = nullptr, int IdxSize = 0, int IdxCount = 0, D3D11_USAGE IdxUsage = D3D11_USAGE_DEFAULT, DXGI_FORMAT Fmt = DXGI_FORMAT_UNKNOWN);
 	virtual void Render();
 	virtual void Render(int SlotNumber);
-
+	virtual void RenderInstancing(int Count);
+	virtual void RenderInstancing(int Count, int SlotNumber);
 
 protected:
 	bool CreateBuffer(BufferType Type, void* Data, int Size, int Count, D3D11_USAGE Usage, ID3D11Buffer** Buffer);

@@ -39,20 +39,20 @@ void CSceneViewport::Update(float DeltaTime)
 
 	for (; iter != iterEnd;)
 	{
-		if (!(*iter).get()->GetActive())
+		if (!(*iter)->GetActive())
 		{
 			iter = m_vecWindow.erase(iter);
 			iterEnd = m_vecWindow.end();
 			continue;
 		}
 
-		else if (!(*iter).get()->GetEnable())
+		else if (!(*iter)->GetEnable())
 		{
 			iter++;
 			continue;
 		}
 
-		(*iter).get()->Update(DeltaTime);
+		(*iter)->Update(DeltaTime);
 		iter++;
 	}
 }
@@ -64,20 +64,20 @@ void CSceneViewport::PostUpdate(float DeltaTime)
 
 	for (; iter != iterEnd;)
 	{
-		if (!(*iter).get()->GetActive())
+		if (!(*iter)->GetActive())
 		{
 			iter = m_vecWindow.erase(iter);
 			iterEnd = m_vecWindow.end();
 			continue;
 		}
 
-		else if (!(*iter).get()->GetEnable())
+		else if (!(*iter)->GetEnable())
 		{
 			iter++;
 			continue;
 		}
 
-		(*iter).get()->PostUpdate(DeltaTime);
+		(*iter)->PostUpdate(DeltaTime);
 		iter++;
 	}
 }
@@ -94,20 +94,20 @@ void CSceneViewport::Render()
 
 	for (; iter != iterEnd;)
 	{
-		if (!(*iter).get()->GetActive())
+		if (!(*iter)->GetActive())
 		{
 			iter = m_vecWindow.erase(iter);
 			iterEnd = m_vecWindow.end();
 			continue;
 		}
 
-		else if (!(*iter).get()->GetEnable())
+		else if (!(*iter)->GetEnable())
 		{
 			iter++;
 			continue;
 		}
 
-		(*iter).get()->Render();
+		(*iter)->Render();
 		iter++;
 	}
 }
@@ -123,13 +123,13 @@ void CSceneViewport::Save(FILE* File)
 
 	for (; iter != iterEnd; iter++)
 	{
-		std::string	TypeName = (*iter).get()->GetWindowTypeName();
+		std::string	TypeName = (*iter)->GetWindowTypeName();
 
 		int	Length = (int)TypeName.length();
 		fwrite(&Length, sizeof(int), 1, File);
 		fwrite(TypeName.c_str(), 1, Length, File);
 
-		(*iter).get()->Save(File);
+		(*iter)->Save(File);
 	}
 }
 
@@ -156,7 +156,7 @@ void CSceneViewport::Load(FILE* File)
 
 		Window->Load(File);
 
-		m_vecWindow.push_back(std::make_shared<CUIWindow>(Window));
+		m_vecWindow.push_back(Window);
 	}
 }
 
@@ -182,21 +182,21 @@ bool CSceneViewport::CollisionMouse()
 
 	for (; iter != iterEnd; iter++)
 	{
-		if (!(*iter).get()->GetEnable())
+		if (!(*iter)->GetEnable())
 		{
 			continue;
 		}
 
-		CUIWidget* Widget = (*iter).get()->CollisionMouse(MousePos);
+		CUIWidget* Widget = (*iter)->CollisionMouse(MousePos);
 
-		if (m_CollisionWidget && m_CollisionWidget.get() != Widget)
+		if (m_CollisionWidget && m_CollisionWidget != Widget)
 		{
 			m_CollisionWidget->m_MouseHovered = false;
 		}
 
 		if (Widget)
 		{
-			m_CollisionWidget = std::make_shared<CUIWidget>(Widget);
+			m_CollisionWidget = Widget;
 		}
 
 		if (Widget)
@@ -222,7 +222,7 @@ bool CSceneViewport::CollisionMouse()
 
 	for (; iter != iterEnd;)
 	{
-		if (!(*iter).get()->GetActive())
+		if (!(*iter)->GetActive())
 		{
 			iter = m_vecWindow.erase(iter);
 			iterEnd = m_vecWindow.end();
@@ -235,12 +235,12 @@ bool CSceneViewport::CollisionMouse()
 	return Result;
 }
 
-bool CSceneViewport::SortWindow(std::shared_ptr<CUIWindow> Src, std::shared_ptr<CUIWindow> Dest)
+bool CSceneViewport::SortWindow(CSharedPtr<CUIWindow> Src, CSharedPtr<CUIWindow> Dest)
 {
 	return Src->GetZOrder() > Dest->GetZOrder();
 }
 
-bool CSceneViewport::SortWindowInv(std::shared_ptr<CUIWindow> Src, std::shared_ptr<CUIWindow> Dest)
+bool CSceneViewport::SortWindowInv(CSharedPtr<CUIWindow> Src, CSharedPtr<CUIWindow> Dest)
 {
 	return Src->GetZOrder() < Dest->GetZOrder();
 }

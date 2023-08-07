@@ -13,8 +13,8 @@ private:
 
 private:
 	IDWriteFactory5* m_WriteFactory;
-	std::unordered_map<std::string, std::shared_ptr<CFontCollection>> m_mapFontCollection;
-	std::unordered_map<std::string, std::shared_ptr<CFont>> m_mapFont;
+	std::unordered_map<std::string, CSharedPtr<CFontCollection>> m_mapFontCollection;
+	std::unordered_map<std::string, CSharedPtr<CFont>> m_mapFont;
 	std::unordered_map<unsigned int, ID2D1SolidColorBrush*> m_mapFontColor;
 
 
@@ -42,7 +42,7 @@ public:
 	unsigned int CreateFontColorKey(float r, float g, float b, float a);
 	unsigned int CreateFontColorKey(const Vector4& Color);
 
-	std::shared_ptr<CFont> FindFont(const std::string& Name);
+	CSharedPtr<CFont> FindFont(const std::string& Name);
 	CFontCollection* FindFontCollection(const std::string& Name);
 	void ReleaseFont(const std::string& Name);
 	void ReleaseFontCollection(const std::string& Name);

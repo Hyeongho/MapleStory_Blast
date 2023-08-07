@@ -11,7 +11,7 @@ private:
 	~CSoundManager();
 
 private:
-	std::unordered_map<std::string, std::shared_ptr<class CSound>> m_mapSound;
+	std::unordered_map<std::string, CSharedPtr<class CSound>> m_mapSound;
 	FMOD::System* m_System;
 	FMOD::ChannelGroup* m_MasterGroup;
 	std::unordered_map<std::string, FMOD::ChannelGroup*> m_mapChannelGroup;
@@ -29,7 +29,7 @@ public:
 	bool SoundResume(const std::string& Name);
 
 	FMOD::ChannelGroup* FindChannelGroup(const std::string& Name);
-	std::shared_ptr<class CSound> FindSound(const std::string& Name);
+	class CSound* FindSound(const std::string& Name);
 	void ReleaseSound(const std::string& Name);
 };
 

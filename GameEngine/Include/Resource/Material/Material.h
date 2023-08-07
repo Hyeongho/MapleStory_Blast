@@ -8,7 +8,7 @@ struct MaterialTextureInfo
 {
     std::string Name;
     ESamplerType SamplerType;
-    std::shared_ptr<CTexture> Texture;
+    CSharedPtr<CTexture> Texture;
     int Register;
     int ShaderBufferType;
     int Index;
@@ -40,15 +40,21 @@ public:
     }
 
 protected:
-    std::shared_ptr<class CShader> m_Shader;
+    CSharedPtr<class CShader> m_Shader;
     std::vector<MaterialTextureInfo*> m_vecTextureInfo;
     Vector4 m_BaseColor;
     Vector4 m_AmbientColor;
     Vector4 m_SpecularColor;
-    Vector4 m_EmissiveColor;    // 자체적으로 빛을 발산하는 물체일 경우
-    float m_Opacity;          // 불투명도.
+    Vector4 m_EmissiveColor;
+    float m_Opacity;
     class CMaterialConstantBuffer* m_CBuffer;
-    std::shared_ptr<CRenderState> m_RenderState[3];
+    CSharedPtr<CRenderState> m_RenderState[3];
+
+public:
+    bool EmptyTexture() const
+    {
+        return m_vecTextureInfo.empty();
+    }
 
 public:
     void SetBaseColor(const Vector4& Color);
@@ -72,6 +78,8 @@ public:
     void AddTextureFullPath(int Register, int ShaderBufferType, const std::string& Name, const TCHAR* FullPath);
     void AddTexture(int Register, int ShaderBufferType, const std::string& Name, const std::vector<const TCHAR*>& vecFileName, const std::string& PathName = TEXTURE_PATH);
     void AddTextureFullPath(int Register, int ShaderBufferType, const std::string& Name, const std::vector<const TCHAR*>& vecFullPath);
+    void AddTextureArray(int Register, int ShaderBufferType, const std::string& Name, const std::vector<const TCHAR*>& vecFileName, const std::string& PathName = TEXTURE_PATH);
+    void AddTextureArrayFullPath(int Register, int ShaderBufferType, const std::string& Name, const std::vector<const TCHAR*>& vecFullPath);
 
     // === 추가되어 있는 Texture 변경 ===
     void SetTexture(int Index, int Register, int ShaderBufferType, const std::string& Name, class CTexture* Texture);
@@ -79,14 +87,14 @@ public:
     void SetTextureFullPath(int Index, int Register, int ShaderBufferType, const std::string& Name, const TCHAR* FullPath);
     void SetTexture(int Index, int Register, int ShaderBufferType, const std::string& Name, const std::vector<const TCHAR*>& vecFileName, const std::string& PathName = TEXTURE_PATH);
     void SetTextureFullPath(int Index, int Register, int ShaderBufferType, const std::string& Name, const std::vector<const TCHAR*>& vecFullPath);
+    void SetTextureArray(int Index, int Register, int ShaderBufferType, const std::string& Name, const std::vector<const TCHAR*>& vecFileName, const std::string& PathName = TEXTURE_PATH);
+    void SetTextureArrayFullPath(int Index, int Register, int ShaderBufferType, const std::string& Name, const std::vector<const TCHAR*>& vecFullPath);
 
     void SetTextureSamplerType(int Index, ESamplerType Type);
 
     void SetTextureFrameIndex(int TexIndex, int FrameIndex);
 
-    void SetImageType(int TexIndex, EImageType ImageType);
-
-    class CTexture* GetTexture(int Index = 0)   const;
+    CTexture* GetTexture(int Index = 0) const;
 
 public:
     void SetRenderState(const std::string& Name);
@@ -95,7 +103,7 @@ public:
     void SetShader(const std::string& Name);
     void SetMaterial();
     void ResetMaterial();
-    CMaterial* Clone()  const;
+    CMaterial* Clone() const;
     virtual void Save(FILE* File);
     virtual void Load(FILE* File);
 };

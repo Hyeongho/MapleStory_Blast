@@ -1,6 +1,13 @@
 #include "Engine.h"
 #include "Device.h"
+#include "Resource\ResourceManager.h"
 #include "Timer.h"
+#include "PathManager.h"
+#include "Scene/SceneManager.h"
+#include "Render/RenderManager.h"
+#include "Input.h"
+#include "Editor/EditorGUIManager.h"
+#include "CollisionManager.h"
 
 #pragma comment(lib, "d3d11.lib")
 #pragma comment(lib, "d3dcompiler.lib")
@@ -23,6 +30,20 @@ CEngine::CEngine() : m_hInst(0), m_hWnd(0), m_WindowRS{}, m_ClearColor{}
 
 CEngine::~CEngine()
 {
+	CSceneManager::DestroyInst();
+
+	CEditorGUIManager::DestroyInst();
+
+	CCollisionManager::DestroyInst();
+
+	CRenderManager::DestroyInst();
+
+	CInput::DestroyInst();
+
+	CPathManager::DestroyInst();
+
+	CResourceManager::DestroyInst();
+
 	SAFE_DELETE(m_Timer);
 
 	CDevice::DestroyInst();
@@ -45,6 +66,51 @@ bool CEngine::Init(HINSTANCE hInst, const TCHAR* Title, const TCHAR* ClassName, 
 
 	// Device 초기화
 	if (!CDevice::GetInst()->Init(m_hWnd, DeviceWidth, DeviceHeight, WindowMode))
+	{
+		return false;
+	}
+
+	// 경로관리자 초기화
+	if (!CPathManager::GetInst()->Init())
+	{
+		return false;
+	}
+
+	// 렌더링 관리자 초기화
+	if (!CRenderManager::GetInst()->Init())
+	{
+		return false;
+	}
+
+	// Resource 관리자 초기화
+	if (!CResourceManager::GetInst()->Init())
+	{
+		return false;
+	}
+
+	// 충돌 관리자 초기화
+	if (!CCollisionManager::GetInst()->Init())
+	{
+		return false;
+	}
+
+
+	// 입력 관리자 초기화
+	if (!CInput::GetInst()->Init(m_hInst, m_hWnd))
+	{
+		return false;
+	}
+
+	if (m_EditorMode)
+	{
+		if (!CEditorGUIManager::GetInst()->Init(m_hWnd))
+		{
+			return false;
+		}
+	}
+
+	// 장면관리자 초기화
+	if (!CSceneManager::GetInst()->Init())
 	{
 		return false;
 	}
@@ -86,6 +152,17 @@ void CEngine::Logic()
 
 	g_DeltaTime = DeltaTime;
 
+	Resolution RS = CDevice::GetInst()->GetResolution();
+
+	CInput::GetInst()->Update(DeltaTime);
+
+	if (m_EditorMode)
+	{
+		CEditorGUIManager::GetInst()->Update(DeltaTime);
+	}
+
+	CResourceManager::GetInst()->Update();
+
 	Input(DeltaTime);
 
 	if (Update(DeltaTime))
@@ -108,17 +185,21 @@ void CEngine::Input(float DeltaTime)
 
 bool CEngine::Update(float DeltaTime)
 {
-	return true;
+	bool Result = CSceneManager::GetInst()->Update(DeltaTime);
+
+	return Result;
 }
 
 bool CEngine::PostUpdate(float DeltaTime)
 {
-	return true;
+	bool Result = CSceneManager::GetInst()->PostUpdate(DeltaTime);
+
+	return Result;
 }
 
 bool CEngine::Collision(float DeltaTime)
 {
-	return true;
+	return CSceneManager::GetInst()->Collision(DeltaTime);
 }
 
 void CEngine::Render(float DeltaTime)

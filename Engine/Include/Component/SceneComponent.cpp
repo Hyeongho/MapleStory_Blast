@@ -89,9 +89,7 @@ void CSceneComponent::AddChild(CSceneComponent* Child, const std::string& Socket
 	Child->m_Parent = this;
 	Child->m_ParentName = m_Name;
 
-	std::shared_ptr<CSceneComponent> ptr = std::make_shared<CSceneComponent>(Child);
-
-	m_vecChild.push_back(ptr);
+	m_vecChild.push_back(Child);
 	m_vecChildName.push_back(Child->GetName());
 
 	Child->m_Transform->m_Parent = m_Transform;
@@ -108,9 +106,7 @@ void CSceneComponent::AddChild(CGameObject* Child, const std::string& SocketName
 	ChildComponent->m_Parent = this;
 	ChildComponent->m_ParentName = m_Name;
 
-	std::shared_ptr<CSceneComponent> ptr = std::make_shared<CSceneComponent>(ChildComponent);
-
-	m_vecChild.push_back(ptr);
+	m_vecChild.push_back(ChildComponent);
 	m_vecChildName.push_back(ChildComponent->GetName());
 
 	ChildComponent->m_Transform->m_Parent = m_Transform;
@@ -124,11 +120,9 @@ bool CSceneComponent::DeleteChild(CSceneComponent* Child)
 {
 	size_t Size = m_vecChild.size();
 
-	std::shared_ptr<CSceneComponent> ptr = std::make_shared<CSceneComponent>(Child);
-
 	for (size_t i = 0; i < Size; i++)
 	{
-		if (m_vecChild[i] == ptr)
+		if (m_vecChild[i] == Child)
 		{
 			auto iter = m_vecChild.begin() + i;
 			auto iterName = m_vecChildName.begin() + i;
@@ -136,7 +130,7 @@ bool CSceneComponent::DeleteChild(CSceneComponent* Child)
 			(*iter)->m_Parent = nullptr;
 			(*iter)->m_ParentName = "";
 
-			m_Owner->DeleteSceneComponent((*iter).get());
+			m_Owner->DeleteSceneComponent(*iter);
 
 			m_vecChild.erase(iter);
 			m_vecChildName.erase(iterName);
@@ -168,7 +162,7 @@ bool CSceneComponent::DeleteChild(const std::string& Name)
 			(*iter)->m_Parent = nullptr;
 			(*iter)->m_ParentName = "";
 
-			m_Owner->DeleteSceneComponent((*iter).get());
+			m_Owner->DeleteSceneComponent((*iter));
 
 			m_vecChild.erase(iter);
 			m_vecChildName.erase(iterName);
@@ -220,7 +214,7 @@ void CSceneComponent::GetAllComponentHierarchyName(std::vector<HierarchyName>& v
 
 		Names.Name = m_vecChild[i]->GetName();
 		Names.ClassName = m_vecChild[i]->GetComponentTypeName();
-		Names.Component = m_vecChild[i].get();
+		Names.Component = m_vecChild[i];
 		Names.Parent = Parent;
 
 		if (Parent)

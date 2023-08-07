@@ -7,7 +7,7 @@ struct MeshSubset
 {
 	IndexBuffer IB;
 	struct MeshSlot* Slot;
-	std::shared_ptr<CMaterial> Material;
+	CSharedPtr<CMaterial> Material;
 };
 
 struct MeshContainer
@@ -23,7 +23,7 @@ struct MeshSlot
 {
 	VertexBuffer* VB;
 	IndexBuffer* IB;
-	std::shared_ptr<class CMaterial> Material;
+	CSharedPtr<class CMaterial> Material;
 	D3D11_PRIMITIVE_TOPOLOGY Primitive;
 
 	MeshSlot() : VB(nullptr), IB(nullptr)
@@ -83,7 +83,7 @@ public:
 		return (int)m_vecMeshSlot.size();
 	}
 
-	std::shared_ptr<CMaterial> GetMaterial(int Slot) const
+	CSharedPtr<CMaterial> GetMaterial(int Slot) const
 	{
 		return m_vecMeshSlot[Slot]->Material;
 	}

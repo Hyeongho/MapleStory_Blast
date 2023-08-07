@@ -14,7 +14,7 @@ CSpriteComponent::CSpriteComponent(const CSpriteComponent& component) : CPrimiti
 {
 	if (component.m_Animation)
 	{
-		m_Animation = std::make_shared<CAnimation>(component.m_Animation->Clone());
+		m_Animation = component.m_Animation->Clone();
 	}
 }
 
@@ -95,7 +95,7 @@ void CSpriteComponent::SetTextureFrameIndex(int Index)
 	m_vecMaterial[0]->SetTextureFrameIndex(0, Index);
 }
 
-std::shared_ptr<CTexture> CSpriteComponent::GetTexture(int Index) const
+CSharedPtr<CTexture> CSpriteComponent::GetTexture(int Index) const
 {
 	if (m_vecMaterial.empty())
 	{
@@ -216,7 +216,7 @@ void CSpriteComponent::Load(FILE* File)
 
 		CAnimation* CDO = CAnimation::FindCDO(ClassName);
 
-		m_Animation = std::make_shared<CAnimation>(CDO->Clone());
+		m_Animation = CDO->Clone();
 
 		m_Animation->m_Owner = this;
 

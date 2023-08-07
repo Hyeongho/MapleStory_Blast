@@ -82,7 +82,7 @@ private:
 	CCameraManager* m_CameraManager;
 	CSceneCollision* m_CollisionManager;
 	CSceneViewport* m_Viewport;
-	std::list<std::shared_ptr<class CGameObject>> m_ObjList;
+	std::list<CSharedPtr<class CGameObject>> m_ObjList;
 	std::string	m_Name;
 	std::function<void(float)>	m_LoadingCallback;
 

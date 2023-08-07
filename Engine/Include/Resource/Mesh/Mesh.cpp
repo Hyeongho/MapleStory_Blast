@@ -27,7 +27,7 @@ CMesh::~CMesh()
 
 void CMesh::SetMaterial(int Container, int Subset, const std::string& Name)
 {
-	std::shared_ptr<CMaterial> Material = std::make_shared<CMaterial>();
+	CMaterial* Material = nullptr;
 
 	if (m_Scene)
 	{
@@ -45,8 +45,8 @@ void CMesh::SetMaterial(int Container, int Subset, const std::string& Name)
 
 void CMesh::SetMaterial(int Container, int Subset, CMaterial* Material)
 {
-	m_vecContainer[Container]->vecSubset[Subset].Material = std::make_shared<CMaterial>(Material);
-	m_vecContainer[Container]->vecSubset[Subset].Slot->Material = std::make_shared<CMaterial>(Material);
+	m_vecContainer[Container]->vecSubset[Subset].Material = Material;
+	m_vecContainer[Container]->vecSubset[Subset].Slot->Material = Material;
 }
 
 bool CMesh::CreateMesh(void* VtxData, int Size, int Count, D3D11_USAGE VtxUsage, D3D11_PRIMITIVE_TOPOLOGY Primitive, void* IdxData, int IdxSize, int IdxCount, D3D11_USAGE IdxUsage, DXGI_FORMAT Fmt)

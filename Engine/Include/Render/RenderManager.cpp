@@ -59,7 +59,7 @@ void CRenderManager::SetLayerAlphaBlend(const std::string& Name)
 	{
 		if ((*iter)->Name == Name)
 		{
-			(*iter)->AlphaBlend = std::make_shared<CRenderState>(FindRenderState<CRenderState>("AlphaBlend"));
+			(*iter)->AlphaBlend = FindRenderState<CRenderState>("AlphaBlend");
 			break;
 		}
 	}
@@ -90,7 +90,7 @@ void CRenderManager::AddRenderList(CSceneComponent* Component)
 	{
 		if ((*iter)->Name == Component->GetRenderLayerName())
 		{
-			(*iter)->RenderList.push_back(std::make_shared<CSceneComponent>(Component));
+			(*iter)->RenderList.push_back(Component);
 			break;
 		}
 	}
@@ -182,6 +182,10 @@ bool CRenderManager::CreateDepthStencil(const std::string& Name,
 	D3D11_DEPTH_STENCILOP_DESC FrontFace, D3D11_DEPTH_STENCILOP_DESC BackFace)
 {
 	return m_RenderStateManager->CreateDepthStencil(Name, DepthEnable, DepthWriteMask, DepthFunc, StencilEnable, StencilReadMask, StencilWriteMask, FrontFace, BackFace);
+}
+
+void CRenderManager::CreateRenderTarget()
+{
 }
 
 bool CRenderManager::SortLayer(RenderLayer* Src, RenderLayer* Dest)

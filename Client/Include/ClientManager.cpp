@@ -1,7 +1,7 @@
 #include "ClientManager.h"
-//#include "Scene/SceneManager.h"
-//#include "Scene/MainSceneInfo.h"
-//#include "Input.h"
+#include "Scene/SceneManager.h"
+#include "Scene/TitleScene.h"
+#include "Input.h"
 //#include "Setting/EngineShareSetting.h"
 
 CClientManager::CClientManager()
@@ -20,7 +20,8 @@ bool CClientManager::Init(HINSTANCE hInst)
         return false;
     }
 
-    CEngineShareSetting::Setting();
+    //CEngineShareSetting::Setting();
+    //CEngine::GetInst()->SetEngineSetting<CDefaultSetting>();
 
     // 키 등록
     CInput::GetInst()->AddBindKey("Rotation", 'D');
@@ -32,7 +33,7 @@ bool CClientManager::Init(HINSTANCE hInst)
     CInput::GetInst()->AddBindKey("Fire", VK_SPACE);
 
     // SceneInfo 생성
-    //CSceneManager::GetInst()->CreateSceneInfo<CMainSceneInfo>();
+    CSceneManager::GetInst()->CreateSceneInfo<CTitleScene>();
     //CSceneManager::GetInst()->GetScene()->Load("Start.scn", SCENE_PATH);
 
     return true;

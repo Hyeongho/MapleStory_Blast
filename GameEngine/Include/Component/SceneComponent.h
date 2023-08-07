@@ -17,7 +17,7 @@ protected:
 protected:
 	CTransform* m_Transform;
 	CSceneComponent* m_Parent;
-	std::vector<std::shared_ptr<CSceneComponent>> m_vecChild;
+	std::vector<CSharedPtr<CSceneComponent>> m_vecChild;
 	std::string m_LayerName;
 	std::string m_ParentName;
 	std::vector<std::string> m_vecChildName;

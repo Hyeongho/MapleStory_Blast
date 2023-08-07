@@ -40,7 +40,7 @@ void CAnimationData::SetSequence(CAnimationSequence* Sequence)
 		m_SequenceName = Sequence->GetName();
 	}
 
-	m_Sequence = std::make_shared<CAnimationSequence>(Sequence);
+	m_Sequence = Sequence;
 }
 
 void CAnimationData::Save(FILE* File)
@@ -92,14 +92,14 @@ void CAnimationData::Load(FILE* File)
 	{
 		CAnimationSequence* Sequence = m_Owner->GetScene()->GetResource()->FindAnimationSequence2D(SequenceName);
 
-		m_Sequence = std::make_shared<CAnimationSequence>(Sequence);
+		m_Sequence = Sequence;
 	}
 
 	else
 	{
 		CAnimationSequence* Sequence = CResourceManager::GetInst()->FindAnimationSequence2D(SequenceName);
 
-		m_Sequence = std::make_shared<CAnimationSequence>(Sequence);
+		m_Sequence = Sequence;
 	}
 }
 

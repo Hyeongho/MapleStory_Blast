@@ -119,3 +119,5 @@ const PathInfo* CPathManager::FindPath(const std::string& Name)
 
 	return iter->second;
 }
+
+

@@ -57,7 +57,7 @@ public:	// ===================== Texture =========================
 	void ReleaseTexture(const std::string& Name);
 
 public:	// ===================== Material =========================
-	CMaterial* FindMaterial(const std::string& Name);
+	class CMaterial* FindMaterial(const std::string& Name);
 	void ReleaseMaterial(const std::string& Name);
 
 	template <typename T>
@@ -83,7 +83,7 @@ public:	// ===================== Animation =========================
 
 	CAnimationSequence* FindAnimationSequence2D(const std::string& Name);
 	void ReleaseAnimationSequence2D(const std::string& Name);
-	class CAnimation2DConstantBuffer* GetAnim2DConstantBuffer()	const;
+	class CAnimationConstantBuffer* GetAnim2DConstantBuffer() const;
 
 public:	// ============================ Sound ================================
 	bool CreateSoundChannel(const std::string& Name);
@@ -120,7 +120,7 @@ public:	// ============================ Font ================================
 	unsigned int CreateFontColorKey(float r, float g, float b, float a);
 	unsigned int CreateFontColorKey(const Vector4& Color);
 
-	CFont* FindFont(const std::string& Name);
+	CSharedPtr<CFont> FindFont(const std::string& Name);
 	CFontCollection* FindFontCollection(const std::string& Name);
 	void ReleaseFont(const std::string& Name);
 	void ReleaseFontCollection(const std::string& Name);

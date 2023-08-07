@@ -51,24 +51,25 @@ bool CFontManager::CreateFontCollection(const std::string& Name, const TCHAR* Fi
         return false;
     }
 
-    m_mapFontCollection.insert(std::make_pair(Name, std::make_shared<CFontCollection>(FontCollection)));
+    m_mapFontCollection.insert(std::make_pair(Name, FontCollection));
 
     return true;
 }
 
 bool CFontManager::LoadFont(const std::string& Name, const TCHAR* FontName, int Weight, float FontSize, const TCHAR* LocalName, int Stretch)
 {
-    std::shared_ptr<CFont> Font = FindFont(Name);
+    CFont* Font = FindFont(Name);
 
     if (Font)
     {
         return true;
     }
 
-    Font = std::make_shared<CFont>();
+    Font = new CFont;
 
     if (!Font->LoadFont(m_WriteFactory, Name, FontName, Weight, FontSize, LocalName, Stretch))
     {
+        SAFE_DELETE(Font);
         return false;
     }
 
@@ -236,7 +237,7 @@ unsigned int CFontManager::CreateFontColorKey(const Vector4& Color)
     return Key;
 }
 
-std::shared_ptr<CFont> CFontManager::FindFont(const std::string& Name)
+CSharedPtr<CFont> CFontManager::FindFont(const std::string& Name)
 {
     auto iter = m_mapFont.find(Name);
 
@@ -257,7 +258,7 @@ CFontCollection* CFontManager::FindFontCollection(const std::string& Name)
         return nullptr;
     }
 
-    return iter->second.get();
+    return iter->second;
 }
 
 void CFontManager::ReleaseFont(const std::string& Name)
