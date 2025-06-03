@@ -146,12 +146,14 @@ bool CResourceManager::LoadTextureArrayFullPath(const std::string& Name, const s
 	return m_TextureManager->LoadTextureArrayFullPath(Name, vecFullPath);
 }
 
-bool CResourceManager::CreateTarget(const std::string& Name,
-	unsigned int Width, unsigned int Height, DXGI_FORMAT PixelFormat,
-	DXGI_FORMAT DepthFormat)
+bool CResourceManager::LoadTexture(const std::string& Name, const std::string& FileName, const std::string& PathName)
 {
-	return m_TextureManager->CreateTarget(Name, Width, Height,
-		PixelFormat, DepthFormat);
+	return m_TextureManager->LoadTexture(Name, FileName, PathName);
+}
+
+bool CResourceManager::CreateTarget(const std::string& Name, unsigned int Width, unsigned int Height, DXGI_FORMAT PixelFormat, DXGI_FORMAT DepthFormat)
+{
+	return m_TextureManager->CreateTarget(Name, Width, Height, PixelFormat, DepthFormat);
 }
 
 void CResourceManager::RenderTexture()

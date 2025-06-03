@@ -35,6 +35,7 @@
 #include "SharedPtr.h"
 #include "Resource/Texture/DirectXTex.h"
 #include "fmod.hpp"
+#include "tinyxml2.h"
 
 #pragma comment(lib, "../Bin/fmod64_vc.lib")
 

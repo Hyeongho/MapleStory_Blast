@@ -42,7 +42,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -297,6 +297,7 @@
     <ClInclude Include="Scene\SceneViewport.h" />
     <ClInclude Include="SharedPtr.h" />
     <ClInclude Include="Timer.h" />
+    <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="UI\UIButton.h" />
     <ClInclude Include="UI\UIImage.h" />
     <ClInclude Include="UI\UINumber.h" />
@@ -307,6 +308,9 @@
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Vector3.h" />
     <ClInclude Include="Vector4.h" />
+    <ClInclude Include="XmlParser\XmlMapParser.h" />
+    <ClInclude Include="XmlParser\XmlParserBase.h" />
+    <ClInclude Include="XmlParser\XmlParserManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Animation\Animation.cpp" />
@@ -408,6 +412,7 @@
     <ClCompile Include="Scene\SceneResource.cpp" />
     <ClCompile Include="Scene\SceneViewport.cpp" />
     <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="UI\UIButton.cpp" />
     <ClCompile Include="UI\UIImage.cpp" />
     <ClCompile Include="UI\UINumber.cpp" />
@@ -418,6 +423,8 @@
     <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="Vector3.cpp" />
     <ClCompile Include="Vector4.cpp" />
+    <ClCompile Include="XmlParser\XmlMapParser.cpp" />
+    <ClCompile Include="XmlParser\XmlParserManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="fmod.cs" />

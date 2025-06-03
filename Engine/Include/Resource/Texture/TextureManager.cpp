@@ -180,6 +180,14 @@ bool CTextureManager::LoadTextureArrayFullPath(const std::string& Name, const st
 	return true;
 }
 
+bool CTextureManager::LoadTexture(const std::string& Name, const std::string& FileName, const std::string& PathName)
+{
+	TCHAR tcharFile[MAX_PATH] = {};
+	mbstowcs_s(nullptr, tcharFile, FileName.c_str(), _TRUNCATE);
+
+	return LoadTexture(Name, tcharFile, PathName);
+}
+
 bool CTextureManager::CreateTarget(const std::string& Name, unsigned int Width, unsigned int Height, DXGI_FORMAT PixelFormat, DXGI_FORMAT DepthFormat)
 {
 	CRenderTarget* Texture = (CRenderTarget*)FindTexture(Name);

@@ -10,18 +10,23 @@
   SpriteComponent.cpp
   TileMapComponent.cpp
   Transform.cpp
+  Device.cpp
+  EditorButton.cpp
   EditorImage.cpp
   Engine.cpp
+  imgui_impl_dx11.cpp
+  imgui_impl_win32.cpp
   AnimationSequence.cpp
   Material.cpp
-  MaterialManager.cpp
-  Mesh.cpp
-  MeshManager.cpp
-  SpriteMesh.cpp
   코드를 생성하고 있습니다...
   컴파일하고 있습니다...
+  Mesh.cpp
+  MeshManager.cpp
   ResourceManager.cpp
+  AnimationConstantBuffer.cpp
   ConstantBufferData.cpp
+  TileMapShader.cpp
+  TransformConstantBuffer.cpp
   RenderTarget.cpp
   TextureManager.cpp
   Scene.cpp
@@ -30,20 +35,51 @@
   SceneManager.cpp
   SceneResource.cpp
   SceneViewport.cpp
+  tinyxml2.cpp
   UIButton.cpp
   UIImage.cpp
   UINumber.cpp
   UIProgressBar.cpp
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
   UIText.cpp
   UIWidget.cpp
+  XmlMapParser.cpp
+  XmlParserManager.cpp
   코드를 생성하고 있습니다...
-  Engine.vcxproj -> E:\C++_Client\MapleStory_Blast\Engine\Bin\Engine_Debug.lib
-  .\Engine\Include\Resource\Material\Material.h
-  1개 파일이 복사되었습니다.
+  Engine.vcxproj -> D:\C++_Client\MapleStory_Blast\Engine\Bin\Engine_Debug.lib
+  .\Engine\Include\EngineInfo.h
+  .\Engine\Include\tinyxml2.h
+  .\Engine\Include\Resource\ResourceManager.h
+  .\Engine\Include\Resource\Texture\TextureManager.h
+  .\Engine\Include\Scene\Scene.h
+  .\Engine\Include\XmlParser\XmlMapParser.h
+  .\Engine\Include\XmlParser\XmlParserBase.h
+  .\Engine\Include\XmlParser\XmlParserManager.h
+  8개 파일이 복사되었습니다.
   파일을 찾을 수 없습니다-*.inl
   0개 파일이 복사되었습니다.
   0개 파일이 복사되었습니다.
+  .\Engine\Bin\Collider.cso
   .\Engine\Bin\Engine_Debug.lib
+  .\Engine\Bin\Mesh.cso
+  .\Engine\Bin\Sprite.cso
+  .\Engine\Bin\TileMap.cso
+  .\Engine\Bin\UI.cso
+  6개 파일이 복사되었습니다.
+  .\Engine\Bin\Collider.cso
+  .\Engine\Bin\DirectXTex.lib
+  .\Engine\Bin\DirectXTex_Debug.lib
+  .\Engine\Bin\Engine.lib
+  .\Engine\Bin\Engine_Debug.lib
+  .\Engine\Bin\fmod.dll
+  .\Engine\Bin\fmod64.dll
+  .\Engine\Bin\fmod64_vc.lib
+  .\Engine\Bin\fmod_vc.lib
+  .\Engine\Bin\Mesh.cso
+  .\Engine\Bin\Sprite.cso
+  .\Engine\Bin\TileMap.cso
+  .\Engine\Bin\UI.cso
   .\Engine\Bin\Animation2D\aaa.txt
   .\Engine\Bin\Animation2D\imgui.ini
   .\Engine\Bin\Animation2D\PlayerIdle.sqc
@@ -56,6 +92,16 @@
   .\Engine\Bin\Scene\Main3.scn
   .\Engine\Bin\Scene\Main4.scn
   .\Engine\Bin\Scene\Start.scn
+  .\Engine\Bin\Shader\Collider.fx
+  .\Engine\Bin\Shader\Debug.fx
+  .\Engine\Bin\Shader\Light.fx
+  .\Engine\Bin\Shader\Mesh.fx
+  .\Engine\Bin\Shader\ParticleRender.fx
+  .\Engine\Bin\Shader\ParticleUpdate.fx
+  .\Engine\Bin\Shader\Share.fx
+  .\Engine\Bin\Shader\Sprite.fx
+  .\Engine\Bin\Shader\TileMap.fx
+  .\Engine\Bin\Shader\UI.fx
   .\Engine\Bin\Sound\1Up.wav
   .\Engine\Bin\Sound\cardboard-step-1.ogg
   .\Engine\Bin\Sound\cardboard-step-2.ogg
@@ -862,8 +908,20 @@
   .\Engine\Bin\Texture\Particle\Snow50px.png
   .\Engine\Bin\Texture\Particle\Sparks.png
   .\Engine\Bin\Texture\Sky\Sky.dds
-  819개 파일이 복사되었습니다.
+  841개 파일이 복사되었습니다.
+  .\Engine\Bin\Collider.cso
+  .\Engine\Bin\DirectXTex.lib
+  .\Engine\Bin\DirectXTex_Debug.lib
+  .\Engine\Bin\Engine.lib
   .\Engine\Bin\Engine_Debug.lib
+  .\Engine\Bin\fmod.dll
+  .\Engine\Bin\fmod64.dll
+  .\Engine\Bin\fmod64_vc.lib
+  .\Engine\Bin\fmod_vc.lib
+  .\Engine\Bin\Mesh.cso
+  .\Engine\Bin\Sprite.cso
+  .\Engine\Bin\TileMap.cso
+  .\Engine\Bin\UI.cso
   .\Engine\Bin\Animation2D\aaa.txt
   .\Engine\Bin\Animation2D\imgui.ini
   .\Engine\Bin\Animation2D\PlayerIdle.sqc
@@ -876,6 +934,16 @@
   .\Engine\Bin\Scene\Main3.scn
   .\Engine\Bin\Scene\Main4.scn
   .\Engine\Bin\Scene\Start.scn
+  .\Engine\Bin\Shader\Collider.fx
+  .\Engine\Bin\Shader\Debug.fx
+  .\Engine\Bin\Shader\Light.fx
+  .\Engine\Bin\Shader\Mesh.fx
+  .\Engine\Bin\Shader\ParticleRender.fx
+  .\Engine\Bin\Shader\ParticleUpdate.fx
+  .\Engine\Bin\Shader\Share.fx
+  .\Engine\Bin\Shader\Sprite.fx
+  .\Engine\Bin\Shader\TileMap.fx
+  .\Engine\Bin\Shader\UI.fx
   .\Engine\Bin\Sound\1Up.wav
   .\Engine\Bin\Sound\cardboard-step-1.ogg
   .\Engine\Bin\Sound\cardboard-step-2.ogg
@@ -1682,49 +1750,4 @@
   .\Engine\Bin\Texture\Particle\Snow50px.png
   .\Engine\Bin\Texture\Particle\Sparks.png
   .\Engine\Bin\Texture\Sky\Sky.dds
-  819개 파일이 복사되었습니다.
-  .\Engine\Bin\Engine_Debug.lib
-  .\Engine\Bin\Scene\Main.scn
-  .\Engine\Bin\Scene\Main1.scn
-  .\Engine\Bin\Scene\Main2.scn
-  .\Engine\Bin\Scene\Main3.scn
-  .\Engine\Bin\Scene\Main4.scn
-  .\Engine\Bin\Scene\Start.scn
-  .\Engine\Bin\Sound\1Up.wav
-  .\Engine\Bin\Sound\cardboard-step-1.ogg
-  .\Engine\Bin\Sound\cardboard-step-2.ogg
-  .\Engine\Bin\Sound\dark-crystal-step-01.ogg
-  .\Engine\Bin\Sound\dark-crystal-step-02.ogg
-  .\Engine\Bin\Sound\Demasia.mp3
-  .\Engine\Bin\Sound\earth-step-1.ogg
-  .\Engine\Bin\Sound\earth-step-2.ogg
-  .\Engine\Bin\Sound\Fire1.wav
-  .\Engine\Bin\Sound\Fire2.wav
-  .\Engine\Bin\Sound\Fire3.wav
-  .\Engine\Bin\Sound\Fire4.wav
-  .\Engine\Bin\Sound\Fire5.wav
-  .\Engine\Bin\Sound\grass-step-1.ogg
-  .\Engine\Bin\Sound\grass-step-2.ogg
-  .\Engine\Bin\Sound\ice-step-1.ogg
-  .\Engine\Bin\Sound\ice-step-2.ogg
-  .\Engine\Bin\Sound\laser-step-1.ogg
-  .\Engine\Bin\Sound\laser-step-2.ogg
-  .\Engine\Bin\Sound\MainBgm.mp3
-  .\Engine\Bin\Sound\metal-solid-step-1.ogg
-  .\Engine\Bin\Sound\metal-solid-step-2.ogg
-  .\Engine\Bin\Sound\pipe-step-1.ogg
-  .\Engine\Bin\Sound\pipe-step-2.ogg
-  .\Engine\Bin\Sound\snow-step-1.ogg
-  .\Engine\Bin\Sound\snow-step-2.ogg
-  .\Engine\Bin\Sound\step-1.ogg
-  .\Engine\Bin\Sound\step-2.ogg
-  .\Engine\Bin\Sound\stone-step-1.ogg
-  .\Engine\Bin\Sound\stone-step-2.ogg
-  .\Engine\Bin\Sound\Stun.wav
-  .\Engine\Bin\Sound\TeemoSmile.mp3
-  .\Engine\Bin\Sound\TeemoStartClicck.mp3
-  .\Engine\Bin\Sound\water-step-01.ogg
-  .\Engine\Bin\Sound\water-step-02.ogg
-  .\Engine\Bin\Sound\wooden-step-1.ogg
-  .\Engine\Bin\Sound\wooden-step-2.ogg
-  44개 파일이 복사되었습니다.
+  841개 파일이 복사되었습니다.

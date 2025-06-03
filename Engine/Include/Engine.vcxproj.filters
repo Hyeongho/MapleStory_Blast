@@ -184,6 +184,12 @@
     <Filter Include="01. Manager\09. SharedPtr">
       <UniqueIdentifier>{9a523158-1a38-45d8-8d72-3e4858bce9e9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Manager\10. tinyxml2">
+      <UniqueIdentifier>{39088124-1922-4d55-8968-2876b1663e04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="10. XmlParser">
+      <UniqueIdentifier>{bec882d4-2c16-4fe0-85bb-1a10e662ab46}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EngineInfo.h">
@@ -564,6 +570,18 @@
     <ClInclude Include="SharedPtr.h">
       <Filter>01. Manager\09. SharedPtr</Filter>
     </ClInclude>
+    <ClInclude Include="tinyxml2.h">
+      <Filter>01. Manager\10. tinyxml2</Filter>
+    </ClInclude>
+    <ClInclude Include="XmlParser\XmlParserManager.h">
+      <Filter>10. XmlParser</Filter>
+    </ClInclude>
+    <ClInclude Include="XmlParser\XmlParserBase.h">
+      <Filter>10. XmlParser</Filter>
+    </ClInclude>
+    <ClInclude Include="XmlParser\XmlMapParser.h">
+      <Filter>10. XmlParser</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine.cpp">
@@ -892,6 +910,15 @@
     </ClCompile>
     <ClCompile Include="UI\UIWidget.cpp">
       <Filter>09. UI\02. Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml2.cpp">
+      <Filter>01. Manager\10. tinyxml2</Filter>
+    </ClCompile>
+    <ClCompile Include="XmlParser\XmlParserManager.cpp">
+      <Filter>10. XmlParser</Filter>
+    </ClCompile>
+    <ClCompile Include="XmlParser\XmlMapParser.cpp">
+      <Filter>10. XmlParser</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

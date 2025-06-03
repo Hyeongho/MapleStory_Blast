@@ -1,19 +1,4 @@
-﻿FXC : warning X4717: Effects deprecated for D3DCompiler_47
-  
-  compilation object save succeeded; see E:\C++_Client\MapleStory_Blast\Engine\Bin\Collider.cso
-FXC : warning X4717: Effects deprecated for D3DCompiler_47
-  
-  compilation object save succeeded; see E:\C++_Client\MapleStory_Blast\Engine\Bin\Mesh.cso
-FXC : warning X4717: Effects deprecated for D3DCompiler_47
-  
-  compilation object save succeeded; see E:\C++_Client\MapleStory_Blast\Engine\Bin\Sprite.cso
-FXC : warning X4717: Effects deprecated for D3DCompiler_47
-  
-  compilation object save succeeded; see E:\C++_Client\MapleStory_Blast\Engine\Bin\TileMap.cso
-FXC : warning X4717: Effects deprecated for D3DCompiler_47
-  
-  compilation object save succeeded; see E:\C++_Client\MapleStory_Blast\Engine\Bin\UI.cso
-  Animation.cpp
+﻿  Animation.cpp
   AnimationData.cpp
   CollisionManager.cpp
   CameraComponent.cpp
@@ -37,8 +22,8 @@ FXC : warning X4717: Effects deprecated for D3DCompiler_47
   EditorButton.cpp
   EditorCheckBox.cpp
   EditorComboBox.cpp
-  EditorGroup.cpp
   EditorGUIManager.cpp
+  EditorGroup.cpp
   EditorImage.cpp
   EditorInput.cpp
   EditorLabel.cpp
@@ -50,18 +35,11 @@ FXC : warning X4717: Effects deprecated for D3DCompiler_47
   Engine.cpp
   EngineSetting.cpp
   GameObject.cpp
-  imgui.cpp
-  imgui_demo.cpp
-  imgui_draw.cpp
-  imgui_impl_dx11.cpp
-  컴파일하고 있습니다...
-  imgui_impl_win32.cpp
-  imgui_tables.cpp
-  imgui_widgets.cpp
   Input.cpp
   Matrix.cpp
   PathManager.cpp
   Ref.cpp
+  컴파일하고 있습니다...
   BlendState.cpp
   DepthStencilState.cpp
   RenderManager.cpp
@@ -75,7 +53,6 @@ FXC : warning X4717: Effects deprecated for D3DCompiler_47
   Material.cpp
   MaterialManager.cpp
   Mesh.cpp
-  컴파일하고 있습니다...
   MeshManager.cpp
   SpriteMesh.cpp
   ResourceManager.cpp
@@ -83,6 +60,7 @@ FXC : warning X4717: Effects deprecated for D3DCompiler_47
   ColliderConstantBuffer.cpp
   ColliderImageShader.cpp
   ColliderShader.cpp
+  컴파일하고 있습니다...
   ComputeShader.cpp
   ConstantBuffer.cpp
   ConstantBufferData.cpp
@@ -96,7 +74,6 @@ FXC : warning X4717: Effects deprecated for D3DCompiler_47
   TileMapBackShader.cpp
   TileMapConstantBuffer.cpp
   TileMapShader.cpp
-  컴파일하고 있습니다...
   TransformConstantBuffer.cpp
   UIConstantBuffer.cpp
   UIProgressBarConstantBuffer.cpp
@@ -104,6 +81,7 @@ FXC : warning X4717: Effects deprecated for D3DCompiler_47
   UIShader.cpp
   Sound.cpp
   SoundManager.cpp
+  컴파일하고 있습니다...
   RenderTarget.cpp
   Texture.cpp
   TextureManager.cpp
@@ -117,7 +95,6 @@ FXC : warning X4717: Effects deprecated for D3DCompiler_47
   SceneViewport.cpp
   Timer.cpp
   UIButton.cpp
-  컴파일하고 있습니다...
   UIImage.cpp
   UINumber.cpp
   UIProgressBar.cpp
@@ -125,9 +102,20 @@ FXC : warning X4717: Effects deprecated for D3DCompiler_47
   UIWidget.cpp
   UIWindow.cpp
   Vector2.cpp
+  컴파일하고 있습니다...
   Vector3.cpp
   Vector4.cpp
-  Engine.vcxproj -> E:\C++_Client\MapleStory_Blast\Engine\Bin\Engine.lib
+  XmlMapParser.cpp
+  XmlParserManager.cpp
+  imgui.cpp
+  imgui_demo.cpp
+  imgui_draw.cpp
+  imgui_impl_dx11.cpp
+  imgui_impl_win32.cpp
+  imgui_tables.cpp
+  imgui_widgets.cpp
+  tinyxml2.cpp
+  Engine.vcxproj -> D:\C++_Client\MapleStory_Blast\Engine\Bin\Engine.lib
   0개 파일이 복사되었습니다.
   파일을 찾을 수 없습니다-*.inl
   0개 파일이 복사되었습니다.
@@ -148,7 +136,8 @@ FXC : warning X4717: Effects deprecated for D3DCompiler_47
   6개 파일이 복사되었습니다.
   .\Engine\Bin\Collider.cso
   .\Engine\Bin\Engine.lib
-  디스크 공간이 부족합니다.
-  1개 파일이 복사되었습니다.
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(155,5): error MSB3073: "call E:\C++_Client\MapleStory_Blast\Copy.bat
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(155,5): error MSB3073: :VCEnd" 명령이 종료되었습니다(코드: 4).
+  .\Engine\Bin\Mesh.cso
+  .\Engine\Bin\Sprite.cso
+  .\Engine\Bin\TileMap.cso
+  .\Engine\Bin\UI.cso
+  6개 파일이 복사되었습니다.
