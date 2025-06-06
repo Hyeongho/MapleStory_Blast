@@ -1,7 +1,7 @@
 #include "XmlParserManager.h"
 #include "XmlParserBase.h"
 
-void CXmlParserManager::Register(const std::string& type, std::shared_ptr<CXmlParserBase> parser)
+void CXmlParserManager::Register(const std::string& type, CXmlParserBase* parser)
 {
 	m_ParserMap[type] = parser;
 }

@@ -3,19 +3,19 @@
   <ProjectOutputs />
   <ContentFiles>
     <ContentFile>
-      <FullPath>D:\C++_Client\MapleStory_Blast\Engine\Bin\Collider.cso</FullPath>
+      <FullPath>D:\MapleStory_Blast\Engine\Bin\Collider.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>D:\C++_Client\MapleStory_Blast\Engine\Bin\Mesh.cso</FullPath>
+      <FullPath>D:\MapleStory_Blast\Engine\Bin\Mesh.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>D:\C++_Client\MapleStory_Blast\Engine\Bin\Sprite.cso</FullPath>
+      <FullPath>D:\MapleStory_Blast\Engine\Bin\Sprite.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>D:\C++_Client\MapleStory_Blast\Engine\Bin\TileMap.cso</FullPath>
+      <FullPath>D:\MapleStory_Blast\Engine\Bin\TileMap.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>D:\C++_Client\MapleStory_Blast\Engine\Bin\UI.cso</FullPath>
+      <FullPath>D:\MapleStory_Blast\Engine\Bin\UI.cso</FullPath>
     </ContentFile>
   </ContentFiles>
   <SatelliteDlls />

@@ -208,7 +208,7 @@ bool CAnimation::AddAnimation(const std::string& Name, const std::string& Sequen
 	return true;
 }
 
-bool CAnimation::AddAnimation(const std::string& Name, CAnimationSequence* Sequence, float PlayTime, float PlayScale, bool Loop, bool Reverse)
+bool CAnimation::AddAnimation(const std::string& Name, const CSharedPtr<CAnimationSequence>& Sequence, float PlayTime, float PlayScale, bool Loop, bool Reverse)
 {
 	CAnimationData* Anim = FindAnimation(Name);
 

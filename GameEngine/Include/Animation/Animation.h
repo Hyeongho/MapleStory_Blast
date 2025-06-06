@@ -67,7 +67,7 @@ public:
 	virtual bool Init();
 	virtual void Update(float DeltaTime);
 	bool AddAnimation(const std::string& Name, const std::string& SequenceName, float PlayTime = 1.f, float PlayScale = 1.f, bool Loop = false, bool Reverse = false);
-	bool AddAnimation(const std::string& Name, class CAnimationSequence* Sequence, float PlayTime = 1.f, float PlayScale = 1.f, bool Loop = false, bool Reverse = false);
+	bool AddAnimation(const std::string& Name, const CSharedPtr<CAnimationSequence>& Sequence, float PlayTime = 1.f, float PlayScale = 1.f, bool Loop = false, bool Reverse = false);
 	void SetPlayTime(const std::string& Name, float PlayTime);
 	void SetPlayScale(const std::string& Name, float PlayScale);
 	void SetLoop(const std::string& Name, bool Loop);

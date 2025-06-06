@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\C++_Client\MapleStory_Blast\Client\Bin\Client_Debug.exe</FullPath>
+      <FullPath>D:\MapleStory_Blast\Client\Bin\Client_Debug.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

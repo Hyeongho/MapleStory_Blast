@@ -24,7 +24,7 @@ bool CMeshManager::Init()
 
 	CreateMesh(nullptr, MeshType::Sprite, "CenterColorRect", CenterColorMesh, sizeof(VertexColor), 4, D3D11_USAGE_IMMUTABLE, D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST, RectIndex, 4, 6, D3D11_USAGE_IMMUTABLE, DXGI_FORMAT_R32_UINT);
 
-	CSharedPtr<CMesh> Mesh = FindMesh("CenterColorRect");
+	CMesh* Mesh = FindMesh("CenterColorRect");
 
 	Mesh->SetMaterial(0, 0, "DefaultColor");
 
