@@ -35,7 +35,7 @@ CClientManager::~CClientManager()
 
 bool CClientManager::Init(HINSTANCE hInst)
 {
-	if (!CEngine::GetInst()->Init(hInst, TEXT("MapleStory_DX11"), 1366, 768, IDI_ICON1))
+	if (!CEngine::GetInst()->Init(hInst, TEXT("MapleStory"), 1366, 768, IDI_ICON1))
 	{
 		CEngine::DestroyInst();
 		return false;
