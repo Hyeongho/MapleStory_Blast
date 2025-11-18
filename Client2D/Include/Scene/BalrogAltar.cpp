@@ -193,21 +193,15 @@ void CBalrogAltar::CollisionBeginCallback(const CollisionResult& Result)
 
 		Player->SetGround(true);
 
-		Vector3 DestPos = Result.Dest->GetWorldPos() + Result.Dest->GetOffset();
 		Vector3 DestScale = Result.Dest->GetWorldScale();
-
-		Vector3 SrcOffSet = Result.Src->GetOffset();
 		Vector3 DestOffSet = Result.Dest->GetOffset();
-
+		
 		Vector3 SrcPos = Result.Src->GetWorldPos() + Result.Src->GetOffset();
 		Vector3 SrcScale = Result.Src->GetWorldScale();
-
-		float Len = abs(DestPos.y - SrcPos.y);
-		float Value = (DestScale.y / 2.f + SrcScale.y / 2.f) - Len;
-
-		DestPos = Player->GetWorldPos();
-		DestPos.y += Value;
-
+		
+		Vector3 DestPos = Player->GetWorldPos();
+		DestPos.y = SrcPos.y + (SrcScale.y * 0.5f) + (DestScale.y * 0.5f) - DestOffSet.y;
+		
 		Player->SetWorldPos(DestPos);
 	}
 }

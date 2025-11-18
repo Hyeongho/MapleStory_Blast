@@ -1,5 +1,7 @@
 #include "CollisionSection.h"
 #include "../Component/ColliderComponent.h"
+#include "../Component/ColliderBox2D.h"
+#include "../Collision/SweptAABB.h"
 #include "../Input.h"
 
 CCollisionSection::CCollisionSection()
@@ -72,10 +74,28 @@ void CCollisionSection::Collision(float DeltaTime)
 				continue;
 			}
 
-			if (Src->Collision(Dest))
+			bool CollisionCheck = Src->Collision(Dest);
+
+			if (!CollisionCheck && Src->GetColliderType() == Collider_Type::Box2D &&
+				Dest->GetColliderType() == Collider_Type::Box2D)
 			{
-				// Áö±Ý Ãæµ¹ÀÌ µÈ°ÇÁö¸¦ ÆÇ´ÜÇÑ´Ù.
-				// Áï, ÀÌÀü ÇÁ·¹ÀÓ¿¡ Ãæµ¹µÈ ¸ñ·Ï¿¡ ¾ø´Ù¸é Áö±Ý ¸· Ãæµ¹ÀÌ ½ÃÀÛµÈ °ÍÀÌ´Ù.
+				CColliderBox2D* SrcBox = (CColliderBox2D*)Src;
+				CColliderBox2D* DestBox = (CColliderBox2D*)Dest;
+				CollisionResult srcResult, destResult;
+
+				if (CSweptAABB::CollisionBox2DToBox2D(SrcBox, DestBox, srcResult, destResult))
+				{
+					Src->SetCollisionResult(srcResult);
+					Dest->SetCollisionResult(destResult);
+
+					CollisionCheck = true;
+				}
+			}
+
+			if (CollisionCheck)
+			{
+			//  Ó¿ æµ¹ ß¾Âµ Ì¹ Ó¿ æµ¹ Ê´ 
+			// æµ¹ Ç¾ Ë¸.
 				if (!Src->CheckPrevCollision(Dest))
 				{
 					Src->AddPrevCollision(Dest);
@@ -89,8 +109,8 @@ void CCollisionSection::Collision(float DeltaTime)
 				Dest->AddCurrentFrameCollision(Src);
 			}
 
-			// ÀÌÀü ÇÁ·¹ÀÓ¿¡ Ãæµ¹ÀÌ µÇ¾ú´Âµ¥ ÇöÀçÇÁ·¹ÀÓ¿¡ Ãæµ¹ÀÌ ¾ÈµÇ´Â »óÈ²ÀÌ¶ó¸é
-			// Ãæµ¹µÇ¾ú´Ù°¡ ÀÌÁ¦ ¶³¾îÁö´Â ÀÇ¹ÌÀÌ´Ù.
+			// ì´ì „ í”„ë ˆìž„ì— ì¶©ëŒì´ ë˜ì—ˆëŠ”ë° í˜„ìž¬í”„ë ˆìž„ì— ì¶©ëŒì´ ì•ˆë˜ëŠ” ìƒí™©ì´ë¼ë©´
+			// ì¶©ëŒë˜ì—ˆë‹¤ê°€ ì´ì œ ë–¨ì–´ì§€ëŠ” ì˜ë¯¸ì´ë‹¤.
 			else if (Src->CheckPrevCollision(Dest))
 			{
 				Src->DeletePrevCollision(Dest);

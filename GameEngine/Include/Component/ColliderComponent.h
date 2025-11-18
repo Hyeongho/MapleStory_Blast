@@ -20,7 +20,7 @@ protected:
     Vector3 m_Max;
     std::vector<int> m_vecSectionIndex;
     std::list<CColliderComponent*> m_PrevCollisionList;
-    std::list<CColliderComponent*> m_CurrentCollisionList; // ÇöÀç ÇÁ·¹ÀÓ¿¡ ÀÌÀü ¿µ¿ª¿¡¼­ Ãæµ¹µÈ ¸ñ·Ï
+    std::list<CColliderComponent*> m_CurrentCollisionList; // í˜„ì¬ í”„ë ˆì„ì— ì´ì „ ì˜ì—­ì—ì„œ ì¶©ëŒëœ ëª©ë¡
     CollisionProfile* m_Profile;
     bool m_CurrentSectionCheck;
     CollisionResult m_Result;
@@ -66,6 +66,11 @@ public:
     CollisionResult GetCollisionResult() const
     {
         return m_Result;
+    }
+
+    void SetCollisionResult(const CollisionResult& Result)
+    {
+        m_Result = Result;
     }
 
     CollisionProfile* GetCollisionProfile() const

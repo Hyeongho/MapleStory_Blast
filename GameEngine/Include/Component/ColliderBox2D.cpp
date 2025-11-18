@@ -16,11 +16,14 @@ CColliderBox2D::CColliderBox2D()
 	m_Render = true;
 
 	m_ColliderType = Collider_Type::Box2D;
+	m_PrevInfoValid = false;
 }
 
 CColliderBox2D::CColliderBox2D(const CColliderBox2D& com) : CColliderComponent(com)
 {
 	m_Info = com.m_Info;
+	m_PrevInfo = com.m_PrevInfo;
+	m_PrevInfoValid = com.m_PrevInfoValid;
 }
 
 CColliderBox2D::~CColliderBox2D()
@@ -50,6 +53,9 @@ bool CColliderBox2D::Init()
 
 	m_Mesh = m_Scene->GetResource()->FindMesh("Box2D");
 
+	m_PrevInfo = m_Info;
+	m_PrevInfoValid = true;
+
 	return true;
 }
 
@@ -61,6 +67,8 @@ void CColliderBox2D::Update(float DeltaTime)
 void CColliderBox2D::PostUpdate(float DeltaTime)
 {
 	CColliderComponent::PostUpdate(DeltaTime);
+
+	m_PrevInfo = m_Info;
 
 	m_Info.Center.x = GetWorldPos().x + m_Offset.x;
 	m_Info.Center.y = GetWorldPos().y + m_Offset.y;
@@ -112,7 +120,10 @@ void CColliderBox2D::PostUpdate(float DeltaTime)
 
 	m_Info.Max.x = m_Max.x;
 	m_Info.Max.y = m_Max.y;
+
+	m_PrevInfoValid = true;
 }
+
 
 void CColliderBox2D::PrevRender()
 {
@@ -188,6 +199,9 @@ void CColliderBox2D::Load(FILE* File)
 	CColliderComponent::Load(File);
 
 	fread(&m_Info, sizeof(Box2DInfo), 1, File);
+
+	m_PrevInfo = m_Info;
+	m_PrevInfoValid = true;
 }
 
 bool CColliderBox2D::Collision(CColliderComponent* Dest)
