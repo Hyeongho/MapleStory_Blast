@@ -16,11 +16,13 @@ CColliderBox2D::CColliderBox2D()
 	m_Render = true;
 
 	m_ColliderType = Collider_Type::Box2D;
+	m_PrevCenter = Vector2(0.f, 0.f);
 }
 
 CColliderBox2D::CColliderBox2D(const CColliderBox2D& com) : CColliderComponent(com)
 {
 	m_Info = com.m_Info;
+	m_PrevCenter = com.m_PrevCenter;
 }
 
 CColliderBox2D::~CColliderBox2D()
@@ -61,6 +63,8 @@ void CColliderBox2D::Update(float DeltaTime)
 void CColliderBox2D::PostUpdate(float DeltaTime)
 {
 	CColliderComponent::PostUpdate(DeltaTime);
+
+	Vector2 prevCenter = m_Info.Center;
 
 	m_Info.Center.x = GetWorldPos().x + m_Offset.x;
 	m_Info.Center.y = GetWorldPos().y + m_Offset.y;
@@ -112,6 +116,8 @@ void CColliderBox2D::PostUpdate(float DeltaTime)
 
 	m_Info.Max.x = m_Max.x;
 	m_Info.Max.y = m_Max.y;
+
+	m_PrevCenter = prevCenter;
 }
 
 void CColliderBox2D::PrevRender()

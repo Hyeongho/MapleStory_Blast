@@ -2,26 +2,55 @@
 #include "../Component/ColliderBox2D.h"
 #include "../Component/ColliderCircle.h"
 #include "../Component/ColliderPixel.h"
+#include "SweptAABB.h"
+
+bool CCollision::m_EnableSweptAABB = false;
+
+void CCollision::SetUseSweptAABB(bool Enable)
+{
+	m_EnableSweptAABB = Enable;
+}
+
+bool CCollision::IsSweptAABBEnabled()
+{
+	return m_EnableSweptAABB;
+}
 
 bool CCollision::CollisionBox2DToBox2D(CColliderBox2D* Src, CColliderBox2D* Dest)
 {
 	CollisionResult	srcResult, destResult;
 
-	if (CollisionBox2DToBox2D(srcResult, destResult, Src->GetInfo(), Dest->GetInfo()))
+	if (m_EnableSweptAABB)
 	{
-		srcResult.Src = Src;
-		srcResult.Dest = Dest;
+		Vector2 normal;
+		Vector2 relativeVelocity = Src->GetFrameVelocity() - Dest->GetFrameVelocity();
+		float entryTime = CSweptAABB::Sweep(Src->GetInfo(), Dest->GetInfo(), relativeVelocity, normal);
 
-		destResult.Src = Dest;
-		destResult.Dest = Src;
+		if (entryTime > 1.f)
+		{
+			return false;
+		}
 
-		Src->m_Result = srcResult;
-		Dest->m_Result = destResult;
-
-		return true;
+		Vector2 contactPoint = Src->GetInfo().Center + relativeVelocity * entryTime;
+		srcResult.HitPoint = Vector3(contactPoint.x, contactPoint.y, Src->GetWorldPos().z);
+		destResult.HitPoint = srcResult.HitPoint;
 	}
 
-	return false;
+	else if (!CollisionBox2DToBox2D(srcResult, destResult, Src->GetInfo(), Dest->GetInfo()))
+	{
+		return false;
+	}
+
+	srcResult.Src = Src;
+	srcResult.Dest = Dest;
+
+	destResult.Src = Dest;
+	destResult.Dest = Src;
+
+	Src->m_Result = srcResult;
+	Dest->m_Result = destResult;
+
+	return true;
 }
 
 bool CCollision::CollisionCircleToCircle(CColliderCircle* Src, CColliderCircle* Dest)

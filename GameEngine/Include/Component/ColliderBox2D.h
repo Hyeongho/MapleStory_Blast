@@ -14,11 +14,22 @@ protected:
 
 protected:
     Box2DInfo m_Info;
+    Vector2 m_PrevCenter;
 
 public:
     Box2DInfo GetInfo() const
     {
         return m_Info;
+    }
+
+    Vector2 GetPrevCenter() const
+    {
+        return m_PrevCenter;
+    }
+
+    Vector2 GetFrameVelocity() const
+    {
+        return m_Info.Center - m_PrevCenter;
     }
 
     void SetExtent(float Width, float Height)
