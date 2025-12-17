@@ -7,6 +7,7 @@
 #include "PlayerManager.h"
 #include "../Widget/Fade.h"
 #include "../ClientManager.h"
+#include "Collision/Collision.h"
 
 CPlayer2D::CPlayer2D() : m_Flip(true), m_Hurt(false), m_HurtTime(0.f), m_Recovery(false), m_RecoveryTime(3.f)
 {
@@ -52,6 +53,8 @@ void CPlayer2D::Start()
 
 bool CPlayer2D::Init()
 {
+	//CCollision::SetUseSweptAABB(true);
+
 	m_Sprite = CreateComponent<CSpriteComponent>("PlayerSprite");
 	m_Body = CreateComponent<CColliderBox2D>("Body");
 	m_Bottom = CreateComponent<CColliderBox2D>("Bottom");

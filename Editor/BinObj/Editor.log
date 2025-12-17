@@ -1,11 +1,7 @@
-﻿  EditorManager.cpp
-  ColliderBox2DWindow.cpp
-  EditorMenu.cpp
-  ObjectHierarchy.cpp
-  코드를 생성하고 있습니다.
-  17 of 9837 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
-    5 functions were new in current compilation
-    122 functions had inline decision re-evaluated but remain unchanged
+﻿  코드를 생성하고 있습니다.
+  2 of 9837 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    42 functions had inline decision re-evaluated but remain unchanged
   코드를 생성했습니다.
 DirectXTex.lib(DirectXTexD3D11.obj) : warning LNK4099: 'DirectXTex.pdb' PDB를 'DirectXTex.lib(DirectXTexD3D11.obj)' 또는 'D:\MapleStory_Blast\Editor\Bin\DirectXTex.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
 DirectXTex.lib(DirectXTexDDS.obj) : warning LNK4099: 'DirectXTex.pdb' PDB를 'DirectXTex.lib(DirectXTexDDS.obj)' 또는 'D:\MapleStory_Blast\Editor\Bin\DirectXTex.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.

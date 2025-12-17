@@ -1,56 +1,8 @@
-﻿  ClientManager.cpp
-  ClientSceneManager.cpp
-  BalrogPaseChange.cpp
-  CheckBalrogHandDie.cpp
-  Balrog.cpp
-  BalrogLeft.cpp
-  BalrogRight.cpp
-  BladeFury.cpp
-  BodyAttack1AreaWarning.cpp
-  BodyAttack2Effect.cpp
-  BodyAttack3AreaWarning.cpp
-  HongA.cpp
-  Jr_Balrog.cpp
-  Jr_BalrogAttack1Effect.cpp
-  Jr_BalrogAttack2Ball.cpp
-  Jr_BalrogAttack2Effect.cpp
-  Jr_BalrogAttack3Effect.cpp
-  LeftAttack1AreaWarning.cpp
-  MonsterManager.cpp
-  ObjectManager.cpp
-  컴파일하고 있습니다...
-  PhantomBlow.cpp
-  Player2D.cpp
-  PlayerAnimation2D.cpp
-  PlayerManager.cpp
-  Potal.cpp
-  RightAttack1AreaWarning.cpp
-  SeolHui.cpp
-  ShadowDualBlade.cpp
-  Tauromacis.cpp
-  Taurospear.cpp
-  TestMonster.cpp
-  AnotherDoor.cpp
-  BalrogAltar.cpp
-  BalrogGate.cpp
-  EntranceToTemple.cpp
-  LoadingAnotherDoor.cpp
-  LoadingBalrogAltar.cpp
-  LoadingBalrogGate.cpp
-  LoadingEToTemple.cpp
-  LoadingScene.cpp
-  컴파일하고 있습니다...
-  LoadingSeolHui.cpp
-  LoadingStartScene.cpp
-  MainScene.cpp
-  SeolHuibang.cpp
-  StartScene.cpp
-  StartWidget.cpp
-  TalkWidget.cpp
+﻿  Player2D.cpp
   코드를 생성하고 있습니다.
-  17 of 14635 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
-    5 functions were new in current compilation
-    170 functions had inline decision re-evaluated but remain unchanged
+  2 of 14635 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    25 functions had inline decision re-evaluated but remain unchanged
   코드를 생성했습니다.
 DirectXTex.lib(DirectXTexD3D11.obj) : warning LNK4099: 'DirectXTex.pdb' PDB를 'DirectXTex.lib(DirectXTexD3D11.obj)' 또는 'D:\MapleStory_Blast\Client2D\Bin\DirectXTex.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
 DirectXTex.lib(DirectXTexDDS.obj) : warning LNK4099: 'DirectXTex.pdb' PDB를 'DirectXTex.lib(DirectXTexDDS.obj)' 또는 'D:\MapleStory_Blast\Client2D\Bin\DirectXTex.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.

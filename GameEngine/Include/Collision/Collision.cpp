@@ -24,16 +24,26 @@ bool CCollision::CollisionBox2DToBox2D(CColliderBox2D* Src, CColliderBox2D* Dest
 	{
 		Vector2 normal;
 		Vector2 relativeVelocity = Src->GetFrameVelocity() - Dest->GetFrameVelocity();
-		float entryTime = CSweptAABB::Sweep(Src->GetInfo(), Dest->GetInfo(), relativeVelocity, normal);
+		float velocitySqr = relativeVelocity.Dot(relativeVelocity);
+		float entryTime = 1.f;
 
-		if (entryTime > 1.f)
+		if (velocitySqr > 0.f)
+		{
+			entryTime = CSweptAABB::Sweep(Src->GetInfo(), Dest->GetInfo(), relativeVelocity, normal);
+
+			if (entryTime <= 1.f)
+			{
+				Vector2 contactPoint = Src->GetInfo().Center + relativeVelocity * entryTime;
+				srcResult.HitPoint = Vector3(contactPoint.x, contactPoint.y, Src->GetWorldPos().z);
+				destResult.HitPoint = srcResult.HitPoint;
+			}
+		}
+
+		// If sweeping found no hit (entryTime > 1) or there was no motion, fall back to SAT check
+		if (entryTime > 1.f && !CollisionBox2DToBox2D(srcResult, destResult, Src->GetInfo(), Dest->GetInfo()))
 		{
 			return false;
 		}
-
-		Vector2 contactPoint = Src->GetInfo().Center + relativeVelocity * entryTime;
-		srcResult.HitPoint = Vector3(contactPoint.x, contactPoint.y, Src->GetWorldPos().z);
-		destResult.HitPoint = srcResult.HitPoint;
 	}
 
 	else if (!CollisionBox2DToBox2D(srcResult, destResult, Src->GetInfo(), Dest->GetInfo()))
