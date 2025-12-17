@@ -23,24 +23,48 @@ bool CCollision::CollisionBox2DToBox2D(CColliderBox2D* Src, CColliderBox2D* Dest
 	if (m_EnableSweptAABB)
 	{
 		Vector2 normal;
-		Vector2 relativeVelocity = Src->GetFrameVelocity() - Dest->GetFrameVelocity();
+
+		// Build the previous-frame boxes so the sweep runs from the old
+		// position to the current one instead of projecting forward
+		// from the already-updated transform. Using the current box as
+		// the sweep start caused fast-moving objects to miss the floor
+		// because the sweep started after the penetration occurred.
+		Box2DInfo srcPrev = Src->GetInfo();
+		Box2DInfo destPrev = Dest->GetInfo();
+
+		Vector2 srcVelocity = Src->GetFrameVelocity();
+		Vector2 destVelocity = Dest->GetFrameVelocity();
+
+		Vector2 srcOffset = Src->GetPrevCenter() - Src->GetInfo().Center;
+		Vector2 destOffset = Dest->GetPrevCenter() - Dest->GetInfo().Center;
+
+		srcPrev.Center += srcOffset;
+		srcPrev.Min += srcOffset;
+		srcPrev.Max += srcOffset;
+
+		destPrev.Center += destOffset;
+		destPrev.Min += destOffset;
+		destPrev.Max += destOffset;
+
+		Vector2 relativeVelocity = srcVelocity - destVelocity;
+
 		float velocitySqr = relativeVelocity.Dot(relativeVelocity);
 		float entryTime = 1.f;
 
 		if (velocitySqr > 0.f)
 		{
-			entryTime = CSweptAABB::Sweep(Src->GetInfo(), Dest->GetInfo(), relativeVelocity, normal);
+			entryTime = CSweptAABB::Sweep(srcPrev, destPrev, relativeVelocity, normal);
 
 			if (entryTime <= 1.f)
 			{
-				Vector2 contactPoint = Src->GetInfo().Center + relativeVelocity * entryTime;
+				Vector2 contactPoint = srcPrev.Center + relativeVelocity * entryTime;
 				srcResult.HitPoint = Vector3(contactPoint.x, contactPoint.y, Src->GetWorldPos().z);
 				destResult.HitPoint = srcResult.HitPoint;
 			}
 		}
 
 		// If sweeping found no hit (entryTime > 1) or there was no motion, fall back to SAT check
-		if (entryTime > 1.f && !CollisionBox2DToBox2D(srcResult, destResult, Src->GetInfo(), Dest->GetInfo()))
+		if (entryTime >= 1.f && !CollisionBox2DToBox2D(srcResult, destResult, Src->GetInfo(), Dest->GetInfo()))
 		{
 			return false;
 		}

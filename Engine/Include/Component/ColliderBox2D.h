@@ -15,6 +15,7 @@ protected:
 protected:
     Box2DInfo m_Info;
     Vector2 m_PrevCenter;
+    bool m_HasPrevCenter;
 
 public:
     Box2DInfo GetInfo() const

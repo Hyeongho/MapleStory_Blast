@@ -1,4 +1,9 @@
-﻿  코드를 생성하고 있습니다.
+﻿  DataManager.cpp
+  main.cpp
+  DefaultScene.cpp
+  DataWindow.cpp
+  DataWindowTable.cpp
+  코드를 생성하고 있습니다.
   Previous IPDB and IOBJ mismatch, fall back to full compilation.
 D:\MapleStory_Blast\Engine\Include\Engine.h(120): warning C4172: 지역 변수 또는 임시: wText의 주소를 반환하고 있습니다.
   All 9000 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.

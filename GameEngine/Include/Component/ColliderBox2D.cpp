@@ -23,6 +23,7 @@ CColliderBox2D::CColliderBox2D(const CColliderBox2D& com) : CColliderComponent(c
 {
 	m_Info = com.m_Info;
 	m_PrevCenter = com.m_PrevCenter;
+	m_HasPrevCenter = com.m_HasPrevCenter;
 }
 
 CColliderBox2D::~CColliderBox2D()
@@ -117,7 +118,16 @@ void CColliderBox2D::PostUpdate(float DeltaTime)
 	m_Info.Max.x = m_Max.x;
 	m_Info.Max.y = m_Max.y;
 
-	m_PrevCenter = prevCenter;
+	if (!m_HasPrevCenter)
+	{
+		m_PrevCenter = m_Info.Center;
+		m_HasPrevCenter = true;
+	}
+
+	else
+	{
+		m_PrevCenter = prevCenter;
+	}
 }
 
 void CColliderBox2D::PrevRender()
@@ -194,6 +204,9 @@ void CColliderBox2D::Load(FILE* File)
 	CColliderComponent::Load(File);
 
 	fread(&m_Info, sizeof(Box2DInfo), 1, File);
+
+	m_PrevCenter = m_Info.Center;
+	m_HasPrevCenter = true;
 }
 
 bool CColliderBox2D::Collision(CColliderComponent* Dest)
