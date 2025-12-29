@@ -25,6 +25,9 @@
 #include <array>
 #include <thread>
 #include <mutex>
+#include <memory>
+#include <fstream>
+#include <cstdint>
 
 #pragma comment(lib, "d3d11.lib")
 #pragma comment(lib, "dxguid.lib")
