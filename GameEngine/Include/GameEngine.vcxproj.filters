@@ -238,6 +238,9 @@
     <Filter Include="05. Component\02. ObjectComponent\04. Gravity">
       <UniqueIdentifier>{2e9177a9-83f2-4f89-81df-3c2a17f89720}</UniqueIdentifier>
     </Filter>
+    <Filter Include="11. Wz">
+      <UniqueIdentifier>{88d7f459-d6a2-4a96-81fb-2f2315dac35d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine.cpp">
@@ -641,6 +644,12 @@
     </ClCompile>
     <ClCompile Include="Collision\SweptAABB.cpp">
       <Filter>08. Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="WzArchive.cpp">
+      <Filter>11. Wz</Filter>
+    </ClCompile>
+    <ClCompile Include="WzLoader.cpp">
+      <Filter>11. Wz</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1129,6 +1138,12 @@
     </ClInclude>
     <ClInclude Include="Collision\SweptAABB.h">
       <Filter>08. Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="WzLoader.h">
+      <Filter>11. Wz</Filter>
+    </ClInclude>
+    <ClInclude Include="WzArchive.h">
+      <Filter>11. Wz</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

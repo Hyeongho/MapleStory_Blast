@@ -352,6 +352,8 @@
     <ClInclude Include="Widget\Text.h" />
     <ClInclude Include="Widget\Widget.h" />
     <ClInclude Include="Widget\WidgetWindow.h" />
+    <ClInclude Include="WzArchive.h" />
+    <ClInclude Include="WzLoader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Animation\AnimationSequence2DData.cpp" />
@@ -503,6 +505,8 @@
     <ClCompile Include="Widget\Text.cpp" />
     <ClCompile Include="Widget\Widget.cpp" />
     <ClCompile Include="Widget\WidgetWindow.cpp" />
+    <ClCompile Include="WzArchive.cpp" />
+    <ClCompile Include="WzLoader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="..\Bin\Shader\Collider.fx">
