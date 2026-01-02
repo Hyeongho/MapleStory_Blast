@@ -1,21 +1,28 @@
-﻿FXC : warning X4717: Effects deprecated for D3DCompiler_47
+﻿  Installing vcpkg dependencies to D:\MapleStory_Blast\vcpkg_installed\x64-windows\
+  "C:\dev\vcpkg\vcpkg.exe" install  --x-wait-for-lock --triplet "x64-windows" --vcpkg-root "C:\dev\vcpkg\\" "--x-manifest-root=D:\MapleStory_Blast\\" "--x-install-root=D:\MapleStory_Blast\vcpkg_installed\x64-windows\\" 
+  삼중항 x64-windows에 대한 컴파일러 해시 감지 중...
+  컴파일러 찾음: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe
+  빌드 및 설치할 패키지:
+    * vcpkg-cmake:x64-windows@2024-04-23
+      zlib:x64-windows@1.3.1
+  이 작업을 완료하기 위해 추가 패키지(*)가 수정됩니다.
+  59.7 ms 후 C:\Users\rlagu\AppData\Local\vcpkg\archives의 패키지 2개를 복원했습니다. 자세한 내용을 보려면 --debug를 사용하세요.
+  1/2 vcpkg-cmake:x64-windows@2024-04-23을(를) 설치하는 중...
+  vcpkg-cmake:x64-windows 처리 경과 시간: 12.1 ms
+  vcpkg-cmake:x64-windows 패키지 ABI: 9135dadb75c362dc5500eb9aa490caf72ff4ab18ba576af39030b6a96f0f3116
+  2/2 zlib:x64-windows@1.3.1을(를) 설치하는 중...
+  zlib:x64-windows 처리 경과 시간: 14.6 ms
+  zlib:x64-windows 패키지 ABI: acb612d12ab8f552b337a6048fd71a3ae1bbdd854c00e1c138504f0ec3481657
+  설치된 콘텐츠에 대한 라이선스는 소유자가 부여합니다. Microsoft는 타사 패키지에 대해 책임을 지지 않으며 라이선스를 부여하지도 않습니다.
+  이 vcpkg 설치에 설치된 패키지는 다음 라이선스를 선언합니다.
+  MIT
+  Zlib
+  The package zlib is compatible with built-in CMake targets:
   
-  compilation object save succeeded; see D:\MapleStory_Blast\GameEngine\BIn\Collider.cso
-FXC : warning X4717: Effects deprecated for D3DCompiler_47
+      find_package(ZLIB REQUIRED)
+      target_link_libraries(main PRIVATE ZLIB::ZLIB)
   
-  compilation object save succeeded; see D:\MapleStory_Blast\GameEngine\BIn\ColorMesh.cso
-FXC : warning X4717: Effects deprecated for D3DCompiler_47
-  
-  compilation object save succeeded; see D:\MapleStory_Blast\GameEngine\BIn\Mesh2D.cso
-FXC : warning X4717: Effects deprecated for D3DCompiler_47
-  
-  compilation object save succeeded; see D:\MapleStory_Blast\GameEngine\BIn\Particle.cso
-FXC : warning X4717: Effects deprecated for D3DCompiler_47
-  
-  compilation object save succeeded; see D:\MapleStory_Blast\GameEngine\BIn\TileMap.cso
-FXC : warning X4717: Effects deprecated for D3DCompiler_47
-  
-  compilation object save succeeded; see D:\MapleStory_Blast\GameEngine\BIn\Widget.cso
+  요청된 모든 설치를 완료했습니다(28.1 ms).
   AnimationSequence2DData.cpp
   AnimationSequence2DInstance.cpp
   Collision.cpp
@@ -161,28 +168,17 @@ FXC : warning X4717: Effects deprecated for D3DCompiler_47
   GameEngine.vcxproj -> D:\MapleStory_Blast\GameEngine\BIn\GameEngine.lib
   .\GameEngine\Bin\GameEngine.lib
   .\GameEngine\Bin\GameEngine.pdb
-  .\GameEngine\Bin\GameEngine_Debug.idb
-  .\GameEngine\Bin\GameEngine_Debug.lib
-  4개 파일이 복사되었습니다.
+  2개 파일이 복사되었습니다.
   .\GameEngine\Bin\GameEngine.lib
   .\GameEngine\Bin\GameEngine.pdb
-  .\GameEngine\Bin\GameEngine_Debug.idb
-  .\GameEngine\Bin\GameEngine_Debug.lib
-  4개 파일이 복사되었습니다.
+  2개 파일이 복사되었습니다.
   .\GameEngine\Bin\GameEngine.lib
   .\GameEngine\Bin\GameEngine.pdb
-  .\GameEngine\Bin\GameEngine_Debug.idb
-  .\GameEngine\Bin\GameEngine_Debug.lib
-  4개 파일이 복사되었습니다.
+  2개 파일이 복사되었습니다.
   .\GameEngine\Bin\GameEngine.lib
   .\GameEngine\Bin\GameEngine.pdb
-  .\GameEngine\Bin\GameEngine_Debug.idb
-  .\GameEngine\Bin\GameEngine_Debug.lib
-  4개 파일이 복사되었습니다.
-  .\GameEngine\Include\GameInfo.h
-  .\GameEngine\Include\WzArchive.h
-  .\GameEngine\Include\WzLoader.h
-  3개 파일이 복사되었습니다.
+  2개 파일이 복사되었습니다.
+  0개 파일이 복사되었습니다.
   파일을 찾을 수 없습니다-*.inl
   0개 파일이 복사되었습니다.
   0개 파일이 복사되었습니다.
