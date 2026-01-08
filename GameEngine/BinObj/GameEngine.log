@@ -1,183 +1,21 @@
-﻿  Installing vcpkg dependencies to D:\MapleStory_Blast\vcpkg_installed\x64-windows\
-  "C:\dev\vcpkg\vcpkg.exe" install  --x-wait-for-lock --triplet "x64-windows" --vcpkg-root "C:\dev\vcpkg\\" "--x-manifest-root=D:\MapleStory_Blast\\" "--x-install-root=D:\MapleStory_Blast\vcpkg_installed\x64-windows\\" 
-  삼중항 x64-windows에 대한 컴파일러 해시 감지 중...
-  컴파일러 찾음: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe
-  빌드 및 설치할 패키지:
-    * vcpkg-cmake:x64-windows@2024-04-23
-      zlib:x64-windows@1.3.1
-  이 작업을 완료하기 위해 추가 패키지(*)가 수정됩니다.
-  59.7 ms 후 C:\Users\rlagu\AppData\Local\vcpkg\archives의 패키지 2개를 복원했습니다. 자세한 내용을 보려면 --debug를 사용하세요.
-  1/2 vcpkg-cmake:x64-windows@2024-04-23을(를) 설치하는 중...
-  vcpkg-cmake:x64-windows 처리 경과 시간: 12.1 ms
-  vcpkg-cmake:x64-windows 패키지 ABI: 9135dadb75c362dc5500eb9aa490caf72ff4ab18ba576af39030b6a96f0f3116
-  2/2 zlib:x64-windows@1.3.1을(를) 설치하는 중...
-  zlib:x64-windows 처리 경과 시간: 14.6 ms
-  zlib:x64-windows 패키지 ABI: acb612d12ab8f552b337a6048fd71a3ae1bbdd854c00e1c138504f0ec3481657
-  설치된 콘텐츠에 대한 라이선스는 소유자가 부여합니다. Microsoft는 타사 패키지에 대해 책임을 지지 않으며 라이선스를 부여하지도 않습니다.
-  이 vcpkg 설치에 설치된 패키지는 다음 라이선스를 선언합니다.
-  MIT
-  Zlib
-  The package zlib is compatible with built-in CMake targets:
-  
-      find_package(ZLIB REQUIRED)
-      target_link_libraries(main PRIVATE ZLIB::ZLIB)
-  
-  요청된 모든 설치를 완료했습니다(28.1 ms).
-  AnimationSequence2DData.cpp
-  AnimationSequence2DInstance.cpp
-  Collision.cpp
-  CollisionManager.cpp
-  SweptAABB.cpp
-  CameraComponent.cpp
-  ColliderBox2D.cpp
-  ColliderCircle.cpp
-  ColliderComponent.cpp
-  ColliderPixel.cpp
-  Component.cpp
-  EffectComponent.cpp
-  Gravity.cpp
-  NavAgent.cpp
-  ObjectComponent.cpp
-  PaperBurnComponent.cpp
-  ParticleComponent.cpp
-  RigidBody.cpp
-  SceneComponent.cpp
-  SpriteComponent.cpp
-  컴파일하고 있습니다...
-  StaticMeshComponent.cpp
-  Tile.cpp
-  TileMapComponent.cpp
-  Transform.cpp
-  WidgetComponent.cpp
-  Data.cpp
-  Device.cpp
-  Engine.cpp
-  Excel.cpp
-  ExcelManager.cpp
-  GameObject.cpp
-  imgui.cpp
-  IMGUIButton.cpp
-  IMGUIComboBox.cpp
-  IMGUIGroup.cpp
-  IMGUIImage.cpp
-  IMGUILabel.cpp
-  IMGUIListBox.cpp
-  IMGUIManager.cpp
-  IMGUIMenuBar.cpp
-  컴파일하고 있습니다...
-  IMGUIModal.cpp
-  IMGUISameLine.cpp
-  IMGUISeparator.cpp
-  IMGUITestWindow.cpp
-  IMGUIText.cpp
-  IMGUITextInput.cpp
-  IMGUIWidget.cpp
-  IMGUIWindow.cpp
-  imgui_demo.cpp
-  imgui_draw.cpp
-  imgui_impl_dx11.cpp
-  imgui_impl_win32.cpp
-  imgui_tables.cpp
-  imgui_widgets.cpp
-  Input.cpp
-  Matrix.cpp
-  PathManager.cpp
-  Ref.cpp
-  BlendState.cpp
-  DepthStencilState.cpp
-  컴파일하고 있습니다...
-  RenderManager.cpp
-  RenderState.cpp
-  RenderStateManager.cpp
-  AnimationManager.cpp
-  AnimationSequence2D.cpp
-  FontManager.cpp
-  Material.cpp
-  MaterialManager.cpp
-  Mesh.cpp
-  MeshManager.cpp
-  SpriteMesh.cpp
-  StaticMesh.cpp
-  Particle.cpp
-  ParticleManager.cpp
-  ResourceManager.cpp
-  Animation2DConstantBuffer.cpp
-  ColliderConstantBuffer.cpp
-  ColliderPixelShader.cpp
-  ColliderShader.cpp
-  ColorMeshShader.cpp
-  컴파일하고 있습니다...
-  ComputeShader.cpp
-  ConstantBuffer.cpp
-  ConstantBufferBase.cpp
-  GlobalConstantBuffer.cpp
-  GraphicShader.cpp
-  MaterialConstantBuffer.cpp
-  Mesh2DShader.cpp
-  NumberShader.cpp
-  PaperBurnConstantBuffer.cpp
-  ParticleConstantBuffer.cpp
-  ParticleRenderShader.cpp
-  ParticleUpdateShader.cpp
-  PosMeshShader.cpp
-  ProgressBarConstantBuffer.cpp
-  ProgressBarShader.cpp
-  Shader.cpp
-  ShaderManager.cpp
-  Standard2DConstantBuffer.cpp
-  StructuredBuffer.cpp
-  TileMapConstantBuffer.cpp
-  컴파일하고 있습니다...
-  TileMapShader.cpp
-  TransformConstantBuffer.cpp
-  WidgetConstantBuffer.cpp
-  WidgetShader.cpp
-  Sound.cpp
-  SoundManager.cpp
-  Texture.cpp
-  TextureManager.cpp
-  CameraManager.cpp
-  CollisionSection.cpp
-  Navigation.cpp
-  NavigationManager.cpp
-  NavigationThread.cpp
-  Scene.cpp
-  SceneCollision.cpp
-  SceneManager.cpp
-  SceneMode.cpp
-  SceneResource.cpp
-  Viewport.cpp
-  Thread.cpp
-  컴파일하고 있습니다...
-  Timer.cpp
-  Vector2.cpp
-  Vector3.cpp
-  Vector4.cpp
-  Button.cpp
-  Image.cpp
-  Number.cpp
-  ProgressBar.cpp
-  Text.cpp
-  Widget.cpp
-  WidgetWindow.cpp
-  WzArchive.cpp
-  WzLoader.cpp
-  IMGUICheckBox.cpp
-  IMGUIRadio.cpp
-  IMGUITreeNode.cpp
-  GameEngine.vcxproj -> D:\MapleStory_Blast\GameEngine\BIn\GameEngine.lib
-  .\GameEngine\Bin\GameEngine.lib
-  .\GameEngine\Bin\GameEngine.pdb
-  2개 파일이 복사되었습니다.
-  .\GameEngine\Bin\GameEngine.lib
-  .\GameEngine\Bin\GameEngine.pdb
-  2개 파일이 복사되었습니다.
-  .\GameEngine\Bin\GameEngine.lib
-  .\GameEngine\Bin\GameEngine.pdb
-  2개 파일이 복사되었습니다.
-  .\GameEngine\Bin\GameEngine.lib
-  .\GameEngine\Bin\GameEngine.pdb
-  2개 파일이 복사되었습니다.
+﻿  Engine.cpp
+  GameEngine.vcxproj -> D:\MapleStory_Blast\GameEngine\BIn\GameEngine_Debug.lib
+  .\GameEngine\Bin\GameEngine_Debug.idb
+  .\GameEngine\Bin\GameEngine_Debug.lib
+  .\GameEngine\Bin\GameEngine_Debug.pdb
+  3개 파일이 복사되었습니다.
+  .\GameEngine\Bin\GameEngine_Debug.idb
+  .\GameEngine\Bin\GameEngine_Debug.lib
+  .\GameEngine\Bin\GameEngine_Debug.pdb
+  3개 파일이 복사되었습니다.
+  .\GameEngine\Bin\GameEngine_Debug.idb
+  .\GameEngine\Bin\GameEngine_Debug.lib
+  .\GameEngine\Bin\GameEngine_Debug.pdb
+  3개 파일이 복사되었습니다.
+  .\GameEngine\Bin\GameEngine_Debug.idb
+  .\GameEngine\Bin\GameEngine_Debug.lib
+  .\GameEngine\Bin\GameEngine_Debug.pdb
+  3개 파일이 복사되었습니다.
   0개 파일이 복사되었습니다.
   파일을 찾을 수 없습니다-*.inl
   0개 파일이 복사되었습니다.

@@ -11,6 +11,7 @@
 #include "Collision/CollisionManager.h"
 #include "Resource/Shader/GlobalConstantBuffer.h"
 #include "Resource/Shader/StructuredBuffer.h"
+#include "WzLoader.h"
 #include <time.h>
 
 DEFINITION_SINGLE(CEngine)
@@ -59,6 +60,10 @@ CEngine::~CEngine()
 
 bool CEngine::Init(HINSTANCE hInst, const TCHAR* Name, unsigned int Width, unsigned int Height, int IconID, bool WindowMode)
 {
+	CWzLoader loader;
+
+	bool ok = loader.enable("C:\\Nexon\\Maple\\Data\\Base");
+
 	m_hInst = hInst;
 
 	m_RS.Width = Width;
