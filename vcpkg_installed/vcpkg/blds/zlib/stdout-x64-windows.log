@@ -1,0 +1,18 @@
+Downloading https://github.com/madler/zlib/archive/v1.3.1.tar.gz -> madler-zlib-v1.3.1.tar.gz
+Successfully downloaded madler-zlib-v1.3.1.tar.gz
+-- Extracting source C:/Users/rlagu/AppData/Local/vcpkg/downloads/madler-zlib-v1.3.1.tar.gz
+-- Applying patch 0001-Prevent-invalid-inclusions-when-HAVE_-is-set-to-0.patch
+-- Applying patch 0002-build-static-or-shared-not-both.patch
+-- Applying patch 0003-android-and-mingw-fixes.patch
+-- Using source at D:/MapleStory_Blast/vcpkg_installed/vcpkg/blds/zlib/src/v1.3.1-2e5db616bf.clean
+-- Configuring x64-windows
+-- Building x64-windows-dbg
+-- Building x64-windows-rel
+-- Installing: D:/MapleStory_Blast/vcpkg_installed/vcpkg/pkgs/zlib_x64-windows/share/zlib/vcpkg-cmake-wrapper.cmake
+-- Fixing pkgconfig file: D:/MapleStory_Blast/vcpkg_installed/vcpkg/pkgs/zlib_x64-windows/lib/pkgconfig/zlib.pc
+-- Using cached msys2-mingw-w64-x86_64-pkgconf-1~2.4.3-1-any.pkg.tar.zst
+-- Using cached msys2-msys2-runtime-3.6.2-2-x86_64.pkg.tar.zst
+-- Using msys root at C:/Users/rlagu/AppData/Local/vcpkg/downloads/tools/msys2/9272adbcaf19caef
+-- Fixing pkgconfig file: D:/MapleStory_Blast/vcpkg_installed/vcpkg/pkgs/zlib_x64-windows/debug/lib/pkgconfig/zlib.pc
+-- Installing: D:/MapleStory_Blast/vcpkg_installed/vcpkg/pkgs/zlib_x64-windows/share/zlib/copyright
+-- 빌드 후 유효성 검사를 수행하는 중

@@ -2,6 +2,8 @@
   "name": "maplestory-blast",
   "version-string": "0.1.0",
   "dependencies": [
-    "zlib"
-  ]
+    "zlib",
+    "openssl"
+  ],
+  "builtin-baseline": "4f326c4072038c8624c36a8ba5ed23f616adda53"
 }

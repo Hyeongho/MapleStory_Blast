@@ -1,0 +1,13 @@
+prefix=D:/MapleStory_Blast/vcpkg_installed/vcpkg/pkgs/zlib_x64-windows
+exec_prefix=D:/MapleStory_Blast/vcpkg_installed/vcpkg/pkgs/zlib_x64-windows
+libdir=D:/MapleStory_Blast/vcpkg_installed/vcpkg/pkgs/zlib_x64-windows/lib
+sharedlibdir=D:/MapleStory_Blast/vcpkg_installed/vcpkg/pkgs/zlib_x64-windows/lib
+includedir=D:/MapleStory_Blast/vcpkg_installed/vcpkg/pkgs/zlib_x64-windows/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.3.1
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lzlib
+Cflags: -I${includedir}
